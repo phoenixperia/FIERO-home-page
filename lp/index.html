@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Shoes — Spring Campaign 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@phosphor-icons/webcomponents@2.1"></script>
+  <style>
+    /* ===== CSS Variables ===== */
+    :root {
+      --color-primary: #d4899a;
+      --color-primary-deep: #b86b7c;
+      --color-accent: #b09070;
+      --color-accent-light: #c8a888;
+      --gradient-main: linear-gradient(135deg, #d4899a, #b09070);
+      --gradient-gold: linear-gradient(135deg, #b09070, #c8a888);
+      --color-bg: #fdf0f2;
+      --color-bg-alt: #f5e6e8;
+      --color-bg-cream: #faf6f3;
+      --color-text: #2a1a1e;
+      --color-text-light: #7a6a6e;
+      --color-dark-bg: #fdf0f2;
+      --color-dark-bg-deep: #f8e4e8;
+      --color-white: #ffffff;
+    }
+
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--color-text);
+      background: var(--color-bg);
+      overflow-x: hidden;
+    }
+
+    /* ===== Typography ===== */
+    h1, h2, h3 { font-family: 'Noto Serif JP', serif; }
+    h2 {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.3;
+      text-wrap: balance;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .en { font-family: 'Cormorant Garamond', serif; }
+    .en-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .highlight {
+      background: linear-gradient(transparent 60%, rgba(212,137,154,0.35) 60%);
+      display: inline;
+    }
+
+    /* ===== Responsive helpers ===== */
+    .sp-only { display: none; }
+    .pc-only { display: inline; }
+
+    /* ===== Layout ===== */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 80px; }
+    section { padding: 100px 0; position: relative; overflow: hidden; }
+
+    /* ===== Top Line ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gradient-main);
+      z-index: 9999;
+    }
+
+    /* ===== Section Number ===== */
+    .section-number {
+      position: absolute;
+      top: -20px;
+      left: 80px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 180px;
+      font-weight: 700;
+      opacity: 0.03;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ===== Title Decorations ===== */
+    .title-line::after {
+      content: '';
+      display: block;
+      width: 64px;
+      height: 3px;
+      background: var(--gradient-gold);
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+    .title-line-left::after {
+      content: '';
+      display: block;
+      width: 64px;
+      height: 3px;
+      background: var(--gradient-gold);
+      margin: 20px 0 0;
+      border-radius: 2px;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 56px;
+      background: var(--gradient-gold);
+      color: var(--color-white);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 80px;
+      box-shadow: 0 0 48px rgba(176,144,112,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      letter-spacing: 0.08em;
+    }
+    .btn-cta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 48px rgba(176,144,112,0.45);
+    }
+    .btn-cta ph-icon { font-size: 20px; }
+
+    .btn-cta-outline {
+      background: transparent;
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+      box-shadow: none;
+    }
+    .btn-cta-outline:hover {
+      background: var(--color-accent);
+      color: var(--color-white);
+      box-shadow: 0 12px 48px rgba(176,144,112,0.3);
+    }
+
+    /* ===== Decorations ===== */
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .deco-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+
+    /* ===== Cards ===== */
+    .card {
+      background: var(--color-white);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-anim-1 { animation: fadeInUp 0.8s ease both; animation-delay: 0.2s; }
+    .hero-anim-2 { animation: fadeInUp 0.8s ease both; animation-delay: 0.5s; }
+    .hero-anim-3 { animation: fadeInUp 0.8s ease both; animation-delay: 0.8s; }
+    .hero-anim-4 { animation: fadeInUp 0.8s ease both; animation-delay: 1.1s; }
+    .hero-anim-5 { animation: fadeInUp 0.8s ease both; animation-delay: 1.4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-anim-1, .hero-anim-2, .hero-anim-3, .hero-anim-4, .hero-anim-5 {
+        animation: none;
+      }
+      .card, .btn-cta, .design-card, .painting-card, .set-card, .faq-item {
+        transition: none;
+      }
+    }
+
+    /* ========================================
+       HERO
+    ======================================== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #fff5f6 0%, #fdf0f2 35%, #f8e4e8 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: var(--color-text);
+    }
+    .hero .deco-circle-1 {
+      width: 700px; height: 700px;
+      top: -250px; right: -200px;
+      background: radial-gradient(circle, rgba(212,137,154,0.1) 0%, transparent 55%);
+    }
+    .hero .deco-circle-2 {
+      width: 500px; height: 500px;
+      bottom: -200px; left: -150px;
+      background: radial-gradient(circle, rgba(176,144,112,0.08) 0%, transparent 55%);
+    }
+    .hero .deco-ring-1 { width: 550px; height: 550px; top: 8%; right: 3%; border-color: rgba(212,137,154,0.1); }
+    .hero .deco-ring-2 { width: 350px; height: 350px; bottom: 12%; right: 10%; border-color: rgba(212,137,154,0.08); }
+    .hero .deco-ring-3 { width: 200px; height: 200px; top: 20%; left: 5%; border-color: rgba(176,144,112,0.08); }
+
+    .hero .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 64px;
+      width: 100%;
+    }
+    .hero-content { flex: 1; max-width: 620px; }
+    .hero-visual { flex: 0 0 420px; }
+
+    .hero-eyebrow {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 32px;
+      letter-spacing: 0.08em;
+    }
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .hero-sub {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+    .hero-lead {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 2;
+      color: var(--color-text);
+      margin-bottom: 48px;
+      letter-spacing: 0.04em;
+      padding: 36px 0;
+      border-top: 1px solid rgba(212,137,154,0.25);
+      border-bottom: 1px solid rgba(212,137,154,0.25);
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-date {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: 0.04em;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 24px;
+      background: rgba(212,137,154,0.15);
+      border: 1px solid rgba(212,137,154,0.25);
+      border-radius: 80px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.05em;
+    }
+    .hero-price {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .hero-price-original {
+      font-size: 16px;
+      color: var(--color-text-light);
+      text-decoration: line-through;
+    }
+    .hero-price-off {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-accent);
+      background: rgba(176,144,112,0.12);
+      padding: 4px 14px;
+      border-radius: 8px;
+    }
+    .hero-price-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .hero-price-tax {
+      font-size: 14px;
+      color: var(--color-text-light);
+    }
+    .hero-price-note {
+      font-size: 14px;
+      color: var(--color-text-light);
+      width: 100%;
+    }
+
+    .hero-visual-single {
+      width: 440px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    .hero-visual-single img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-visual-grid {
+      width: 420px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 270px 138px;
+      gap: 12px;
+    }
+    .hero-visual-grid .img-main {
+      grid-column: 1 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .hero-visual-grid .img-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-visual-grid .img-sub {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .hero-visual-grid .img-sub img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ========================================
+       PROBLEM
+    ======================================== */
+    .problem {
+      background: var(--color-bg);
+      background-image: radial-gradient(circle, rgba(42,21,32,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .problem .container {
+      max-width: 800px;
+      text-align: center;
+    }
+    .problem-lead {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      color: var(--color-text);
+    }
+    .problem-items {
+      list-style: none;
+      margin-bottom: 48px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .problem-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(42,21,32,0.06);
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--color-text-light);
+    }
+    .problem-items li ph-icon {
+      font-size: 24px;
+      color: var(--color-primary);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .problem-bridge {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.8;
+      padding: 40px;
+      background: var(--color-white);
+      border-radius: 16px;
+      border-left: 4px solid var(--color-accent);
+      text-align: left;
+    }
+
+    /* ========================================
+       PRODUCT
+    ======================================== */
+    .product { background: var(--color-white); }
+    .product-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .product-header .en-label {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .product-header h2 { margin-bottom: 16px; }
+    .product-header p {
+      font-size: 18px;
+      color: var(--color-text-light);
+      max-width: 600px;
+      margin: 24px auto 0;
+    }
+    .product-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+    .product-feature {
+      text-align: center;
+      padding: 48px 32px;
+      background: var(--color-bg);
+      border-radius: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .product-feature:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+    .product-feature-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 24px;
+      background: var(--gradient-main);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-feature-icon ph-icon {
+      font-size: 36px;
+      color: var(--color-white);
+    }
+    .product-feature h3 { margin-bottom: 12px; font-size: 22px; }
+    .product-feature p {
+      font-size: 16px;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+    .product-quote {
+      text-align: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-top: 48px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    /* ========================================
+       DESIGN
+    ======================================== */
+    .design-section { background: var(--color-bg-alt); }
+    .design-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .design-header .en-label {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .design-header p {
+      font-size: 18px;
+      color: var(--color-text-light);
+      margin-top: 24px;
+    }
+    .design-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    .design-card {
+      background: var(--color-white);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .design-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+    .design-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+    .design-card-name {
+      padding: 14px 12px;
+      text-align: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.4;
+    }
+
+    /* ========================================
+       COLOR
+    ======================================== */
+    .color-section { background: var(--color-white); }
+    .color-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .color-header .en-label {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .color-subtitle {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .color-main-img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+    .color-finish-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .color-finish-list img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    /* ========================================
+       PAINTING
+    ======================================== */
+    .painting { background: var(--color-bg-alt); }
+    .painting-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .painting-header .en-label {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .painting-header p {
+      font-size: 18px;
+      color: var(--color-text-light);
+      margin-top: 24px;
+    }
+    .painting-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .painting-card {
+      background: var(--color-white);
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .painting-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .painting-card-body {
+      padding: 28px 24px 32px;
+    }
+    .painting-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .painting-card-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--color-primary);
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .painting-card h3 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    .painting-card-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .painting-card p.desc {
+      font-size: 15px;
+      color: var(--color-text-light);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      min-height: 72px;
+    }
+    .painting-price {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .painting-price.free { color: var(--color-primary-deep); }
+    .painting-price.paid { color: var(--color-accent); }
+
+    /* ========================================
+       CRAFTSMAN
+    ======================================== */
+    .craftsman {
+      background: var(--color-bg-alt);
+      color: var(--color-text);
+      padding: 120px 0;
+    }
+    .craftsman .deco-circle-1 {
+      width: 600px; height: 600px;
+      top: -200px; right: -200px;
+      background: radial-gradient(circle, rgba(212,137,154,0.1) 0%, transparent 55%);
+    }
+    .craftsman .container {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+    }
+    .craftsman-text { flex: 1; }
+    .craftsman-visual { flex: 0 0 480px; }
+    .craftsman .en-label {
+      color: var(--color-accent);
+      margin-bottom: 24px;
+      display: block;
+    }
+    .craftsman h2 {
+      color: var(--color-text);
+      font-size: 44px;
+      margin-bottom: 32px;
+    }
+    .craftsman p {
+      font-size: 17px;
+      color: var(--color-text-light);
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .craftsman-img {
+      width: 100%;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+    }
+
+    /* ========================================
+       CAMPAIGN DETAIL
+    ======================================== */
+    .campaign { background: var(--color-bg-cream); }
+    .campaign-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .campaign-header .en-label {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .campaign-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border-radius: 24px;
+      padding: 56px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .campaign-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gradient-main);
+    }
+    .campaign-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--color-accent);
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+    .campaign-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .campaign-table tr { border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .campaign-table tr:last-child { border-bottom: none; }
+    .campaign-table th {
+      text-align: left;
+      padding: 16px 24px 16px 0;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-primary-deep);
+      width: 140px;
+      vertical-align: top;
+    }
+    .campaign-table td {
+      padding: 16px 0;
+      font-size: 16px;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+    .campaign-table .price-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .campaign-table .price-note {
+      font-size: 14px;
+      color: var(--color-text-light);
+    }
+    .campaign-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    /* ========================================
+       MID CTA
+    ======================================== */
+    .mid-cta {
+      background: var(--gradient-main);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .mid-deco-1 {
+      width: 400px; height: 400px;
+      top: -150px; right: -80px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 55%);
+    }
+    .mid-deco-2 {
+      width: 300px; height: 300px;
+      bottom: -100px; left: -60px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 55%);
+    }
+    .mid-cta-limit {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+    }
+    .mid-cta h2 {
+      color: var(--color-white);
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+    .mid-cta-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.1em;
+      margin-bottom: 48px;
+    }
+    .mid-cta .btn-cta {
+      background: var(--color-white);
+      color: var(--color-primary-deep);
+      box-shadow: 0 0 48px rgba(255,255,255,0.2);
+    }
+    .mid-cta .btn-cta:hover {
+      box-shadow: 0 12px 48px rgba(255,255,255,0.3);
+    }
+
+    /* ========================================
+       SET ITEMS
+    ======================================== */
+    .set-items { background: var(--color-bg-cream); }
+    .set-items-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .set-items-header .en-label {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .set-items-header p {
+      font-size: 17px;
+      color: var(--color-text-light);
+      margin-top: 24px;
+    }
+    .set-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+    .set-card {
+      background: var(--color-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .set-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .set-card img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+    }
+    .set-card-body { padding: 32px; }
+    .set-card-body h3 { margin-bottom: 16px; }
+    .set-card-prices {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .set-card-price-new {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .set-card-price-old {
+      font-size: 15px;
+      text-decoration: line-through;
+      color: var(--color-text-light);
+    }
+    .set-card-price-off {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-primary-deep);
+      background: rgba(212,137,154,0.12);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .set-card-note {
+      font-size: 14px;
+      color: var(--color-text-light);
+      margin-top: 8px;
+    }
+    .set-footer-note {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 15px;
+      color: var(--color-text-light);
+    }
+
+    /* ========================================
+       TESTIMONIALS
+    ======================================== */
+    .testimonials { background: var(--color-bg-alt); }
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .testimonials-header .en-label {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .testimonial-card {
+      background: var(--color-white);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .testimonial-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--gradient-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .testimonial-qa { margin-bottom: 20px; }
+    .testimonial-qa:last-child { margin-bottom: 0; }
+    .testimonial-q {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-primary-deep);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .testimonial-q span {
+      flex-shrink: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+    .testimonial-a {
+      font-size: 14px;
+      color: var(--color-text-light);
+      line-height: 1.7;
+      padding-left: 22px;
+    }
+
+    /* ========================================
+       FAQ
+    ======================================== */
+    .faq { background: var(--color-white); }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .faq-header .en-label {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .faq-q-label {
+      flex-shrink: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1.3;
+    }
+    .faq-a {
+      font-size: 16px;
+      color: var(--color-text-light);
+      line-height: 1.7;
+      padding-left: 32px;
+    }
+
+    /* ========================================
+       FINAL CTA
+    ======================================== */
+    .final-cta {
+      background: linear-gradient(160deg, #fff5f6 0%, #fdf0f2 35%, #f8e4e8 100%);
+      color: var(--color-text);
+      text-align: center;
+      padding: 120px 0;
+      position: relative;
+    }
+    .final-cta .deco-circle-1 {
+      width: 500px; height: 500px;
+      top: -180px; right: -100px;
+      background: radial-gradient(circle, rgba(212,137,154,0.12) 0%, transparent 55%);
+    }
+    .final-cta .deco-circle-2 {
+      width: 400px; height: 400px;
+      bottom: -120px; left: -80px;
+      background: radial-gradient(circle, rgba(176,144,112,0.1) 0%, transparent 55%);
+    }
+    .final-cta h2 {
+      color: var(--color-text);
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+    .final-cta-sub {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-primary-deep);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      margin-bottom: 56px;
+    }
+    .final-cta-note {
+      font-size: 15px;
+      color: var(--color-text-light);
+      margin-top: 32px;
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    footer {
+      background: var(--color-bg-alt);
+      color: var(--color-text-light);
+      text-align: center;
+      padding: 32px 0;
+      font-size: 13px;
+    }
+
+    /* ========================================
+       RESPONSIVE (≤768px)
+    ======================================== */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+
+      /* Responsive helpers (mobile) */
+      .sp-only { display: inline; }
+      .pc-only { display: none; }
+
+      .container { padding: 0 20px; }
+      section { padding: 64px 0; }
+
+      h2 { font-size: 30px; line-height: 1.35; }
+      h3 { font-size: 20px; }
+
+      .section-number {
+        font-size: 96px;
+        left: 20px;
+        top: -10px;
+      }
+
+      .btn-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 18px 24px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      /* HERO */
+      .hero { min-height: auto; padding: 80px 0 64px; }
+      .hero .container {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .hero-content { max-width: 100%; }
+      .hero-visual { flex: 0 0 auto; width: 100%; }
+      .hero h1 {
+        font-size: 28px;
+        line-height: 1.4;
+      }
+      .hero-eyebrow { font-size: 16px; margin-bottom: 20px; }
+      .hero-sub { font-size: 14px; line-height: 1.7; }
+      .hero-lead {
+        font-size: 18px;
+        line-height: 1.8;
+        padding: 24px 0;
+        margin-bottom: 32px;
+      }
+      .hero-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .hero-date { font-size: 15px; }
+      .hero-badge { font-size: 13px; padding: 6px 18px; }
+      .hero-price { margin-bottom: 32px; }
+      .hero-price-main { font-size: 36px; }
+      .hero-price-original { font-size: 14px; }
+      .hero-visual-grid {
+        width: 100%;
+        grid-template-rows: 220px 110px;
+        gap: 8px;
+      }
+
+      /* PROBLEM */
+      .problem-lead { font-size: 20px; margin-bottom: 32px; }
+      .problem-items { margin-bottom: 32px; }
+      .problem-items li { font-size: 15px; gap: 12px; }
+      .problem-bridge {
+        font-size: 16px;
+        padding: 24px 20px;
+        line-height: 1.8;
+      }
+
+      /* PRODUCT */
+      .product-header { margin-bottom: 40px; }
+      .product-header p { font-size: 14px; line-height: 1.8; }
+      .product-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      .product-feature { padding: 32px 24px; }
+      .product-feature h3 { font-size: 20px; }
+      .product-feature p { font-size: 15px; }
+      .product-quote {
+        font-size: 18px;
+        padding-top: 32px;
+        line-height: 1.8;
+      }
+
+      /* DESIGN */
+      .design-header { margin-bottom: 40px; }
+      .design-header p { font-size: 16px; }
+      .design-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .design-card-name { font-size: 12px; padding: 10px 8px; }
+
+      /* COLOR */
+      .color-subtitle { font-size: 18px; margin-top: 32px; margin-bottom: 16px; }
+      .color-finish-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      /* PAINTING */
+      .painting-header { margin-bottom: 40px; }
+      .painting-header p { font-size: 16px; }
+      .painting-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .painting-card-body { padding: 24px 20px 28px; }
+      .painting-card h3 { font-size: 20px; }
+      .painting-card p.desc { min-height: auto; font-size: 14px; }
+
+      /* CRAFTSMAN */
+      .craftsman { padding: 80px 0; }
+      .craftsman .container {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .craftsman-visual { flex: 0 0 auto; width: 100%; }
+      .craftsman h2 { font-size: 28px; margin-bottom: 24px; }
+      .craftsman p { font-size: 15px; line-height: 1.9; }
+
+      /* CAMPAIGN */
+      .campaign-header { margin-bottom: 40px; }
+      .campaign-card {
+        padding: 32px 24px;
+        border-radius: 16px;
+      }
+      .campaign-card-title { font-size: 13px; margin-bottom: 20px; }
+      .campaign-table th,
+      .campaign-table td {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+      }
+      .campaign-table th {
+        padding-top: 16px;
+        font-size: 13px;
+      }
+      .campaign-table tr {
+        display: block;
+        padding: 8px 0;
+      }
+      .campaign-table td { font-size: 15px; }
+      .campaign-table .price-big { font-size: 26px; }
+
+      /* MID CTA */
+      .mid-cta { padding: 64px 0; }
+      .mid-cta h2 { font-size: 26px; }
+      .mid-cta-sub { font-size: 15px; margin-bottom: 32px; }
+
+      /* SET ITEMS */
+      .set-items-header { margin-bottom: 40px; }
+      .set-items-header p { font-size: 15px; }
+      .set-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .set-card-body { padding: 24px; }
+      .set-card-price-new { font-size: 24px; }
+      .set-card-prices { gap: 8px; }
+
+      /* TESTIMONIALS */
+      .testimonials-header { margin-bottom: 40px; }
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .testimonial-card { padding: 28px 24px; }
+      .testimonial-name { font-size: 15px; }
+      .testimonial-q { font-size: 13px; }
+      .testimonial-a { font-size: 14px; padding-left: 18px; }
+
+      /* FAQ */
+      .faq-header { margin-bottom: 40px; }
+      .faq-item { padding: 20px 0; }
+      .faq-q { font-size: 15px; gap: 10px; }
+      .faq-q-label { font-size: 18px; }
+      .faq-a { font-size: 14px; padding-left: 26px; }
+
+      /* FINAL CTA */
+      .final-cta { padding: 80px 0; }
+      .final-cta h2 { font-size: 28px; }
+      .final-cta-sub {
+        font-size: 20px;
+        margin-bottom: 40px;
+        line-height: 1.6;
+      }
+      .final-cta-note { font-size: 13px; }
+
+      /* Images */
+      img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="deco-circle deco-circle-1"></div>
+  <div class="deco-circle deco-circle-2"></div>
+  <div class="deco-ring deco-ring-1"></div>
+  <div class="deco-ring deco-ring-2"></div>
+  <div class="deco-ring deco-ring-3"></div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-eyebrow hero-anim-1">特別なご案内です。</p>
+      <h1 class="hero-anim-2">あなたのスーツ<br>足元まで完成していますか？</h1>
+      <p class="hero-sub hero-anim-2">5年、10年と履けば履くほどあなたの色になる。<br>職人が手染めするパティーヌオーダーシューズ。</p>
+      <div class="hero-meta hero-anim-4">
+        <span class="hero-date">2026年4月21日（火）〜 5月7日（木）</span>
+        <span class="hero-badge">先着10名様限定</span>
+      </div>
+      <div class="hero-price hero-anim-4">
+        <span class="hero-price-original">通常 ¥84,000（税抜）</span>
+        <span class="hero-price-off">17% OFF</span>
+        <br>
+        <span class="hero-price-main">¥70,000</span>
+        <span class="hero-price-tax">（税抜）/ 税込 ¥77,000</span>
+      </div>
+      <div class="hero-anim-5">
+        <a href="https://line.me/R/ti/p/@538mhqlu" class="btn-cta" aria-label="LINEで予約する">
+          LINEで予約する
+          <ph-icon name="arrow-right" weight="bold" size="20"></ph-icon>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual hero-anim-3">
+      <div class="hero-visual-grid">
+        <div class="img-main">
+          <img src="./images/finish5.JPG" width="420" height="270" alt="パティーヌ仕上げのオーダーシューズ">
+        </div>
+        <div class="img-sub">
+          <img src="./images/finish1.jpg" width="204" height="138" alt="仕上がりイメージ">
+        </div>
+        <div class="img-sub">
+          <img src="./images/finish3.JPG" width="204" height="138" alt="仕上がりイメージ">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="problem">
+  <div class="section-number">01</div>
+  <div class="container">
+    <p class="problem-lead">良い靴を履きたい。<br>でも何を選べばいいかわからない。</p>
+    <ul class="problem-items">
+      <li>
+        <ph-icon name="chat-dots" weight="duotone" size="24"></ph-icon>
+        スーツにはこだわってきたけど、靴は後回しになっていた。
+      </li>
+      <li>
+        <ph-icon name="chat-dots" weight="duotone" size="24"></ph-icon>
+        甲高幅広で、既製品だとサイズが合わず靴擦れしてしまう。
+      </li>
+      <li>
+        <ph-icon name="chat-dots" weight="duotone" size="24"></ph-icon>
+        オーダーシューズは高いイメージがあって手が出しづらい。
+      </li>
+    </ul>
+    <div class="problem-bridge">
+      そんな方へ、<span class="highlight">納得の一足</span>と出会える機会を用意しました。<br>
+      いい靴は履けば履くほど、磨けば磨くほど育ちます。
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT ===== -->
+<section class="product">
+  <div class="section-number">02</div>
+  <div class="container">
+    <div class="product-header">
+      <span class="en-label">Product</span>
+      <h2 class="title-line">世界にひとつ、<br>あなただけのシューズ</h2>
+      <p>自分の好きな形を選び、<br class="sp-only">職人が一点一点色を入れる。<br>いい靴は磨けば磨くほど育ち、<br class="sp-only">5年、10年と共に歩み続けます。</p>
+    </div>
+    <div class="product-features">
+      <div class="product-feature">
+        <div class="product-feature-icon">
+          <ph-icon name="sneaker" weight="duotone" size="36"></ph-icon>
+        </div>
+        <h3>形を選ぶ</h3>
+        <p>全10デザインからお好みのシルエットを選択</p>
+      </div>
+      <div class="product-feature">
+        <div class="product-feature-icon">
+          <ph-icon name="palette" weight="duotone" size="36"></ph-icon>
+        </div>
+        <h3>色を選ぶ</h3>
+        <p>パティーヌ本体カラー11色から、あなたらしい一色を</p>
+      </div>
+      <div class="product-feature">
+        <div class="product-feature-icon">
+          <ph-icon name="hand" weight="duotone" size="36"></ph-icon>
+        </div>
+        <h3>職人が仕上げる</h3>
+        <p>一足一足、手染めで仕上げる唯一無二の一足</p>
+      </div>
+    </div>
+    <p class="product-quote">それはもう、シューズではありません。<br>あなたの<span class="highlight">相棒</span>です。</p>
+  </div>
+</section>
+
+<!-- ===== DESIGN ===== -->
+<section class="design-section">
+  <div class="section-number">03</div>
+  <div class="container">
+    <div class="design-header">
+      <span class="en-label">Design</span>
+      <h2 class="title-line">全10デザインから選ぶ</h2>
+    </div>
+    <div class="design-grid">
+      <div class="design-card">
+        <img src="./images/0.png" width="200" height="200" alt="ホールカット">
+        <div class="design-card-name">ホールカット</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/1.png" width="200" height="200" alt="内羽根ストレートチップ">
+        <div class="design-card-name">内羽根ストレートチップ</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/2.png" width="200" height="200" alt="内羽根ストレートチップメダリオン">
+        <div class="design-card-name">ストレートチップ<br>メダリオン</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/3.png" width="200" height="200" alt="ダブルモンク">
+        <div class="design-card-name">ダブルモンク</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/4.png" width="200" height="200" alt="セミブローグ">
+        <div class="design-card-name">セミブローグ</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/5.png" width="200" height="200" alt="サドルシューズ">
+        <div class="design-card-name">サドルシューズ</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/6.png" width="200" height="200" alt="外羽プレーントゥ">
+        <div class="design-card-name">外羽プレーントゥ</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/7.png" width="200" height="200" alt="チャッカブーツ">
+        <div class="design-card-name">チャッカブーツ</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/8.png" width="200" height="200" alt="サイドゴアブーツ">
+        <div class="design-card-name">サイドゴアブーツ</div>
+      </div>
+      <div class="design-card">
+        <img src="./images/9.png" width="200" height="200" alt="ローファー">
+        <div class="design-card-name">ローファー</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLOR ===== -->
+<section class="color-section">
+  <div class="section-number">04</div>
+  <div class="container">
+    <div class="color-header">
+      <span class="en-label">Color</span>
+      <h2 class="title-line">パティーヌカラーを選ぶ</h2>
+    </div>
+    <p class="color-subtitle">カラーバリエーション 11色</p>
+    <img src="./images/color2.png" width="1120" height="auto" alt="パティーヌカラーバリエーション11色" class="color-main-img">
+
+    <p class="color-subtitle">仕上がりイメージ</p>
+    <div class="color-finish-list">
+      <img src="./images/finish3.JPG" width="800" height="auto" alt="仕上がりイメージ 1">
+      <img src="./images/finish4.JPG" width="800" height="auto" alt="仕上がりイメージ 2">
+      <img src="./images/finish5.JPG" width="800" height="auto" alt="仕上がりイメージ 3">
+      <img src="./images/finish1.jpg" width="800" height="auto" alt="仕上がりイメージ 4">
+      <img src="./images/finish2.jpg" width="800" height="auto" alt="仕上がりイメージ 5">
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAINTING STYLE ===== -->
+<section class="painting">
+  <div class="section-number">05</div>
+  <div class="container">
+    <div class="painting-header">
+      <span class="en-label">Painting Style</span>
+      <h2 class="title-line">塗り方を選ぶ</h2>
+      <p>4つの技法から、お好みの表情を</p>
+    </div>
+    <div class="painting-grid">
+      <div class="painting-card">
+        <img src="./images/1natural.jpg" width="280" height="210" alt="ナチュラル仕上げ">
+        <div class="painting-card-body">
+          <h3>ナチュラル</h3>
+          <p class="painting-card-en">Natural</p>
+          <p class="desc">手染めならではの濃淡は残しつつ染め上げる、基本的な技法。</p>
+          <p class="painting-price free">追加料金なし</p>
+        </div>
+      </div>
+      <div class="painting-card">
+        <img src="./images/2stroke.jpg" width="280" height="210" alt="ストローク仕上げ">
+        <div class="painting-card-body">
+          <h3>ストローク</h3>
+          <p class="painting-card-en">Stroke</p>
+          <p class="desc">運動感のある縦塗りの刷毛跡が印象的に残る染色技法。</p>
+          <p class="painting-price paid">＋ 5,000円（税抜）</p>
+        </div>
+      </div>
+      <div class="painting-card">
+        <img src="./images/3blur.jpg" width="280" height="210" alt="ブラー仕上げ">
+        <div class="painting-card-body">
+          <h3>ブラー</h3>
+          <p class="painting-card-en">Blur</p>
+          <p class="desc">マーブル調に色の輪郭をぼかしながら染め上げる技法。濃淡がはっきりし、より個性が生まれます。</p>
+          <p class="painting-price paid">＋ 5,000円（税抜）</p>
+        </div>
+      </div>
+      <div class="painting-card">
+        <img src="./images/4stipple.jpg" width="280" height="210" alt="スティップル仕上げ">
+        <div class="painting-card-body">
+          <h3>スティップル</h3>
+          <p class="painting-card-en">Stippled</p>
+          <p class="desc">点描画のように細かく染料を軽く叩くように色を塗り重ねていく技法。</p>
+          <p class="painting-price paid">＋ 5,000円（税抜）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRAFTSMAN ===== -->
+<section class="craftsman">
+  <div class="deco-circle deco-circle-1"></div>
+  <div class="container">
+    <div class="craftsman-text">
+      <span class="en-label">Craftsman</span>
+      <h2 class="title-line-left">職人が、一点一点。</h2>
+      <p>色の重なり、ムラの妙。<br>機械では決して出せない奥行きを、<br class="sp-only">職人の手が生み出します。</p>
+      <p>一足一足に向き合い、<br class="sp-only">革と対話するように色を入れていく。<br>だからこそ、同じ仕上がりは二度とない。</p>
+      <p>あなたの一足は、あなただけのものになります。</p>
+    </div>
+    <div class="craftsman-visual">
+      <img src="./images/craftsman.jpg" width="480" height="auto" alt="職人がパティーヌを施す様子" class="craftsman-img">
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAMPAIGN DETAIL ===== -->
+<section class="campaign">
+  <div class="section-number">06</div>
+  <div class="container">
+    <div class="campaign-header">
+      <span class="en-label">Campaign</span>
+      <h2 class="title-line">キャンペーン詳細</h2>
+    </div>
+    <div class="campaign-card">
+      <p class="campaign-card-title">Order Shoes — Spring Campaign 2026</p>
+      <table class="campaign-table">
+        <tr>
+          <th>期間</th>
+          <td>2026年4月21日（火）〜 5月7日（木）</td>
+        </tr>
+        <tr>
+          <th>定員</th>
+          <td>先着10名様限定</td>
+        </tr>
+        <tr>
+          <th>価格</th>
+          <td>
+            <span class="price-big">¥77,000</span>
+            <span class="price-note">（税込）/ 税抜 ¥70,000</span><br>
+            <span class="price-note">※通常 ¥84,000（税抜）のところ / ※ブーツは別途 +¥5,000（税抜）</span>
+          </td>
+        </tr>
+        <tr>
+          <th>デザイン</th>
+          <td>全10デザインから選択</td>
+        </tr>
+        <tr>
+          <th>カラー</th>
+          <td>パティーヌ本体カラー11色から選択</td>
+        </tr>
+        <tr>
+          <th>サイズ</th>
+          <td style="font-variant-numeric: tabular-nums;">24.5 / 25.0 / 25.5 / 26.0 / 26.5 / 27.0 / 27.5 / 28.0</td>
+        </tr>
+        <tr>
+          <th>オプション</th>
+          <td>
+            塗り方変更（ブラー・スティップル・ストローク）+5,000円（税抜）<br>
+            ソールゴム底変更 +5,000円（税抜）
+          </td>
+        </tr>
+        <tr>
+          <th>製作期間</th>
+          <td>約1ヶ月から1ヶ月半いただいております</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MID CTA ===== -->
+<section class="mid-cta">
+  <div class="deco-circle mid-deco-1"></div>
+  <div class="deco-circle mid-deco-2"></div>
+  <div class="container">
+    <p class="mid-cta-limit">先着10名様限定</p>
+    <h2>この一足が、<br class="sp-only">あなたを変える。</h2>
+    <p class="mid-cta-sub">2026年4月21日（火）〜 5月7日（木）</p>
+    <a href="https://line.me/R/ti/p/@538mhqlu" class="btn-cta" aria-label="LINEで予約する">
+      LINEで予約する
+      <ph-icon name="arrow-right" weight="bold" size="20"></ph-icon>
+    </a>
+  </div>
+</section>
+
+<!-- ===== SET ITEMS ===== -->
+<section class="set-items">
+  <div class="section-number">07</div>
+  <div class="container">
+    <div class="set-items-header">
+      <span class="en-label">Also Available</span>
+      <h2 class="title-line">シューズと合わせて</h2>
+      <p>パティーヌシューズと同じ技法で仕上げる革小物もご用意しています。<br>トータルコーディネートをお楽しみください。</p>
+    </div>
+    <div class="set-grid">
+      <div class="set-card">
+        <img src="./images/belt.png" width="560" height="350" alt="オーダーベルト">
+        <div class="set-card-body">
+          <h3>ベルト</h3>
+          <div class="set-card-prices">
+            <span class="set-card-price-new">¥20,790</span>
+            <span style="font-size: 14px; color: var(--color-text-light);">（税込）</span>
+            <span class="set-card-price-old">¥21,000（税抜）</span>
+            <span class="set-card-price-off">10% OFF</span>
+          </div>
+          <p class="set-card-note">塗り方オプション：+¥4,000（税抜）</p>
+        </div>
+      </div>
+      <div class="set-card">
+        <img src="./images/meishi.png" width="560" height="350" alt="オーダー名刺入れ">
+        <div class="set-card-body">
+          <h3>名刺入れ</h3>
+          <div class="set-card-prices">
+            <span class="set-card-price-new">¥19,800</span>
+            <span style="font-size: 14px; color: var(--color-text-light);">（税込）</span>
+            <span class="set-card-price-old">¥20,000（税抜）</span>
+            <span class="set-card-price-off">10% OFF</span>
+          </div>
+          <p class="set-card-note">塗り方オプション：+¥4,000（税抜）</p>
+        </div>
+      </div>
+    </div>
+    <p class="set-footer-note">※ セット価格についてはLINEにてご相談ください</p>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="section-number">08</div>
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="en-label">Testimonials</span>
+      <h2 class="title-line">お客様の声</h2>
+    </div>
+    <div class="testimonials-grid">
+      <!-- R・T さん -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">R.T</div>
+          <div class="testimonial-name">R・T さん</div>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>オーダーシューズを作る前、どんな悩みや不安がありましたか？</p>
+          <p class="testimonial-a">甲高幅広の足型で革靴はサイズアップして選び、靴擦れが悩みでした。かかとが大きいブランドのものを選んだりと自分に合う靴に出会えず苦労していました。オーダーシューズは高いイメージでしたが、金額的に手の届くところにあると知りお願いしました。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>実際に履いてみて、何が一番変わりましたか？</p>
+          <p class="testimonial-a">足馴染みが良く、長時間履いても疲れにくくなりました。見た目も美しく、知人からベ○ルッティに間違われる程コストパフォーマンスが高く品質が良いと感じています。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>どんな方にすすめたいですか？</p>
+          <p class="testimonial-a">折角良いスーツを着ているのに足元の靴が冴えない方。カッコいい靴を履きたいけど躊躇している方にぜひお薦めしたいです。</p>
+        </div>
+      </div>
+      <!-- O・H さん -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">O.H</div>
+          <div class="testimonial-name">O・H さん</div>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>オーダーシューズを作る前、どんな悩みや不安がありましたか？</p>
+          <p class="testimonial-a">新しく革靴を検討するとき、どのような柄にするか、あるいは似合うのかが今一わかりませんでした。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>実際に履いてみて、何が一番変わりましたか？</p>
+          <p class="testimonial-a">靴だけでなく、服装全体が整うような気がします。また、それに伴って見た目の心配をする必要が薄れ、行動に自信がつきました。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>どんな方にすすめたいですか？</p>
+          <p class="testimonial-a">革靴や革小物に興味があり、革を育てて年を重ねたい人。自分に自信が持てないが、行動を起こして状況を変えたい人におすすめしたいです。</p>
+        </div>
+      </div>
+      <!-- H・A さん -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">H.A</div>
+          <div class="testimonial-name">H・A さん</div>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>オーダーシューズを作る前、どんな悩みや不安がありましたか？</p>
+          <p class="testimonial-a">過去の革靴購入だと、小さめを選ぶときつく、結局慣れるまで待てず、はかないで終わることが多く、逆に少し大きめを購入していた経緯もあり、やはりそれもサイズが合わず、革靴の購入には、ずっと難しさがありました。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>実際に履いてみて、何が一番変わりましたか？</p>
+          <p class="testimonial-a">購入前のサイズフィットの心配はあったが、すぐに足になじんでくれたのは衝撃的でした。履いた瞬間に自分自身が上がる体験があります。パティーヌシューズを採用して、一段と自身のプレゼンテーションが変わり、どんな場面でも、いろいろな人からオシャレさをお褒めいただけています。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q"><span>Q.</span>どんな方にすすめたいですか？</p>
+          <p class="testimonial-a">自分のファッションの土台が足元にあるのは、間違いないので、一生モノの買い物として、おすすめします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="section-number">09</div>
+  <div class="container">
+    <div class="faq-header">
+      <span class="en-label">FAQ</span>
+      <h2 class="title-line">よくあるご質問</h2>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q.</span>予約はどうすればいいですか？</p>
+        <p class="faq-a">LINEよりお問い合わせください。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q.</span>税込みの価格はいくらですか？</p>
+        <p class="faq-a">77,000円（税込）です。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q.</span>パティーヌの色は何色から選べますか？</p>
+        <p class="faq-a">本体カラー11色からお選びいただけます。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q.</span>サイズ展開はどのくらいですか？</p>
+        <p class="faq-a">24.5〜28.0（0.5刻み、全8サイズ）に対応しています。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q.</span>デザインはどれくらいありますか？</p>
+        <p class="faq-a">ホールカット・内羽根ストレートチップ・内羽根ストレートチップメダリオン・ダブルモンク・セミブローグ・サドルシューズ・外羽プレーントゥ・チャッカブーツ・サイドゴアブーツ・ローファーの全10種類です。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q.</span>製作期間はどのくらいかかりますか？</p>
+        <p class="faq-a">約1ヶ月から1ヶ月半いただいております。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q.</span>塗り方オプションはいくらですか？</p>
+        <p class="faq-a">ナチュラルは無料です。ブラー・スティップル・ストロークへの変更は5,000円（税抜）の追加となります。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q.</span>キャンセルはできますか？</p>
+        <p class="faq-a">オーダーメイド品のため、ご注文確定後のキャンセルはお受けできません。ご不明な点はお気軽にLINEよりご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="deco-circle deco-circle-1"></div>
+  <div class="deco-circle deco-circle-2"></div>
+  <div class="container">
+    <h2>あなただけの一足を、<br>この春に。</h2>
+    <p class="final-cta-sub">先着10名様限定<span class="pc-only"> — </span><br class="sp-only">2026年4月21日〜5月7日</p>
+    <a href="https://line.me/R/ti/p/@538mhqlu" class="btn-cta" aria-label="LINEで予約する">
+      LINEで予約する
+      <ph-icon name="arrow-right" weight="bold" size="20"></ph-icon>
+    </a>
+    <p class="final-cta-note">ご質問・ご相談もLINEからお気軽にどうぞ。</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Order Shoes Campaign. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

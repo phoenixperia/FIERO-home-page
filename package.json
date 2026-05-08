@@ -1,0 +1,13 @@
+{
+  "name": "cc-lp-v2",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI LP制作ツール。対話だけでプロ品質のLPを作り、Figma互換のHTMLに書き出す。",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build:figma": "node tools/build-figma-ready.mjs"
+  }
+}

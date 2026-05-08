@@ -1,0 +1,2895 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIERO | 町田のオーダースーツ・パティーヌシューズ</title>
+  <meta name="description" content="装いは、未来から逆算する。経営者・ビジネスパーソンの「なりたい姿」を、対話から一着に翻訳します。完全予約制。ファッションプロデューサー 藤井孝昌。">
+  <meta name="keywords" content="オーダースーツ,町田,町田駅,ビスポーク,パティーヌシューズ,ファッションプロデューサー,経営者スーツ,リーダーシップ,ビジネススーツ,完全オーダー,装い,コーチング,40代スーツ,30代経営者,役員スーツ">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FIERO | 町田のオーダースーツ・パティーヌシューズ">
+  <meta property="og:description" content="装いは、未来から逆算する。経営者・ビジネスパーソンの「なりたい姿」を、対話から一着に翻訳します。">
+  <meta property="og:image" content="images/owner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Webフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       CSS変数(デザイントークン)
+       ============================================ */
+    :root {
+      /* カラー: ベース(白基調) */
+      --color-background: #FFFFFF;
+      --color-background-alt: #FAF8F3;
+      --color-surface: #FFFFFF;
+
+      /* カラー: アクセント(ネイビー) */
+      --color-accent: #1A2942;
+      --color-accent-light: #2A3A52;
+      --color-accent-dark: #0F1C30;
+
+      /* カラー: テキスト */
+      --color-text-primary: #2A2620;
+      --color-text-secondary: #6B6358;
+      --color-text-muted: #9C9388;
+      --color-text-on-dark: #F4ECDA;
+      --color-text-on-dark-soft: #D9CDB3;
+
+      /* カラー: 機能色 */
+      --color-border: #E5DCC8;
+      --color-divider: #C9A961;
+      --color-overlay: rgba(26, 22, 16, 0.55);
+      --color-overlay-deep: rgba(26, 22, 16, 0.75);
+      --color-dark: #1A1610;
+
+      /* フォント */
+      --font-serif-jp: "Noto Serif JP", "Yu Mincho", "游明朝", serif;
+      --font-serif-en: "Cormorant Garamond", "Times New Roman", serif;
+      --font-sans-en: "Inter", "Helvetica Neue", sans-serif;
+
+      /* サイズスケール */
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 1.875rem;
+      --text-4xl: 2.25rem;
+      --text-5xl: 3rem;
+      --text-6xl: 3.75rem;
+
+      /* レイアウト */
+      --max-width-prose: 720px;
+      --max-width-content: 1080px;
+      --max-width-wide: 1280px;
+
+      /* スペーシング */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+    }
+
+    /* ============================================
+       リセット & ベース
+       ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--font-serif-jp);
+      font-weight: 400;
+      font-size: var(--text-base);
+      line-height: 2.0;
+      color: var(--color-text-primary);
+      background-color: var(--color-background);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img, svg {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    input, textarea, select {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    /* ============================================
+       共通: コンテナ・タイトル・ボタン
+       ============================================ */
+    .container {
+      max-width: var(--max-width-content);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .container-wide {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .container-prose {
+      max-width: var(--max-width-prose);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    /* セクションタイトル(英字大文字) */
+    .section-eyebrow {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+      display: inline-block;
+      position: relative;
+      padding-bottom: var(--space-3);
+    }
+    .section-eyebrow::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 1px;
+      background-color: var(--color-accent);
+    }
+    /* 左寄せセクション用 */
+    .section-eyebrow.is-left::after {
+      left: 0;
+      transform: none;
+    }
+
+    .section-title {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-3xl);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    .section-lead {
+      font-size: var(--text-base);
+      line-height: 2.0;
+      color: var(--color-text-secondary);
+    }
+
+    /* ボタン */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 36px;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      border-radius: 2px;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--color-accent-dark);
+    }
+
+    .btn-secondary {
+      color: var(--color-accent-dark);
+      border-bottom: 0.5px solid var(--color-accent);
+      padding: 12px 4px;
+      border-radius: 0;
+      letter-spacing: 0.08em;
+    }
+    .btn-secondary:hover {
+      color: var(--color-text-primary);
+      border-bottom-color: var(--color-text-primary);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--color-accent);
+      color: var(--color-accent-dark);
+      background-color: transparent;
+    }
+    .btn-outline:hover {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+    }
+
+    .btn-arrow {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.2s ease;
+    }
+    .btn:hover .btn-arrow {
+      transform: translateX(3px);
+    }
+
+    /* 区切り線 */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background-color: var(--color-accent);
+      margin: var(--space-6) 0;
+    }
+    .divider.center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* アニメーション */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .fade-in { opacity: 1; transform: none; }
+    }
+
+    /* ============================================
+       Header / Navigation
+       ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(140%) blur(14px);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid rgba(229, 220, 200, 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .header-inner {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--color-text-primary);
+      line-height: 1;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+      list-style: none;
+    }
+
+    .nav-link {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+      position: relative;
+      padding: 6px 0;
+    }
+    .nav-link:hover {
+      color: var(--color-accent-dark);
+    }
+
+    .nav-cta {
+      padding: 12px 24px;
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+    }
+
+    /* ハンバーガー */
+    .nav-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background-color: var(--color-text-primary);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    @media (max-width: 1023px) {
+      .nav-list {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background-color: var(--color-background);
+        flex-direction: column;
+        gap: 0;
+        padding: var(--space-4) 0 var(--space-8);
+        border-bottom: 1px solid var(--color-border);
+        transform: translateY(-110%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      }
+      .nav-list.is-open {
+        transform: translateY(0);
+      }
+      .nav-list li {
+        width: 100%;
+        text-align: center;
+      }
+      .nav-link {
+        display: block;
+        padding: 16px 24px;
+        width: 100%;
+      }
+      .nav-cta {
+        margin: var(--space-4) auto 0;
+        width: calc(100% - 48px);
+        max-width: 320px;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+    }
+
+    /* ============================================
+       Hero — フルブリード背景 + 左テキストオーバーレイ
+       ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background-color: #f0ebe0;
+    }
+
+    /* 背景写真: 全面 */
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+    }
+
+    /* グラデーションオーバーレイ: 左は白く・右は写真が見える */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(255, 255, 255, 0.82) 30%,
+        rgba(255, 255, 255, 0.58) 52%,
+        rgba(255, 255, 255, 0)    70%
+      );
+      z-index: 1;
+    }
+
+    /* テキストエリア: 左側 */
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      width: 58%;
+      max-width: 680px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 148px 80px 40px 80px;
+    }
+
+    .hero-brand {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-8);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .hero-brand::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background-color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-serif-jp);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--color-text-primary);
+      margin: 0 0 var(--space-8);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    /* Block 1: 主役のキャッチ */
+    .hero-h1 .h1-main {
+      font-size: clamp(1.875rem, 3.4vw, 2.75rem);
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--color-text-primary);
+      letter-spacing: 0.04em;
+    }
+
+    /* Block 2: 問いかけ */
+    .hero-h1 .h1-question {
+      font-size: clamp(0.9375rem, 1.4vw, 1.125rem);
+      font-weight: 400;
+      line-height: 1.9;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.06em;
+    }
+
+    /* Block 3: 結び */
+    .hero-h1 .h1-resolution {
+      font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+      font-weight: 500;
+      line-height: 1.7;
+      color: var(--color-text-primary);
+      letter-spacing: 0.06em;
+    }
+    .hero-h1 .h1-resolution .brand-mark {
+      font-family: var(--font-serif-en);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--color-accent);
+      margin-right: 2px;
+    }
+
+    /* ゴールドの縦ライン */
+    .hero-h1-wrap {
+      position: relative;
+      padding-left: var(--space-6);
+      border-left: 2px solid var(--color-divider);
+    }
+
+    .hero-sub {
+      font-family: var(--font-serif-jp);
+      font-size: clamp(0.8125rem, 1vw, 0.9375rem);
+      line-height: 1.8;
+      color: var(--color-text-muted);
+      margin: 0 0 var(--space-8);
+      letter-spacing: 0.2em;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+    }
+
+    /* ヒーローCTAのみサイズ拡大 */
+    .hero-actions .btn-primary {
+      padding: 17px 46px;
+      font-size: var(--text-base);
+    }
+
+    .hero-scroll { display: none; }
+
+    /* タブレット */
+    @media (max-width: 1023px) {
+      .hero-left {
+        width: 75%;
+        padding: 120px 48px 80px 48px;
+      }
+      .hero-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 1)   0%,
+          rgba(255, 255, 255, 0.95) 50%,
+          rgba(255, 255, 255, 0.5)  75%,
+          rgba(255, 255, 255, 0)    100%
+        );
+      }
+    }
+
+    /* モバイル専用改行 / デスクトップ専用改行 */
+    .sp-br { display: none; }
+    .pc-br { display: inline; }
+
+    /* モバイル */
+    @media (max-width: 639px) {
+      .sp-br { display: inline; }
+      .hero-left {
+        width: 100%;
+        padding: 92px 24px 56px;
+        justify-content: center;
+      }
+      .hero-overlay {
+        background: rgba(255, 255, 255, 0.88);
+      }
+      .hero-brand { margin-bottom: var(--space-6); font-size: 0.7rem; }
+      .hero-h1 { margin-bottom: var(--space-8); gap: var(--space-6); }
+      .hero-h1 .h1-main { font-size: 1.375rem; }
+      .hero-h1 .h1-question { font-size: 0.875rem; }
+      .hero-h1 .h1-resolution { font-size: 1.0625rem; }
+      .hero-sub { margin-bottom: var(--space-8); font-size: 0.8rem; }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+      }
+      .hero-actions .btn { width: 100%; text-align: center; }
+    }
+
+    /* ============================================
+       Empathy
+       ============================================ */
+    .empathy {
+      background-color: var(--color-background-alt);
+      padding: 120px 24px;
+      text-align: center;
+    }
+
+    .empathy-text {
+      font-family: var(--font-serif-jp);
+      font-size: 2.25rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.05em;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 639px) {
+      .empathy { padding: 48px 24px; }
+      .empathy-text { font-size: 1.1875rem; }
+    }
+
+    /* ============================================
+       Owner Story
+       ============================================ */
+    .story {
+      position: relative;
+      padding: 120px 0;
+      overflow: hidden;
+      background-color: var(--color-background);
+    }
+
+    .story-bg { display: none; }
+
+    .story-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .story-opening {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .story-philosophy {
+      font-family: var(--font-serif-jp);
+      font-weight: 500;
+      font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+      line-height: 1.7;
+      letter-spacing: 0.08em;
+      color: var(--color-text-primary);
+      margin: var(--space-6) 0 var(--space-12);
+    }
+    .story-philosophy::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 1px;
+      background-color: var(--color-accent);
+      margin: var(--space-8) auto 0;
+    }
+
+    .story-body {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .story-body p {
+      font-size: 1.125rem;
+      line-height: 2.2;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.04em;
+    }
+    .story-body p.emphasis {
+      font-size: 1.25rem;
+      color: var(--color-accent-dark);
+      font-style: italic;
+      font-family: var(--font-serif-jp);
+      font-weight: 500;
+      text-align: center;
+      padding: var(--space-6) 0;
+      letter-spacing: 0.06em;
+      border-left: 2px solid var(--color-divider);
+      padding-left: var(--space-6);
+    }
+
+    .story-closing {
+      margin-top: var(--space-12);
+      padding-top: var(--space-10);
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+    .story-closing p {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      line-height: 2.0;
+      color: var(--color-text-primary);
+      letter-spacing: 0.06em;
+    }
+    .story-closing p + p {
+      margin-top: var(--space-4);
+      color: var(--color-accent-dark);
+      font-weight: 500;
+    }
+
+    @media (max-width: 639px) {
+      .story-body { text-align: left; }
+      .pc-br { display: none; }
+    }
+
+    /* ============================================
+       Order Items（ダーク背景）
+       ============================================ */
+    .items {
+      position: relative;
+      overflow: hidden;
+      background-color: #1A1610;
+      padding: 120px 0;
+    }
+
+    /* 背景画像 */
+    .items-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/price.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.28;
+      z-index: 0;
+    }
+
+    .items .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 大きな装飾タイトル */
+    .items-label-large {
+      font-family: var(--font-serif-en);
+      font-size: clamp(5rem, 13vw, 10rem);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: rgba(255, 255, 255, 0.04);
+      text-align: center;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: -2.5rem;
+      user-select: none;
+    }
+
+    .items-header {
+      text-align: center;
+      margin-bottom: var(--space-20);
+    }
+
+    /* 暗背景上のテキスト色上書き */
+    .items .section-eyebrow {
+      color: rgba(244, 236, 218, 0.5);
+    }
+    .items .section-eyebrow::after {
+      background-color: var(--color-divider);
+    }
+    .items .section-title {
+      color: #F4ECDA;
+      font-size: clamp(1.25rem, 2.4vw, 1.875rem);
+    }
+    .items .section-lead {
+      color: rgba(244, 236, 218, 0.65);
+      font-size: var(--text-lg);
+    }
+
+    .items-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-16);
+    }
+
+    .item-category {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: var(--space-8);
+    }
+
+    .item-category-head {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-6);
+      margin-bottom: var(--space-8);
+      flex-wrap: wrap;
+    }
+    .item-category-en {
+      font-family: var(--font-serif-en);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #F4ECDA;
+      letter-spacing: 0.08em;
+    }
+    .item-category-jp {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      color: rgba(244, 236, 218, 0.55);
+      letter-spacing: 0.1em;
+    }
+
+    .item-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .item-table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .item-table tr:last-child {
+      border-bottom: none;
+    }
+    .item-table td {
+      padding: var(--space-6) 0;
+      vertical-align: top;
+      font-size: var(--text-2xl);
+      line-height: 1.7;
+    }
+    .item-name {
+      font-family: var(--font-serif-jp);
+      color: rgba(244, 236, 218, 0.9);
+      font-weight: 400;
+      width: 50%;
+    }
+    .item-price {
+      text-align: right;
+      font-family: var(--font-serif-jp);
+      color: rgba(244, 236, 218, 0.6);
+      letter-spacing: 0.02em;
+    }
+    .item-price strong {
+      font-family: var(--font-serif-en);
+      font-weight: 400;
+      font-size: 1.75rem;
+      color: #F4ECDA;
+      letter-spacing: 0.02em;
+      margin-right: 4px;
+    }
+    .item-price .price-sub {
+      font-size: var(--text-sm);
+      color: rgba(244, 236, 218, 0.4);
+      display: inline-block;
+    }
+    .item-price .price-note {
+      display: block;
+      font-size: var(--text-sm);
+      color: rgba(244, 236, 218, 0.4);
+      margin-top: 4px;
+      text-align: right;
+    }
+    .price-tax {
+      font-family: var(--font-sans-en);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(244, 236, 218, 0.4);
+      letter-spacing: 0.08em;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    .item-note {
+      margin-top: var(--space-4);
+      font-size: var(--text-base);
+      color: rgba(244, 236, 218, 0.45);
+      line-height: 1.8;
+    }
+
+    .item-available {
+      font-size: var(--text-2xl);
+      color: rgba(244, 236, 218, 0.65);
+      padding: var(--space-4) 0;
+    }
+
+    .item-note-row td {
+      font-size: var(--text-sm);
+      color: rgba(244, 236, 218, 0.4);
+      text-align: right;
+      padding-top: 0 !important;
+      padding-bottom: var(--space-4);
+      border-bottom: none !important;
+    }
+
+    .items-footer-note {
+      margin-top: var(--space-16);
+      padding-top: var(--space-8);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: var(--text-base);
+      color: rgba(244, 236, 218, 0.4);
+      line-height: 2.0;
+      text-align: center;
+    }
+
+    @media (max-width: 639px) {
+      .items .section-title { font-size: 1.1875rem; }
+      .item-table td {
+        display: block;
+        width: 100%;
+        padding: 6px 0;
+      }
+      .item-name {
+        font-weight: 500;
+        padding-top: var(--space-4) !important;
+      }
+      .item-price {
+        text-align: left;
+        padding-bottom: var(--space-4) !important;
+      }
+    }
+
+    /* ============================================
+       Process(8ステップ)
+       ============================================ */
+    .process {
+      background-color: var(--color-background);
+      padding: 100px 0;
+    }
+
+    .process-header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .process-lead {
+      max-width: 640px;
+      margin: 0 auto var(--space-8);
+      font-size: var(--text-2xl);
+      line-height: 2.2;
+      color: var(--color-text-secondary);
+    }
+
+    .process-callout {
+      max-width: 640px;
+      margin: 0 auto var(--space-20);
+      padding: var(--space-6) var(--space-8);
+      background-color: var(--color-surface);
+      border-left: 2px solid var(--color-accent);
+      font-size: var(--text-lg);
+      line-height: 2.0;
+      color: var(--color-text-secondary);
+    }
+
+    /* 横並びステップフロー */
+    .process-flow {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 960px;
+      margin: 0 auto var(--space-20);
+      padding: var(--space-8) 0;
+      overflow-x: auto;
+    }
+    .process-flow-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 96px;
+    }
+    .process-flow-num {
+      width: 60px;
+      height: 60px;
+      border: 1px solid var(--color-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif-en);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-accent-dark);
+      background-color: var(--color-background);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .process-flow-label {
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      text-align: center;
+      margin-top: 10px;
+      letter-spacing: 0.03em;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+    .process-flow-arrow {
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      padding-bottom: 44px;
+      color: var(--color-accent);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .process-steps {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-12);
+      position: relative;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: var(--space-8);
+      align-items: start;
+      position: relative;
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 64px;
+      bottom: -48px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--color-border) 0%, var(--color-border) 80%, transparent 100%);
+    }
+    .process-step:last-child::before {
+      display: none;
+    }
+
+    .process-step-num {
+      width: 72px;
+      height: 72px;
+      border: 1px solid var(--color-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      color: var(--color-accent-dark);
+      background-color: var(--color-background);
+      letter-spacing: 0.05em;
+    }
+
+    .process-step-body {
+      padding-top: 8px;
+    }
+    .process-step-title {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-3xl);
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+      letter-spacing: 0.05em;
+    }
+    .process-step-title .step-meta {
+      display: inline-block;
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      margin-left: var(--space-3);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+    .process-step-text {
+      font-size: var(--text-lg);
+      line-height: 2.1;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.03em;
+    }
+    .process-step-text + .process-step-text {
+      margin-top: var(--space-4);
+    }
+    .process-step-text.note {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      padding: var(--space-2) 0;
+    }
+
+    @media (max-width: 639px) {
+      .process-lead {
+        font-size: 0.8rem;
+      }
+
+      /* ステップフロー 2段組み */
+      .process-flow {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px 0;
+        padding: var(--space-6) 16px;
+        overflow-x: visible;
+      }
+      .process-flow-item {
+        width: 22%;
+        min-width: 0;
+      }
+      .process-flow-num {
+        width: 48px;
+        height: 48px;
+        font-size: 0.875rem;
+      }
+      .process-flow-label {
+        font-size: 0.55rem;
+        margin-top: 6px;
+        word-break: keep-all;
+        overflow-wrap: normal;
+      }
+      .process-flow-arrow {
+        display: none;
+      }
+
+      /* ステップ詳細 */
+      .process-step {
+        grid-template-columns: 64px 1fr;
+        gap: var(--space-4);
+      }
+      .process-step::before {
+        left: 16px;
+        top: 48px;
+        bottom: -36px;
+      }
+      .process-step-num {
+        width: 44px;
+        height: 44px;
+        font-size: var(--text-base);
+      }
+      .process-step-title {
+        font-size: var(--text-xl);
+      }
+      .process-step-text {
+        font-size: var(--text-sm);
+      }
+    }
+
+    /* ============================================
+       Bespoke Card セクション
+       ============================================ */
+    .bespoke-section {
+      background-color: var(--color-background-alt);
+      padding: 120px 0;
+    }
+
+    .bespoke-header {
+      text-align: center;
+      margin-bottom: var(--space-20);
+    }
+
+    .bespoke-lead {
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: var(--text-lg);
+      line-height: 2.0;
+      color: var(--color-text-secondary);
+    }
+
+    .bespoke-content {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .bespoke-card-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .bespoke-card {
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 1.65 / 1;
+      background: linear-gradient(135deg, #1E2F4A 0%, #0F1C30 55%, #1A2942 100%);
+      border: 1px solid rgba(201, 169, 97, 0.55);
+      padding: 44px 52px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    .bespoke-card::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 0.5px solid rgba(201, 169, 97, 0.18);
+      pointer-events: none;
+    }
+
+    .bespoke-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .bespoke-card-brand {
+      font-family: var(--font-serif-en);
+      font-size: 2.25rem;
+      font-weight: 400;
+      color: #F4ECDA;
+      letter-spacing: 0.22em;
+    }
+
+    .bespoke-card-label {
+      font-family: var(--font-serif-en);
+      font-size: 0.7rem;
+      color: rgba(201, 169, 97, 0.8);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      text-align: right;
+      line-height: 2.0;
+    }
+
+    .bespoke-card-divider {
+      height: 0.5px;
+      background: linear-gradient(to right, rgba(201,169,97,0.7), rgba(201,169,97,0.05));
+      margin: 20px 0;
+    }
+
+    .bespoke-card-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      flex: 1;
+    }
+
+    .bespoke-card-items li {
+      font-family: var(--font-serif-jp);
+      font-size: 0.875rem;
+      color: rgba(244, 236, 218, 0.65);
+      letter-spacing: 0.06em;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .bespoke-card-items li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: rgba(201, 169, 97, 0.55);
+      font-size: 0.7rem;
+      top: 2px;
+    }
+
+    .bespoke-card-bottom {
+      font-family: var(--font-serif-en);
+      font-size: 0.7rem;
+      color: rgba(201, 169, 97, 0.55);
+      letter-spacing: 0.18em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .bespoke-description {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    .bespoke-text {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      line-height: 2.1;
+      color: var(--color-text-secondary);
+    }
+
+    .bespoke-quote {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      line-height: 2.2;
+      color: var(--color-text-secondary);
+      border-left: 2px solid var(--color-divider);
+      padding-left: var(--space-6);
+    }
+
+    .bespoke-note {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-border);
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 639px) {
+      .bespoke-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+      }
+      .bespoke-card {
+        max-width: 100%;
+      }
+      .bespoke-text {
+        font-size: var(--text-base);
+      }
+    }
+
+    /* ============================================
+       Pricing & Payment
+       ============================================ */
+    .pricing {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-background-alt);
+      padding: 120px 0;
+    }
+
+    .pricing-bg { display: none; }
+
+    .pricing-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: var(--space-16);
+    }
+
+    /* 横並びリスト形式 */
+    .pricing-list {
+      list-style: none;
+      margin-bottom: var(--space-12);
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .pricing-row:first-child {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .pricing-row-label {
+      font-family: var(--font-serif-jp);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--color-text-primary);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+    }
+    .pricing-row-label span {
+      display: block;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+
+    .pricing-row-price {
+      font-family: var(--font-serif-en);
+      font-size: 2.25rem;
+      font-weight: 400;
+      color: var(--color-text-primary);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      margin-left: var(--space-8);
+    }
+    .pricing-row-price small {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      margin-left: 2px;
+    }
+
+    .pricing-note {
+      font-size: var(--text-sm);
+      line-height: 2.0;
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-bottom: var(--space-12);
+      letter-spacing: 0.04em;
+    }
+
+    .pricing-payment {
+      text-align: center;
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--color-border);
+    }
+    .pricing-payment-title {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+    }
+    .pricing-payment p {
+      font-size: var(--text-sm);
+      line-height: 2.1;
+      color: var(--color-text-secondary);
+    }
+
+    @media (max-width: 639px) {
+      .pricing-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+      }
+      .pricing-row-price { margin-left: 0; font-size: 1.5rem; }
+      .pricing-card { padding: var(--space-8) var(--space-6); }
+      .pricing-amount { font-size: var(--text-3xl); }
+    }
+
+    /* ============================================
+       Customer Voice
+       ============================================ */
+    .voice {
+      background-color: var(--color-background);
+      padding: 120px 48px;
+    }
+
+    .voice-header {
+      text-align: center;
+      margin-bottom: var(--space-20);
+    }
+
+    /* Featured testimonial: M様 (2カラム) */
+    .voice-featured {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: var(--space-16);
+      max-width: 1080px;
+      margin: 0 auto var(--space-20);
+      align-items: start;
+    }
+    .voice-feat-card {
+      background-color: var(--color-accent);
+      padding: var(--space-12);
+    }
+    .voice-feat-label {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(244, 236, 218, 0.55);
+      margin-bottom: var(--space-6);
+    }
+    .voice-feat-quote {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-2xl);
+      line-height: 1.9;
+      color: var(--color-text-on-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-4);
+    }
+    .voice-feat-meta {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      color: rgba(244, 236, 218, 0.55);
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-8);
+    }
+    .voice-feat-desc {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      line-height: 2.1;
+      color: rgba(244, 236, 218, 0.82);
+      letter-spacing: 0.03em;
+    }
+
+    .voice-feat-reports {
+      display: flex;
+      flex-direction: column;
+    }
+    .voice-feat-report {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: var(--space-4);
+      align-items: start;
+      padding: var(--space-8) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .voice-feat-report:first-child {
+      border-top: 1px solid var(--color-border);
+    }
+    .voice-feat-num {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-4xl);
+      font-weight: 500;
+      color: var(--color-text-primary);
+      line-height: 1;
+      opacity: 0.18;
+    }
+    .voice-feat-report p {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      line-height: 2.0;
+      color: var(--color-text-primary);
+      letter-spacing: 0.03em;
+      padding-top: 10px;
+    }
+    .voice-feat-blog {
+      margin-top: var(--space-8);
+    }
+
+    /* Patine Shoes testimonials */
+    .voice-shoes {
+      max-width: 1080px;
+      margin: 0 auto var(--space-20);
+    }
+    .voice-shoes-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+    .voice-shoes-divider::before,
+    .voice-shoes-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: var(--color-border);
+    }
+    .voice-shoes-divider span {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+    .voice-shoes-head {
+      text-align: center;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-12);
+      letter-spacing: 0.05em;
+    }
+    .voice-shoes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+    }
+    .voice-shoe-card {
+      padding: var(--space-8);
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .voice-shoe-quote {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      line-height: 2.1;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.03em;
+      flex: 1;
+    }
+    .voice-shoe-name {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-base);
+      letter-spacing: 0.2em;
+      color: var(--color-text-primary);
+      font-weight: 500;
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Closing */
+    .voice-closing {
+      max-width: 640px;
+      margin: var(--space-20) auto 0;
+      text-align: center;
+    }
+    .voice-closing-text {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-2xl);
+      line-height: 2.2;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.05em;
+    }
+    .voice-closing-emphasis {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin: var(--space-8) 0;
+      letter-spacing: 0.08em;
+      position: relative;
+      display: inline-block;
+      padding: var(--space-2) var(--space-6);
+    }
+    .voice-closing-emphasis::before,
+    .voice-closing-emphasis::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 24px;
+      height: 1px;
+      background-color: var(--color-accent);
+    }
+    .voice-closing-emphasis::before { left: -24px; }
+    .voice-closing-emphasis::after { right: -24px; }
+    .voice-closing-cta {
+      font-size: var(--text-lg);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    @media (max-width: 1023px) {
+      .voice-featured {
+        grid-template-columns: 1fr;
+      }
+      .voice-shoes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 639px) {
+      .voice { padding: 80px 24px; }
+      .voice-feat-report {
+        grid-template-columns: 44px 1fr;
+        gap: var(--space-3);
+      }
+      .voice-feat-num { font-size: var(--text-2xl); }
+      .voice-feat-report p { font-size: var(--text-base); }
+      .voice-feat-quote { font-size: var(--text-xl); }
+      .voice-closing-text {
+        font-size: 0.875rem;
+        line-height: 2.0;
+        letter-spacing: 0.02em;
+      }
+      .voice-closing-emphasis {
+        font-size: var(--text-lg);
+        letter-spacing: 0.04em;
+        padding: var(--space-2) var(--space-3);
+        white-space: nowrap;
+      }
+      .voice-closing-cta {
+        font-size: var(--text-base);
+        white-space: nowrap;
+      }
+    }
+
+    /* ============================================
+       Access(白基調)
+       ============================================ */
+    .access {
+      background-color: var(--color-background);
+      color: var(--color-text-primary);
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .access-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .access-store-name {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-3xl);
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+    }
+
+    .access-address {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      line-height: 2.2;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-8);
+      letter-spacing: 0.05em;
+    }
+
+    .access-map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 12px 24px;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+      font-size: var(--text-base);
+      letter-spacing: 0.1em;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      margin-bottom: var(--space-12);
+    }
+    .access-map-btn:hover {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border-color: var(--color-accent);
+    }
+
+    .access-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-8);
+      max-width: 600px;
+      margin: 0 auto var(--space-12);
+      padding: var(--space-8) 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .access-info-block {
+      text-align: center;
+    }
+    .access-info-label {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      margin-bottom: var(--space-3);
+    }
+    .access-info-value {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      line-height: 1.8;
+      color: var(--color-text-primary);
+      letter-spacing: 0.03em;
+    }
+    .access-info-value a {
+      transition: color 0.2s ease;
+    }
+    .access-info-value a:hover {
+      color: var(--color-accent-dark);
+    }
+
+    .access-closing {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      line-height: 2.0;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-8);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 639px) {
+      .access-info {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      .access-store-name { font-size: var(--text-2xl); }
+    }
+
+    /* ============================================
+       Contact Form
+       ============================================ */
+    .contact {
+      background-color: var(--color-background-alt);
+      padding: 100px 0;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .contact-lead {
+      max-width: 560px;
+      margin: 0 auto;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      line-height: 2.2;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.04em;
+    }
+
+    /* LINE CTA */
+    .contact-line-wrap {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto;
+      padding: var(--space-8) 0 var(--space-12);
+    }
+    .contact-line-steps {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-6);
+      margin-bottom: var(--space-12);
+      flex-wrap: wrap;
+    }
+    .contact-line-step {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+    .contact-line-step-num {
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif-en);
+      font-size: 0.65rem;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+    }
+    .contact-line-arrow {
+      color: var(--color-border);
+      font-size: 0.75rem;
+    }
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background-color: #06C755;
+      color: #FFFFFF;
+      padding: 20px 48px;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+      margin-bottom: var(--space-8);
+    }
+    .btn-line:hover {
+      background-color: #05b04a;
+      transform: translateY(-1px);
+    }
+    .btn-line-icon {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+    }
+    .contact-line-note {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 2.1;
+      letter-spacing: 0.03em;
+    }
+    .contact-line-promo {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: var(--space-8);
+      padding: var(--space-2) var(--space-6);
+      border: 1px solid rgba(26, 41, 66, 0.25);
+      display: inline-block;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-lead { font-size: var(--text-lg); }
+      .contact-line-step { font-size: var(--text-base); }
+      .contact-line-note { font-size: var(--text-base); }
+    }
+
+    .contact-form {
+      max-width: 760px;
+      margin: 0 auto;
+      background-color: var(--color-surface);
+      padding: var(--space-16) var(--space-12);
+      border: 1px solid var(--color-border);
+    }
+
+    .form-section {
+      margin-bottom: var(--space-12);
+      padding-bottom: var(--space-12);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .form-section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: var(--space-8);
+    }
+
+    .form-section-title {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+    }
+    .form-section-title .req {
+      font-size: var(--text-xs);
+      color: var(--color-accent-dark);
+      letter-spacing: 0.1em;
+      font-weight: 400;
+    }
+    .form-section-title .opt {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      letter-spacing: 0.1em;
+      font-weight: 400;
+    }
+
+    .form-row {
+      margin-bottom: var(--space-6);
+    }
+    .form-row:last-child { margin-bottom: 0; }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-2);
+      letter-spacing: 0.05em;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background-color: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: 2px;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      background-color: var(--color-surface);
+    }
+    .form-textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+
+    .form-checks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3) var(--space-6);
+    }
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: 8px 0;
+      font-size: var(--text-sm);
+      color: var(--color-text-primary);
+      cursor: pointer;
+      letter-spacing: 0.03em;
+    }
+    .form-check input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--color-accent);
+      cursor: pointer;
+    }
+
+    .form-vision-help {
+      background-color: var(--color-background);
+      padding: var(--space-6);
+      border-left: 2px solid var(--color-accent);
+      margin-bottom: var(--space-6);
+    }
+    .form-vision-help-label {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-3);
+      letter-spacing: 0.05em;
+    }
+    .form-vision-examples {
+      list-style: none;
+      font-size: var(--text-sm);
+      line-height: 2.1;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+    }
+    .form-vision-examples li::before {
+      content: '・';
+      color: var(--color-accent);
+    }
+    .form-vision-supplement {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      line-height: 1.8;
+    }
+
+    .form-actions {
+      text-align: center;
+      margin-top: var(--space-8);
+    }
+    .form-actions .btn-primary {
+      min-width: 280px;
+      padding: 18px 40px;
+      font-size: var(--text-base);
+    }
+
+    .form-line {
+      text-align: center;
+      margin-top: var(--space-12);
+      padding-top: var(--space-12);
+      border-top: 1px solid var(--color-border);
+    }
+    .form-line p {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+    }
+
+    .form-footer-note {
+      max-width: 560px;
+      margin: var(--space-12) auto 0;
+      text-align: center;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      line-height: 2.0;
+    }
+
+    @media (max-width: 639px) {
+      .contact-form { padding: var(--space-8) var(--space-6); }
+      .form-grid-3 { grid-template-columns: 1fr; }
+      .form-checks { grid-template-columns: 1fr; }
+      .form-actions .btn-primary {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    /* ============================================
+       Footer(白基調)
+       ============================================ */
+    .footer {
+      background-color: var(--color-background-alt);
+      color: var(--color-text-primary);
+      padding: 80px 0 32px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer-top {
+      text-align: center;
+      padding-bottom: var(--space-12);
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: var(--space-12);
+    }
+    .footer-logo {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-4xl);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+    }
+    .footer-philosophy {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      letter-spacing: 0.1em;
+      color: var(--color-text-secondary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-8);
+      margin-bottom: var(--space-12);
+    }
+
+    .footer-block-title {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .footer-block-content {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      line-height: 2.0;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.03em;
+    }
+    .footer-block-content a {
+      transition: color 0.2s ease;
+    }
+    .footer-block-content a:hover {
+      color: var(--color-accent-dark);
+    }
+
+    .footer-map-btn {
+      display: inline-block;
+      margin-top: var(--space-3);
+      padding: 8px 16px;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    .footer-map-btn:hover {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border-color: var(--color-accent);
+    }
+
+    .footer-menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-cta {
+      text-align: center;
+      padding: var(--space-8) 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: var(--space-8);
+    }
+    .footer-cta-title {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-credit {
+      text-align: center;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.05em;
+    }
+    .footer-credit-name {
+      font-family: var(--font-serif-en);
+      letter-spacing: 0.15em;
+      color: var(--color-text-primary);
+      font-weight: 500;
+    }
+
+    .footer-copy {
+      text-align: center;
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.15em;
+      color: var(--color-text-muted);
+    }
+
+    @media (max-width: 1023px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-12) var(--space-6);
+      }
+    }
+    @media (max-width: 639px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+      .footer-logo { font-size: var(--text-3xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===========================================
+       Header
+       =========================================== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#hero" class="logo" aria-label="FIERO ホーム">FIERO</a>
+      <nav>
+        <ul class="nav-list" id="navList">
+          <li><a href="#story" class="nav-link">Story</a></li>
+          <li><a href="#items" class="nav-link">Items</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#voice" class="nav-link">Voice</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#contact" class="btn btn-primary nav-cta">自分に似合う一着を相談する
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===========================================
+       Hero
+       =========================================== -->
+  <section class="hero" id="hero">
+
+    <!-- 背景写真 -->
+    <img
+      src="images/hero6.png"
+      alt="仕立て中の手元"
+      class="hero-photo"
+    >
+
+    <!-- グラデーションオーバーレイ -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- テキストコンテンツ -->
+    <div class="hero-left">
+      <div class="hero-brand">人生を動かす一着を仕立てる</div>
+      <div class="hero-h1-wrap">
+        <h1 class="hero-h1">
+          <span class="h1-main">見られ方が変われば<br>人生が動き出す。</span>
+          <span class="h1-question">その一着は<br class="sp-br">あなたの未来を語っていますか?</span>
+          <span class="h1-resolution"><span class="brand-mark">FIERO</span> はあなたの目指す姿から<br>一着を仕立てます。</span>
+        </h1>
+      </div>
+      <p class="hero-sub">町田 ・ 完全予約制 ・ オーダースーツ 8年</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#story" class="btn btn-secondary">FIEROについて知る
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16M6 14l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===========================================
+       Empathy
+       =========================================== -->
+  <section class="empathy" id="empathy">
+    <p class="empathy-text fade-in">
+      あなたの今の一着は<br>
+      あなたの未来を語っていますか。
+    </p>
+  </section>
+
+  <!-- ===========================================
+       Owner Story
+       =========================================== -->
+  <section class="story" id="story">
+    <div class="story-bg" aria-hidden="true"></div>
+    <div class="story-inner fade-in">
+      <span class="section-eyebrow">Owner Story</span>
+      <p class="story-opening">人は見られ方で人生が変わる。</p>
+      <h2 class="story-philosophy">装いは<br class="sp-br">未来から逆算する。</h2>
+
+      <div class="story-body">
+        <p>私はサラリーマンのスーツが嫌いでした。</p>
+
+        <p>35歳で会社が倒産し、M&amp;Aで上場企業へ<br class="pc-br">その会社に平社員として入社したとき、</p>
+
+        <p>私は5年後の&ldquo;なりたい自分&rdquo;を描き、<br class="pc-br">5年後の自分が着ているスーツをまずは自分のために仕立てました。</p>
+
+        <p class="emphasis">グレーのスーツに<br class="sp-br">スーツケースを引いて<br class="pc-br"><br class="sp-br"><br class="sp-br">全国を飛び回る<br class="sp-br">デキるサラリーマン。</p>
+
+        <p>その一着を着始めた1年後、<br class="pc-br">私は事業部長へ昇進していました。</p>
+
+        <p>装いは&ldquo;未来を引き寄せる投資&rdquo;です。</p>
+      </div>
+
+      <div class="story-closing">
+        <p>──あなたは5年後<br class="sp-br">どんな自分でいたいですか。</p>
+        <p>その姿から一着をお仕立てします。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       Order Items
+       =========================================== -->
+  <section class="items" id="items">
+    <div class="items-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="items-label-large" aria-hidden="true">Items</div>
+      <div class="items-header fade-in">
+        <span class="section-eyebrow">Order Items</span>
+        <h2 class="section-title">スーツからシューズまで<br class="sp-br">　あなたの在り方を設計する</h2>
+        <p class="section-lead">
+          スーツからシャツ、シューズまで。<br>
+          あなたの在り方を<br class="sp-br">すべての装いで一貫させます。
+        </p>
+      </div>
+
+      <div class="items-list fade-in">
+
+        <div class="item-category">
+          <div class="item-category-head">
+            <span class="item-category-en">Suits &amp; Jackets</span>
+            <span class="item-category-jp">スーツ・ジャケット</span>
+          </div>
+          <table class="item-table">
+            <tbody>
+              <tr><td class="item-name">ビジネススーツ</td><td class="item-price"><strong>¥80,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥300,000程度)</span></td></tr>
+              <tr><td class="item-name">カジュアルジャケット</td><td class="item-price"><strong>¥60,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥150,000程度)</span></td></tr>
+              <tr><td class="item-name">フォーマルスーツ</td><td class="item-price"><strong>¥100,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥200,000程度)</span></td></tr>
+              <tr><td class="item-name">タキシード・礼装</td><td class="item-price"><strong>¥150,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥400,000程度)</span></td></tr>
+              <tr><td class="item-name">ジャケット単品</td><td class="item-price"><strong>¥60,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥150,000程度)</span></td></tr>
+              <tr><td class="item-name">パンツ単品</td><td class="item-price"><strong>¥30,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥70,000程度)</span></td></tr>
+              <tr><td class="item-name">ベスト</td><td class="item-price"><strong>¥38,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥75,000程度)</span></td></tr>
+              <tr class="item-note-row"><td colspan="2">※スーツに追加の場合はスーツ価格の25%にて</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="item-category">
+          <div class="item-category-head">
+            <span class="item-category-en">Shirts</span>
+            <span class="item-category-jp">シャツ</span>
+          </div>
+          <table class="item-table">
+            <tbody>
+              <tr><td class="item-name">国産生地</td><td class="item-price"><strong>¥14,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥22,000程度)</span></td></tr>
+              <tr><td class="item-name">インポート生地</td><td class="item-price"><strong>¥24,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥60,000程度)</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="item-category">
+          <div class="item-category-head">
+            <span class="item-category-en">Coats</span>
+            <span class="item-category-jp">コート</span>
+          </div>
+          <table class="item-table">
+            <tbody>
+              <tr><td class="item-name">コート</td><td class="item-price"><strong>¥150,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥500,000程度)</span></td></tr>
+              <tr><td class="item-name">カシミアコート</td><td class="item-price"><strong>¥220,000〜</strong><span class="price-tax">+TAX</span> <span class="price-sub">(〜¥1,200,000程度)</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="item-category">
+          <div class="item-category-head">
+            <span class="item-category-en">Shoes (Patine)</span>
+            <span class="item-category-jp">パティーヌシューズ</span>
+          </div>
+          <table class="item-table">
+            <tbody>
+              <tr><td class="item-name">パティーヌオーダーシューズ</td><td class="item-price"><strong>¥84,000〜</strong><span class="price-tax">+TAX</span></td></tr>
+            </tbody>
+          </table>
+          <p class="item-note">
+            ※全10デザイン、11色、4種の塗り技法から選択<br>
+            ※キャンペーン時は特別価格でご提供
+          </p>
+        </div>
+
+        <div class="item-category">
+          <div class="item-category-head">
+            <span class="item-category-en">Leather Goods (Patine)</span>
+            <span class="item-category-jp">レザー小物</span>
+          </div>
+          <table class="item-table">
+            <tbody>
+              <tr><td class="item-name">ベルト</td><td class="item-price"><strong>¥21,000〜</strong><span class="price-tax">+TAX</span></td></tr>
+              <tr><td class="item-name">名刺入れ</td><td class="item-price"><strong>¥20,000〜</strong><span class="price-tax">+TAX</span></td></tr>
+              <tr><td class="item-name">マネークリップ</td><td class="item-price"><strong>¥応相談</strong></td></tr>
+              <tr><td class="item-name">財布</td><td class="item-price"><strong>¥応相談</strong></td></tr>
+              <tr><td class="item-name">バッグ</td><td class="item-price"><strong>¥応相談</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="item-category">
+          <div class="item-category-head">
+            <span class="item-category-en">Available Items</span>
+            <span class="item-category-jp">仕入れ品</span>
+          </div>
+          <p class="item-available">
+            ・Harrison靴下<br>
+            ・モルトンブラウン製品<br>
+            ・国産ネクタイなど
+          </p>
+        </div>
+
+      </div>
+
+      <p class="items-footer-note">
+        ※初めてご利用の方は、別途 Bespoke Card 作成費 ¥5,000
+      </p>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       Process
+       =========================================== -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process-header fade-in">
+        <span class="section-eyebrow">Process</span>
+        <h2 class="section-title">お仕立ては<br class="sp-br">対話から始まります。</h2>
+        <p class="process-lead">
+          あなたが目指す姿を伺うところから<br>お渡し後の長いお付き合いまで。<br class="pc-br"><br class="sp-br">一着が完成するまでの<br class="sp-br">全ステップをご紹介します。
+        </p>
+      </div>
+
+      <div class="process-callout fade-in">
+        ※ステップ02〜03は購入を検討されるステップです。<br>
+        この間は購入検討でお帰り頂いても大丈夫です。
+      </div>
+
+      <!-- 横並びステップフロー -->
+      <div class="process-flow fade-in">
+        <div class="process-flow-item">
+          <div class="process-flow-num">01</div>
+          <div class="process-flow-label">お問い合わせ<br>ご予約</div>
+        </div>
+        <div class="process-flow-arrow">→</div>
+        <div class="process-flow-item">
+          <div class="process-flow-num">02</div>
+          <div class="process-flow-label">個別相談</div>
+        </div>
+        <div class="process-flow-arrow">→</div>
+        <div class="process-flow-item">
+          <div class="process-flow-num">03</div>
+          <div class="process-flow-label">生地選定</div>
+        </div>
+        <div class="process-flow-arrow">→</div>
+        <div class="process-flow-item">
+          <div class="process-flow-num">04</div>
+          <div class="process-flow-label">仕様選定<br>お見積り</div>
+        </div>
+        <div class="process-flow-arrow">→</div>
+        <div class="process-flow-item">
+          <div class="process-flow-num">05</div>
+          <div class="process-flow-label">お支払い<br>採寸</div>
+        </div>
+        <div class="process-flow-arrow">→</div>
+        <div class="process-flow-item">
+          <div class="process-flow-num">06</div>
+          <div class="process-flow-label">お仕立て</div>
+        </div>
+        <div class="process-flow-arrow">→</div>
+        <div class="process-flow-item">
+          <div class="process-flow-num">07</div>
+          <div class="process-flow-label">お渡し<br>フィッティング</div>
+        </div>
+        <div class="process-flow-arrow">→</div>
+        <div class="process-flow-item">
+          <div class="process-flow-num">08</div>
+          <div class="process-flow-label">アフターケア</div>
+        </div>
+      </div>
+
+      <div class="process-steps">
+
+        <div class="process-step fade-in">
+          <div class="process-step-num">01</div>
+          <div class="process-step-body">
+            <h3 class="process-step-title">お問い合わせ・ご予約</h3>
+            <p class="process-step-text">まずは個別相談のご予約を。お電話・お問い合わせフォーム・ご紹介者様経由、どのルートでも構いません。</p>
+            <p class="process-step-text">ご相談は完全無料、ご購入の義務もございません。「まずは話を聞いてみたい」だけでも、どうぞお気軽にお越しください。</p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-step-num">02</div>
+          <div class="process-step-body">
+            <h3 class="process-step-title">個別相談<span class="step-meta">(1.5〜2時間)</span></h3>
+            <p class="process-step-text">町田の小さな一室にて、ゆっくりお話を伺います。</p>
+            <p class="process-step-text">どんな場面でその一着を着るのか。どう見られたいのか。5年後、どんな自分でいたいのか。──オーダースーツは&ldquo;作る前の対話&rdquo;が9割です。あなたの目指す姿を、私と一緒に言葉にしていきましょう。</p>
+            <p class="process-step-text">対話の最後に、ざっくりとしたご予算感をお伝えします。ここで「次に進みたい」と思ったときだけ、次のステップへ。その場で決められなくて構いません。</p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-step-num">03</div>
+          <div class="process-step-body">
+            <h3 class="process-step-title">生地のご選定</h3>
+            <p class="process-step-text">国内外の生地ブランドから、ご相談時に伺った&ldquo;目指す姿&rdquo;に最適な一枚をご提案します。</p>
+            <p class="process-step-text">気に入った生地が見つかれば、その場で在庫を確認します。生地は今日在庫があっても明日も同様にあるかわかりません。ここでご購入の意向を確認させていただき、ご購入の意思があれば生地在庫を抑えます。</p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-step-num">04</div>
+          <div class="process-step-body">
+            <h3 class="process-step-title">仕様のご選定・お見積り</h3>
+            <p class="process-step-text">裏地、ボタン、ステッチ、襟の角度まで。ひとつひとつの選択を、私と対話しながら決めていきます。これは、あなたの一着をあなた自身が設計する時間です。</p>
+            <p class="process-step-text">仕様が固まったところで、最終的な価格をご提示します。どのようにお支払いするのかここでお伝えください。</p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-step-num">05</div>
+          <div class="process-step-body">
+            <h3 class="process-step-title">お支払い・採寸</h3>
+            <p class="process-step-text">ご納得いただけたら、その場でお手続きいただきます。お支払いは、PayPal・現金・お振込みからお選びください。</p>
+            <p class="process-step-text note">※PayPalご希望の場合は、事前にアカウント作成が必要になっているのでお見積り前にお伝えいただけますと助かります。<br>※初めてご利用の方は、別途 Bespoke Card 作成費として ¥5,000 を頂戴しております。</p>
+            <p class="process-step-text">ご入金確認後、丁寧にお採寸し、あなたのためだけに生地を発注、制作がスタートします。</p>
+            <p class="process-step-text note">※ご入金後は、お客様だけのために生地を発注し、制作に着手するため、キャンセル・ご返金はお受けできかねます。何卒ご理解ください。</p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-step-num">06</div>
+          <div class="process-step-body">
+            <h3 class="process-step-title">お仕立て<span class="step-meta">(約1〜1.5ヶ月)</span></h3>
+            <p class="process-step-text">採寸を元に、職人が一着を仕上げていきます。</p>
+            <p class="process-step-text">通常スーツで約1〜1.5ヶ月、コートは約2ヶ月。少しお時間を頂戴しますが、それは&ldquo;あなたの未来の一着&rdquo;が形になる時間です。</p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-step-num">07</div>
+          <div class="process-step-body">
+            <h3 class="process-step-title">お渡し・最終フィッティング</h3>
+            <p class="process-step-text">完成した一着を、あなたの体に合わせて最終調整します。</p>
+            <p class="process-step-text">鏡の前に立った瞬間の、その一着を着た自分を、ぜひ感じてください。──「ここから、変わっていく」その瞬間に立ち会えることが、私の何よりの喜びです。</p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-step-num">08</div>
+          <div class="process-step-body">
+            <h3 class="process-step-title">アフターケア</h3>
+            <p class="process-step-text">お渡しは、お付き合いの終わりではなく、始まりです。</p>
+            <p class="process-step-text">体型の変化に合わせたお直し、長く着ていただくためのメンテナンス、シーズンに合わせた着こなしのご相談──。「こんなこと聞いていいのかな」と思うことこそ、お気軽にどうぞ。一着を10年お付き合いいただけるよう、伴走いたします。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       Bespoke Card
+       =========================================== -->
+  <section class="bespoke-section" id="bespoke">
+    <div class="container">
+      <div class="bespoke-header fade-in">
+        <span class="section-eyebrow">Bespoke Card</span>
+        <h2 class="section-title">5年後のあなたを<br class="sp-br">覚えているテーラー</h2>
+        <p class="bespoke-lead">FIEROでは初回のご来店時に<br class="sp-br">あなただけの<br class="pc-br">「Bespoke Card」<br class="sp-br">を作成します。</p>
+      </div>
+
+      <div class="bespoke-content fade-in">
+        <!-- カードビジュアル -->
+        <div class="bespoke-card-visual">
+          <div class="bespoke-card">
+            <div class="bespoke-card-top">
+              <span class="bespoke-card-brand">FIERO</span>
+              <span class="bespoke-card-label">Bespoke<br>Card</span>
+            </div>
+            <div class="bespoke-card-divider"></div>
+            <ul class="bespoke-card-items">
+              <li>採寸データ</li>
+              <li>ご選定いただいた生地・色・仕様</li>
+              <li>装いに関するご相談の記録</li>
+              <li>次回のお仕立てへの申し送り</li>
+            </ul>
+            <div class="bespoke-card-bottom">Takamasa Fujii / FIERO Machida</div>
+          </div>
+        </div>
+
+        <!-- 説明テキスト -->
+        <div class="bespoke-description">
+          <p class="bespoke-text">初回来店から5年後。あなたの体型が変わっても、好みが変わっても、FIEROはあなたのデータを持っています。</p>
+          <p class="bespoke-quote">
+            「あのとき仕立てたスーツと同じ生地で、もう一着」<br>
+            「5年前と体型が変わったが、同じシルエットで」<br>
+            「今度は礼装を一着」
+          </p>
+          <p class="bespoke-text">あなたの「目指す姿」を覚えているテーラーとの関係は、一着が完成してからも続きます。</p>
+          <p class="bespoke-note">※ Bespoke Card 作成費 ¥5,000（初回のみ）<br>カードはあなたとFIEROの、長いお付き合いの証です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       Customer Voice
+       =========================================== -->
+  <section class="voice" id="voice">
+    <div class="container">
+
+      <div class="voice-header fade-in">
+        <span class="section-eyebrow">Customer Voice</span>
+        <h2 class="section-title">お客様の声</h2>
+      </div>
+
+      <!-- M様 フィーチャード事例 -->
+      <div class="voice-featured fade-in">
+        <!-- 左: 引用カード (ネイビー) -->
+        <div class="voice-feat-card">
+          <div class="voice-feat-label">Bespoke Suits / M 様</div>
+          <blockquote class="voice-feat-quote">「見られ方が<br>変わってきた」</blockquote>
+          <p class="voice-feat-meta">── 着用から3週間後のご報告</p>
+          <p class="voice-feat-desc">大手企業の若手有望株のM様。<br>ご友人のご紹介でご来店いただき、<br>目指すご自身像を一着に翻訳しました。</p>
+        </div>
+
+        <!-- 右: 3つの変化 -->
+        <div class="voice-feat-reports">
+          <div class="voice-feat-report">
+            <div class="voice-feat-num">01</div>
+            <p>部長陣から「なんかベスト着けてたり、ネクタイがしっかりしてるね」と注目され始めた。見られ方が変わってきた。</p>
+          </div>
+          <div class="voice-feat-report">
+            <div class="voice-feat-num">02</div>
+            <p>副社長から突然、「リーダーシップをテーマに、1on1しよう」と打診をいただいた。</p>
+          </div>
+          <div class="voice-feat-report">
+            <div class="voice-feat-num">03</div>
+            <p>周囲の社員からの見方が変わり、頼られたり、仕事を任されるのがよりスムーズになってきた。</p>
+          </div>
+          <div class="voice-feat-blog">
+            <a href="https://otonafashionblog.hatenablog.com/entry/2024/02/21/210000" target="_blank" rel="noopener" class="btn-secondary">詳細はブログでご紹介しています
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:inline; vertical-align:middle; margin-left:6px;"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patine Shoes の声 -->
+      <div class="voice-shoes fade-in">
+        <div class="voice-shoes-divider">
+          <span>Patine Shoes</span>
+        </div>
+        <p class="voice-shoes-head">パティーヌシューズをご注文のお客様より</p>
+        <div class="voice-shoes-grid">
+          <div class="voice-shoe-card">
+            <p class="voice-shoe-quote">「足馴染みが良く、長時間履いても疲れにくくなりました。見た目も美しく、知人からベ〇ルッティに間違われる程コストパフォーマンスが高く品質が良いと感じています」</p>
+            <p class="voice-shoe-name">R.T 様</p>
+          </div>
+          <div class="voice-shoe-card">
+            <p class="voice-shoe-quote">「靴だけでなく服装全体が整うような気がします。見た目への心配が薄れ、行動に自信がつきました。革を育てて年を重ねたい人、行動を起こして状況を変えたい人におすすめしたいです」</p>
+            <p class="voice-shoe-name">O.H 様</p>
+          </div>
+          <div class="voice-shoe-card">
+            <p class="voice-shoe-quote">「購入前のサイズフィットの心配はあったが、すぐに足になじんでくれたのは衝撃的でした。履いた瞬間に自分自身が上がる体験があります。パティーヌシューズを採用して一段と自身のプレゼンテーションが変わり、どんな場面でもいろいろな人からオシャレさをお褒めいただいています」</p>
+            <p class="voice-shoe-name">H.A 様</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- クロージング -->
+      <div class="voice-closing fade-in">
+        <p class="voice-closing-text">
+          FIEROのお客様の多くは、<br>
+          ご友人やお仕事仲間の「変化」を見て、<br>
+          お問い合わせをいただきます。
+        </p>
+        <p class="voice-closing-emphasis">「あの人、最近なんだか違うな」</p>
+        <p class="voice-closing-cta">そう思わせる一着を、あなたにも。</p>
+        <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===========================================
+       Access
+       =========================================== -->
+  <section class="access" id="access">
+    <div class="access-inner fade-in">
+      <span class="section-eyebrow">Access</span>
+      <h2 class="section-title">店舗のご案内</h2>
+
+      <div class="access-store-name">FIERO</div>
+
+      <p class="access-address">
+        〒194-0021<br>
+        東京都町田市中町1-2-5<br>
+        3階(BIZcomfort町田 内)
+      </p>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%94%BA%E7%94%B0%E5%B8%82%E4%B8%AD%E7%94%BA1-2-5" target="_blank" rel="noopener" class="access-map-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+          Google Mapで開く
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <div class="access-info">
+        <div class="access-info-block">
+          <div class="access-info-label">Access</div>
+          <div class="access-info-value">小田急線 町田駅<br>北口より徒歩4分</div>
+        </div>
+        <div class="access-info-block">
+          <div class="access-info-label">Hours</div>
+          <div class="access-info-value">11:00 - 20:00<br>完全予約制</div>
+        </div>
+        <div class="access-info-block">
+          <div class="access-info-label">Tel</div>
+          <div class="access-info-value"><a href="tel:09048470487">090-4847-0487</a></div>
+        </div>
+        <div class="access-info-block">
+          <div class="access-info-label">Mail</div>
+          <div class="access-info-value"><a href="mailto:fiero878@gmail.com">fiero878@gmail.com</a></div>
+        </div>
+      </div>
+
+      <p class="access-closing">
+        ご来店は、完全予約制です。<br>
+        個別相談のご予約は、フォームまたはお電話にて承っております。
+      </p>
+
+      <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
+        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       Contact Form
+       =========================================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-header fade-in">
+        <span class="section-eyebrow">Contact</span>
+        <h2 class="section-title">個別相談のお申し込み</h2>
+        <p class="contact-lead">
+          ご相談は完全無料、<br class="sp-br">ご購入の義務はございません。<br><br>
+          「まずは話を聞いてみたい」だけでも、<br class="sp-br">お気軽にどうぞ。<br><br>
+          お申し込み後、1〜2営業日以内に<br>
+          ファッションプロデューサー 藤井より<br class="sp-br">ご連絡させて頂きます。
+        </p>
+      </div>
+
+      <div class="contact-line-wrap fade-in">
+        <!-- ステップ説明 -->
+        <div class="contact-line-steps">
+          <div class="contact-line-step">
+            <div class="contact-line-step-num">01</div>
+            <span>LINEを友だち追加</span>
+          </div>
+          <div class="contact-line-arrow">→</div>
+          <div class="contact-line-step">
+            <div class="contact-line-step-num">02</div>
+            <span>メッセージで希望日を送る</span>
+          </div>
+          <div class="contact-line-arrow">→</div>
+          <div class="contact-line-step">
+            <div class="contact-line-step-num">03</div>
+            <span>藤井より日程確認のご連絡</span>
+          </div>
+        </div>
+
+        <!-- LINE予約特典 -->
+        <p class="contact-line-promo">LINEからのご予約で Bespoke Card 作成費無料</p>
+
+        <!-- LINEボタン -->
+        <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn-line">
+          <!-- LINE icon -->
+          <svg class="btn-line-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9zm-3.5 11.5h-1.5v-5h1.5v5zm3 0h-1.5v-5H11.5v5zm4.5 0h-1.5v-2.5l-1.5-2.5H16l.75 1.5.75-1.5h1.5l-1.5 2.5v2.5z"/>
+          </svg>
+          LINEで個別相談を申し込む
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       Footer
+       =========================================== -->
+  <footer class="footer">
+    <div class="container-wide">
+
+      <div class="footer-top">
+        <div class="footer-logo">FIERO</div>
+        <p class="footer-philosophy">装いは、未来から逆算する。</p>
+      </div>
+
+      <div class="footer-grid">
+
+        <div class="footer-block">
+          <h4 class="footer-block-title">Store</h4>
+          <div class="footer-block-content">
+            FIERO<br>
+            〒194-0021<br>
+            東京都町田市中町1-2-5<br>
+            3階(BIZcomfort町田 内)<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%94%BA%E7%94%B0%E5%B8%82%E4%B8%AD%E7%94%BA1-2-5" target="_blank" rel="noopener" class="footer-map-btn">Google Mapで開く →</a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <h4 class="footer-block-title">Hours</h4>
+          <div class="footer-block-content">
+            11:00 - 20:00<br>
+            完全予約制
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <h4 class="footer-block-title">Contact</h4>
+          <div class="footer-block-content">
+            TEL <a href="tel:09048470487">090-4847-0487</a><br>
+            MAIL <a href="mailto:fiero878@gmail.com">fiero878@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <h4 class="footer-block-title">Menu</h4>
+          <ul class="footer-menu-list footer-block-content">
+            <li><a href="#story">Story</a></li>
+            <li><a href="#items">Items</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#voice">Voice</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-cta">
+        <p class="footer-cta-title">あなたの&ldquo;なりたい姿&rdquo;を、お聞かせください。</p>
+        <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <p class="footer-credit">
+        ファッションプロデューサー <span class="footer-credit-name">藤井 孝昌 / Takamasa Fujii</span>
+      </p>
+
+      <p class="footer-copy">© 2026 FIERO. All rights reserved.</p>
+
+    </div>
+  </footer>
+
+  <!-- ===========================================
+       Scripts
+       =========================================== -->
+  <script>
+    // モバイルメニュー開閉
+    const navToggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    if (navToggle && navList) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navList.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+      navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navList.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // スクロール連動フェードイン
+    const fadeEls = document.querySelectorAll('.fade-in');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      fadeEls.forEach(el => io.observe(el));
+    } else {
+      fadeEls.forEach(el => el.classList.add('is-visible'));
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社新井建設工業 | 郷土の安心を、確かな技術で。</title>
+<meta name="description" content="株式会社新井建設工業は、1978年の設立以来、茨城県境町を中心に土木・建築の両面から地域の発展に寄与してまいりました。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-beige:#f5f4f1;
+  --bg-beige-deep:#ece9e2;
+  --bg-dark:#111111;
+  --text:#1a1a1a;
+  --text-sub:#5a5a5a;
+  --text-muted:#9a9a9a;
+  --accent:#c80000;
+  --accent-deep:#8a0000;
+  --border:#e8e6e0;
+  --line:#1a1a1a;
+  --serif:'Cormorant Garamond', serif;
+  --sans:'Noto Sans JP', sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sans);
+  font-weight:400;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt";
+  letter-spacing:0.02em;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+.icon{display:inline-block;vertical-align:middle;flex-shrink:0;}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;}
+}
+
+/* ====== HEADER ====== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:24px 56px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+.header.scrolled{
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(0,0,0,0.04);
+  padding:16px 56px;
+}
+.logo{
+  font-size:26px;font-weight:900;letter-spacing:0.08em;
+  color:#fff;
+  transition:color 0.3s ease, font-size 0.3s ease;
+}
+.header.scrolled .logo{
+  font-size:22px;
+  color:var(--text);
+}
+.nav{display:flex;align-items:center;gap:36px;}
+.nav-list{display:flex;gap:32px;list-style:none;}
+.nav-list a{
+  font-size:14px;font-weight:500;color:#fff;
+  position:relative;padding:4px 0;
+  transition:color 0.3s ease, opacity 0.2s ease;
+}
+.nav-list a:hover{opacity:0.7;}
+.header.scrolled .nav-list a{color:var(--text);}
+.nav-list .external::after{
+  content:'';display:inline-block;width:10px;height:10px;margin-left:4px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ffffff'><path d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z'/><path d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z'/></svg>");
+  background-size:contain;background-repeat:no-repeat;vertical-align:middle;
+}
+.header.scrolled .nav-list .external::after{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%231a1a1a'><path d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z'/><path d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z'/></svg>");
+}
+.btn-contact{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;
+  background:#fff;color:var(--text);
+  font-size:13px;font-weight:700;letter-spacing:0.05em;
+  transition:transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.header.scrolled .btn-contact{
+  background:var(--text);color:#fff;
+}
+.btn-contact:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+}
+.menu-toggle{display:none;}
+
+/* ====== HERO ====== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;align-items:flex-end;
+  padding:0 56px 80px;
+  color:#fff;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2000&q=85&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  z-index:-2;
+}
+.hero::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.55) 100%);
+  z-index:-1;
+}
+.hero-inner{
+  width:100%;
+  display:flex;justify-content:flex-end;
+  animation:heroFadeUp 1.2s 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes heroFadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.hero-text{
+  text-align:right;
+}
+.hero-eyebrow{
+  font-family:var(--serif);font-style:italic;
+  font-size:22px;letter-spacing:0.12em;
+  margin-bottom:32px;opacity:0.95;
+}
+.hero-title{
+  font-size:80px;font-weight:700;
+  line-height:1.45;
+  letter-spacing:0.06em;
+  text-shadow:0 2px 32px rgba(0,0,0,0.4);
+  text-wrap:balance;
+}
+.hero-title .highlight-mark{
+  font-style:normal;
+  position:relative;
+}
+.hero-title .highlight-mark::after{
+  content:'';
+  position:absolute;left:0;right:0;bottom:-4px;
+  height:3px;
+  background:var(--accent);
+}
+.hero-scroll{
+  position:absolute;left:56px;bottom:32px;
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--serif);font-style:italic;
+  font-size:13px;letter-spacing:0.15em;
+  color:#fff;opacity:0.85;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+}
+.hero-scroll::after{
+  content:'';
+  position:absolute;left:50%;top:calc(100% + 12px);
+  width:1px;height:64px;
+  background:linear-gradient(to bottom, #fff 0%, transparent 100%);
+  animation:scrollHint 2s ease-in-out infinite;
+}
+@keyframes scrollHint{
+  0%,100%{transform:scaleY(1);transform-origin:top;opacity:0.85;}
+  50%{transform:scaleY(0.4);transform-origin:top;opacity:0.3;}
+}
+
+/* ====== COMMON ====== */
+.section{
+  padding:160px 56px;
+  position:relative;
+}
+.section-beige{background:var(--bg-beige);}
+.section-dark{background:var(--bg-dark);color:#fff;}
+.container{max-width:1280px;margin:0 auto;}
+
+.section-head{
+  display:flex;align-items:baseline;gap:32px;
+  margin-bottom:96px;
+}
+.section-en{
+  font-family:var(--serif);
+  font-size:88px;font-weight:500;
+  line-height:0.9;
+  letter-spacing:-0.01em;
+}
+.section-jp{
+  font-size:14px;font-weight:500;
+  letter-spacing:0.2em;
+  color:var(--text-sub);
+  padding-left:16px;
+  border-left:1px solid var(--text);
+}
+
+/* ====== ABOUT ====== */
+.about{
+  padding:160px 56px 200px;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:120px;
+  align-items:start;
+}
+.about-photo{
+  position:relative;
+  aspect-ratio:3/4;
+  background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=85&auto=format&fit=crop') center/cover no-repeat;
+  border-radius:2px;
+}
+.about-photo::before{
+  content:'EST. 1978';
+  position:absolute;top:-20px;left:-20px;
+  font-family:var(--serif);
+  font-size:13px;letter-spacing:0.3em;
+  background:var(--accent);color:#fff;
+  padding:8px 20px;
+  font-weight:500;
+}
+.about-body{
+  padding-top:32px;
+}
+.about-lead{
+  font-size:24px;font-weight:500;
+  line-height:1.9;
+  margin-bottom:48px;
+  letter-spacing:0.05em;
+  text-wrap:balance;
+}
+.about-lead em{
+  font-style:normal;
+  background:linear-gradient(transparent 65%, rgba(200,0,0,0.18) 65%);
+  padding:0 4px;
+}
+.about-text p{
+  font-size:16px;
+  color:var(--text-sub);
+  line-height:2.0;
+  margin-bottom:24px;
+}
+.about-text p:last-child{margin-bottom:0;}
+.about-cta{
+  margin-top:56px;
+  display:inline-flex;align-items:center;gap:20px;
+  padding:24px 56px;
+  border:1.5px solid var(--text);
+  border-radius:999px;
+  font-size:16px;font-weight:700;
+  letter-spacing:0.12em;
+  transition:background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.about-cta:hover{
+  background:var(--text);color:#fff;
+  transform:translateY(-3px);
+}
+.about-cta .icon{transition:transform 0.3s ease;}
+.about-cta:hover .icon{transform:translate(4px,-4px);}
+
+/* ====== SERVICE ====== */
+.service-intro{
+  text-align:center;
+  font-size:32px;font-weight:500;
+  margin-bottom:120px;
+  letter-spacing:0.06em;
+  line-height:1.7;
+  text-wrap:balance;
+}
+.service-list{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:0;
+  border-top:1px solid var(--border);
+}
+.service-item{
+  display:grid;
+  grid-template-columns:120px minmax(0,1fr);
+  gap:40px;
+  padding:64px 32px;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+  position:relative;
+  transition:background-color 0.3s ease;
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+.service-item:nth-child(odd){border-right:1px solid var(--border);}
+.service-item:hover{background:rgba(200,0,0,0.02);}
+.service-num{
+  font-family:var(--serif);
+  font-size:48px;font-weight:400;
+  color:var(--accent);
+  line-height:1;
+  font-style:italic;
+}
+.service-content h3{
+  font-size:24px;font-weight:700;
+  margin-bottom:20px;
+  letter-spacing:0.05em;
+  line-height:1.5;
+}
+.service-content p{
+  font-size:15px;color:var(--text-sub);
+  line-height:2.0;
+}
+
+/* ====== CASE ====== */
+.case-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:48px 56px;
+}
+.case-card{
+  display:block;
+  transition:transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.case-card:hover{transform:translateY(-8px);}
+.case-image{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:#ddd;
+  margin-bottom:24px;
+}
+.case-image img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.case-card:hover .case-image img{transform:scale(1.06);}
+.case-meta{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:12px;
+  font-size:12px;letter-spacing:0.1em;
+}
+.case-tag{
+  display:inline-block;
+  padding:4px 12px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:var(--text-sub);
+}
+.case-date{
+  font-family:var(--serif);font-style:italic;
+  color:var(--text-muted);
+}
+.case-title{
+  font-size:22px;font-weight:700;
+  letter-spacing:0.04em;
+  line-height:1.5;
+}
+.case-cta-row{
+  display:flex;justify-content:flex-end;
+  margin-top:64px;
+}
+.case-link{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:14px 32px;
+  border:1px solid var(--text);
+  border-radius:999px;
+  font-size:13px;font-weight:600;
+  letter-spacing:0.12em;
+  transition:background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.case-link:hover{
+  background:var(--text);color:#fff;
+  transform:translateY(-3px);
+}
+
+/* ====== VOICE (お客様の声) ====== */
+.voice-head{
+  text-align:center;
+  margin-bottom:72px;
+}
+.voice-head .section-en{
+  display:block;
+  text-align:center;
+}
+.voice-head .section-jp{
+  display:inline-block;
+  margin-top:16px;
+  padding:0;border:none;
+  letter-spacing:0.3em;
+}
+.voice-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:32px;
+}
+.voice-card{
+  background:#fff;
+  padding:48px 40px;
+  position:relative;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.voice-card::before{
+  content:'"';
+  position:absolute;top:16px;right:24px;
+  font-family:var(--serif);font-style:italic;
+  font-size:80px;line-height:1;
+  color:var(--accent);
+  opacity:0.15;
+}
+.voice-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.06);
+}
+.voice-title{
+  font-size:18px;font-weight:700;
+  margin-bottom:12px;
+  letter-spacing:0.04em;
+  line-height:1.5;
+}
+.voice-tag-line{
+  font-size:12px;color:var(--text-sub);
+  letter-spacing:0.15em;
+  margin-bottom:8px;
+}
+.voice-rating{
+  margin-bottom:20px;
+  color:var(--accent);
+  font-size:13px;letter-spacing:0.1em;
+}
+.voice-body{
+  font-size:14px;
+  color:var(--text-sub);
+  line-height:2.0;
+}
+.voice-controls{
+  display:flex;justify-content:center;gap:16px;
+  margin-top:56px;
+}
+.voice-btn{
+  width:48px;height:48px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-sub);
+  transition:background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  border:1px solid var(--border);
+}
+.voice-btn:hover{
+  background:var(--text);color:#fff;
+  transform:translateY(-2px);
+}
+
+/* ====== COMPANY ====== */
+.company-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:96px;
+  align-items:start;
+}
+.company-photo{
+  aspect-ratio:1/1;
+  background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=85&auto=format&fit=crop') center/cover no-repeat;
+  position:relative;
+}
+.company-photo::after{
+  content:'';
+  position:absolute;inset:24px;
+  border:1px solid rgba(255,255,255,0.4);
+  pointer-events:none;
+}
+.company-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.company-table tr{
+  border-bottom:1px solid var(--border);
+}
+.company-table tr:first-child{border-top:1px solid var(--border);}
+.company-table th,
+.company-table td{
+  padding:20px 0;
+  text-align:left;
+  font-size:15px;
+  font-weight:400;
+  vertical-align:top;
+}
+.company-table th{
+  width:160px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  color:var(--text);
+}
+.company-table td{
+  color:var(--text-sub);
+  padding-left:24px;
+}
+.company-placeholder{
+  color:var(--text-muted);
+  font-style:italic;
+}
+
+/* ====== CTA ====== */
+.cta{
+  position:relative;
+  padding:200px 56px;
+  color:#fff;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2000&q=85&auto=format&fit=crop') center/cover no-repeat;
+  background-attachment:fixed;
+}
+.cta-eyebrow{
+  font-family:var(--serif);font-style:italic;
+  font-size:18px;letter-spacing:0.15em;
+  margin-bottom:24px;opacity:0.85;
+}
+.cta-title{
+  font-size:48px;font-weight:700;
+  line-height:1.5;
+  margin-bottom:24px;
+  letter-spacing:0.06em;
+  text-wrap:balance;
+}
+.cta-text{
+  font-size:16px;
+  margin-bottom:56px;
+  opacity:0.85;
+  line-height:2.0;
+}
+.cta-buttons{
+  display:flex;justify-content:center;gap:24px;flex-wrap:wrap;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:22px 44px;
+  border-radius:999px;
+  font-size:14px;font-weight:600;
+  letter-spacing:0.12em;
+  transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.cta-btn-primary{
+  background:var(--accent);
+  color:#fff;
+}
+.cta-btn-primary:hover{
+  background:var(--accent-deep);
+  transform:translateY(-3px);
+  box-shadow:0 16px 40px rgba(200,0,0,0.4);
+}
+.cta-btn-ghost{
+  background:transparent;color:#fff;
+  border:1px solid rgba(255,255,255,0.5);
+}
+.cta-btn-ghost:hover{
+  background:rgba(255,255,255,0.1);
+  transform:translateY(-3px);
+}
+
+/* ====== FOOTER ====== */
+.footer{
+  background:#0a0a0a;
+  color:rgba(255,255,255,0.7);
+  padding:96px 56px 32px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:64px;
+  margin-bottom:80px;
+}
+.footer-brand{
+  font-size:22px;font-weight:900;
+  color:#fff;
+  margin-bottom:24px;
+  letter-spacing:0.05em;
+}
+.footer-tagline{
+  font-family:var(--serif);font-style:italic;
+  font-size:14px;
+  opacity:0.7;
+  line-height:1.7;
+  margin-bottom:32px;
+}
+.footer-info{
+  font-size:13px;line-height:2.0;opacity:0.6;
+}
+.footer h4{
+  font-size:13px;font-weight:600;
+  letter-spacing:0.2em;
+  color:#fff;
+  margin-bottom:24px;
+}
+.footer-list{
+  list-style:none;
+}
+.footer-list li{margin-bottom:12px;}
+.footer-list a{
+  font-size:13px;
+  opacity:0.7;
+  transition:opacity 0.2s ease;
+}
+.footer-list a:hover{opacity:1;}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  font-size:12px;
+  font-family:var(--serif);
+  opacity:0.5;
+  letter-spacing:0.15em;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width:1080px){
+  .header,.section,.cta,.about,.footer{padding-left:32px;padding-right:32px;}
+  .header.scrolled{padding-left:32px;padding-right:32px;}
+  .hero{padding:0 32px 64px;}
+  .hero-scroll{left:32px;}
+  .section-en{font-size:64px;}
+  .hero-title{font-size:56px;}
+  .about-grid,.company-grid{grid-template-columns:1fr;gap:64px;}
+  .voice-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:768px){
+  .header,.header.scrolled{padding:16px 20px;}
+  .nav-list{display:none;}
+  .menu-toggle{
+    display:flex;align-items:center;justify-content:center;
+    width:44px;height:44px;color:#fff;
+  }
+  .header.scrolled .menu-toggle{color:var(--text);}
+  .btn-contact{display:none;}
+  .hero{padding:0 24px 48px;align-items:flex-end;}
+  .hero-scroll{display:none;}
+  .hero-title{font-size:32px;line-height:1.6;}
+  .hero-eyebrow{font-size:14px;}
+  .section,.about,.cta{padding:96px 20px;}
+  .section-head{flex-direction:column;gap:8px;margin-bottom:56px;align-items:flex-start;}
+  .section-en{font-size:48px;}
+  .section-jp{padding-left:0;border:none;}
+  .about-lead{font-size:18px;}
+  .service-list{grid-template-columns:1fr;}
+  .service-item{grid-template-columns:80px 1fr;gap:24px;padding:40px 8px;border-right:none!important;}
+  .service-num{font-size:36px;}
+  .service-intro{font-size:22px;margin-bottom:64px;}
+  .case-grid,.voice-grid{grid-template-columns:1fr;gap:32px;}
+  .cta{padding:128px 20px;background-attachment:scroll;}
+  .cta-title{font-size:30px;}
+  .cta-buttons{flex-direction:column;align-items:stretch;}
+  .footer{padding:64px 20px 24px;}
+  .footer-grid{grid-template-columns:1fr;gap:40px;margin-bottom:48px;}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
+  .company-table th{width:100px;font-size:13px;}
+  .company-table td{padding-left:16px;font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <a href="#" class="logo">株式会社新井建設工業</a>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="#about">私たちについて</a></li>
+      <li><a href="#case">施工事例</a></li>
+      <li><a href="#service">サービス</a></li>
+      <li><a href="#" class="external">採用情報</a></li>
+    </ul>
+    <a href="#contact" class="btn-contact">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"/></svg>
+      問い合わせ
+    </a>
+    <button class="menu-toggle" aria-label="メニューを開く">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">For the future of our hometown.</div>
+      <h1 class="hero-title">
+        郷土の安心を、確かな技術で。<br>
+        地域の<span class="highlight-mark">『街医者』</span>のような存在。
+      </h1>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-en">About</h2>
+      <p class="section-jp">私たちについて</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo" aria-hidden="true"></div>
+      <div class="about-body">
+        <p class="about-lead">
+          1978年から続く<em>半世紀の歩み</em>。<br>
+          郷土の未来を、一棟ずつ形にしてきました。
+        </p>
+        <div class="about-text">
+          <p>株式会社新井建設工業は、1978年の設立以来、茨城県境町を中心に土木・建築の両面から地域の発展に寄与してまいりました。</p>
+          <p>私たちが手がけるのは、単なる建造物ではありません。皆様が毎日通る道路、安全な水を届ける上下水道、そして大切な家族と過ごす住まい。そのすべてが、この街の「安心」に直結していると考えています。</p>
+          <p>半世紀近い歴史の中で培った確かな技術と、地域への深い愛着を胸に、これからも変わらぬ情熱で郷土の未来を形にしていきます。</p>
+        </div>
+        <a href="#" class="about-cta">
+          詳しく見る
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE ============ -->
+<section class="section section-beige" id="service">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-en">Service</h2>
+      <p class="section-jp">サービス</p>
+    </div>
+    <p class="service-intro">暮らしの質を高める建築を、設計・創造します。</p>
+    <div class="service-list">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div class="service-content">
+          <h3>土木工事</h3>
+          <p>道路や上下水道といった公共インフラの整備から、宅地の造成まで幅広く対応。長年培った確かな施工技術で、災害に強く、誰もが安心して暮らせる街の基盤を築きます。</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div class="service-content">
+          <h3>建築工事<small style="font-size:14px;font-weight:500;color:var(--text-sub);display:block;margin-top:4px;letter-spacing:0.08em;">注文住宅・公共施設</small></h3>
+          <p>官公庁の施設建設から一般住宅の新築まで、機能性と安全性を両立した建築をご提案。お客様の理想を形にするだけでなく、プロの視点から耐久性や使い勝手を追求した空間を創造します。</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div class="service-content">
+          <h3>リノベーション・修繕</h3>
+          <p>住まいの小さなお困りごとから大規模な改修まで迅速に対応。愛着のある建物の記憶を大切にしながら、現代のライフスタイルに合わせた快適さと強さを蘇らせます。</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <div class="service-content">
+          <h3>○○○○</h3>
+          <p>サービス内容のテキストがここに入ります。○○○○○○○○○○○○○○○。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE ============ -->
+<section class="section" id="case">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-en">Case</h2>
+      <p class="section-jp">施工事例</p>
+    </div>
+    <div class="case-grid">
+      <a href="#" class="case-card">
+        <div class="case-image">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&q=85&auto=format&fit=crop" alt="廻転鮨 銀座おのでら 境町店" loading="lazy">
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">店舗</span>
+          <span class="case-date">Apr, 2026</span>
+        </div>
+        <h3 class="case-title">廻転鮨 銀座おのでら 境町店</h3>
+      </a>
+      <a href="#" class="case-card">
+        <div class="case-image">
+          <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1200&q=85&auto=format&fit=crop" alt="境町ドローンラボ・ドローンフィールド" loading="lazy">
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">公共施設</span>
+          <span class="case-date">Apr, 2026</span>
+        </div>
+        <h3 class="case-title">境町ドローンラボ・ドローンフィールド</h3>
+      </a>
+    </div>
+    <div class="case-cta-row">
+      <a href="#" class="case-link">
+        詳しく見る
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOICE ============ -->
+<section class="section section-beige" id="voice">
+  <div class="container">
+    <div class="voice-head">
+      <h2 class="section-en">Voice</h2>
+      <p class="section-jp">お客様の声</p>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <p class="voice-tag-line">○○○○○</p>
+        <h3 class="voice-title">○○○○○○○○○○</h3>
+        <div class="voice-rating">●●●●○</div>
+        <p class="voice-body">
+          お客様の声がここに入ります。○○○○○○○○○○○○○○○○○。<br><br>
+          ○○○○○○○○○○○○○○○○○○○○○○○○○○○。
+        </p>
+      </div>
+      <div class="voice-card">
+        <p class="voice-tag-line">リノベーション</p>
+        <h3 class="voice-title">理想の住まいが実現！</h3>
+        <div class="voice-rating">●●●●○</div>
+        <p class="voice-body">
+          キッチンをアイランド型にして、リビングと一体化してもらいました。打ち合わせの際、私たちのぼんやりとしたイメージを、デザイナーさんが具体的に、そして機能的なデザインとして提案してくださったのが本当に心強かったです。<br><br>
+          デッドスペースになりがちだった廊下の壁一面に、大容量のファミリークローゼットを作ってもらえたこと。これで部屋が散らからなくなり、毎日が快適です！
+        </p>
+      </div>
+      <div class="voice-card">
+        <p class="voice-tag-line">注文住宅</p>
+        <h3 class="voice-title">変形地を活かす家</h3>
+        <div class="voice-rating">●●●●○</div>
+        <p class="voice-body">
+          お客様の声がここに入ります。○○○○○○○○○○○○○○○○○。<br><br>
+          ○○○○○○○○○○○○○○○○○○○○○○○○○○○。
+        </p>
+      </div>
+    </div>
+    <div class="voice-controls">
+      <button class="voice-btn" aria-label="前のお客様の声">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg>
+      </button>
+      <button class="voice-btn" aria-label="次のお客様の声">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPANY ============ -->
+<section class="section" id="company">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-en">Company</h2>
+      <p class="section-jp">会社概要</p>
+    </div>
+    <div class="company-grid">
+      <div class="company-photo" aria-hidden="true"></div>
+      <table class="company-table">
+        <tr><th>会社名</th><td>株式会社新井建設工業</td></tr>
+        <tr><th>設立</th><td>1978年</td></tr>
+        <tr><th>所在地</th><td>茨城県境町○○○○○○○○○○</td></tr>
+        <tr><th>代表者</th><td><span class="company-placeholder">○○ ○○</span></td></tr>
+        <tr><th>資本金</th><td><span class="company-placeholder">○○○○万円</span></td></tr>
+        <tr><th>従業員数</th><td><span class="company-placeholder">○○名</span></td></tr>
+        <tr><th>事業内容</th><td>土木工事 / 建築工事(注文住宅・公共施設) / リノベーション・修繕</td></tr>
+        <tr><th>許可・登録</th><td><span class="company-placeholder">○○○○○○○○○○○○○○○○</span></td></tr>
+        <tr><th>TEL</th><td><span class="company-placeholder">000-000-0000</span></td></tr>
+        <tr><th>Email</th><td><span class="company-placeholder">○○○@○○○.co.jp</span></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / CONTACT ============ -->
+<section class="cta" id="contact">
+  <div class="cta-eyebrow">Contact us</div>
+  <h2 class="cta-title">あなたの「安心」を、<br>私たちと一緒に築きませんか。</h2>
+  <p class="cta-text">
+    新築・リフォーム・公共工事に関するご相談は、お気軽にお問い合わせください。<br>
+    地域に根ざした「街医者」として、最適なご提案をいたします。
+  </p>
+  <div class="cta-buttons">
+    <a href="#" class="cta-btn cta-btn-primary">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"/></svg>
+      お問い合わせフォーム
+    </a>
+    <a href="#" class="cta-btn cta-btn-ghost">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h.13A40.21,40.21,0,0,1,176,208Z"/></svg>
+      000-000-0000
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">株式会社新井建設工業</div>
+      <p class="footer-tagline">For the future of our hometown.<br>Since 1978.</p>
+      <div class="footer-info">
+        茨城県境町○○○○○○○○<br>
+        TEL: 000-000-0000<br>
+        Email: ○○○@○○○.co.jp
+      </div>
+    </div>
+    <div>
+      <h4>SITEMAP</h4>
+      <ul class="footer-list">
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#service">サービス</a></li>
+        <li><a href="#case">施工事例</a></li>
+        <li><a href="#voice">お客様の声</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>BUSINESS</h4>
+      <ul class="footer-list">
+        <li><a href="#service">土木工事</a></li>
+        <li><a href="#service">建築工事</a></li>
+        <li><a href="#service">リノベーション</a></li>
+        <li><a href="#">採用情報</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>CONTACT</h4>
+      <ul class="footer-list">
+        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ARAI KENSETSU KOGYO Co., Ltd.</span>
+    <span>SAKAI-MACHI, IBARAKI</span>
+  </div>
+</footer>
+
+<script>
+// ヘッダーのスクロール時切り替え（ブラウザ表示用。Figma取り込み時はデフォルト状態のまま透過ヘッダーになる）
+const header = document.getElementById('header');
+const onScroll = () => {
+  if (window.scrollY > 80) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+</script>
+</body>
+</html>
