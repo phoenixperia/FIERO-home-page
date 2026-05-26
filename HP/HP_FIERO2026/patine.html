@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patine Shoes | FIERO — bespoke tailor, machida</title>
+  <meta name="description" content="職人が一点一点手染めするパティーヌオーダーシューズ。全10デザイン・11色から選ぶ、世界にひとつのあなただけの一足。FIERO / 町田。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       CSS変数
+       ============================================ */
+    :root {
+      --color-background: #FFFFFF;
+      --color-background-alt: #FAF8F3;
+      --color-surface: #FFFFFF;
+      --color-accent: #1A2942;
+      --color-accent-light: #2A3A52;
+      --color-accent-dark: #0F1C30;
+      --color-gold: #C9A961;
+      --color-gold-light: #D4B876;
+      --color-text-primary: #2A2620;
+      --color-text-secondary: #6B6358;
+      --color-text-muted: #9C9388;
+      --color-text-on-dark: #F4ECDA;
+      --color-border: #E5DCC8;
+
+      --font-serif-jp: "Noto Serif JP", "Yu Mincho", serif;
+      --font-serif-en: "Cormorant Garamond", "Times New Roman", serif;
+      --font-sans-en: "Inter", "Helvetica Neue", sans-serif;
+
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 1.875rem;
+      --text-4xl: 2.25rem;
+      --text-5xl: 3rem;
+
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --max-w: 1080px;
+      --max-w-prose: 720px;
+    }
+
+    /* ============================================
+       リセット & ベース
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 124px; }
+    body {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      line-height: 2.0;
+      color: var(--color-text-primary);
+      background: var(--color-background);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    .sp-br { display: none; }
+    .pc-br { display: inline; }
+    @media (max-width: 639px) {
+      .sp-br { display: inline; }
+      .pc-br { display: none; }
+    }
+
+    /* ============================================
+       Header
+       ============================================ */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 72px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+    }
+    .header-logo {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      color: var(--color-text-primary);
+    }
+    .header-logo span {
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      color: var(--color-text-muted);
+      display: block;
+      margin-top: -4px;
+    }
+    .header-back {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      letter-spacing: 0.15em;
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .header-back:hover { color: var(--color-text-primary); }
+    .header-cta {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      background: var(--color-accent);
+      color: var(--color-text-on-dark);
+      padding: 10px 24px;
+      transition: background 0.2s;
+    }
+    .header-cta:hover { background: var(--color-accent-light); }
+
+    @media (max-width: 639px) {
+      .site-header { padding: 0 20px; }
+      .header-back span { display: none; }
+    }
+
+    /* ============================================
+       ページ内ナビゲーション
+       ============================================ */
+    .page-nav {
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .page-nav::-webkit-scrollbar { display: none; }
+    .page-nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 48px;
+    }
+    .page-nav-link {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-base);
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: var(--color-text-secondary);
+      padding: 16px 18px;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .page-nav-link:hover {
+      color: var(--color-text-primary);
+    }
+    .page-nav-link.is-active {
+      color: var(--color-text-primary);
+      border-bottom-color: var(--color-gold);
+    }
+    @media (max-width: 639px) {
+      .page-nav-inner { padding: 0 16px; }
+      .page-nav-link { font-size: var(--text-sm); padding: 14px 12px; }
+    }
+
+    /* ============================================
+       Hero
+       ============================================ */
+    .hero {
+      min-height: 80vh;
+      margin-top: 72px;
+      background: linear-gradient(160deg, #231E18 0%, #151210 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 48px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201,169,97,0.1) 0%, transparent 65%);
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      display: block;
+      margin-bottom: var(--space-6);
+    }
+    .hero h1 {
+      font-family: var(--font-serif-en);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 300;
+      color: var(--color-text-on-dark);
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+      margin-bottom: var(--space-6);
+      white-space: nowrap;
+    }
+    .hero-jp {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-xl);
+      color: rgba(244,236,218,0.75);
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-8);
+    }
+    .hero-sub {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      color: rgba(244,236,218,0.65);
+      line-height: 2.2;
+      margin-bottom: var(--space-10);
+      letter-spacing: 0.04em;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+    }
+    .hero-img-main {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-img-sub { aspect-ratio: 4/3; overflow: hidden; }
+    .hero-img-sub img { width: 100%; height: 100%; object-fit: cover; }
+
+    @media (max-width: 1023px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+    @media (max-width: 639px) {
+      .hero { padding: 60px 24px; min-height: auto; }
+    }
+
+    /* ============================================
+       共通 section
+       ============================================ */
+    .section { padding: 100px 48px; }
+    .section-alt { background: var(--color-background-alt); }
+    .section-dark {
+      background: #F0EBE1;
+      color: var(--color-text-primary);
+    }
+    .inner { max-width: var(--max-w); margin: 0 auto; }
+    .inner-prose { max-width: var(--max-w-prose); margin: 0 auto; }
+
+    .eyebrow {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      display: inline-block;
+      position: relative;
+      padding-bottom: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    .eyebrow::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 24px;
+      height: 1px;
+      background-color: var(--color-accent);
+    }
+    .text-center .eyebrow::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section-dark .eyebrow { color: var(--color-text-secondary); }
+    .section-dark .eyebrow::after { background-color: var(--color-accent); }
+
+    .sec-title {
+      font-family: var(--font-serif-jp);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      margin-bottom: var(--space-8);
+    }
+    .sec-title-en {
+      font-family: var(--font-serif-en);
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      margin-bottom: var(--space-6);
+    }
+    .divider-gold {
+      width: 40px;
+      height: 1px;
+      background: var(--color-gold);
+      margin: 0 0 var(--space-8);
+    }
+    .text-center { text-align: center; }
+    .text-center .divider-gold { margin: 0 auto var(--space-8); }
+
+    @media (max-width: 639px) {
+      .section { padding: 72px 24px; }
+      .sec-title { font-size: var(--text-2xl); }
+    }
+
+    /* ============================================
+       Product Philosophy (3 features)
+       ============================================ */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-12);
+      margin-top: var(--space-16);
+    }
+    .feature {
+      text-align: center;
+    }
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto var(--space-6);
+      color: var(--color-accent);
+    }
+    .feature h3 {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      margin-bottom: var(--space-3);
+      letter-spacing: 0.04em;
+    }
+    .feature p {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      line-height: 2.0;
+      letter-spacing: 0.03em;
+    }
+    .feature-num {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-4xl);
+      font-weight: 300;
+      color: rgba(26,41,66,0.1);
+      line-height: 1;
+      margin-bottom: var(--space-4);
+    }
+
+    @media (max-width: 639px) {
+      .features-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+    }
+
+    /* ============================================
+       Design (10 designs grid)
+       ============================================ */
+    .design-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-3);
+      margin-top: var(--space-8);
+    }
+    .design-card {
+      text-align: center;
+    }
+    .design-card-img {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: #F8F5F0;
+      margin-bottom: var(--space-2);
+      cursor: zoom-in;
+      position: relative;
+      transition: opacity 0.2s ease;
+    }
+    .design-card-img:hover { opacity: 0.85; }
+    .design-card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(26,41,66,0);
+      transition: background 0.2s ease;
+      pointer-events: none;
+    }
+    .design-card-img:hover::after {
+      background: rgba(26,41,66,0.08);
+    }
+    .design-card-img img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+
+    /* ============================================
+       ライトボックス
+       ============================================ */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      cursor: zoom-out;
+    }
+    .lightbox-overlay.is-open {
+      display: flex;
+    }
+    .lightbox-inner {
+      position: relative;
+      max-width: 640px;
+      width: 100%;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .lightbox-img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #F8F5F0;
+      padding: 24px;
+    }
+    .lightbox-caption {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      letter-spacing: 0.1em;
+      color: rgba(244,236,218,0.85);
+      text-align: center;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(244,236,218,0.7);
+      transition: color 0.2s ease;
+      padding: 8px;
+    }
+    .lightbox-close:hover { color: rgba(244,236,218,1); }
+    .lightbox-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.08);
+      border: none;
+      cursor: pointer;
+      color: rgba(244,236,218,0.7);
+      padding: 20px 16px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.16); color: rgba(244,236,218,1); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+    .lightbox-counter {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      letter-spacing: 0.2em;
+      color: rgba(244,236,218,0.45);
+    }
+    .design-card-name {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1023px) {
+      .design-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 639px) {
+      .design-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+    }
+
+    /* ============================================
+       Color
+       ============================================ */
+    .color-palette-img {
+      width: 100%;
+      margin: var(--space-8) 0 var(--space-12);
+      border: 1px solid var(--color-border);
+    }
+    .color-sub-title {
+      font-family: var(--font-serif-jp);
+      font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--color-text-primary);
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .finish-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .finish-grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .finish-grid-wide {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 639px) {
+      .finish-grid { grid-template-columns: 1fr; }
+      .finish-grid-wide { grid-column: span 1; }
+    }
+
+    /* ============================================
+       Painting Style (4 cards)
+       ============================================ */
+    .painting-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+    .painting-card {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+    .painting-card-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .painting-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .painting-card-body { padding: var(--space-6); }
+    .painting-card-body h3 {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      font-weight: 500;
+      margin-bottom: var(--space-1);
+      letter-spacing: 0.04em;
+    }
+    .painting-en {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      letter-spacing: 0.2em;
+      margin-bottom: var(--space-4);
+    }
+    .painting-desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.9;
+      margin-bottom: var(--space-4);
+    }
+    .painting-price {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+    .painting-price.free { color: var(--color-accent); }
+    .painting-price.paid { color: var(--color-text-secondary); }
+
+    @media (max-width: 1023px) {
+      .painting-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 639px) {
+      .painting-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       Craftsman
+       ============================================ */
+    .craftsman-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-20);
+      align-items: center;
+    }
+    .craftsman-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .craftsman-text p {
+      font-size: var(--text-xl);
+      line-height: 2.2;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.04em;
+    }
+    .craftsman-text p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 1023px) {
+      .craftsman-inner { grid-template-columns: 1fr; gap: var(--space-10); }
+    }
+
+    /* ============================================
+       Pricing
+       ============================================ */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--space-10);
+      font-size: var(--text-base);
+    }
+    .pricing-table th {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      font-weight: 400;
+      text-align: left;
+      padding: var(--space-4) var(--space-6) var(--space-4) 0;
+      border-bottom: 1px solid var(--color-border);
+      white-space: nowrap;
+      width: 30%;
+    }
+    .pricing-table td {
+      padding: var(--space-4) var(--space-6) var(--space-4) var(--space-6);
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+      line-height: 2.0;
+    }
+    .pricing-table tr:last-child th,
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .price-main {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .price-tax {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-left: var(--space-2);
+    }
+    .price-note {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-top: var(--space-1);
+    }
+    .option-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--space-4);
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid rgba(229,220,200,0.5);
+    }
+    .option-item:last-child { border-bottom: none; }
+    .option-name { color: var(--color-text-primary); }
+    .option-price {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-lg);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 639px) {
+      .pricing-table th { width: auto; display: block; border-bottom: none; padding-bottom: 0; }
+      .pricing-table td { display: block; padding-left: 0; }
+      .pricing-table tr { display: block; border-bottom: 1px solid var(--color-border); padding: var(--space-4) 0; }
+      .pricing-table tr:last-child { border-bottom: none; }
+    }
+
+    /* ============================================
+       Leather Goods (Also Available)
+       ============================================ */
+    .goods-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+    .goods-card { border: 1px solid var(--color-border); }
+    .goods-card-img { aspect-ratio: 16/9; overflow: hidden; background: #F8F5F0; }
+    .goods-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .goods-card-body { padding: var(--space-6) var(--space-8); }
+    .goods-card-body h3 {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      margin-bottom: var(--space-2);
+    }
+    .goods-card-price {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: var(--space-2);
+    }
+    .goods-card-note {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    @media (max-width: 639px) {
+      .goods-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       Testimonials
+       ============================================ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+    .testimonial-card {
+      border: 1px solid var(--color-border);
+      padding: var(--space-8);
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      background: var(--color-accent);
+      color: var(--color-text-on-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-base);
+      letter-spacing: 0.15em;
+      font-weight: 500;
+    }
+    .testimonial-qa { margin-bottom: var(--space-6); }
+    .testimonial-qa:last-child { margin-bottom: 0; }
+    .testimonial-q {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-2);
+    }
+    .testimonial-a {
+      font-size: var(--text-sm);
+      line-height: 2.0;
+      color: var(--color-text-primary);
+      padding-left: var(--space-4);
+      border-left: 1px solid var(--color-border);
+    }
+
+    @media (max-width: 1023px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       FAQ
+       ============================================ */
+    .faq-list {
+      margin-top: var(--space-12);
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-item {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .faq-q {
+      display: flex;
+      gap: var(--space-4);
+      align-items: baseline;
+      font-size: var(--text-lg);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: var(--space-3);
+    }
+    .faq-q-label {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xl);
+      color: var(--color-accent);
+      font-weight: 400;
+      flex-shrink: 0;
+    }
+    .faq-a {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: 2.0;
+      padding-left: calc(var(--space-4) + 1.25rem);
+    }
+
+    /* ============================================
+       CTA
+       ============================================ */
+    .cta-section {
+      background: #FAF6EE;
+      border-top: 1px solid var(--color-border);
+      padding: 100px 48px;
+      text-align: center;
+    }
+    .cta-section .eyebrow { color: var(--color-gold); margin-bottom: var(--space-6); }
+    .cta-section .eyebrow::after { background-color: var(--color-gold); }
+    .cta-section h2 {
+      font-family: var(--font-serif-jp);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 400;
+      color: var(--color-text-primary);
+      letter-spacing: 0.06em;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+    .cta-section p {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      line-height: 2.2;
+      margin-bottom: var(--space-12);
+      letter-spacing: 0.04em;
+    }
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #06C755;
+      color: #FFFFFF;
+      padding: 20px 52px;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-line:hover { background: #05b04a; transform: translateY(-1px); }
+    .btn-line svg { width: 26px; height: 26px; flex-shrink: 0; }
+
+    @media (max-width: 639px) {
+      .cta-section { padding: 72px 24px; }
+      .cta-section h2 { font-size: var(--text-2xl); }
+      .btn-line { padding: 16px 32px; font-size: var(--text-lg); }
+    }
+
+    /* ============================================
+       Footer
+       ============================================ */
+    .site-footer {
+      background: var(--color-accent-dark);
+      color: rgba(244,236,218,0.7);
+      padding: 64px 48px 40px;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      padding-bottom: var(--space-12);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-logo {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--color-text-on-dark);
+      margin-bottom: var(--space-3);
+    }
+    .footer-tagline {
+      font-size: var(--text-sm);
+      letter-spacing: 0.08em;
+      line-height: 2.0;
+    }
+    .footer-info dt {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(201,169,97,0.7);
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-1);
+    }
+    .footer-info dd {
+      font-size: var(--text-sm);
+      line-height: 1.8;
+    }
+    .footer-bottom {
+      max-width: var(--max-w);
+      margin: var(--space-8) auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+    }
+    .footer-nav {
+      display: flex;
+      gap: var(--space-6);
+    }
+    .footer-nav a:hover { color: var(--color-text-on-dark); }
+
+    @media (max-width: 639px) {
+      .site-footer { padding: 48px 24px 32px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: var(--space-4); text-align: center; }
+      .footer-nav { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-logo">
+    FIERO
+    <span>bespoke tailor, machida</span>
+  </div>
+  <a href="index.html#items" class="header-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12H4M10 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>トップに戻る</span>
+  </a>
+  <a href="#cta" class="header-cta">シューズを相談する</a>
+</header>
+
+
+<!-- ===== PAGE NAV ===== -->
+<nav class="page-nav" aria-label="ページ内ナビゲーション">
+  <div class="page-nav-inner">
+    <a href="#about"       class="page-nav-link">About</a>
+    <a href="#design"      class="page-nav-link">Design</a>
+    <a href="#color"       class="page-nav-link">Color</a>
+    <a href="#painting"    class="page-nav-link">Painting Style</a>
+    <a href="#craftsman"   class="page-nav-link">Craftsman</a>
+    <a href="#pricing"     class="page-nav-link">Pricing</a>
+    <a href="#goods"       class="page-nav-link">Leather Goods</a>
+    <a href="#testimonials" class="page-nav-link">Testimonials</a>
+    <a href="#faq"         class="page-nav-link">FAQ</a>
+    <a href="#cta"         class="page-nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">Patine Shoes — FIERO</span>
+      <h1>Patine Shoes</h1>
+      <p class="hero-jp">パティーヌオーダーシューズ</p>
+      <p class="hero-sub">
+        職人が一点一点手染めする、<br>
+        世界にひとつの一足。<br>
+        全10デザイン・11色から、<br>
+        あなただけの色と形を選ぶ。
+      </p>
+      <a href="#cta" class="btn-line">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
+        LINEで相談する
+      </a>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-img-main">
+        <img src="patine-images/finish5.JPG" alt="パティーヌシューズ 仕上がりイメージ">
+      </div>
+      <div class="hero-img-sub">
+        <img src="patine-images/finish1.jpg" alt="パティーヌ仕上がり">
+      </div>
+      <div class="hero-img-sub">
+        <img src="patine-images/finish3.JPG" alt="パティーヌ仕上がり">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PHILOSOPHY ===== -->
+<section class="section" id="about">
+  <div class="inner text-center">
+    <span class="eyebrow">About</span>
+    <h2 class="sec-title">世界にひとつ、<br>あなただけのシューズ</h2>
+    <div class="divider-gold"></div>
+    <p style="font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 2.4; max-width: 600px; margin: 0 auto;">
+      自分の好きな形を選び、職人が一点一点色を入れる。<br>
+      いい靴は磨けば磨くほど育ち、<br>
+      5年・10年と共に歩み続けます。
+    </p>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-num">01</div>
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 6c0 0 3-2 6-2s6 2 9 2v12c-3 0-6-2-9-2s-6 2-6 2V6z"/><path d="M9 4v12M15 4v12"/></svg>
+        <h3>形を選ぶ</h3>
+        <p>全10デザインから<br>お好みのシルエットを選択</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">02</div>
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+        <h3>色を選ぶ</h3>
+        <p>パティーヌ本体カラー11色から<br>あなたらしい一色を</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">03</div>
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 16V4m0 0L3 8m4-4l4 4"/><path d="M17 8v12m0 0l4-4m-4 4l-4-4"/></svg>
+        <h3>職人が仕上げる</h3>
+        <p>一足一足、手染めで仕上げる<br>唯一無二の一足</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== DESIGN ===== -->
+<section class="section section-alt" id="design">
+  <div class="inner">
+    <span class="eyebrow">Design</span>
+    <h2 class="sec-title">全10デザインから選ぶ</h2>
+    <div class="design-grid">
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/0.png" alt="ホールカット"></div>
+        <div class="design-card-name">ホールカット</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/1.png" alt="内羽根ストレートチップ"></div>
+        <div class="design-card-name">内羽根<br>ストレートチップ</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/2.png" alt="ストレートチップメダリオン"></div>
+        <div class="design-card-name">ストレートチップ<br>メダリオン</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/3.png" alt="ダブルモンク"></div>
+        <div class="design-card-name">ダブルモンク</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/4.png" alt="セミブローグ"></div>
+        <div class="design-card-name">セミブローグ</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/5.png" alt="サドルシューズ"></div>
+        <div class="design-card-name">サドルシューズ</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/6.png" alt="外羽プレーントゥ"></div>
+        <div class="design-card-name">外羽プレーントゥ</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/7.png" alt="チャッカブーツ"></div>
+        <div class="design-card-name">チャッカブーツ</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/8.png" alt="サイドゴアブーツ"></div>
+        <div class="design-card-name">サイドゴアブーツ</div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-img"><img src="patine-images/9.png" alt="ローファー"></div>
+        <div class="design-card-name">ローファー</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== COLOR ===== -->
+<section class="section" id="color">
+  <div class="inner">
+    <span class="eyebrow">Color</span>
+    <h2 class="sec-title">パティーヌカラーを選ぶ</h2>
+    <p class="color-sub-title">カラーバリエーション 11色</p>
+    <img src="patine-images/color2.png" alt="パティーヌカラーバリエーション11色" class="color-palette-img">
+
+    <p class="color-sub-title">仕上がりイメージ</p>
+    <div class="finish-grid">
+      <div class="finish-grid-wide">
+        <img src="patine-images/finish5.JPG" alt="仕上がりイメージ">
+      </div>
+      <div>
+        <img src="patine-images/finish4.JPG" alt="仕上がりイメージ">
+      </div>
+      <div>
+        <img src="patine-images/finish1.jpg" alt="仕上がりイメージ">
+      </div>
+      <div>
+        <img src="patine-images/finish2.jpg" alt="仕上がりイメージ">
+      </div>
+      <div>
+        <img src="patine-images/finish3.JPG" alt="仕上がりイメージ">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PAINTING STYLE ===== -->
+<section class="section section-alt" id="painting">
+  <div class="inner">
+    <span class="eyebrow">Painting Style</span>
+    <h2 class="sec-title">塗り方を選ぶ</h2>
+    <p style="color: var(--color-text-secondary); font-size: var(--text-lg);">4つの技法から、お好みの表情を</p>
+    <div class="painting-grid">
+      <div class="painting-card">
+        <div class="painting-card-img"><img src="patine-images/1natural.jpg" alt="ナチュラル"></div>
+        <div class="painting-card-body">
+          <h3>ナチュラル</h3>
+          <p class="painting-en">Natural</p>
+          <p class="painting-desc">手染めならではの濃淡は残しつつ染め上げる、基本的な技法。</p>
+          <p class="painting-price free">追加料金なし</p>
+        </div>
+      </div>
+      <div class="painting-card">
+        <div class="painting-card-img"><img src="patine-images/2stroke.jpg" alt="ストローク"></div>
+        <div class="painting-card-body">
+          <h3>ストローク</h3>
+          <p class="painting-en">Stroke</p>
+          <p class="painting-desc">運動感のある縦塗りの刷毛跡が印象的に残る染色技法。</p>
+          <p class="painting-price paid">＋ ¥5,000（税抜）</p>
+        </div>
+      </div>
+      <div class="painting-card">
+        <div class="painting-card-img"><img src="patine-images/3blur.jpg" alt="ブラー"></div>
+        <div class="painting-card-body">
+          <h3>ブラー</h3>
+          <p class="painting-en">Blur</p>
+          <p class="painting-desc">マーブル調に色の輪郭をぼかしながら染め上げる技法。濃淡がはっきりし、より個性が生まれます。</p>
+          <p class="painting-price paid">＋ ¥5,000（税抜）</p>
+        </div>
+      </div>
+      <div class="painting-card">
+        <div class="painting-card-img"><img src="patine-images/4stipple.jpg" alt="スティップル"></div>
+        <div class="painting-card-body">
+          <h3>スティップル</h3>
+          <p class="painting-en">Stippled</p>
+          <p class="painting-desc">点描画のように細かく染料を軽く叩くように色を塗り重ねていく技法。</p>
+          <p class="painting-price paid">＋ ¥5,000（税抜）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CRAFTSMAN ===== -->
+<section class="section section-dark" id="craftsman">
+  <div class="inner">
+    <div class="craftsman-inner">
+      <div>
+        <img src="patine-images/craftsman.jpg" alt="職人がパティーヌを施す様子" class="craftsman-img">
+      </div>
+      <div class="craftsman-text">
+        <span class="eyebrow">Craftsman</span>
+        <h2 class="sec-title-en">職人が、<br>一点一点。</h2>
+        <div class="divider-gold"></div>
+        <p>色の重なり、ムラの妙。<br>機械では決して出せない奥行きを、職人の手が生み出します。</p>
+        <p>一足一足に向き合い、革と対話するように色を入れていく。<br>だからこそ、同じ仕上がりは二度とない。</p>
+        <p>あなたの一足は、あなただけのものになります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PRICING ===== -->
+<section class="section" id="pricing">
+  <div class="inner-prose">
+    <span class="eyebrow">Pricing</span>
+    <h2 class="sec-title">ご価格・ご注文について</h2>
+
+    <table class="pricing-table">
+      <tr>
+        <th>価格</th>
+        <td>
+          <span class="price-main">¥84,000</span>
+          <span class="price-tax">税抜 / 税込 ¥92,400</span>
+          <p class="price-note">※ブーツは別途 +¥5,000（税抜）</p>
+        </td>
+      </tr>
+      <tr>
+        <th>オプション</th>
+        <td>
+          <div class="option-item">
+            <span class="option-name">塗り方変更（ストローク・ブラー・スティップル）</span>
+            <span class="option-price">+¥5,000</span>
+          </div>
+          <div class="option-item">
+            <span class="option-name">ソールゴム底変更</span>
+            <span class="option-price">+¥5,000</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>デザイン</th>
+        <td>全10デザインから選択</td>
+      </tr>
+      <tr>
+        <th>カラー</th>
+        <td>パティーヌ本体カラー11色から選択</td>
+      </tr>
+      <tr>
+        <th>サイズ</th>
+        <td>24.5 / 25.0 / 25.5 / 26.0 / 26.5 / 27.0 / 27.5 / 28.0</td>
+      </tr>
+      <tr>
+        <th>製作期間</th>
+        <td>約1ヶ月〜1ヶ月半</td>
+      </tr>
+      <tr>
+        <th>お支払い</th>
+        <td>現金・お振込み・PayPal<br>
+          <span style="font-size: var(--text-sm); color: var(--color-text-muted);">※PayPalご希望の場合はお見積り前にお申し付けください</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+
+<!-- ===== LEATHER GOODS ===== -->
+<section class="section section-alt" id="goods">
+  <div class="inner">
+    <span class="eyebrow">Also Available</span>
+    <h2 class="sec-title">レザー小物も同じ技法で</h2>
+    <p style="color: var(--color-text-secondary); font-size: var(--text-lg);">
+      パティーヌシューズと同じ手染め技法で仕上げる革小物。<br>
+      トータルコーディネートをお楽しみください。
+    </p>
+    <div class="goods-grid">
+      <div class="goods-card">
+        <div class="goods-card-img"><img src="patine-images/belt.png" alt="オーダーベルト"></div>
+        <div class="goods-card-body">
+          <h3>ベルト</h3>
+          <p class="goods-card-price">¥21,000 <span style="font-size: var(--text-sm); font-family: var(--font-serif-jp); font-weight: 400; color: var(--color-text-muted);">税抜</span></p>
+          <p class="goods-card-note">塗り方オプション：+¥4,000（税抜）</p>
+        </div>
+      </div>
+      <div class="goods-card">
+        <div class="goods-card-img"><img src="patine-images/meishi.png" alt="オーダー名刺入れ"></div>
+        <div class="goods-card-body">
+          <h3>名刺入れ</h3>
+          <p class="goods-card-price">¥20,000 <span style="font-size: var(--text-sm); font-family: var(--font-serif-jp); font-weight: 400; color: var(--color-text-muted);">税抜</span></p>
+          <p class="goods-card-note">塗り方オプション：+¥4,000（税抜）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section" id="testimonials">
+  <div class="inner">
+    <span class="eyebrow">Testimonials</span>
+    <h2 class="sec-title">お客様の声</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">R.T</div>
+          <div class="testimonial-name">R・T 様</div>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">オーダーシューズを作る前、どんな悩みや不安がありましたか？</p>
+          <p class="testimonial-a">甲高幅広の足型で革靴はサイズアップして選び、靴擦れが悩みでした。オーダーシューズは高いイメージでしたが、金額的に手の届くところにあると知りお願いしました。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">実際に履いてみて、何が一番変わりましたか？</p>
+          <p class="testimonial-a">足馴染みが良く、長時間履いても疲れにくくなりました。見た目も美しく、知人からベ○ルッティに間違われる程コストパフォーマンスが高く品質が良いと感じています。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">どんな方にすすめたいですか？</p>
+          <p class="testimonial-a">良いスーツを着ているのに足元の靴が冴えない方。カッコいい靴を履きたいけど躊躇している方にぜひおすすめしたいです。</p>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">O.H</div>
+          <div class="testimonial-name">O・H 様</div>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">オーダーシューズを作る前、どんな悩みや不安がありましたか？</p>
+          <p class="testimonial-a">新しく革靴を検討するとき、どのような柄にするか、あるいは似合うのかが今一わかりませんでした。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">実際に履いてみて、何が一番変わりましたか？</p>
+          <p class="testimonial-a">靴だけでなく服装全体が整うような気がします。見た目への心配が薄れ、行動に自信がつきました。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">どんな方にすすめたいですか？</p>
+          <p class="testimonial-a">革を育てて年を重ねたい人。行動を起こして状況を変えたい人におすすめしたいです。</p>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">H.A</div>
+          <div class="testimonial-name">H・A 様</div>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">オーダーシューズを作る前、どんな悩みや不安がありましたか？</p>
+          <p class="testimonial-a">革靴の購入だとサイズが合わず、はかないで終わることが多く、ずっと難しさがありました。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">実際に履いてみて、何が一番変わりましたか？</p>
+          <p class="testimonial-a">すぐに足になじんでくれたのは衝撃的でした。履いた瞬間に自分自身が上がる体験があります。パティーヌシューズを採用して一段と自身のプレゼンテーションが変わりました。</p>
+        </div>
+        <div class="testimonial-qa">
+          <p class="testimonial-q">どんな方にすすめたいですか？</p>
+          <p class="testimonial-a">自分のファッションの土台が足元にあるのは間違いないので、一生モノの買い物としておすすめします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FAQ ===== -->
+<section class="section section-alt" id="faq">
+  <div class="inner-prose">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="sec-title">よくあるご質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q</span>ご予約はどうすればいいですか？</p>
+        <p class="faq-a">LINEよりお気軽にお問い合わせください。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q</span>パティーヌの色は何色から選べますか？</p>
+        <p class="faq-a">本体カラー11色からお選びいただけます。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q</span>サイズ展開はどのくらいですか？</p>
+        <p class="faq-a">24.5〜28.0（0.5刻み、全8サイズ）に対応しています。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q</span>製作期間はどのくらいかかりますか？</p>
+        <p class="faq-a">約1ヶ月〜1ヶ月半いただいております。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q</span>塗り方オプションはいくらですか？</p>
+        <p class="faq-a">ナチュラルは追加料金なしです。ストローク・ブラー・スティップルへの変更は+¥5,000（税抜）となります。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-label">Q</span>キャンセルはできますか？</p>
+        <p class="faq-a">オーダーメイド品のため、ご注文確定後のキャンセルはお受けできません。ご不明な点はお気軽にLINEよりご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="cta">
+  <span class="eyebrow">Contact</span>
+  <h2>あなただけの一足を、<br>いま仕立てる。</h2>
+  <p>
+    ご相談は完全無料、ご購入の義務はございません。<br>
+    「まずは話を聞いてみたい」だけでも、お気軽にどうぞ。
+  </p>
+  <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn-line">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
+    LINEで個別相談を申し込む
+  </a>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-logo">FIERO</p>
+      <p class="footer-tagline">装いは、未来から逆算する。</p>
+    </div>
+    <dl class="footer-info">
+      <dt>Address</dt>
+      <dd>〒194-0021 東京都町田市中町1-2-5 3階<br>（BIZcomfort町田 内）</dd>
+      <dt>Hours</dt>
+      <dd>11:00 - 20:00（完全予約制）</dd>
+      <dt>Contact</dt>
+      <dd>090-4847-0487 / fiero878@gmail.com</dd>
+    </dl>
+  </div>
+  <div class="footer-bottom">
+    <p>ファッションプロデューサー 藤井 孝昌 / Takamasa Fujii</p>
+    <nav class="footer-nav">
+      <a href="index.html">Top</a>
+      <a href="index.html#items">Order Items</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="前のデザイン">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="lightbox-inner" id="lightboxInner">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="次のデザイン">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script>
+  // ===== ライトボックス =====
+  (function() {
+    const cards = Array.from(document.querySelectorAll('.design-card-img'));
+    const overlay  = document.getElementById('lightbox');
+    const imgEl    = document.getElementById('lightboxImg');
+    const caption  = document.getElementById('lightboxCaption');
+    const counter  = document.getElementById('lightboxCounter');
+    const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn  = document.getElementById('lightboxPrev');
+    const nextBtn  = document.getElementById('lightboxNext');
+    let current = 0;
+
+    function open(index) {
+      current = index;
+      update();
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    function update() {
+      const card = cards[current];
+      const img  = card.querySelector('img');
+      imgEl.src = img.src;
+      imgEl.alt = img.alt;
+      caption.textContent = card.closest('.design-card').querySelector('.design-card-name').textContent.replace(/\n\s+/g, ' ');
+      counter.textContent = (current + 1) + ' / ' + cards.length;
+    }
+
+    function prev() { current = (current - 1 + cards.length) % cards.length; update(); }
+    function next() { current = (current + 1) % cards.length; update(); }
+
+    // イベント
+    cards.forEach((card, i) => card.addEventListener('click', () => open(i)));
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', function(e) { e.stopPropagation(); prev(); });
+    nextBtn.addEventListener('click', function(e) { e.stopPropagation(); next(); });
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) close(); });
+
+    document.addEventListener('keydown', function(e) {
+      if (!overlay.classList.contains('is-open')) return;
+      if (e.key === 'Escape')     close();
+      if (e.key === 'ArrowLeft')  prev();
+      if (e.key === 'ArrowRight') next();
+    });
+  })();
+</script>
+
+<script>
+  // ===== ページ内ナビ アクティブ追跡 =====
+  (function() {
+    const navLinks = Array.from(document.querySelectorAll('.page-nav-link'));
+    const sectionIds = navLinks.map(l => l.getAttribute('href').replace('#', ''));
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    function update() {
+      const scrollY = window.scrollY + 160;
+      let active = sections[0];
+      sections.forEach(sec => { if (sec && sec.offsetTop <= scrollY) active = sec; });
+      navLinks.forEach(l => {
+        l.classList.toggle('is-active', l.getAttribute('href') === '#' + (active ? active.id : ''));
+      });
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+
+</body>
+</html>

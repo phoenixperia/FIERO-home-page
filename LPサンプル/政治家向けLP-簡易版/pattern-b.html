@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>そめや直人 — 境町議会議員</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Pattern B: 深い赤 × 白 × 黒 ===== */
+    :root {
+      --crimson: #9b1a1a;
+      --crimson-dark: #6b0f0f;
+      --crimson-light: #c0392b;
+      --black: #0f0f0f;
+      --charcoal: #1c1c1c;
+      --white: #ffffff;
+      --warm-white: #faf8f5;
+      --text: #1c1c1c;
+      --text-mid: #4a4a4a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--warm-white);
+      color: var(--text);
+      max-width: 430px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    /* ===== ヘッダー ===== */
+    .header {
+      background: var(--black);
+      padding: 0 0 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 装飾: 赤のトップライン */
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--crimson-dark), var(--crimson-light), var(--crimson-dark));
+    }
+
+    /* 装飾: 右側のグロー */
+    .header::after {
+      content: '';
+      position: absolute;
+      top: 20px; right: -40px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(155,26,26,0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      padding: 20px 20px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--white);
+      background: var(--crimson);
+      padding: 4px 12px;
+      margin-bottom: 12px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: flex-end;
+      gap: 0;
+    }
+
+    .hero-text { padding-bottom: 0; }
+
+    .name-ja {
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .name-ja .accent {
+      color: var(--crimson-light);
+    }
+
+    .hero-photo-placeholder {
+      width: 150px;
+      height: 175px;
+      background: linear-gradient(180deg, #2c2c2c 0%, #1c1c1c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: rgba(255,255,255,0.3);
+      font-size: 11px;
+    }
+
+    /* 経歴バナー */
+    .career-banner {
+      background: var(--crimson);
+      padding: 10px 20px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== ごあいさつ ===== */
+    .greeting {
+      background: var(--white);
+      padding: 28px 20px 32px;
+      position: relative;
+    }
+
+    .greeting-title {
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--crimson);
+      letter-spacing: 0.05em;
+    }
+
+    .greeting-body {
+      font-size: 14px;
+      line-height: 2.0;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .greeting-sign {
+      text-align: right;
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--black);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== 区切り ===== */
+    .divider {
+      height: 4px;
+      background: linear-gradient(90deg, var(--crimson-dark), var(--crimson-light), var(--crimson-dark));
+    }
+
+    /* ===== 公式SNS ===== */
+    .sns-section {
+      background: var(--charcoal);
+      padding: 32px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sns-section::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(155,26,26,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: var(--crimson-light);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .sns-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .sns-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .sns-btn:hover {
+      background: rgba(155,26,26,0.3);
+      border-color: var(--crimson-light);
+      transform: translateY(-3px);
+    }
+
+    .sns-icon {
+      width: 36px; height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== 活動報告 ===== */
+    .report-section {
+      background: var(--warm-white);
+      padding: 28px 20px;
+    }
+
+    .report-title {
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .report-title::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 20px;
+      background: var(--crimson);
+      border-radius: 2px;
+    }
+
+    .report-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .report-item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: var(--white);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--black);
+      font-size: 14px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--crimson);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .report-item a:hover {
+      transform: translateX(4px);
+      box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .report-arrow { color: var(--crimson); }
+
+    /* ===== 基本情報 ===== */
+    .info-section {
+      background: var(--white);
+      padding: 28px 20px;
+    }
+
+    .info-title {
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-title::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 20px;
+      background: var(--crimson);
+      border-radius: 2px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid #f0ede8;
+    }
+
+    .info-table th {
+      padding: 12px 0;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-mid);
+      width: 80px;
+      vertical-align: top;
+    }
+
+    .info-table td {
+      padding: 12px 0;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ===== フッター ===== */
+    .footer {
+      background: var(--black);
+      padding: 20px;
+      text-align: center;
+      border-top: 4px solid var(--crimson);
+    }
+
+    .footer-name {
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.15em;
+      margin-bottom: 4px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== SCREEN 1: プロフィール ===== -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="label">境 町 議 会 議 員</div>
+      <div class="hero-layout">
+        <div class="hero-text">
+          <div class="name-ja">そめや<br><span class="accent">直人</span></div>
+        </div>
+        <div class="hero-photo-placeholder" aria-label="染谷直人 議員の写真">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8C53.94,194,79.69,184,128,184s74.06,10,89.07,36a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/>
+          </svg>
+          <span>写真をここに配置</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-banner">
+    森戸小・境二中・水海道一高・早稲田大学政治経済学部卒業<br>
+    元農林中央金庫（JAバンク）職員／茨城むつみ農協監事
+  </div>
+
+  <div class="greeting">
+    <div class="greeting-title">— 地域の皆さまへ — ごあいさつ</div>
+    <div class="greeting-body">
+      　コロナ禍真っ只中の2021年初。どうしても故郷への思いを忘れらず、日を追うごとに強くなっていた気持ちを実現すべく、「退路を断っての挑戦」をしてから早４年。農林中央金庫を辞して、Uターンして間もない私に1,634票という大きなご支援を頂戴し、境町議会へ送り出していただき、感謝申しあげます。「誰よりも身近な存在」「まっ直ぐ人にむきあう」ことを心がけ、職務に打ち込んできました。多くのご理解やご支援は私の宝物でもあり、若者のチャレンジに引き続きご指導いただけますと幸いです。
+    </div>
+    <div class="greeting-sign">染谷直人</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ===== SCREEN 2: SNS・活動報告 ===== -->
+  <div class="sns-section">
+    <div class="section-eyebrow">OFFICIAL SNS</div>
+    <div class="section-title">公式SNS</div>
+    <div class="sns-grid">
+      <a href="#" class="sns-btn">
+        <div class="sns-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,40,128,40,128,40S70.44,40,36.16,53.12A24,24,0,0,0,21.67,69.52,240.35,240.35,0,0,0,16,128a240.35,240.35,0,0,0,5.67,58.48,24,24,0,0,0,14.49,16.4C70.44,216,128,216,128,216s57.56,0,91.84-13.12a24,24,0,0,0,14.49-16.4A240.35,240.35,0,0,0,240,128,240.35,240.35,0,0,0,234.33,69.52Zm-72.11,61.44L108.33,163a8,8,0,0,1-12.33-6.73V99.76a8,8,0,0,1,12.33-6.73l53.89,32.48A8,8,0,0,1,162.22,130.96Z"/>
+          </svg>
+        </div>
+        YouTube
+      </a>
+      <a href="#" class="sns-btn">
+        <div class="sns-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/>
+          </svg>
+        </div>
+        Instagram
+      </a>
+      <a href="#" class="sns-btn">
+        <div class="sns-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M214.75,211.71l-62.6-98.36,61.77-67.95a8,8,0,0,0-11.84-10.76l-58.36,64.17L99.31,40.29A8,8,0,0,0,92.49,36H48a8,8,0,0,0-6.75,12.29l62.6,98.36L41.08,214.6a8,8,0,1,0,11.84,10.76l58.36-64.17,56.41,88.52A8,8,0,0,0,174.49,254H219a8,8,0,0,0,6.75-12.29ZM183.84,238,114.2,131.51l.12-.13L182.68,54l36.68,57.6Z"/>
+          </svg>
+        </div>
+        X
+      </a>
+    </div>
+  </div>
+
+  <div class="report-section">
+    <div class="report-title">最新の活動報告</div>
+    <ul class="report-list">
+      <li class="report-item">
+        <a href="#">
+          2026年発行
+          <span class="report-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor">
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/>
+            </svg>
+          </span>
+        </a>
+      </li>
+      <li class="report-item">
+        <a href="#">
+          それ以前（2021〜）
+          <span class="report-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor">
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/>
+            </svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="info-section">
+    <div class="info-title">基本情報</div>
+    <table class="info-table">
+      <tr>
+        <th>氏名</th>
+        <td>染谷 直人（そめや なおと）</td>
+      </tr>
+      <tr>
+        <th>役職</th>
+        <td>境町議会議員</td>
+      </tr>
+      <tr>
+        <th>学歴</th>
+        <td>早稲田大学政治経済学部卒業</td>
+      </tr>
+      <tr>
+        <th>経歴</th>
+        <td>元農林中央金庫（JAバンク）職員<br>茨城むつみ農協監事</td>
+      </tr>
+      <tr>
+        <th>出身</th>
+        <td>茨城県境町</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <div class="footer-name">染谷 直人</div>
+    <div class="footer-copy">© 2025 Naoto Someya. All rights reserved.</div>
+  </div>
+
+</body>
+</html>

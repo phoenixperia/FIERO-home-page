@@ -342,15 +342,24 @@
       font-family: var(--font-serif-en);
       font-size: var(--text-sm);
       font-weight: 400;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.26em;      /* ⑤ 少し広げて上品に */
       color: var(--color-text-secondary);
+      opacity: 0.87;               /* ⑤ クッキリ感を抑える */
       text-transform: uppercase;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, opacity 0.2s ease;
       position: relative;
       padding: 6px 0;
     }
     .nav-link:hover {
       color: var(--color-accent-dark);
+      opacity: 1;
+    }
+    /* パティーヌシューズはゴールドで差別化 */
+    .nav-link-patine {
+      color: var(--color-gold);
+    }
+    .nav-link-patine:hover {
+      color: var(--color-gold-light);
     }
 
     .nav-cta {
@@ -415,6 +424,20 @@
     }
 
     /* ============================================
+       HERO ORIGINAL VALUES BACKUP (2025-05-10)
+       元に戻す場合は以下の値を参照
+       .hero-left       : padding 148px 80px 40px 80px / justify-content: center
+       .hero-brand      : font-size var(--text-sm) / letter-spacing 0.2em / color var(--color-text-secondary) / opacity: 1
+       .h1-main         : clamp(1.875rem, 3.4vw, 2.75rem) / line-height 1.5 / letter-spacing 0.04em
+       .hero-h1-wrap    : max-width なし
+       .hero-actions .btn-primary : padding 17px 46px / font-size var(--text-base)
+       .nav-link        : letter-spacing 0.18em / opacity なし
+       .hero-photo      : animation なし
+       SP .hero-left    : padding 92px 24px 56px / justify-content center
+       SP .h1-main      : 1.375rem / line-height 1.5
+       ============================================ */
+
+    /* ============================================
        Hero — フルブリード背景 + 左テキストオーバーレイ
        ============================================ */
     .hero {
@@ -422,6 +445,12 @@
       min-height: 100vh;
       overflow: hidden;
       background-color: #f0ebe0;
+    }
+
+    /* 背景ズームアニメーション — 極めて控えめに (1.8%/14s) */
+    @keyframes heroZoom {
+      0%, 100% { transform: scale(1.0); }
+      50%       { transform: scale(1.018); }
     }
 
     /* 背景写真: 全面 */
@@ -433,6 +462,8 @@
       object-fit: cover;
       object-position: center center;
       z-index: 0;
+      transform-origin: center center;
+      animation: heroZoom 14s ease-in-out infinite;
     }
 
     /* グラデーションオーバーレイ: 左は白く・右は写真が見える */
@@ -459,15 +490,16 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 148px 80px 40px 80px;
+      padding: 200px 80px 60px 80px;  /* ② 縦中央よりやや下へ */
     }
 
     .hero-brand {
       font-family: var(--font-serif-jp);
-      font-size: var(--text-sm);
+      font-size: 0.72rem;          /* ③ 現在の約82% */
       font-weight: 400;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.32em;      /* ③ より広げて空気感 */
       color: var(--color-text-secondary);
+      opacity: 0.62;               /* ③ 存在を引き算 */
       margin-bottom: var(--space-8);
       display: inline-flex;
       align-items: center;
@@ -495,11 +527,11 @@
 
     /* Block 1: 主役のキャッチ */
     .hero-h1 .h1-main {
-      font-size: clamp(1.875rem, 3.4vw, 2.75rem);
+      font-size: clamp(1.75rem, 3.1vw, 2.5rem);  /* ① 約8%縮小 */
       font-weight: 500;
-      line-height: 1.5;
+      line-height: 1.78;           /* ① 行間を広げて余白感 */
       color: var(--color-text-primary);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;      /* ① 少し広げる */
     }
 
     /* Block 2: 問いかけ */
@@ -532,6 +564,7 @@
       position: relative;
       padding-left: var(--space-6);
       border-left: 2px solid var(--color-divider);
+      max-width: 420px;  /* ① 余白感強化のため最大幅を絞る */
     }
 
     .hero-sub {
@@ -552,8 +585,42 @@
 
     /* ヒーローCTAのみサイズ拡大 */
     .hero-actions .btn-primary {
-      padding: 17px 46px;
+      padding: 24px 58px;          /* ④ +7px縦 / +12px横 */
       font-size: var(--text-base);
+      letter-spacing: 0.12em;      /* ④ 余白感 */
+      min-height: 56px;            /* ④ スマホ押しやすさ */
+    }
+
+    /* パティーヌ誘導バッジ */
+    .hero-patine-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: var(--space-8);
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+      transition: color 0.2s ease;
+    }
+    .hero-patine-badge:hover {
+      color: var(--color-gold);
+    }
+    .hero-patine-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-gold);
+      flex-shrink: 0;
+    }
+    .hero-patine-badge svg {
+      flex-shrink: 0;
+      color: var(--color-gold);
+      transition: transform 0.2s ease;
+    }
+    .hero-patine-badge:hover svg {
+      transform: translateX(3px);
     }
 
     .hero-scroll { display: none; }
@@ -584,24 +651,41 @@
       .sp-br { display: inline; }
       .hero-left {
         width: 100%;
-        padding: 92px 24px 56px;
+        padding: 112px 28px 64px;  /* ⑦ 余白を縦横ともに確保 */
         justify-content: center;
       }
       .hero-overlay {
-        background: rgba(255, 255, 255, 0.88);
+        background: rgba(255, 255, 255, 0.90);
       }
-      .hero-brand { margin-bottom: var(--space-6); font-size: 0.7rem; }
-      .hero-h1 { margin-bottom: var(--space-8); gap: var(--space-6); }
-      .hero-h1 .h1-main { font-size: 1.375rem; }
-      .hero-h1 .h1-question { font-size: 0.875rem; }
-      .hero-h1 .h1-resolution { font-size: 1.0625rem; }
-      .hero-sub { margin-bottom: var(--space-8); font-size: 0.8rem; }
+      .hero-brand {
+        margin-bottom: var(--space-8);
+        font-size: 0.65rem;        /* ⑦ より控えめに */
+        letter-spacing: 0.35em;
+      }
+      .hero-h1 { margin-bottom: var(--space-10); gap: var(--space-6); }
+      .hero-h1-wrap { max-width: 100%; }  /* ⑦ SP全幅許可 */
+      .hero-h1 .h1-main {
+        font-size: 1.3rem;         /* ⑦ 少し絞って余白感 */
+        line-height: 1.85;         /* ⑦ 行間をゆったりと */
+        letter-spacing: 0.06em;
+      }
+      .hero-h1 .h1-question { font-size: 0.875rem; line-height: 2.1; }
+      .hero-h1 .h1-resolution { font-size: 1.0rem; line-height: 1.9; }
+      .hero-sub { margin-bottom: var(--space-10); font-size: 0.75rem; letter-spacing: 0.18em; }
+      .hero-patine-badge { margin-bottom: var(--space-10); }
       .hero-actions {
         flex-direction: column;
         align-items: stretch;
-        gap: var(--space-3);
+        gap: var(--space-4);
       }
-      .hero-actions .btn { width: 100%; text-align: center; }
+      .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+        min-height: 54px;          /* ⑦ タップしやすい高さ */
+      }
+      .hero-actions .btn-primary {
+        padding: 18px 32px;        /* ⑦ SP幅に収まる余白調整 */
+      }
     }
 
     /* ============================================
@@ -899,6 +983,31 @@
       border-bottom: none !important;
     }
 
+    .item-detail-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: var(--space-4);
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      letter-spacing: 0.08em;
+      color: var(--color-gold);
+      border-bottom: 1px solid rgba(201, 169, 97, 0.4);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .item-detail-link:hover {
+      color: var(--color-gold-light);
+      border-color: var(--color-gold);
+    }
+    .item-detail-link svg {
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .item-detail-link:hover svg {
+      transform: translateX(3px);
+    }
+
     .items-footer-note {
       margin-top: var(--space-16);
       padding-top: var(--space-8);
@@ -907,6 +1016,93 @@
       color: rgba(244, 236, 218, 0.4);
       line-height: 2.0;
       text-align: center;
+    }
+
+    /* ============================================
+       パティーヌシューズ バナー（Itemsセクション内）
+       ============================================ */
+    .patine-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      margin-top: var(--space-20);
+      border: 1px solid var(--color-gold);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: opacity 0.25s ease;
+      cursor: pointer;
+    }
+    .patine-banner:hover {
+      opacity: 0.88;
+    }
+    .patine-banner-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: 260px;
+    }
+    .patine-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .patine-banner-body {
+      padding: 48px 56px;
+      background-color: rgba(26, 41, 66, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .patine-banner-eyebrow {
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+    .patine-banner-title {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-3xl);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--color-text-on-dark);
+      letter-spacing: 0.04em;
+    }
+    .patine-banner-desc {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      line-height: 1.9;
+      color: rgba(244, 236, 218, 0.65);
+    }
+    .patine-banner-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      letter-spacing: 0.12em;
+      color: var(--color-gold);
+      border-bottom: 1px solid rgba(201, 169, 97, 0.5);
+      padding-bottom: 3px;
+      width: fit-content;
+    }
+
+    @media (max-width: 639px) {
+      .patine-banner {
+        grid-template-columns: 1fr;
+      }
+      .patine-banner-images {
+        height: 180px;
+      }
+      .patine-banner-body {
+        padding: 32px 24px;
+        gap: 12px;
+      }
+      .patine-banner-title {
+        font-size: var(--text-2xl);
+      }
     }
 
     @media (max-width: 639px) {
@@ -2205,6 +2401,7 @@
         <ul class="nav-list" id="navList">
           <li><a href="#story" class="nav-link">Story</a></li>
           <li><a href="#items" class="nav-link">Items</a></li>
+          <li><a href="patine.html" class="nav-link nav-link-patine">Patine Shoes</a></li>
           <li><a href="#process" class="nav-link">Process</a></li>
           <li><a href="#voice" class="nav-link">Voice</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -2245,6 +2442,11 @@
         </h1>
       </div>
       <p class="hero-sub">町田 ・ 完全予約制 ・ オーダースーツ 8年</p>
+      <a href="patine.html" class="hero-patine-badge">
+        <span class="hero-patine-badge-dot"></span>
+        パティーヌシューズも承っています
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+      </a>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -2372,9 +2574,14 @@
             </tbody>
           </table>
           <p class="item-note">
-            ※全10デザイン、11色、4種の塗り技法から選択<br>
-            ※キャンペーン時は特別価格でご提供
+            ※全10デザイン、11色、4種の塗り技法から選択
           </p>
+          <a href="patine.html" class="item-detail-link">
+            デザイン・カラー・制作工程を見る
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="currentColor">
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/>
+            </svg>
+          </a>
         </div>
 
         <div class="item-category">
@@ -2406,6 +2613,24 @@
         </div>
 
       </div>
+
+      <!-- パティーヌシューズ 専用バナー -->
+      <a href="patine.html" class="patine-banner">
+        <div class="patine-banner-images">
+          <img src="patine-images/1natural.jpg" alt="パティーヌシューズ 仕上げ例1" class="patine-banner-img">
+          <img src="patine-images/2stroke.jpg" alt="パティーヌシューズ 仕上げ例2" class="patine-banner-img">
+          <img src="patine-images/3blur.jpg" alt="パティーヌシューズ 仕上げ例3" class="patine-banner-img">
+        </div>
+        <div class="patine-banner-body">
+          <span class="patine-banner-eyebrow">Patine Shoes</span>
+          <h3 class="patine-banner-title">職人による<br>手染めシューズ</h3>
+          <p class="patine-banner-desc">全10デザイン・11色・4種の塗り技法から<br>あなただけの一足をオーダー。¥84,000〜</p>
+          <span class="patine-banner-cta">
+            詳細ページを見る
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </span>
+        </div>
+      </a>
 
       <p class="items-footer-note">
         ※初めてご利用の方は、別途 Bespoke Card 作成費 ¥5,000
@@ -2890,6 +3115,707 @@
       fadeEls.forEach(el => el.classList.add('is-visible'));
     }
   </script>
+
+
+  <!-- =====================================================
+       FIERO チャットボット ウィジェット
+       ===================================================== -->
+  <style>
+    /* ---- FAB ボタン ---- */
+    .cb-fab {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 9000;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 2px solid rgba(201,169,97,0.6);
+      box-shadow: 0 4px 20px rgba(26,41,66,0.3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      outline: none;
+    }
+    .cb-fab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(26,41,66,0.38);
+      background: var(--color-accent-dark);
+    }
+    .cb-fab svg { color: #fff; transition: opacity 0.2s ease; }
+    .cb-fab .cb-icon-chat  { display: block; }
+    .cb-fab .cb-icon-close { display: none; }
+    .cb-fab.is-open .cb-icon-chat  { display: none; }
+    .cb-fab.is-open .cb-icon-close { display: block; }
+    .cb-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #C9A961;
+      border: 2px solid #fff;
+      font-family: var(--font-sans-en);
+      font-size: 10px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .cb-badge.is-visible { opacity: 1; transform: scale(1); }
+
+    /* ---- チャットウィンドウ ---- */
+    .cb-window {
+      position: fixed;
+      bottom: 104px;
+      right: 32px;
+      z-index: 8999;
+      width: 380px;
+      max-height: 560px;
+      background: #fff;
+      border: 1px solid rgba(229,220,200,0.8);
+      box-shadow: 0 12px 48px rgba(26,41,66,0.18);
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(16px) scale(0.97);
+      pointer-events: none;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+      transform-origin: bottom right;
+    }
+    .cb-window.is-open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    /* ヘッダー */
+    .cb-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--color-accent);
+      border-left: 3px solid var(--color-gold);
+      flex-shrink: 0;
+    }
+    .cb-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cb-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(201,169,97,0.2);
+      border: 1px solid rgba(201,169,97,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif-en);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+      flex-shrink: 0;
+    }
+    .cb-header-name {
+      font-family: var(--font-serif-en);
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: #fff;
+      display: block;
+    }
+    .cb-header-sub {
+      font-family: var(--font-serif-jp);
+      font-size: 0.7rem;
+      color: rgba(244,236,218,0.6);
+      letter-spacing: 0.08em;
+      display: block;
+      margin-top: 2px;
+    }
+    .cb-close-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.5);
+      padding: 4px;
+      transition: color 0.2s;
+      line-height: 0;
+    }
+    .cb-close-btn:hover { color: rgba(255,255,255,0.9); }
+
+    /* メッセージエリア */
+    .cb-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(229,220,200,0.5) transparent;
+    }
+    .cb-messages::-webkit-scrollbar { width: 4px; }
+    .cb-messages::-webkit-scrollbar-track { background: transparent; }
+    .cb-messages::-webkit-scrollbar-thumb { background: rgba(229,220,200,0.6); border-radius: 2px; }
+
+    /* メッセージ bubble */
+    .cb-msg {
+      display: flex;
+      flex-direction: column;
+      max-width: 88%;
+      animation: cbFadeIn 0.22s ease;
+    }
+    @keyframes cbFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .cb-msg.bot { align-self: flex-start; }
+    .cb-msg.user { align-self: flex-end; }
+
+    .cb-bubble {
+      padding: 12px 16px;
+      font-family: var(--font-serif-jp);
+      font-size: 0.875rem;
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+      white-space: pre-wrap;
+    }
+    .cb-msg.bot .cb-bubble {
+      background: #F8F5EF;
+      color: var(--color-text-primary);
+      border-top: 2px solid rgba(201,169,97,0.25);
+    }
+    .cb-msg.user .cb-bubble {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    /* タイピングインジケーター */
+    .cb-typing {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 12px 16px;
+      background: #F8F5EF;
+      align-self: flex-start;
+      border-top: 2px solid rgba(201,169,97,0.25);
+      animation: cbFadeIn 0.22s ease;
+    }
+    .cb-typing span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(26,41,66,0.3);
+      animation: cbDot 1.2s ease-in-out infinite;
+    }
+    .cb-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .cb-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes cbDot {
+      0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+      40%           { transform: scale(1.0); opacity: 1; }
+    }
+
+    /* クイックリプライ */
+    .cb-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 16px 12px;
+      flex-shrink: 0;
+    }
+    .cb-chip {
+      font-family: var(--font-serif-jp);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      color: var(--color-accent);
+      border: 1px solid rgba(26,41,66,0.25);
+      padding: 7px 14px;
+      cursor: pointer;
+      background: #fff;
+      transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .cb-chip:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    /* LINE CTAボタン */
+    .cb-line-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 4px 16px 8px;
+      padding: 12px 16px;
+      background: #06C755;
+      color: #fff;
+      font-family: var(--font-serif-jp);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      justify-content: center;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .cb-line-btn:hover { background: #05b04a; }
+    .cb-line-btn svg { flex-shrink: 0; }
+
+    /* 区切り線 */
+    .cb-divider {
+      padding: 0 16px;
+      flex-shrink: 0;
+    }
+    .cb-divider hr {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 0;
+    }
+
+    /* 入力欄 */
+    .cb-input-area {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--color-border);
+      flex-shrink: 0;
+      background: #fff;
+    }
+    .cb-input {
+      flex: 1;
+      font-family: var(--font-serif-jp);
+      font-size: 0.875rem;
+      color: var(--color-text-primary);
+      background: #FAF8F3;
+      border: 1px solid var(--color-border);
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color 0.2s ease;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+    .cb-input:focus { border-color: var(--color-accent); }
+    .cb-input::placeholder { color: var(--color-text-muted); font-size: 0.8125rem; }
+    .cb-send {
+      background: var(--color-accent);
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      padding: 10px 16px;
+      font-family: var(--font-serif-jp);
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      transition: background 0.2s ease;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .cb-send:hover { background: var(--color-accent-dark); }
+
+    /* スマホ対応 */
+    @media (max-width: 639px) {
+      .cb-fab  { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+      .cb-window {
+        bottom: 84px;
+        right: 12px;
+        left: 12px;
+        width: auto;
+        max-height: 72vh;
+      }
+    }
+  </style>
+
+  <!-- ウィジェット HTML -->
+  <div id="cbWidget">
+    <!-- FABボタン -->
+    <button class="cb-fab" id="cbFab" aria-label="チャットで質問する" aria-expanded="false">
+      <!-- チャットアイコン -->
+      <svg class="cb-icon-chat" width="26" height="26" viewBox="0 0 256 256" fill="currentColor">
+        <path d="M216,48H40A16,16,0,0,0,24,64V224a8,8,0,0,0,13,6.22L72,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM88,144a16,16,0,1,1,16-16A16,16,0,0,1,88,144Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,128,144Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,168,144Z"/>
+      </svg>
+      <!-- 閉じるアイコン -->
+      <svg class="cb-icon-close" width="22" height="22" viewBox="0 0 256 256" fill="currentColor">
+        <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/>
+      </svg>
+      <!-- バッジ -->
+      <span class="cb-badge" id="cbBadge">1</span>
+    </button>
+
+    <!-- チャットウィンドウ -->
+    <div class="cb-window" id="cbWindow" role="dialog" aria-label="FIEROチャットアシスタント">
+      <!-- ヘッダー -->
+      <div class="cb-header">
+        <div class="cb-header-left">
+          <div class="cb-avatar">F</div>
+          <div>
+            <span class="cb-header-name">FIERO Assistant</span>
+            <span class="cb-header-sub">HPの内容をお答えします</span>
+          </div>
+        </div>
+        <button class="cb-close-btn" id="cbClose" aria-label="チャットを閉じる">
+          <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- メッセージエリア -->
+      <div class="cb-messages" id="cbMessages"></div>
+
+      <!-- クイックリプライ -->
+      <div class="cb-chips" id="cbChips"></div>
+
+      <!-- LINE CTAボタン（動的に表示） -->
+      <div id="cbLineArea"></div>
+
+      <!-- 区切り -->
+      <div class="cb-divider"><hr></div>
+
+      <!-- 入力欄 -->
+      <div class="cb-input-area">
+        <input class="cb-input" id="cbInput" type="text" placeholder="ご質問をどうぞ" maxlength="200" autocomplete="off">
+        <button class="cb-send" id="cbSend">送信</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+
+    /* =====================================================
+       FIERO ナレッジベース
+       ===================================================== */
+    var KB = [
+      {
+        match: ['こんにちは','はじめまして','こんばんは','おはよう','よろしく','hello','hi'],
+        reply: 'こんにちは！\n\nFIEROについて気になることがあれば、お気軽にどうぞ。\nスーツ・シューズ・ご予約など、HPの内容をお答えします。',
+        chips: ['サービスについて', '価格を知りたい', 'ご予約・相談']
+      },
+      {
+        match: ['スーツ','オーダースーツ','仕立て','ビジネス'],
+        reply: 'オーダースーツは ¥80,000〜 承っております（ビジネススーツの場合）。\n\nフォーマルスーツは ¥100,000〜、タキシード・礼装は ¥150,000〜 となります。\n生地はHarrison（英国）など国内外の上質な素材をご用意。仕様により価格は異なります。\n\n詳しいご予算・仕様はLINEにてご相談ください。',
+        chips: ['プロセスを知りたい', '初回相談について', 'ご予約・相談']
+      },
+      {
+        match: ['シャツ','ドレスシャツ','オーダーシャツ'],
+        reply: 'オーダーシャツの価格帯：\n\n・国産生地 ¥14,000〜（〜¥22,000程度）\n・インポート生地 ¥24,000〜（〜¥60,000程度）\n\n詳しい仕様はLINEにてお気軽にご相談ください。',
+        chips: ['スーツについて', 'ご予約・相談']
+      },
+      {
+        match: ['コート','オーバーコート','カシミア'],
+        reply: 'コートのオーダー価格帯：\n\n・コート ¥150,000〜（〜¥500,000程度）\n・カシミアコート ¥220,000〜（〜¥1,200,000程度）\n\n詳しくはLINEへ。',
+        chips: ['スーツについて', 'ご予約・相談']
+      },
+      {
+        match: ['タキシード','礼装','フォーマル'],
+        reply: 'タキシード・礼装は ¥150,000〜（〜¥400,000程度）承っております。\n\n結婚式・式典など、大切な場面のご装いもお任せください。',
+        chips: ['プロセスを知りたい', 'ご予約・相談']
+      },
+      {
+        match: ['シューズ','靴','パティーヌ','patine','革靴','オーダーシューズ'],
+        reply: 'パティーヌオーダーシューズは ¥84,000〜（+TAX）です。\n\n全10デザイン・11色・4種の塗り技法から、世界にひとつの一足をお作りします。\n\n専用ページでデザイン・カラーをご覧いただけます。',
+        chips: ['シューズ専用ページを見る', 'ご予約・相談', 'レザー小物について']
+      },
+      {
+        match: ['ベルト','名刺入れ','財布','バッグ','マネークリップ','レザー','革小物'],
+        reply: 'パティーヌ技法によるレザー小物もお作りしています。\n\n・ベルト ¥21,000〜\n・名刺入れ ¥20,000〜\n・財布・バッグ・マネークリップ → ご要望に応じてご相談\n\nシューズと合わせたトータルコーディネートも可能です。',
+        chips: ['シューズについて', 'ご予約・相談']
+      },
+      {
+        match: ['価格','料金','値段','いくら','費用','金額','プライス'],
+        reply: 'FIEROの主な価格帯です：\n\n・ビジネススーツ ¥80,000〜\n・フォーマルスーツ ¥100,000〜\n・タキシード・礼装 ¥150,000〜\n・シャツ ¥14,000〜（国産）/ ¥24,000〜（インポート）\n・コート ¥150,000〜\n・パティーヌシューズ ¥84,000〜\n・ベルト ¥21,000〜\n・名刺入れ ¥20,000〜\n\n※初回のみBespoke Card作成費¥5,000が別途かかります\n（LINE予約で無料）',
+        chips: ['スーツについて', 'シューズについて', 'ご予約・相談']
+      },
+      {
+        match: ['bespoke card','bespokeカード','ビスポークカード','カルテ','カード'],
+        reply: 'Bespoke Cardは初回ご来店時に作成する、お客様専用のカルテです。\n\n【記録内容】\n・採寸データ\n・ご選定いただいた生地・色・仕様\n・装いに関するご相談の記録\n・次回のお仕立てへの申し送り\n\nLINEからのご予約でカード作成費（¥5,000）が無料になります。',
+        chips: ['ご予約・相談', 'プロセスを知りたい']
+      },
+      {
+        match: ['プロセス','流れ','手順','ステップ','工程','どんな流れ','どうやって'],
+        reply: 'お仕立ての流れは以下の通りです：\n\n① お問い合わせ・ご予約\n② 個別相談\n③ 生地・仕様選定\n④ 正式ご注文\n⑤ 採寸\n⑥ 仮縫い\n⑦ 最終仕上げ\n⑧ お渡し・アフターケア\n\n②〜③の段階まではご購入の義務はございません。',
+        chips: ['初回相談について', 'ご予約・相談']
+      },
+      {
+        match: ['初回','相談','無料','気軽','購入義務','見るだけ','話だけ','話を聞きたい'],
+        reply: 'ご相談は完全無料です。ご購入の義務はございません。\n\n「まずは話を聞いてみたい」だけでもお気軽にどうぞ。\n\nお申し込み後、1〜2営業日以内にファッションプロデューサー藤井よりご連絡いたします。',
+        chips: ['ご予約・相談', '場所・アクセス'],
+        showLine: true
+      },
+      {
+        match: ['予約','申し込み','ライン','line','ご予約','相談したい','問い合わせ','連絡','メッセージ'],
+        reply: 'ご予約・ご相談はLINEからお気軽にどうぞ。\n\nTEL: 090-4847-0487\nMAIL: fiero878@gmail.com\n\nLINEからのご予約でBespoke Card作成費が無料になります。',
+        chips: ['初回相談について', '場所・アクセス'],
+        showLine: true
+      },
+      {
+        match: ['場所','アクセス','住所','どこ','地図','map','マップ','行き方','町田'],
+        reply: '【店舗情報】\nFIERO\n〒194-0021 東京都町田市中町1-2-5\n3階（BIZcomfort町田 内）\n\n町田駅から徒歩圏内です。\nページ下部「Access」セクションにGoogle Mapがございます。',
+        chips: ['営業時間', 'ご予約・相談']
+      },
+      {
+        match: ['営業時間','時間','何時','open','定休日','休み'],
+        reply: '営業時間：11:00〜20:00\n\n完全予約制です。\nご来店は事前にLINEまたはお電話でご予約ください。',
+        chips: ['ご予約・相談', '場所・アクセス']
+      },
+      {
+        match: ['オーナー','藤井','fujii','誰が','スタッフ','プロフィール','経歴'],
+        reply: 'FIEROのオーナーはファッションプロデューサーの\n藤井 孝昌（ふじい たかまさ）です。\n\nオーダースーツ歴8年。\n装いを通じて、お客様の在り方・なりたい姿を一緒に設計します。',
+        chips: ['FIEROのサービスについて', 'ご予約・相談']
+      },
+      {
+        match: ['paypal','ペイパル','支払い','払い方','決済','クレジット'],
+        reply: 'お支払い方法：\n\n・現金\n・お振込み\n・PayPal\n\nPayPalをご希望の場合は、お見積り前にお申し付けください。',
+        chips: ['ご予約・相談']
+      },
+      {
+        match: ['期間','納期','いつ','何ヶ月','どのくらい','製作'],
+        reply: '製作期間はアイテムにより異なります。\n\n【目安】\n・パティーヌシューズ：約1〜1.5ヶ月\n・スーツ：詳しくはLINEにてご確認ください\n\nお急ぎの場合もご相談可能です。',
+        chips: ['ご予約・相談', 'プロセスを知りたい']
+      },
+      {
+        match: ['harrison','ハリソン','生地','ファブリック','素材','英国'],
+        reply: 'FIEROではHarrison（英国）など上質な生地を取り扱っています。\n\n具体的なラインナップはご来店・ご相談の際にご確認いただけます。',
+        chips: ['スーツについて', 'ご予約・相談']
+      },
+      {
+        match: ['靴下','ソックス','ネクタイ','モルトン'],
+        reply: 'オーダー品に加え、以下の仕入れ品もご用意しています：\n\n・Harrison靴下\n・モルトンブラウン製品\n・国産ネクタイ など',
+        chips: ['ご予約・相談']
+      },
+      {
+        match: ['ありがとう','ありがとうございます','サンキュー','thank','thanks','助かった'],
+        reply: 'こちらこそ、ありがとうございます。\n\nご不明な点はLINEでもお気軽にどうぞ。\nスタッフ一同お待ちしております。',
+        chips: ['ご予約・相談']
+      }
+    ];
+
+    /* クイックリプライ → 検索語のマッピング */
+    var CHIP_QUERY = {
+      'サービスについて':     'スーツ',
+      '価格を知りたい':       '価格',
+      'ご予約・相談':         '予約',
+      'プロセスを知りたい':   'プロセス',
+      '初回相談について':     '初回',
+      '場所・アクセス':       '場所',
+      '営業時間':             '営業時間',
+      'スーツについて':       'スーツ',
+      'シューズについて':     'シューズ',
+      'シューズ専用ページを見る': '__patine__',
+      'レザー小物について':   'ベルト',
+      'FIEROのサービスについて': 'スーツ'
+    };
+
+    /* =====================================================
+       DOM 取得
+       ===================================================== */
+    var fab     = document.getElementById('cbFab');
+    var win     = document.getElementById('cbWindow');
+    var badge   = document.getElementById('cbBadge');
+    var msgs    = document.getElementById('cbMessages');
+    var chips   = document.getElementById('cbChips');
+    var lineArea= document.getElementById('cbLineArea');
+    var input   = document.getElementById('cbInput');
+    var sendBtn = document.getElementById('cbSend');
+    var closeBtn= document.getElementById('cbClose');
+    var isOpen  = false;
+
+    /* =====================================================
+       ウィジェット開閉
+       ===================================================== */
+    function openChat() {
+      isOpen = true;
+      fab.classList.add('is-open');
+      win.classList.add('is-open');
+      fab.setAttribute('aria-expanded','true');
+      badge.classList.remove('is-visible');
+      if (msgs.children.length === 0) { greeting(); }
+      setTimeout(function(){ input.focus(); }, 300);
+    }
+    function closeChat() {
+      isOpen = false;
+      fab.classList.remove('is-open');
+      win.classList.remove('is-open');
+      fab.setAttribute('aria-expanded','false');
+    }
+    fab.addEventListener('click', function() { isOpen ? closeChat() : openChat(); });
+    closeBtn.addEventListener('click', closeChat);
+
+    /* 3秒後にバッジ表示 */
+    setTimeout(function() {
+      if (!isOpen) { badge.classList.add('is-visible'); }
+    }, 3000);
+
+    /* =====================================================
+       メッセージ追加
+       ===================================================== */
+    function addMsg(role, text) {
+      var wrap = document.createElement('div');
+      wrap.className = 'cb-msg ' + role;
+      var bub = document.createElement('div');
+      bub.className = 'cb-bubble';
+      bub.textContent = text;
+      wrap.appendChild(bub);
+      msgs.appendChild(wrap);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function showTyping() {
+      var t = document.createElement('div');
+      t.className = 'cb-typing';
+      t.id = 'cbTyping';
+      t.innerHTML = '<span></span><span></span><span></span>';
+      msgs.appendChild(t);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+    function hideTyping() {
+      var t = document.getElementById('cbTyping');
+      if (t) { t.parentNode.removeChild(t); }
+    }
+
+    /* =====================================================
+       クイックリプライ チップ表示
+       ===================================================== */
+    function showChips(list) {
+      chips.innerHTML = '';
+      lineArea.innerHTML = '';
+      if (!list || list.length === 0) return;
+      list.forEach(function(label) {
+        var btn = document.createElement('button');
+        btn.className = 'cb-chip';
+        btn.textContent = label;
+        btn.addEventListener('click', function() {
+          chips.innerHTML = '';
+          lineArea.innerHTML = '';
+          handleChip(label);
+        });
+        chips.appendChild(btn);
+      });
+    }
+
+    function showLineBtn() {
+      lineArea.innerHTML = '';
+      var a = document.createElement('a');
+      a.className = 'cb-line-btn';
+      a.href = 'https://line.me/R/ti/p/@538mhqlu';
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>LINEで個別相談を申し込む';
+      lineArea.appendChild(a);
+    }
+
+    /* =====================================================
+       チップクリック処理
+       ===================================================== */
+    function handleChip(label) {
+      addMsg('user', label);
+      var query = CHIP_QUERY[label];
+      if (query === '__patine__') {
+        respondPatine();
+      } else if (query) {
+        respondWithDelay(query);
+      } else {
+        respondWithDelay(label);
+      }
+    }
+
+    /* =====================================================
+       グリーティング
+       ===================================================== */
+    function greeting() {
+      showTyping();
+      setTimeout(function() {
+        hideTyping();
+        addMsg('bot', 'こんにちは。FIEROアシスタントです。\n\nスーツ・シューズ・ご予約など、HPの内容であればお答えできます。お気軽にどうぞ。');
+        showChips(['サービスについて', '価格を知りたい', 'ご予約・相談', '場所・アクセス']);
+      }, 900);
+    }
+
+    /* =====================================================
+       キーワードマッチング
+       ===================================================== */
+    function findKB(text) {
+      var lower = text.toLowerCase().replace(/\s/g,'');
+      for (var i = 0; i < KB.length; i++) {
+        var item = KB[i];
+        for (var j = 0; j < item.match.length; j++) {
+          if (lower.indexOf(item.match[j].toLowerCase()) !== -1) {
+            return item;
+          }
+        }
+      }
+      return null;
+    }
+
+    function respondWithDelay(query) {
+      showTyping();
+      setTimeout(function() {
+        hideTyping();
+        var found = findKB(query);
+        if (found) {
+          addMsg('bot', found.reply);
+          showChips(found.chips || []);
+          if (found.showLine) { showLineBtn(); }
+        } else {
+          addMsg('bot', 'ご質問ありがとうございます。\n\n細かい内容につきましては、LINEまたはメールにてお気軽にお問い合わせください。');
+          showChips(['ご予約・相談']);
+          showLineBtn();
+        }
+      }, 700 + Math.random() * 300);
+    }
+
+    function respondPatine() {
+      showTyping();
+      setTimeout(function() {
+        hideTyping();
+        addMsg('bot', 'パティーヌシューズの専用ページをご覧ください。\n\n全10デザイン・11色・4種の塗り技法をご確認いただけます。');
+        chips.innerHTML = '';
+        var btn = document.createElement('a');
+        btn.href = 'patine.html';
+        btn.className = 'cb-line-btn';
+        btn.style.background = 'var(--color-accent)';
+        btn.textContent = 'パティーヌシューズ専用ページを見る';
+        lineArea.innerHTML = '';
+        lineArea.appendChild(btn);
+      }, 600);
+    }
+
+    /* =====================================================
+       送信処理
+       ===================================================== */
+    function handleSend() {
+      var text = input.value.trim();
+      if (!text) return;
+      chips.innerHTML = '';
+      lineArea.innerHTML = '';
+      addMsg('user', text);
+      input.value = '';
+      respondWithDelay(text);
+    }
+
+    sendBtn.addEventListener('click', handleSend);
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); }
+    });
+
+  })();
+  </script>
+
 
 </body>
 </html>

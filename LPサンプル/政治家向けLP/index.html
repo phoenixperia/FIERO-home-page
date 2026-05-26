@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>染谷直人 ｜ 茨城県境町議会議員</title>
+<meta name="description" content="茨城県境町議会議員・染谷直人。30代・元金融マンが、数字と行動で町の未来を動かす。">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<!-- Phosphor Icons -->
+<script type="module" src="https://unpkg.com/@phosphor-icons/webcomponents@2.1"></script>
+
+<style>
+/* ====================================
+   カラーシステム & ベース
+==================================== */
+:root {
+  --color-primary: #1a3a2e;       /* Deep Forest */
+  --color-primary-dark: #0f2820;  /* さらに深い森 */
+  --color-secondary: #5c7c6a;     /* Sage Mist */
+  --color-accent: #c9a961;        /* Champagne Gold */
+  --color-accent-soft: #d9bd7a;   /* Soft Gold */
+  --color-bg: #faf7f0;            /* Warm Ivory */
+  --color-bg-alt: #eef2ec;        /* Pale Sage */
+  --color-text: #1a1a1a;          /* Deep Charcoal */
+  --color-text-light: #5c5c5c;
+  --color-text-mute: #8a8a8a;
+  --color-line: rgba(26,58,46,0.12);
+  --color-line-strong: rgba(26,58,46,0.28);
+
+  --font-jp: 'Noto Sans JP', sans-serif;
+  --font-jp-bold: 'Zen Kaku Gothic Antique', sans-serif;
+  --font-en: 'Cormorant Garamond', serif;
+
+  --container-w: 1280px;
+  --container-pad: 80px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-jp);
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+/* セクション共通 */
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  position: relative;
+}
+
+section {
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* セクション見出し共通 */
+.eyebrow {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.18em;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.eyebrow-jp {
+  font-family: var(--font-jp);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--color-secondary);
+  font-style: normal;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.3;
+  color: var(--color-primary);
+  margin-bottom: 32px;
+  letter-spacing: 0.02em;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.section-title .accent {
+  background: linear-gradient(transparent 65%, rgba(201,169,97,0.4) 65%);
+  display: inline;
+  white-space: nowrap;
+}
+
+.nb {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.bg-letter {
+  position: absolute;
+  font-family: var(--font-en);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-secondary);
+  opacity: 0.07;
+  font-size: 320px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* ====================================
+   ヒーロー
+==================================== */
+.hero {
+  min-height: 100vh;
+  padding: 56px 0 80px;
+  background:
+    radial-gradient(ellipse 800px 600px at 90% 30%, rgba(92,124,106,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 500px at 10% 80%, rgba(201,169,97,0.08) 0%, transparent 60%),
+    var(--color-bg);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 50%, var(--color-primary) 100%);
+}
+
+.hero-topbar {
+  position: absolute;
+  top: 28px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--container-pad);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--color-text-light);
+  z-index: 5;
+}
+
+.hero-topbar .logo-mark {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.hero-topbar .topbar-right span + span::before {
+  content: '／';
+  margin: 0 12px;
+  color: var(--color-accent);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 0.9s ease 0.1s both;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-line);
+  border-radius: 100px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+
+.hero-label .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.hero-catch {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 1.15;
+  color: var(--color-primary);
+  margin-bottom: 36px;
+  letter-spacing: 0.02em;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.hero-catch .accent {
+  background: linear-gradient(transparent 70%, rgba(201,169,97,0.45) 70%);
+  display: inline;
+  white-space: nowrap;
+}
+
+.hero-sub {
+  font-size: 19px;
+  line-height: 1.85;
+  color: var(--color-text);
+  margin-bottom: 56px;
+  font-weight: 500;
+  max-width: 520px;
+}
+
+.hero-name {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  margin-bottom: 48px;
+}
+
+.hero-name .kanji {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+}
+
+.hero-name .romaji {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  color: var(--color-secondary);
+  margin-left: auto;
+}
+
+/* CTAボタン */
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 40px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-jp-bold);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 8px 24px rgba(26,58,46,0.18);
+}
+
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(201,169,97,0.25) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(26,58,46,0.28);
+  background: var(--color-primary-dark);
+}
+
+.cta-primary:hover::before { transform: translateX(100%); }
+
+.cta-primary ph-arrow-right { font-size: 20px; transition: transform 0.25s ease; }
+.cta-primary:hover ph-arrow-right { transform: translateX(4px); }
+
+.cta-primary ph-youtube-logo-duotone { font-size: 22px; color: var(--color-accent-soft); }
+
+/* ヒーロー写真 */
+.hero-photo {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 700px;
+  animation: fadeIn 1.2s ease 0.3s both;
+}
+
+.hero-photo .photo-bg {
+  position: absolute;
+  bottom: 0;
+  width: 480px;
+  height: 600px;
+  background: linear-gradient(160deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  border-radius: 240px 240px 24px 24px;
+  z-index: 1;
+}
+
+.hero-photo .photo-ring {
+  position: absolute;
+  bottom: -20px;
+  width: 540px;
+  height: 540px;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.hero-photo .photo-ring-2 {
+  position: absolute;
+  top: 20px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.hero-photo img {
+  position: relative;
+  z-index: 2;
+  height: 680px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 50px rgba(26,58,46,0.25));
+}
+
+.hero-photo .photo-badge {
+  position: absolute;
+  bottom: 60px;
+  left: -20px;
+  width: 130px;
+  height: 130px;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-align: center;
+  z-index: 3;
+  box-shadow: 0 12px 30px rgba(201,169,97,0.4);
+  transform: rotate(-8deg);
+}
+
+.hero-photo .photo-badge .num {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+/* スクロールヒント */
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--color-text-light);
+}
+
+.scroll-hint .line {
+  width: 1px;
+  height: 40px;
+  background: var(--color-line-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-hint .line::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: var(--color-primary);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0% { top: -40px; }
+  100% { top: 40px; }
+}
+
+/* ====================================
+   VISION
+==================================== */
+.vision {
+  background: var(--color-bg-alt);
+  text-align: center;
+}
+
+.vision .bg-letter {
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vision-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.vision .eyebrow {
+  justify-content: center;
+}
+
+.vision .eyebrow::before { display: none; }
+
+.vision .eyebrow::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.vision-title {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1.4;
+  color: var(--color-primary);
+  margin-bottom: 56px;
+  letter-spacing: 0.02em;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.vision-body p {
+  font-size: 19px;
+  line-height: 2.1;
+  color: var(--color-text);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.vision-body p.quote {
+  margin-top: 48px;
+  padding: 32px 24px;
+  font-family: var(--font-jp-bold);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.8;
+  color: var(--color-primary);
+  border-top: 1px solid var(--color-line-strong);
+  border-bottom: 1px solid var(--color-line-strong);
+  letter-spacing: 0.04em;
+}
+
+/* ====================================
+   PROFILE
+==================================== */
+.profile {
+  background: var(--color-bg);
+}
+
+.profile .bg-letter {
+  top: 80px;
+  right: -100px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 96px;
+  align-items: center;
+}
+
+.profile-photo {
+  position: relative;
+  aspect-ratio: 1 / 1.15;
+}
+
+.profile-photo .frame {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile-photo .frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: saturate(0.95);
+}
+
+.profile-photo .frame-decor {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.profile-photo .name-card {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  background: rgba(250,247,240,0.92);
+  backdrop-filter: blur(8px);
+  padding: 16px 24px;
+  border-radius: 4px;
+  border-left: 3px solid var(--color-accent);
+}
+
+.profile-photo .name-card .ja {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+}
+
+.profile-photo .name-card .en {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--color-secondary);
+  margin-top: 2px;
+}
+
+.profile-content .section-title {
+  margin-bottom: 40px;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-table tr {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.profile-table tr:first-child {
+  border-top: 1px solid var(--color-line);
+}
+
+.profile-table th,
+.profile-table td {
+  padding: 20px 4px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.profile-table th {
+  width: 130px;
+  font-family: var(--font-jp-bold);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--color-secondary);
+  padding-right: 16px;
+}
+
+.profile-table td {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.profile-table td .small {
+  display: block;
+  font-size: 13px;
+  color: var(--color-text-light);
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+/* ====================================
+   POLICY (ダーク)
+==================================== */
+.policy {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.policy::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0.5;
+}
+
+.policy .bg-letter {
+  color: #fff;
+  opacity: 0.04;
+  top: 100px;
+  left: -80px;
+}
+
+.policy .eyebrow { color: var(--color-accent-soft); }
+.policy .eyebrow::before { background: var(--color-accent-soft); }
+
+.policy .section-title {
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.policy .section-title .accent {
+  background: linear-gradient(transparent 65%, rgba(201,169,97,0.45) 65%);
+}
+
+.policy-sub {
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 80px;
+  max-width: 600px;
+}
+
+.policy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.policy-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 48px;
+  align-items: center;
+  padding: 36px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  position: relative;
+  cursor: default;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.policy-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(201,169,97,0.06), transparent);
+  transition: width 0.4s ease;
+}
+
+.policy-item:hover {
+  padding-left: 40px;
+  background: rgba(255,255,255,0.02);
+}
+
+.policy-item:hover::before { width: 100%; }
+
+.policy-num {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--color-accent);
+  letter-spacing: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.policy-content {
+  position: relative;
+  z-index: 2;
+}
+
+.policy-content h3 {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.policy-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
+}
+
+.policy-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(201,169,97,0.12);
+  border: 1px solid rgba(201,169,97,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-soft);
+  font-size: 28px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.policy-item:hover .policy-icon {
+  transform: rotate(-8deg) scale(1.05);
+  background: rgba(201,169,97,0.22);
+}
+
+/* ====================================
+   RECORD
+==================================== */
+.record {
+  background: var(--color-bg);
+  background-image: radial-gradient(circle, rgba(26,58,46,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.record .bg-letter {
+  top: 100px;
+  right: -60px;
+  font-size: 280px;
+}
+
+.record-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 80px;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.record-stat {
+  padding: 56px 32px;
+  text-align: center;
+  border-right: 1px solid var(--color-line);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.record-stat:last-child { border-right: none; }
+
+.record-stat:hover {
+  background: rgba(201,169,97,0.05);
+}
+
+.record-stat .label {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.record-stat .num {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.record-stat .num .unit {
+  font-size: 28px;
+  margin-left: 4px;
+  color: var(--color-secondary);
+}
+
+.record-stat .desc {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.record-honors {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.honor-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 36px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--color-line);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.honor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26,58,46,0.08);
+}
+
+.honor-card .icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-soft) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 26px;
+}
+
+.honor-card .text .ttl {
+  font-family: var(--font-jp-bold);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.honor-card .text .desc {
+  font-size: 13px;
+  color: var(--color-text-light);
+  letter-spacing: 0.04em;
+}
+
+/* ====================================
+   CHANNEL
+==================================== */
+.channel {
+  background: var(--color-bg-alt);
+  position: relative;
+}
+
+.channel .bg-letter {
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 280px;
+}
+
+.channel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.channel-text .section-title {
+  font-size: 52px;
+  margin-bottom: 32px;
+}
+
+.channel-text .lead {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--color-text);
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.channel-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 100px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+
+.channel-name ph-youtube-logo-fill { color: #ff0000; font-size: 22px; }
+
+.channel-card {
+  position: relative;
+  background: var(--color-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 48px 48px 56px;
+  color: #fff;
+  box-shadow: 0 20px 60px rgba(26,58,46,0.18);
+  border: 1px solid var(--color-line-strong);
+}
+
+.channel-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle 300px at 90% 10%, rgba(201,169,97,0.18) 0%, transparent 60%),
+    radial-gradient(circle 240px at 10% 100%, rgba(92,124,106,0.25) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.channel-card-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.channel-card-head .yt-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.channel-card-head .meta .name {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.channel-card-head .meta .handle {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.6);
+}
+
+.channel-thumbnails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.channel-thumb {
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.25s ease;
+}
+
+.channel-thumb:hover { transform: translateY(-3px); }
+
+.channel-thumb .play {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 24px;
+}
+
+.channel-thumb .label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.channel-thumb .duration {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-family: var(--font-en);
+  font-weight: 500;
+}
+
+.channel-cta-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-channel {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 36px;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-family: var(--font-jp-bold);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  border-radius: 6px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+}
+
+.cta-channel:hover {
+  transform: translateY(-3px);
+  background: var(--color-accent-soft);
+  box-shadow: 0 14px 28px rgba(201,169,97,0.4);
+}
+
+.cta-channel ph-arrow-up-right { font-size: 20px; transition: transform 0.25s ease; }
+.cta-channel:hover ph-arrow-up-right { transform: translate(3px, -3px); }
+
+/* ====================================
+   FINAL CTA (ダーク)
+==================================== */
+.final-cta {
+  background: var(--color-primary-dark);
+  color: #fff;
+  text-align: center;
+  padding: 160px 0;
+  position: relative;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle 600px at 30% 20%, rgba(201,169,97,0.15) 0%, transparent 60%),
+    radial-gradient(circle 500px at 80% 80%, rgba(92,124,106,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.final-cta .bg-letter {
+  color: #fff;
+  opacity: 0.04;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.final-cta .container {
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta .eyebrow { justify-content: center; color: var(--color-accent-soft); }
+.final-cta .eyebrow::before { display: none; }
+
+.final-cta-title {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1.4;
+  color: #fff;
+  margin-bottom: 32px;
+  letter-spacing: 0.02em;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.final-cta-sub {
+  font-size: 18px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 56px;
+  font-weight: 500;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
+.cta-final-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 48px;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 12px 32px rgba(201,169,97,0.35);
+  position: relative;
+}
+
+.cta-final-main:hover {
+  transform: translateY(-4px);
+  background: var(--color-accent-soft);
+  box-shadow: 0 18px 40px rgba(201,169,97,0.5);
+}
+
+.cta-final-main ph-youtube-logo-fill { color: var(--color-primary); font-size: 24px; }
+.cta-final-main ph-arrow-right { font-size: 22px; transition: transform 0.25s ease; }
+.cta-final-main:hover ph-arrow-right { transform: translateX(5px); }
+
+.sns-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sns-link {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.sns-link:hover {
+  transform: translateY(-4px);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.sns-label {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* ====================================
+   FOOTER
+==================================== */
+.footer {
+  background: #0a1612;
+  color: rgba(255,255,255,0.55);
+  padding: 80px 0 40px;
+  font-size: 14px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 56px;
+}
+
+.footer-brand .name-ja {
+  font-family: var(--font-jp-bold);
+  font-weight: 900;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.footer-brand .name-en {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  color: var(--color-accent-soft);
+  margin-bottom: 24px;
+}
+
+.footer-brand .desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.5);
+  max-width: 320px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-soft);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col li { font-size: 13px; line-height: 1.7; }
+
+.footer-col a {
+  color: rgba(255,255,255,0.65);
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover { color: var(--color-accent-soft); }
+
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.35);
+}
+
+.footer-bottom .legal { font-size: 11px; }
+
+/* ====================================
+   アニメーション
+==================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* スクロール連動風 */
+.section-title,
+.policy-item,
+.record-stat,
+.honor-card {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.15s;
+}
+
+section.in-view .section-title,
+section.in-view .policy-item,
+section.in-view .record-stat,
+section.in-view .honor-card {
+  opacity: 1;
+}
+
+/* ====================================
+   レスポンシブ
+==================================== */
+
+/* タブレット (1024px以下) */
+@media (max-width: 1024px) {
+  :root { --container-pad: 48px; }
+  section { padding: 100px 0; }
+
+  /* Hero */
+  .hero { min-height: auto; padding: 80px 0 80px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 64px; }
+  .hero-catch { font-size: 72px; }
+  .hero-photo { height: 580px; }
+  .hero-photo img { height: 560px; }
+  .hero-photo .photo-bg { width: 400px; height: 500px; }
+  .hero-photo .photo-ring { width: 460px; height: 460px; }
+
+  /* Profile */
+  .profile-grid { grid-template-columns: 1fr; gap: 80px; max-width: 720px; margin: 0 auto; }
+  .profile-photo { max-width: 480px; margin: 0 auto; }
+
+  /* Channel */
+  .channel-grid { grid-template-columns: 1fr; gap: 48px; }
+
+  /* セクションタイトル */
+  .section-title { font-size: 44px; }
+  .vision-title { font-size: 52px; }
+  .final-cta-title { font-size: 52px; }
+
+  .bg-letter { font-size: 240px; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+/* スマホ (768px以下) */
+@media (max-width: 768px) {
+  :root { --container-pad: 24px; }
+  section { padding: 72px 0; }
+  body { line-height: 1.7; }
+
+  /* Hero */
+  .hero { padding: 76px 0 56px; }
+  .hero-topbar {
+    top: 18px;
+    padding: 0 24px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+  .hero-topbar .logo-mark { font-size: 16px; }
+  .hero-topbar .topbar-right span + span::before { margin: 0 8px; }
+  .hero-grid { gap: 48px; }
+  .hero-label {
+    padding: 6px 14px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    margin-bottom: 24px;
+  }
+  .hero-catch { font-size: 48px; margin-bottom: 24px; }
+  .hero-sub { font-size: 15px; margin-bottom: 36px; }
+  .hero-name {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 18px 0;
+    margin-bottom: 32px;
+  }
+  .hero-name .kanji { font-size: 26px; }
+  .hero-name .romaji {
+    font-size: 13px;
+    margin-left: 0;
+    letter-spacing: 0.12em;
+  }
+  .hero-photo {
+    display: block;
+    position: relative;
+    height: 500px;
+    min-height: 500px;
+    width: 100%;
+  }
+  .hero-photo img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 460px;
+    width: auto;
+    max-width: 92%;
+    z-index: 5;
+    display: block;
+  }
+  .hero-photo .photo-bg {
+    width: 280px;
+    height: 360px;
+    border-radius: 140px 140px 16px 16px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  .hero-photo .photo-ring {
+    width: 320px;
+    height: 320px;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  .hero-photo .photo-ring-2 { display: none; }
+  .hero-photo .photo-badge {
+    width: 88px;
+    height: 88px;
+    font-size: 10px;
+    bottom: 30px;
+    right: 16px;
+    left: auto;
+    z-index: 6;
+  }
+  .hero-photo .photo-badge .num { font-size: 20px; }
+  .scroll-hint { display: none; }
+
+  /* CTA */
+  .cta-primary {
+    padding: 16px 24px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* セクションタイトル */
+  .section-title { font-size: 32px; line-height: 1.4; margin-bottom: 24px; }
+  .vision-title { font-size: 34px; margin-bottom: 36px; }
+  .final-cta-title { font-size: 32px; line-height: 1.45; }
+
+  .eyebrow { font-size: 12px; }
+  .eyebrow-jp { font-size: 11px; letter-spacing: 0.2em; }
+
+  .bg-letter { font-size: 140px; }
+
+  /* Vision */
+  .vision-body p { font-size: 15px; line-height: 1.95; }
+  .vision-body p.quote {
+    font-size: 18px;
+    padding: 24px 12px;
+    margin-top: 32px;
+    line-height: 1.7;
+  }
+
+  /* Profile */
+  .profile-grid { gap: 56px; }
+  .profile-photo { max-width: 100%; }
+  .profile-photo .name-card {
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 18px;
+  }
+  .profile-photo .name-card .ja { font-size: 18px; }
+  .profile-photo .name-card .en { font-size: 11px; }
+  .profile-table th {
+    width: 96px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    padding: 14px 4px;
+  }
+  .profile-table td { font-size: 13px; padding: 14px 4px; line-height: 1.6; }
+  .profile-table td .small { font-size: 11px; line-height: 1.5; }
+
+  /* Policy */
+  .policy-sub { font-size: 14px; margin-bottom: 40px; }
+  .policy-list { border-top-color: rgba(255,255,255,0.18); }
+  .policy-item {
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 24px 8px;
+  }
+  .policy-item:hover { padding-left: 8px; }
+  .policy-icon { display: none; }
+  .policy-num { font-size: 40px; }
+  .policy-content h3 {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+  .policy-content p { font-size: 13px; line-height: 1.65; }
+
+  /* Record */
+  .record-stats {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 48px;
+  }
+  .record-stat {
+    padding: 32px 16px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .record-stat:nth-child(2n) { border-right: none; }
+  .record-stat:nth-child(3),
+  .record-stat:nth-child(4) { border-bottom: none; }
+  .record-stat .label { font-size: 11px; letter-spacing: 0.14em; margin-bottom: 10px; }
+  .record-stat .num { font-size: 40px; }
+  .record-stat .num .unit { font-size: 18px; }
+  .record-stat .desc { font-size: 11px; letter-spacing: 0.04em; line-height: 1.5; }
+
+  .record-honors {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 56px;
+  }
+  .honor-card {
+    padding: 22px 24px;
+    gap: 18px;
+  }
+  .honor-card .icon { width: 44px; height: 44px; font-size: 22px; }
+  .honor-card .text .ttl { font-size: 14px; line-height: 1.45; }
+  .honor-card .text .desc { font-size: 11px; }
+
+  /* Channel */
+  .channel-text .section-title { font-size: 32px; }
+  .channel-text .lead { font-size: 14px; }
+  .channel-name { font-size: 12px; padding: 12px 18px; margin-bottom: 32px; }
+  .channel-card { padding: 32px 24px 36px; border-radius: 12px; }
+  .channel-card-head { gap: 14px; margin-bottom: 24px; }
+  .channel-card-head .yt-icon { width: 48px; height: 48px; font-size: 26px; border-radius: 12px; }
+  .channel-card-head .meta .name { font-size: 16px; }
+  .channel-card-head .meta .handle { font-size: 11px; }
+  .channel-thumbnails { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+  .channel-thumb .label { font-size: 10px; bottom: 8px; left: 8px; right: 8px; }
+  .channel-thumb .play { width: 36px; height: 36px; font-size: 18px; }
+  .channel-thumb .duration { font-size: 9px; padding: 1px 6px; }
+  .cta-channel {
+    padding: 16px 24px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Final CTA */
+  .final-cta { padding: 96px 0; }
+  .final-cta-sub { font-size: 15px; margin-bottom: 40px; }
+  .final-cta-buttons { margin-bottom: 48px; }
+  .cta-final-main {
+    padding: 18px 28px;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    width: 100%;
+    justify-content: center;
+  }
+  .sns-link { width: 48px; height: 48px; font-size: 20px; }
+  .sns-row { gap: 12px; }
+  .sns-label { font-size: 11px; letter-spacing: 0.14em; }
+
+  /* Footer */
+  .footer { padding: 64px 0 32px; }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-brand { grid-column: auto; }
+  .footer-brand .name-ja { font-size: 20px; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 11px;
+  }
+}
+
+/* iPhone SE 等 (480px以下) のさらなる微調整 */
+@media (max-width: 480px) {
+  .hero-catch { font-size: 40px; }
+  .vision-title { font-size: 28px; }
+  .section-title { font-size: 28px; }
+  .final-cta-title { font-size: 28px; }
+  .hero-photo { height: 420px; min-height: 420px; }
+  .hero-photo img { height: 380px; max-width: 88%; }
+  .hero-photo .photo-bg {
+    width: 220px;
+    height: 300px;
+    border-radius: 110px 110px 14px 14px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  .hero-photo .photo-ring {
+    width: 260px;
+    height: 260px;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+  }
+  .hero-photo .photo-badge {
+    width: 72px;
+    height: 72px;
+    font-size: 9px;
+    bottom: 20px;
+    right: 8px;
+    left: auto;
+  }
+  .hero-photo .photo-badge .num { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================
+     HERO ファーストビュー
+============================ -->
+<section class="hero">
+  <div class="hero-topbar">
+    <div class="logo-mark">Someya Naoto</div>
+    <div class="topbar-right">
+      <span>SAKAI TOWN</span>
+      <span>IBARAKI</span>
+      <span>2021–</span>
+    </div>
+  </div>
+
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="hero-label">
+        <span class="dot"></span>
+        茨城県境町議会議員 ／ 議席2番 ／ 無所属
+      </span>
+      <h1 class="hero-catch">
+        境町を、<br>
+        <span class="accent">もっと前へ。</span>
+      </h1>
+      <p class="hero-sub">
+        30代・元金融マン。<br>
+        数字で語り、行動で示す町政を。
+      </p>
+      <div class="hero-name">
+        <span class="kanji">染谷 直人</span>
+        <span class="romaji">SOMEYA NAOTO</span>
+      </div>
+      <a href="https://www.youtube.com/@sakai-somechannel" class="cta-primary" target="_blank" rel="noopener">
+        <ph-youtube-logo-duotone></ph-youtube-logo-duotone>
+        そめチャンネルを見る
+        <ph-arrow-right></ph-arrow-right>
+      </a>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo-ring"></div>
+      <div class="photo-ring-2"></div>
+      <div class="photo-bg"></div>
+      <img src="images/someya-portrait.jpg" alt="染谷直人" width="480" height="680" loading="eager">
+      <div class="photo-badge">
+        <span class="num">30s</span>
+        <span>YOUNG<br>POWER</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+
+<!-- ============================
+     VISION 私の信念
+============================ -->
+<section class="vision">
+  <div class="bg-letter">VISION</div>
+  <div class="container">
+    <div class="vision-inner">
+      <p class="eyebrow">Vision <span class="eyebrow-jp">私の信念</span></p>
+      <h2 class="vision-title">
+        町は、<br>
+        <span class="nb">待っていても変わらない。</span>
+      </h2>
+      <div class="vision-body">
+        <p>育った町に、恩を返したい。</p>
+        <p>その想いだけで、安定した金融機関を辞め、私はこの町に戻りました。</p>
+        <p>政治は遠いものじゃない。暮らしを変えるための、最も近い道具です。</p>
+        <p class="quote">数字で語り、行動で示す。<br>それが私の流儀です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     PROFILE 染谷直人について
+============================ -->
+<section class="profile">
+  <div class="bg-letter">PROFILE</div>
+  <div class="container">
+    <div class="profile-grid">
+      <div class="profile-photo">
+        <div class="frame-decor"></div>
+        <div class="frame">
+          <img src="images/someya-portrait.jpg" alt="染谷直人 プロフィール" width="400" height="460" loading="lazy">
+        </div>
+        <div class="name-card">
+          <div class="ja">染谷 直人</div>
+          <div class="en">Someya Naoto</div>
+        </div>
+      </div>
+
+      <div class="profile-content">
+        <p class="eyebrow">Profile <span class="eyebrow-jp">プロフィール</span></p>
+        <h2 class="section-title">
+          金融の現場から、<br>
+          <span class="accent">町の議会へ。</span>
+        </h2>
+        <table class="profile-table">
+          <tr>
+            <th>NAME</th>
+            <td>染谷 直人 <span class="small">そめや なおと</span></td>
+          </tr>
+          <tr>
+            <th>AGE</th>
+            <td>30代</td>
+          </tr>
+          <tr>
+            <th>BIRTH</th>
+            <td>茨城県猿島郡境町</td>
+          </tr>
+          <tr>
+            <th>EDUCATION</th>
+            <td>早稲田大学 卒業</td>
+          </tr>
+          <tr>
+            <th>CAREER</th>
+            <td>農林中央金庫（JAバンク）勤務 <span class="small">2021年 境町議会議員 初当選</span></td>
+          </tr>
+          <tr>
+            <th>POSITION</th>
+            <td>教育福祉常任委員会 委員長 <span class="small">広報編集委員会 副委員長 ／ 議会運営委員会</span></td>
+          </tr>
+          <tr>
+            <th>HONORS</th>
+            <td>全国高校弁論大会 優勝 <span class="small">自由民主党エッセイ募集 安倍晋三総裁賞 受賞</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     POLICY 5つの約束
+============================ -->
+<section class="policy">
+  <div class="bg-letter">POLICY</div>
+  <div class="container">
+    <p class="eyebrow">Policy <span class="eyebrow-jp">5つの約束</span></p>
+    <h2 class="section-title">
+      境町の未来を、<br>
+      <span class="accent">こう動かす。</span>
+    </h2>
+    <p class="policy-sub">5つの政策で、暮らしを前に進めます。</p>
+
+    <div class="policy-list">
+      <div class="policy-item">
+        <span class="policy-num">01</span>
+        <div class="policy-content">
+          <h3>先端技術で、暮らしを変える。</h3>
+          <p>自動運転バス・ドローン物流・スマート農業を、地域に実装する。</p>
+        </div>
+        <div class="policy-icon"><ph-cpu-duotone></ph-cpu-duotone></div>
+      </div>
+
+      <div class="policy-item">
+        <span class="policy-num">02</span>
+        <div class="policy-content">
+          <h3>英語が使える子を、境町から。</h3>
+          <p>小中学校での先進的な英語教育プログラムを推進する。</p>
+        </div>
+        <div class="policy-icon"><ph-translate-duotone></ph-translate-duotone></div>
+      </div>
+
+      <div class="policy-item">
+        <span class="policy-num">03</span>
+        <div class="policy-content">
+          <h3>「書く・話す」を育てる教育。</h3>
+          <p>弁論・作文を通じて、自分の考えを伝える力を育てる。</p>
+        </div>
+        <div class="policy-icon"><ph-pen-nib-duotone></ph-pen-nib-duotone></div>
+      </div>
+
+      <div class="policy-item">
+        <span class="policy-num">04</span>
+        <div class="policy-content">
+          <h3>ふるさと納税を、町の力に。</h3>
+          <p>コシヒカリ・干し芋・常陸牛で、全国に境町ブランドを届ける。</p>
+        </div>
+        <div class="policy-icon"><ph-package-duotone></ph-package-duotone></div>
+      </div>
+
+      <div class="policy-item">
+        <span class="policy-num">05</span>
+        <div class="policy-content">
+          <h3>金融マンの目で、財政を透明に。</h3>
+          <p>民間で培った数字の感覚で、町の財政を見える化する。</p>
+        </div>
+        <div class="policy-icon"><ph-chart-line-up-duotone></ph-chart-line-up-duotone></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     RECORD 経歴と実績
+============================ -->
+<section class="record">
+  <div class="bg-letter">RECORD</div>
+  <div class="container">
+    <p class="eyebrow">Record <span class="eyebrow-jp">経歴と実績</span></p>
+    <h2 class="section-title">
+      実績は、<br>
+      <span class="accent">数字が語る。</span>
+    </h2>
+
+    <div class="record-stats">
+      <div class="record-stat">
+        <div class="label">FIRST ELECTED</div>
+        <div class="num">1,634<span class="unit">票</span></div>
+        <div class="desc">2021年 初当選得票数</div>
+      </div>
+      <div class="record-stat">
+        <div class="label">TERMS</div>
+        <div class="num">2<span class="unit">回</span></div>
+        <div class="desc">当選回数</div>
+      </div>
+      <div class="record-stat">
+        <div class="label">COMMITTEES</div>
+        <div class="num">3<span class="unit">委員会</span></div>
+        <div class="desc">教育福祉・広報編集・議会運営</div>
+      </div>
+      <div class="record-stat">
+        <div class="label">AWARD</div>
+        <div class="num">No.1</div>
+        <div class="desc">全国高校弁論大会 優勝</div>
+      </div>
+    </div>
+
+    <div class="record-honors">
+      <div class="honor-card">
+        <div class="icon"><ph-medal-duotone></ph-medal-duotone></div>
+        <div class="text">
+          <div class="ttl">教育福祉常任委員会 委員長</div>
+          <div class="desc">境町議会の中核委員会で要職を務める</div>
+        </div>
+      </div>
+      <div class="honor-card">
+        <div class="icon"><ph-trophy-duotone></ph-trophy-duotone></div>
+        <div class="text">
+          <div class="ttl">自由民主党エッセイ募集 安倍晋三総裁賞 受賞</div>
+          <div class="desc">「書く力・伝える力」を社会に問う活動</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     CHANNEL そめチャンネル
+============================ -->
+<section class="channel">
+  <div class="bg-letter">CHANNEL</div>
+  <div class="container">
+    <div class="channel-grid">
+      <div class="channel-text">
+        <p class="eyebrow">Channel <span class="eyebrow-jp">そめチャンネル</span></p>
+        <h2 class="section-title">
+          YouTubeで、<br>
+          <span class="accent">毎週発信。</span>
+        </h2>
+        <p class="lead">
+          町政・教育・先端技術。<br>
+          難しい話を、わかりやすく。
+        </p>
+        <div class="channel-name">
+          <ph-youtube-logo-fill></ph-youtube-logo-fill>
+          @sakai-somechannel
+        </div>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-card-head">
+          <div class="yt-icon"><ph-youtube-logo-fill></ph-youtube-logo-fill></div>
+          <div class="meta">
+            <div class="name">そめチャンネル【染谷直人】境町議会議員</div>
+            <div class="handle">YOUTUBE / WEEKLY UPLOAD</div>
+          </div>
+        </div>
+
+        <div class="channel-thumbnails">
+          <div class="channel-thumb">
+            <span class="duration">10:42</span>
+            <div class="play"><ph-play-fill></ph-play-fill></div>
+            <span class="label">境町の自動運転バスに乗ってきた</span>
+          </div>
+          <div class="channel-thumb">
+            <span class="duration">07:15</span>
+            <div class="play"><ph-play-fill></ph-play-fill></div>
+            <span class="label">ふるさと納税が町を変える理由</span>
+          </div>
+          <div class="channel-thumb">
+            <span class="duration">12:30</span>
+            <div class="play"><ph-play-fill></ph-play-fill></div>
+            <span class="label">議員2年目の活動報告</span>
+          </div>
+          <div class="channel-thumb">
+            <span class="duration">08:50</span>
+            <div class="play"><ph-play-fill></ph-play-fill></div>
+            <span class="label">境町の教育、これからの話</span>
+          </div>
+        </div>
+
+        <div class="channel-cta-wrap">
+          <a href="https://www.youtube.com/@sakai-somechannel" class="cta-channel" target="_blank" rel="noopener">
+            チャンネルを見る
+            <ph-arrow-up-right></ph-arrow-up-right>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     FINAL CTA
+============================ -->
+<section class="final-cta">
+  <div class="bg-letter">ACTION</div>
+  <div class="container">
+    <p class="eyebrow">Action <span class="eyebrow-jp">未来へ、一緒に</span></p>
+    <h2 class="final-cta-title">
+      これからの境町を、<br>
+      <span class="nb">一緒に。</span>
+    </h2>
+    <p class="final-cta-sub">
+      あなたの一視聴・一フォローが、<br>
+      町を動かす力になります。
+    </p>
+
+    <div class="final-cta-buttons">
+      <a href="https://www.youtube.com/@sakai-somechannel" class="cta-final-main" target="_blank" rel="noopener">
+        <ph-youtube-logo-fill></ph-youtube-logo-fill>
+        そめチャンネルを見る
+        <ph-arrow-right></ph-arrow-right>
+      </a>
+    </div>
+
+    <span class="sns-label">FOLLOW ON SOCIAL</span>
+    <div class="sns-row">
+      <a href="#" class="sns-link" aria-label="X (Twitter)">
+        <ph-x-logo-bold></ph-x-logo-bold>
+      </a>
+      <a href="#" class="sns-link" aria-label="Instagram">
+        <ph-instagram-logo-bold></ph-instagram-logo-bold>
+      </a>
+      <a href="#" class="sns-link" aria-label="Facebook">
+        <ph-facebook-logo-bold></ph-facebook-logo-bold>
+      </a>
+      <a href="https://www.youtube.com/@sakai-somechannel" class="sns-link" aria-label="YouTube" target="_blank" rel="noopener">
+        <ph-youtube-logo-bold></ph-youtube-logo-bold>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     FOOTER
+============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name-ja">染谷 直人</div>
+        <div class="name-en">SOMEYA NAOTO</div>
+        <p class="desc">
+          茨城県境町議会議員。<br>
+          30代・元金融マン。数字で語り、行動で示す町政を、境町から。
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Office</h4>
+        <ul>
+          <li>染谷直人事務所</li>
+          <li>〒306-0426</li>
+          <li>茨城県猿島郡境町大字若林2362番地</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@sakai-somechannel" target="_blank" rel="noopener">YouTube そめチャンネル</a></li>
+          <li><a href="#">X (Twitter)</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© Someya Naoto Office. All rights reserved.</span>
+      <span class="legal">本ページはサンプル制作物です。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 簡易的なスクロール連動アニメーション
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
