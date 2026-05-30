@@ -1489,6 +1489,20 @@
       padding: var(--space-2) 0;
     }
 
+    /* ステップ内リンク */
+    .process-step-link {
+      display: inline-block;
+      margin-top: var(--space-4);
+      font-family: var(--font-serif-en);
+      font-size: var(--text-sm);
+      letter-spacing: 0.15em;
+      color: var(--color-accent);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .process-step-link:hover { border-color: var(--color-accent); }
+
     /* ステップ詳細内 画像レイアウト */
     .process-step-body-flex {
       display: flex;
@@ -1517,6 +1531,16 @@
     }
     .process-step-img-wrap.img-wrap-wide .process-step-img {
       aspect-ratio: 4 / 3;
+      object-position: center center;
+    }
+    /* 図解タイプ：全体を見せる（クリップさせない） */
+    .process-step-img-wrap.img-wrap-diagram {
+      flex: 0 0 280px;
+    }
+    .process-step-img-wrap.img-wrap-diagram .process-step-img {
+      aspect-ratio: 16 / 7;
+      object-fit: contain;
+      background-color: #f8f5f0;
       object-position: center center;
     }
     .process-step-img.img-atelier {
@@ -1589,6 +1613,14 @@
       .process-step-img-wrap.img-wrap-wide {
         flex: none;
         width: 100%;
+      }
+      /* SP：図解タイプも全幅表示 */
+      .process-step-img-wrap.img-wrap-diagram {
+        flex: none;
+        width: 100%;
+      }
+      .process-step-img-wrap.img-wrap-diagram .process-step-img {
+        aspect-ratio: 16 / 7;
       }
       /* SP：Processヘッダータイトルを2行に収める */
       .process-header .section-title {
@@ -3092,9 +3124,10 @@
               <div class="process-step-body-text">
                 <p class="process-step-text">お渡しは、お付き合いの終わりではなく、始まりです。</p>
                 <p class="process-step-text">体型の変化に合わせたお直し、長く着ていただくためのメンテナンス、シーズンに合わせた着こなしのご相談──。「こんなこと聞いていいのかな」と思うことこそ、お気軽にどうぞ。一着を10年お付き合いいただけるよう、伴走いたします。</p>
+                <a href="naoshi.html" class="process-step-link">お直しメニューを見る →</a>
               </div>
-              <div class="process-step-img-wrap">
-                <img src="images/hero6.png" alt="アフターケア — FIEROアトリエ" class="process-step-img img-atelier">
+              <div class="process-step-img-wrap img-wrap-diagram">
+                <img src="images/alteration-diagram.png" alt="洋服のお直し — ジャケット・パンツの修正箇所ガイド" class="process-step-img">
               </div>
             </div>
           </div>
