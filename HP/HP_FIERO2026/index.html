@@ -454,7 +454,8 @@
     }
 
     /* 背景写真: 全面 */
-    .hero-photo {
+    .hero-photo,
+    .hero-photo-pc {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -725,13 +726,22 @@
 
     .story-bg { display: none; }
 
-    .story-inner {
+    /* 2カラムレイアウト：テキスト左・写真右 */
+    .story-layout {
       position: relative;
       z-index: 1;
-      max-width: 760px;
+      display: flex;
+      align-items: flex-start;
+      gap: 80px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 24px;
-      text-align: center;
+      padding: 0 40px;
+    }
+
+    .story-inner {
+      flex: 1;
+      min-width: 0;
+      text-align: left;
     }
 
     .story-opening {
@@ -758,13 +768,12 @@
       width: 56px;
       height: 1px;
       background-color: var(--color-accent);
-      margin: var(--space-8) auto 0;
+      margin: var(--space-8) 0 0;
     }
 
     .story-body {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
+      text-align: left;
+      max-width: 560px;
     }
     .story-body p {
       font-size: 1.125rem;
@@ -779,18 +788,17 @@
       font-style: italic;
       font-family: var(--font-serif-jp);
       font-weight: 500;
-      text-align: center;
-      padding: var(--space-6) 0;
+      text-align: left;
+      padding: var(--space-6) 0 var(--space-6) var(--space-6);
       letter-spacing: 0.06em;
       border-left: 2px solid var(--color-divider);
-      padding-left: var(--space-6);
     }
 
     .story-closing {
       margin-top: var(--space-12);
       padding-top: var(--space-10);
       border-top: 1px solid var(--color-border);
-      text-align: center;
+      text-align: left;
     }
     .story-closing p {
       font-family: var(--font-serif-jp);
@@ -805,9 +813,120 @@
       font-weight: 500;
     }
 
+    /* 写真カラム */
+    .story-photo-wrap {
+      flex: 0 0 320px;
+      position: sticky;
+      top: 120px;
+    }
+
+    .story-photo-fig {
+      margin: 0;
+    }
+
+    .story-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border: 1px solid var(--color-border);
+    }
+
+    .story-photo-caption {
+      margin-top: 16px;
+      text-align: center;
+      font-family: var(--font-serif-jp);
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.1em;
+      line-height: 1.9;
+    }
+    .story-photo-caption span {
+      display: block;
+      font-size: 0.775rem;
+      color: var(--color-text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* タブレット・スマホ：縦積み、写真が先 */
+    @media (max-width: 1023px) {
+      .story-layout {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 32px;
+      }
+      .story-photo-wrap {
+        flex: none;
+        width: 260px;
+        margin: 0 auto;
+        position: static;
+        order: -1;
+      }
+    }
+
     @media (max-width: 639px) {
-      .story-body { text-align: left; }
+      .story-layout { padding: 0 20px; }
+      .story-photo-wrap { width: 200px; }
       .pc-br { display: none; }
+    }
+
+    /* ============================================
+       間奏ビジュアル B-1（生地サンプル）
+       ============================================ */
+    .interlude-b1 {
+      width: 100%;
+      height: 460px;
+      overflow: hidden;
+      position: relative;
+      display: block;
+    }
+    .interlude-b1-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 42%;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .interlude-b1-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(8, 6, 4, 0.10) 0%,
+        rgba(8, 6, 4, 0.22) 100%
+      );
+      pointer-events: none;
+    }
+    /* B-2: 縦構図画像のため上寄せでスーツを見せる */
+    .interlude-b2 .interlude-b1-img {
+      object-position: center 20%;
+    }
+    @media (max-width: 639px) {
+      .interlude-b1 { height: 260px; }
+    }
+
+    /* ============================================
+       スマホ用ヒーロー画像（A）
+       ============================================ */
+    .hero-photo-sp {
+      display: none;
+    }
+    @media (max-width: 639px) {
+      .hero-photo-pc { display: none; }
+      .hero-photo-sp {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 8%;
+        z-index: 0;
+        animation: heroZoom 14s ease-in-out infinite;
+        transform-origin: center center;
+      }
     }
 
     /* ============================================
@@ -1128,6 +1247,27 @@
     .process {
       background-color: var(--color-background);
       padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 薄い背景：アトリエ写真を全体にウォーターマーク的に */
+    .process::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hero6.png');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Process内テキストを背景より前面に */
+    .process .container {
+      position: relative;
+      z-index: 1;
     }
 
     .process-header {
@@ -2421,11 +2561,17 @@
        =========================================== -->
   <section class="hero" id="hero">
 
-    <!-- 背景写真 -->
+    <!-- 背景写真: PC = hero6.png / SP = 縦構図ポートレート -->
     <img
       src="images/hero6.png"
       alt="仕立て中の手元"
-      class="hero-photo"
+      class="hero-photo hero-photo-pc"
+    >
+    <!-- SP用縦構図ヒーロー -->
+    <img
+      src="images/hero-sp.jpg"
+      alt="FIEROアトリエ — オーダースーツと生地サンプル"
+      class="hero-photo hero-photo-sp"
     >
 
     <!-- グラデーションオーバーレイ -->
@@ -2437,7 +2583,7 @@
       <div class="hero-h1-wrap">
         <h1 class="hero-h1">
           <span class="h1-main">見られ方が変われば<br>人生が動き出す。</span>
-          <span class="h1-question">その一着は<br class="sp-br">あなたの未来を語っていますか?</span>
+          <span class="h1-question">その一着は<br class="sp-br">あなたの未来を語っていますか。</span>
           <span class="h1-resolution"><span class="brand-mark">FIERO</span> はあなたの目指す姿から<br>一着を仕立てます。</span>
         </h1>
       </div>
@@ -2464,7 +2610,7 @@
        =========================================== -->
   <section class="empathy" id="empathy">
     <p class="empathy-text fade-in">
-      あなたの今の一着は<br>
+      その一着は<br>
       あなたの未来を語っていますか。
     </p>
   </section>
@@ -2474,31 +2620,63 @@
        =========================================== -->
   <section class="story" id="story">
     <div class="story-bg" aria-hidden="true"></div>
-    <div class="story-inner fade-in">
-      <span class="section-eyebrow">Owner Story</span>
-      <p class="story-opening">人は見られ方で人生が変わる。</p>
-      <h2 class="story-philosophy">装いは<br class="sp-br">未来から逆算する。</h2>
+    <div class="story-layout">
 
-      <div class="story-body">
-        <p>私はサラリーマンのスーツが嫌いでした。</p>
+      <!-- テキストカラム -->
+      <div class="story-inner fade-in">
+        <span class="section-eyebrow">Owner Story</span>
+        <p class="story-opening">人は見られ方で人生が変わる。</p>
+        <h2 class="story-philosophy">装いは<br class="sp-br">未来から逆算する。</h2>
 
-        <p>35歳で会社が倒産し、M&amp;Aで上場企業へ<br class="pc-br">その会社に平社員として入社したとき、</p>
+        <div class="story-body">
+          <p>私はサラリーマンのスーツが嫌いでした。</p>
 
-        <p>私は5年後の&ldquo;なりたい自分&rdquo;を描き、<br class="pc-br">5年後の自分が着ているスーツをまずは自分のために仕立てました。</p>
+          <p>35歳で会社が倒産し、M&amp;Aで上場企業へ<br class="pc-br">その会社に平社員として入社したとき、</p>
 
-        <p class="emphasis">グレーのスーツに<br class="sp-br">スーツケースを引いて<br class="pc-br"><br class="sp-br"><br class="sp-br">全国を飛び回る<br class="sp-br">デキるサラリーマン。</p>
+          <p>私は5年後の&ldquo;なりたい自分&rdquo;を描き、<br class="pc-br">5年後の自分が着ているスーツをまずは自分のために仕立てました。</p>
 
-        <p>その一着を着始めた1年後、<br class="pc-br">私は事業部長へ昇進していました。</p>
+          <p class="emphasis">グレーのスーツに<br class="sp-br">スーツケースを引いて<br class="pc-br"><br class="sp-br"><br class="sp-br">全国を飛び回る<br class="sp-br">デキるサラリーマン。</p>
 
-        <p>装いは&ldquo;未来を引き寄せる投資&rdquo;です。</p>
+          <p>その一着を着始めた1年後、<br class="pc-br">私は事業部長へ昇進していました。</p>
+
+          <p>装いは&ldquo;未来を引き寄せる投資&rdquo;です。</p>
+        </div>
+
+        <div class="story-closing">
+          <p>──あなたは5年後<br class="sp-br">どんな自分でいたいですか。</p>
+          <p>その姿から一着をお仕立てします。</p>
+        </div>
       </div>
 
-      <div class="story-closing">
-        <p>──あなたは5年後<br class="sp-br">どんな自分でいたいですか。</p>
-        <p>その姿から一着をお仕立てします。</p>
+      <!-- 写真カラム -->
+      <div class="story-photo-wrap fade-in">
+        <figure class="story-photo-fig">
+          <img
+            src="images/owner.png"
+            alt="ファッションプロデューサー 藤井孝昌"
+            class="story-photo"
+          >
+          <figcaption class="story-photo-caption">
+            藤井 孝昌
+            <span>ファッションプロデューサー / FIERO</span>
+          </figcaption>
+        </figure>
       </div>
+
     </div>
   </section>
+
+  <!-- ===========================================
+       間奏ビジュアル B-1（生地サンプル）
+       =========================================== -->
+  <div class="interlude-b1" aria-hidden="true">
+    <img
+      src="images/price.png"
+      alt="Ermenegildo Zegna 生地サンプル"
+      class="interlude-b1-img"
+    >
+    <div class="interlude-b1-overlay"></div>
+  </div>
 
   <!-- ===========================================
        Order Items
@@ -2779,6 +2957,18 @@
       </div>
     </div>
   </section>
+
+  <!-- ===========================================
+       間奏ビジュアル B-2（アトリエ・仕立て空間）
+       =========================================== -->
+  <div class="interlude-b1 interlude-b2" aria-hidden="true">
+    <img
+      src="images/interlude-b2.png"
+      alt="FIEROアトリエ — 3着のスーツと生地サンプル"
+      class="interlude-b1-img"
+    >
+    <div class="interlude-b1-overlay"></div>
+  </div>
 
   <!-- ===========================================
        Bespoke Card
