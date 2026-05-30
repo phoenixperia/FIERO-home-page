@@ -163,9 +163,8 @@
     ============================================ */
     .hero {
       background: var(--bg-warm);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
+      height: calc(100vh - 74px - 44px); /* ヘッダー74px + ナビバー44px */
+      min-height: 600px;
       position: relative;
       overflow: hidden;
     }
@@ -201,13 +200,17 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 80px;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 0;
+      align-items: stretch;
       width: 100%;
+      height: 100%;
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(20px, 3vh, 40px) 60px clamp(20px, 3vh, 40px) clamp(48px, 7vw, 120px);
     }
 
     /* テキスト側 */
@@ -219,7 +222,7 @@
       font-weight: 700;
       letter-spacing: 0.35em;
       color: var(--accent);
-      margin-bottom: 20px;
+      margin-bottom: 12px;
       animation: heroFadeIn 0.6s ease-out 0.1s both;
     }
     .hero-label-tag::before {
@@ -235,7 +238,7 @@
       line-height: 1.1;
       color: var(--primary);
       letter-spacing: -0.02em;
-      margin-bottom: 24px;
+      margin-bottom: 14px;
       animation: heroFadeIn 0.6s ease-out 0.3s both;
     }
     .hero-title .accent { color: var(--accent); }
@@ -243,7 +246,7 @@
       font-size: 16px;
       color: var(--text-mid);
       line-height: 1.85;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       animation: heroFadeIn 0.6s ease-out 0.5s both;
     }
     .hero-cta-wrap {
@@ -255,9 +258,9 @@
       flex-direction: column;
       background: var(--primary);
       color: var(--white);
-      padding: 18px 36px;
+      padding: 14px 32px;
       border-radius: 4px;
-      margin-bottom: 28px;
+      margin-bottom: 16px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .hero-phone-btn:hover {
@@ -290,7 +293,7 @@
     .hero-trust-item {
       display: flex;
       flex-direction: column;
-      padding: 12px 20px;
+      padding: 8px 18px;
       border-right: 1px solid rgba(58,36,16,0.1);
     }
     .hero-trust-item:first-child { padding-left: 0; }
@@ -313,18 +316,24 @@
       position: relative;
       animation: heroFadeIn 0.8s ease-out 0.35s both;
     }
+    .hero-visual {
+      display: flex;
+      align-items: stretch;
+    }
     .hero-photo {
       width: 100%;
-      aspect-ratio: 4/3;
+      height: 100%;
+      min-height: 420px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: var(--shadow-md);
+      object-position: center;
+      border-radius: 0;
+      box-shadow: none;
     }
     /* 写真の上に浮かぶバッジ */
     .hero-badge {
       position: absolute;
-      bottom: -16px;
-      left: -16px;
+      bottom: 24px;
+      left: 24px;
       background: var(--gradient-accent);
       color: var(--white);
       padding: 16px 22px;
@@ -345,8 +354,8 @@
     /* 写真右上バッジ */
     .hero-badge-top {
       position: absolute;
-      top: -12px;
-      right: -12px;
+      top: 20px;
+      right: 20px;
       background: var(--white);
       border: 2px solid var(--bg-alt);
       color: var(--primary);
@@ -460,6 +469,170 @@
       font-size: 14px;
       color: var(--text-mid);
       line-height: 1.8;
+    }
+
+    /* ============================================
+       ページ内ナビ（ヘッダー直下）
+    ============================================ */
+    .page-nav {
+      background: var(--bg-warm);
+      border-bottom: 1px solid rgba(58,36,16,0.10);
+    }
+    .page-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .page-nav-inner::-webkit-scrollbar { display: none; }
+    .pnav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-mid);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .pnav-btn:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .pnav-btn--contact {
+      margin-left: auto;
+      background: var(--primary);
+      color: var(--white) !important;
+      border-radius: 4px;
+      border-bottom: 3px solid transparent !important;
+      padding: 8px 20px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    .pnav-btn--contact:hover {
+      background: var(--accent);
+    }
+
+    /* ============================================
+       すべらん革命 バナー
+    ============================================ */
+    .suberan-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-top: 32px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+      border-radius: 16px;
+      padding: 36px 48px;
+      text-decoration: none;
+      color: var(--white);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .suberan-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(200,132,60,0.15);
+      pointer-events: none;
+    }
+    .suberan-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: 30%;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(200,132,60,0.08);
+      pointer-events: none;
+    }
+    .suberan-banner:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(58,36,16,0.28);
+    }
+    .suberan-left { flex: 1; position: relative; z-index: 1; }
+    .suberan-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--accent-light);
+      background: rgba(200,132,60,0.2);
+      border: 1px solid rgba(200,132,60,0.4);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .suberan-title {
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 900;
+      line-height: 1.3;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .suberan-brand {
+      display: block;
+      font-size: clamp(22px, 2.8vw, 34px);
+      color: var(--accent-light);
+    }
+    .suberan-desc {
+      font-size: 14px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.80);
+      margin-bottom: 20px;
+    }
+    .suberan-desc strong { color: var(--accent-light); font-weight: 700; }
+    .suberan-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .suberan-feat {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+    .suberan-right {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .suberan-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient-accent);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 6px;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(200,132,60,0.5);
+    }
+    .suberan-url {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.05em;
     }
 
     /* ============================================
@@ -839,7 +1012,7 @@
 
       /* ===== モバイルヒーロー: 写真を背景にひく ===== */
       .hero {
-        background-image: url('./images/AdobeStock_1874203857.jpeg');
+        background-image: url('./images/７月＜和型：ブラック＞.jpg');
         background-size: cover;
         background-position: top center;
         background-color: #1a2a10;
@@ -879,6 +1052,14 @@
       .services-grid { grid-template-columns: 1fr; }
       .specialty-grid { grid-template-columns: 1fr; }
 
+      .page-nav-inner { padding: 0 16px; }
+      .pnav-btn { font-size: 12px; padding: 10px 12px; }
+      .pnav-btn--contact { margin-left: 8px; }
+
+      .suberan-banner { flex-direction: column; padding: 28px 24px; gap: 24px; }
+      .suberan-right { width: 100%; }
+      .suberan-cta-btn { width: 100%; justify-content: center; }
+
       .trust-inner { grid-template-columns: 1fr; gap: 44px; }
       .trust-stats { grid-template-columns: 1fr 1fr; }
 
@@ -912,15 +1093,7 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="header-brand">
-        <div class="header-logo" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 256 256" fill="currentColor">
-            <path d="M240,208H224V136l4.41,4.41a8,8,0,0,0,11.32-11.32l-106-106a8,8,0,0,0-11.32,0l-106,106a8,8,0,0,0,11.32,11.32L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,136.69,128,56.69l80,80V208H168V168a8,8,0,0,0-8-8H96a8,8,0,0,0-8,8v40H48ZM152,208H104V176h48Z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="header-name">株式会社タツミ屋根企画</div>
-          <div class="header-name-sub">東京都町田市・神奈川県の屋根工事専門店</div>
-        </div>
+        <img src="./images/logo-dark.jpg" alt="株式会社タツミ屋根企画" style="height: 44px; width: auto; display: block;">
       </div>
       <div class="header-contact">
         <div class="header-area">東京都・神奈川県エリア対応　屋根工事・屋根リフォーム</div>
@@ -934,6 +1107,33 @@
       </div>
     </div>
   </header>
+
+
+  <!-- ============================================ ページ内ナビ -->
+  <nav class="page-nav" aria-label="ページ内ナビゲーション">
+    <div class="page-nav-inner">
+      <a href="#services" class="pnav-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M240,208H224V136l4.41,4.41a8,8,0,0,0,11.32-11.32l-106-106a8,8,0,0,0-11.32,0l-106,106a8,8,0,0,0,11.32,11.32L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,136.69,128,56.69l80,80V208H168V168a8,8,0,0,0-8-8H96a8,8,0,0,0-8,8v40H48ZM152,208H104V176h48Z"/></svg>
+        サービス一覧
+      </a>
+      <a href="#about" class="pnav-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,40H48A16,16,0,0,0,32,56V96c0,91.36,71.88,153.08,90.29,168.08a15.86,15.86,0,0,0,11.42,3.84,16,16,0,0,0,7-2.27C159.41,249.84,224,194.46,224,96V56A16,16,0,0,0,208,40Zm0,56c0,86.4-56.82,135.62-72.61,148.32L128,249.2l-7.39-5.17C104.82,231.62,48,182.4,48,96V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg>
+        会社実績
+      </a>
+      <a href="#area" class="pnav-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,16a64.07,64.07,0,0,0-64,64c0,52.65,57.23,138.2,59.69,141.81a8,8,0,0,0,8.62,0C134.77,218.2,192,132.65,192,80A64.07,64.07,0,0,0,128,16Zm0,88a24,24,0,1,1,24-24A24,24,0,0,1,128,104Z"/></svg>
+        営業エリア
+      </a>
+      <a href="#news" class="pnav-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></svg>
+        新着情報
+      </a>
+      <a href="#contact" class="pnav-btn pnav-btn--contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+        お問い合わせ
+      </a>
+    </div>
+  </nav>
 
 
   <!-- ============================================ HERO -->
@@ -980,8 +1180,8 @@
       <!-- 写真ビジュアル -->
       <div class="hero-visual">
         <img
-          src="./images/AdobeStock_1874203857.jpeg"
-          alt="タツミ屋根企画の施工例 — 青空の下の美しい屋根"
+          src="./images/７月＜和型：ブラック＞.jpg"
+          alt="タツミ屋根企画の施工例 — 和型ブラック瓦の美しい住宅"
           class="hero-photo"
           width="600" height="450"
           loading="eager"
@@ -992,7 +1192,7 @@
 
 
   <!-- ============================================ SERVICES -->
-  <section class="services-section">
+  <section class="services-section" id="services">
     <div class="container">
       <div class="section-center" style="margin-bottom: 56px;">
         <div class="section-label">SERVICE</div>
@@ -1008,8 +1208,8 @@
         <!-- 屋根調査 -->
         <div class="service-card">
           <img
-            src="./images/AdobeStock_1842518900.jpeg"
-            alt="屋根調査の様子 — 作業員が屋根を点検している"
+            src="./images/新築板金屋根工事/IMG_1728.JPG"
+            alt="屋根調査・診断の様子 — 新築板金屋根工事"
             class="service-photo"
             width="400" height="300"
             loading="lazy"
@@ -1024,8 +1224,8 @@
         <!-- 屋根リフォーム -->
         <div class="service-card">
           <img
-            src="./images/AdobeStock_1044762633.jpeg"
-            alt="屋根リフォームの施工例 — 雨の中でも機能する瓦屋根"
+            src="./images/お寺改修工事/20231228_160813.jpg"
+            alt="屋根リフォームの施工例 — お寺の大規模改修工事"
             class="service-photo"
             width="400" height="300"
             loading="lazy"
@@ -1040,8 +1240,8 @@
         <!-- 屋根瓦販売 -->
         <div class="service-card">
           <img
-            src="./images/AdobeStock_456845648.jpeg"
-            alt="高品質な屋根瓦のクローズアップ"
+            src="./images/新築屋根瓦工事/IMG_9882.JPG"
+            alt="高品質な屋根瓦の施工例 — 新築瓦工事"
             class="service-photo"
             width="400" height="300"
             loading="lazy"
@@ -1092,29 +1292,47 @@
             <p class="specialty-desc">ドローンを使った高精度な屋根・外壁診断。足場不要で安全かつ短時間に現状を把握し、最適な修繕プランをご提案します。</p>
           </div>
         </div>
-        <div class="specialty-card">
-          <div class="specialty-icon">
-            <!-- 床アイコン -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-              <path d="M208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40Zm0,160H48V56H208V200ZM80,128a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,128Zm0,32a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,160ZM80,96a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,96Z"/>
-            </svg>
+      </div>
+
+      <!-- すべらん革命 バナー -->
+      <a href="https://suvelankakumei.jp/group/tokyo-machida/" target="_blank" rel="noopener" class="suberan-banner">
+        <div class="suberan-left">
+          <div class="suberan-tag">NEW SERVICE</div>
+          <div class="suberan-title">
+            床のすべり止め材 施工・販売
+            <span class="suberan-brand">「すべらん革命」</span>
           </div>
-          <div>
-            <div class="specialty-title">床のすべり止め材施工販売</div>
-            <p class="specialty-desc"><a href="https://suvelankakumei.jp/group/tokyo-machida/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700;">すべらん革命</a> の施工・販売代理店。玄関・浴室・廊下など転倒リスクが高い場所のすべり止め施工を行います。</p>
+          <p class="suberan-desc">
+            転倒事故を防ぐすべり止め専門サービス。玄関・浴室・廊下・階段など、滑りやすい場所に透明な特殊コーティングを施工。見た目を変えずに安全を守ります。<br>
+            <strong>タツミ屋根企画は東京都町田市エリアの認定施工店です。</strong>
+          </p>
+          <div class="suberan-features">
+            <span class="suberan-feat">透明施工で見た目そのまま</span>
+            <span class="suberan-feat">玄関・浴室・廊下・階段 対応</span>
+            <span class="suberan-feat">高齢者・介護施設にも</span>
           </div>
         </div>
-      </div>
+        <div class="suberan-right">
+          <span class="suberan-cta-btn">
+            詳しくはこちら
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;">
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/>
+            </svg>
+          </span>
+          <div class="suberan-url">suvelankakumei.jp</div>
+        </div>
+      </a>
+
     </div>
   </section>
 
 
   <!-- ============================================ 実績・信頼（写真背景） -->
-  <section class="trust-section">
+  <section class="trust-section" id="about">
     <!-- 背景写真 -->
     <img
-      src="./images/AdobeStock_1655678105.jpeg"
-      alt="東京・神奈川の住宅街の空撮"
+      src="./images/DSC01536.JPG"
+      alt="タツミ屋根企画の施工実績 — 新築和風住宅"
       class="trust-photo-bg"
       width="1600" height="900"
       loading="lazy"
@@ -1189,7 +1407,7 @@
 
 
   <!-- ============================================ 営業エリア -->
-  <section class="area-section">
+  <section class="area-section" id="area">
     <div class="area-dot" aria-hidden="true"></div>
     <div class="container">
       <div class="section-center" style="margin-bottom: 56px; position: relative; z-index: 1;">
@@ -1240,7 +1458,7 @@
 
 
   <!-- ============================================ 新着情報 -->
-  <section class="news-section">
+  <section class="news-section" id="news">
     <div class="container">
       <div class="section-center" style="margin-bottom: 52px;">
         <div class="section-label">NEWS</div>
@@ -1278,10 +1496,10 @@
 
 
   <!-- ============================================ 最終CTA（写真背景） -->
-  <section class="cta-section">
+  <section class="cta-section" id="contact">
     <img
-      src="./images/AdobeStock_643629246.jpeg"
-      alt="青空の下の美しい屋根"
+      src="./images/お寺改修工事/20231228_160943.jpg"
+      alt="夕暮れに輝くお寺の屋根改修工事"
       class="cta-photo-bg"
       width="1600" height="800"
       loading="lazy"
@@ -1329,12 +1547,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <div class="footer-logo" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="currentColor">
-                <path d="M240,208H224V136l4.41,4.41a8,8,0,0,0,11.32-11.32l-106-106a8,8,0,0,0-11.32,0l-106,106a8,8,0,0,0,11.32,11.32L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,136.69,128,56.69l80,80V208H168V168a8,8,0,0,0-8-8H96a8,8,0,0,0-8,8v40H48ZM152,208H104V176h48Z"/>
-              </svg>
-            </div>
-            <div class="footer-name">株式会社タツミ屋根企画</div>
+            <img src="./images/logo-white.jpg" alt="株式会社タツミ屋根企画" style="height: 40px; width: auto; display: block;">
           </div>
           <p class="footer-tagline">
             東京・神奈川の屋根工事専門店。<br>
