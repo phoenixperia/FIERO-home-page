@@ -1489,6 +1489,18 @@
       padding: var(--space-2) 0;
     }
 
+    /* ステップ内：図解画像（テキスト下に独立配置） */
+    .process-step-diagram {
+      margin-top: var(--space-6);
+      max-width: 420px;
+    }
+    .process-step-diagram-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--color-border);
+    }
+
     /* ステップ内リンク */
     .process-step-link {
       display: inline-block;
@@ -3120,15 +3132,11 @@
           <div class="process-step-num">08</div>
           <div class="process-step-body">
             <h3 class="process-step-title">アフターケア</h3>
-            <div class="process-step-body-flex">
-              <div class="process-step-body-text">
-                <p class="process-step-text">お渡しは、お付き合いの終わりではなく、始まりです。</p>
-                <p class="process-step-text">体型の変化に合わせたお直し、長く着ていただくためのメンテナンス、シーズンに合わせた着こなしのご相談──。「こんなこと聞いていいのかな」と思うことこそ、お気軽にどうぞ。一着を10年お付き合いいただけるよう、伴走いたします。</p>
-                <a href="naoshi.html" class="process-step-link">お直しメニューを見る →</a>
-              </div>
-              <div class="process-step-img-wrap img-wrap-diagram">
-                <img src="images/alteration-diagram.png" alt="洋服のお直し — ジャケット・パンツの修正箇所ガイド" class="process-step-img">
-              </div>
+            <p class="process-step-text">お渡しは、お付き合いの終わりではなく、始まりです。</p>
+            <p class="process-step-text">体型の変化に合わせたお直し、長く着ていただくためのメンテナンス、シーズンに合わせた着こなしのご相談──。「こんなこと聞いていいのかな」と思うことこそ、お気軽にどうぞ。一着を10年お付き合いいただけるよう、伴走いたします。</p>
+            <a href="naoshi.html" class="process-step-link">お直しメニューを見る →</a>
+            <div class="process-step-diagram">
+              <img src="images/alteration-diagram.png" alt="洋服のお直し — ジャケット・パンツの修正箇所ガイド" class="process-step-diagram-img">
             </div>
           </div>
         </div>
