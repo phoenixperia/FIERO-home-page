@@ -1042,19 +1042,24 @@
       .hero-trust-label { color: rgba(255,255,255,0.60) !important; }
       /* ===== モバイルヒーロー ここまで ===== */
 
-      .hero-inner { grid-template-columns: 1fr; padding: 80px 20px 64px; gap: 40px; position: relative; z-index: 2; }
-      .hero-title { font-size: clamp(36px, 9vw, 52px) !important; }
+      .hero-inner { grid-template-columns: 1fr; padding: 60px 20px 48px; gap: 40px; position: relative; z-index: 2; }
+      .hero-text { padding: 0; } /* デスクトップ用の左右パディングをリセット */
+      .hero-title { font-size: clamp(32px, 8.5vw, 48px) !important; }
+      .hero-title .accent { white-space: nowrap; } /* "39年" を折り返し禁止 */
+      .hero-label-tag { white-space: nowrap; font-size: 10px; letter-spacing: 0.2em; } /* ラベル折り返し禁止 */
+      .hero-sub br { display: none; } /* モバイルでは<br>を無効化、自然な折り返しに */
+      .hero-sub { font-size: 14px; line-height: 1.65; margin-bottom: 16px; }
       .hero-visual { display: none; }
-      .hero-phone-num { font-size: 24px; }
+      .hero-phone-num { font-size: 22px; white-space: nowrap; } /* 電話番号を折り返し禁止 */
       .hero-trust { flex-wrap: wrap; }
       .hero-trust-item { padding: 10px 14px; }
 
       .services-grid { grid-template-columns: 1fr; }
       .specialty-grid { grid-template-columns: 1fr; }
 
-      .page-nav-inner { padding: 0 16px; }
+      .page-nav-inner { padding: 0 16px; justify-content: space-around; }
       .pnav-btn { font-size: 12px; padding: 10px 12px; }
-      .pnav-btn--contact { margin-left: 8px; }
+      .pnav-btn--contact { display: none; } /* スマホはヒーローに電話番号があるので非表示 */
 
       .suberan-banner { flex-direction: column; padding: 28px 24px; gap: 24px; }
       .suberan-right { width: 100%; }
@@ -1124,10 +1129,12 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,16a64.07,64.07,0,0,0-64,64c0,52.65,57.23,138.2,59.69,141.81a8,8,0,0,0,8.62,0C134.77,218.2,192,132.65,192,80A64.07,64.07,0,0,0,128,16Zm0,88a24,24,0,1,1,24-24A24,24,0,0,1,128,104Z"/></svg>
         営業エリア
       </a>
+      <!-- 新着情報ボタン（セクション復活時にコメントを外す）
       <a href="#news" class="pnav-btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></svg>
         新着情報
       </a>
+      -->
       <a href="#contact" class="pnav-btn pnav-btn--contact">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
         お問い合わせ
@@ -1457,7 +1464,9 @@
   </section>
 
 
-  <!-- ============================================ 新着情報 -->
+  <!-- ============================================ 新着情報（一時非表示）
+       実際のお知らせができたらコメントを外して使用してください。
+       日付・バッジ（お知らせ/キャンペーン/サービス）・本文を書き換えるだけでOKです。
   <section class="news-section" id="news">
     <div class="container">
       <div class="section-center" style="margin-bottom: 52px;">
@@ -1493,6 +1502,7 @@
       </div>
     </div>
   </section>
+  ============================================ -->
 
 
   <!-- ============================================ 最終CTA（写真背景） -->
