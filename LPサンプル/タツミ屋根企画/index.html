@@ -34,6 +34,7 @@
     ============================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    br.sp-br { display: none; } /* スマホのみ改行 */
     body {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 16px;
@@ -403,7 +404,7 @@
     }
     .service-photo {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
     }
@@ -1007,8 +1008,16 @@
       .container { padding: 0 20px; }
       section { padding: 60px 0; }
 
-      .header-inner { padding: 12px 20px; height: auto; flex-wrap: wrap; gap: 10px; }
-      .header-tel { font-size: 20px; }
+      /* ヘッダー: 1行コンパクトに */
+      .header-inner { padding: 0 16px; height: 56px; flex-wrap: nowrap; gap: 0; }
+      .header-area { display: none; } /* エリア文字は非表示 */
+      .header-tel { font-size: 18px; }
+      .header-tel-note { display: none; } /* 受付時間テキストも非表示 */
+      .header-logo { width: 40px; height: 40px; }
+      .header-name { font-size: 15px; }
+
+      /* ヒーロー高さをモバイルヘッダー56px＋ナビ40pxに合わせて再計算 */
+      .hero { height: calc(100vh - 56px - 40px); }
 
       /* ===== モバイルヒーロー: 写真を背景にひく ===== */
       .hero {
@@ -1042,17 +1051,37 @@
       .hero-trust-label { color: rgba(255,255,255,0.60) !important; }
       /* ===== モバイルヒーロー ここまで ===== */
 
-      .hero-inner { grid-template-columns: 1fr; padding: 60px 20px 48px; gap: 40px; position: relative; z-index: 2; }
-      .hero-text { padding: 0; } /* デスクトップ用の左右パディングをリセット */
-      .hero-title { font-size: clamp(32px, 8.5vw, 48px) !important; }
-      .hero-title .accent { white-space: nowrap; } /* "39年" を折り返し禁止 */
-      .hero-label-tag { white-space: nowrap; font-size: 10px; letter-spacing: 0.2em; } /* ラベル折り返し禁止 */
-      .hero-sub br { display: none; } /* モバイルでは<br>を無効化、自然な折り返しに */
-      .hero-sub { font-size: 14px; line-height: 1.65; margin-bottom: 16px; }
+      /* モバイルヒーロー: コンテンツを下寄せにして空間を活かす */
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 0 24px 40px;   /* 上は0、下寄せで余白 */
+        gap: 0;
+        position: relative;
+        z-index: 2;
+        display: flex;           /* グリッドをフレックスに切り替え */
+        flex-direction: column;
+        justify-content: flex-end; /* コンテンツを下に寄せる */
+      }
+      .hero-text { padding: 0; }
+      /* タイトルを大きく */
+      .hero-title { font-size: clamp(36px, 9.5vw, 52px) !important; margin-bottom: 16px; }
+      .hero-title .accent { white-space: nowrap; }
+      br.sp-br { display: inline; } /* スマホで改行を有効化 */
+      /* ラベル */
+      .hero-label-tag { white-space: nowrap; font-size: 11px; letter-spacing: 0.2em; margin-bottom: 14px; }
+      /* サブコピー */
+      .hero-sub br { display: none; }
+      .hero-sub { font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+      /* 電話ボタンを大きく・フル幅 */
+      .hero-phone-btn { width: 100%; box-sizing: border-box; padding: 18px 24px; margin-bottom: 20px; }
+      .hero-phone-num { font-size: 28px; white-space: nowrap; }
+      .hero-phone-note { font-size: 12px; }
+      /* 実績バッジ */
       .hero-visual { display: none; }
-      .hero-phone-num { font-size: 22px; white-space: nowrap; } /* 電話番号を折り返し禁止 */
-      .hero-trust { flex-wrap: wrap; }
-      .hero-trust-item { padding: 10px 14px; }
+      .hero-trust { flex-wrap: nowrap; gap: 0; }
+      .hero-trust-item { padding: 8px 16px; }
+      .hero-trust-num { font-size: 24px; }
+      .hero-trust-label { font-size: 11px; }
 
       .services-grid { grid-template-columns: 1fr; }
       .specialty-grid { grid-template-columns: 1fr; }
@@ -1154,7 +1183,7 @@
       <div class="hero-text">
         <div class="hero-label-tag">昭和62年創業　|　建設業許可取得</div>
         <h1 class="hero-title">
-          屋根で守る <span class="accent">39年</span>の信頼
+          屋根で守る<br class="sp-br"><span class="accent">39年</span>の信頼
         </h1>
         <p class="hero-sub">
           東京・神奈川の屋根工事ならタツミ屋根企画へ。<br>
