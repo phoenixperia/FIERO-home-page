@@ -1926,34 +1926,86 @@
        ============================================ */
     .voice {
       background-color: var(--color-background);
-      padding: 120px 48px;
+      padding: 120px 0;
     }
-
     .voice-header {
       text-align: center;
       margin-bottom: var(--space-20);
     }
 
-    /* Featured testimonial: M様 (2カラム) */
+    /* -----------------------------------------------
+       アバター円
+       イニシャル表示。写真差し替え時は
+       style="background-image: url('images/xxx.jpg');"
+       を追加するだけでOK
+       ----------------------------------------------- */
+    .voice-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif-en);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--color-text-on-dark);
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+      border: 2px solid rgba(201, 169, 97, 0.25);
+    }
+    /* 写真設定時はイニシャルテキストを非表示 */
+    .voice-avatar[style*="background-image"] { color: transparent; }
+
+    /* -----------------------------------------------
+       M様 フィーチャード
+       ----------------------------------------------- */
     .voice-featured {
       display: grid;
-      grid-template-columns: 360px 1fr;
+      grid-template-columns: 300px 1fr;
       gap: var(--space-16);
-      max-width: 1080px;
+      max-width: 1000px;
       margin: 0 auto var(--space-20);
       align-items: start;
+      padding: 0 40px;
     }
     .voice-feat-card {
       background-color: var(--color-accent);
-      padding: var(--space-12);
+      padding: var(--space-10);
     }
-    .voice-feat-label {
+    .voice-feat-avatar-wrap {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid rgba(244,236,218,0.12);
+    }
+    .voice-feat-card .voice-avatar {
+      width: 56px;
+      height: 56px;
+      font-size: 1rem;
+      background-color: transparent;
+      border: 1.5px solid rgba(201,169,97,0.5);
+      color: var(--color-divider);
+    }
+    .voice-feat-card .voice-avatar[style*="background-image"] { color: transparent; }
+    .voice-feat-avatar-name {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      color: var(--color-text-on-dark);
+      letter-spacing: 0.1em;
+    }
+    .voice-feat-avatar-sub {
       font-family: var(--font-serif-en);
       font-size: var(--text-xs);
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: rgba(244, 236, 218, 0.55);
-      margin-bottom: var(--space-6);
+      color: rgba(244, 236, 218, 0.45);
+      margin-top: 2px;
     }
     .voice-feat-quote {
       font-family: var(--font-serif-jp);
@@ -1966,7 +2018,7 @@
     .voice-feat-meta {
       font-family: var(--font-serif-jp);
       font-size: var(--text-sm);
-      color: rgba(244, 236, 218, 0.55);
+      color: rgba(244, 236, 218, 0.5);
       letter-spacing: 0.05em;
       margin-bottom: var(--space-8);
     }
@@ -1977,11 +2029,7 @@
       color: rgba(244, 236, 218, 0.82);
       letter-spacing: 0.03em;
     }
-
-    .voice-feat-reports {
-      display: flex;
-      flex-direction: column;
-    }
+    .voice-feat-reports { display: flex; flex-direction: column; }
     .voice-feat-report {
       display: grid;
       grid-template-columns: 60px 1fr;
@@ -1990,9 +2038,7 @@
       padding: var(--space-8) 0;
       border-bottom: 1px solid var(--color-border);
     }
-    .voice-feat-report:first-child {
-      border-top: 1px solid var(--color-border);
-    }
+    .voice-feat-report:first-child { border-top: 1px solid var(--color-border); }
     .voice-feat-num {
       font-family: var(--font-serif-en);
       font-size: var(--text-4xl);
@@ -2009,14 +2055,15 @@
       letter-spacing: 0.03em;
       padding-top: 10px;
     }
-    .voice-feat-blog {
-      margin-top: var(--space-8);
-    }
+    .voice-feat-blog { margin-top: var(--space-8); }
 
-    /* Patine Shoes testimonials */
+    /* -----------------------------------------------
+       Patine Shoes 縦並びカード
+       ----------------------------------------------- */
     .voice-shoes {
-      max-width: 1080px;
+      max-width: 800px;
       margin: 0 auto var(--space-20);
+      padding: 0 40px;
     }
     .voice-shoes-divider {
       display: flex;
@@ -2026,9 +2073,7 @@
     }
     .voice-shoes-divider::before,
     .voice-shoes-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
+      content: ''; flex: 1; height: 1px;
       background-color: var(--color-border);
     }
     .voice-shoes-divider span {
@@ -2044,46 +2089,70 @@
       font-family: var(--font-serif-jp);
       font-size: var(--text-lg);
       color: var(--color-text-secondary);
-      margin-bottom: var(--space-12);
+      margin-bottom: var(--space-10);
       letter-spacing: 0.05em;
     }
-    .voice-shoes-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-8);
+
+    /* カード縦積み */
+    .voice-card-list {
+      border-top: 1px solid var(--color-border);
     }
-    .voice-shoe-card {
-      padding: var(--space-8);
-      background-color: var(--color-surface);
-      border: 1px solid var(--color-border);
+    .voice-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .voice-card:nth-child(even) {
+      background-color: var(--color-background-alt);
+      margin: 0 -40px;
+      padding: 40px 40px;
+    }
+    .voice-card-left {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      width: 80px;
     }
-    .voice-shoe-quote {
+    .voice-card-name {
+      font-family: var(--font-serif-en);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--color-text-muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .voice-card-body { flex: 1; min-width: 0; }
+    .voice-card-keyphrase {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      color: var(--color-accent);
+      line-height: 1.7;
+      letter-spacing: 0.03em;
+      margin-bottom: var(--space-4);
+      padding-left: var(--space-4);
+      border-left: 2px solid var(--color-divider);
+    }
+    .voice-card-quote {
       font-family: var(--font-serif-jp);
       font-size: var(--text-base);
       line-height: 2.1;
-      color: var(--color-text-primary);
-      margin-bottom: var(--space-6);
-      letter-spacing: 0.03em;
-      flex: 1;
-    }
-    .voice-shoe-name {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-base);
-      letter-spacing: 0.2em;
-      color: var(--color-text-primary);
-      font-weight: 500;
-      padding-top: var(--space-4);
-      border-top: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      letter-spacing: 0.02em;
     }
 
-    /* Closing */
+    /* -----------------------------------------------
+       Closing
+       ----------------------------------------------- */
     .voice-closing {
       max-width: 640px;
       margin: var(--space-20) auto 0;
       text-align: center;
+      padding: 0 24px;
     }
     .voice-closing-text {
       font-family: var(--font-serif-jp);
@@ -2109,8 +2178,7 @@
       content: '';
       position: absolute;
       top: 50%;
-      width: 24px;
-      height: 1px;
+      width: 24px; height: 1px;
       background-color: var(--color-accent);
     }
     .voice-closing-emphasis::before { left: -24px; }
@@ -2122,37 +2190,26 @@
     }
 
     @media (max-width: 1023px) {
-      .voice-featured {
-        grid-template-columns: 1fr;
-      }
-      .voice-shoes-grid {
-        grid-template-columns: 1fr;
-      }
+      .voice-featured { grid-template-columns: 1fr; padding: 0 32px; }
+      .voice-shoes { padding: 0 32px; }
+      .voice-card:nth-child(even) { margin: 0 -32px; padding: 40px 32px; }
     }
     @media (max-width: 639px) {
-      .voice { padding: 80px 24px; }
-      .voice-feat-report {
-        grid-template-columns: 44px 1fr;
-        gap: var(--space-3);
-      }
+      .voice { padding: 60px 0; }
+      .voice-featured { padding: 0 20px; gap: var(--space-8); }
+      .voice-shoes { padding: 0 20px; }
+      .voice-card { gap: 20px; padding: 32px 0; }
+      .voice-card:nth-child(even) { margin: 0 -20px; padding: 32px 20px; }
+      .voice-card-left { width: 56px; }
+      .voice-avatar { width: 56px; height: 56px; font-size: 1rem; }
+      .voice-card-keyphrase { font-size: var(--text-lg); }
+      .voice-feat-report { grid-template-columns: 44px 1fr; gap: var(--space-3); }
       .voice-feat-num { font-size: var(--text-2xl); }
       .voice-feat-report p { font-size: var(--text-base); }
       .voice-feat-quote { font-size: var(--text-xl); }
-      .voice-closing-text {
-        font-size: 0.875rem;
-        line-height: 2.0;
-        letter-spacing: 0.02em;
-      }
-      .voice-closing-emphasis {
-        font-size: var(--text-lg);
-        letter-spacing: 0.04em;
-        padding: var(--space-2) var(--space-3);
-        white-space: nowrap;
-      }
-      .voice-closing-cta {
-        font-size: var(--text-base);
-        white-space: nowrap;
-      }
+      .voice-closing-text { font-size: 0.875rem; line-height: 2.0; letter-spacing: 0.02em; }
+      .voice-closing-emphasis { font-size: var(--text-lg); letter-spacing: 0.04em; padding: var(--space-2) var(--space-3); white-space: nowrap; }
+      .voice-closing-cta { font-size: var(--text-base); white-space: nowrap; }
     }
 
     /* ============================================
@@ -3207,68 +3264,109 @@
        Customer Voice
        =========================================== -->
   <section class="voice" id="voice">
-    <div class="container">
 
+    <div class="container">
       <div class="voice-header fade-in">
         <span class="section-eyebrow">Customer Voice</span>
         <h2 class="section-title">お客様の声</h2>
       </div>
+    </div>
 
-      <!-- M様 フィーチャード事例 -->
-      <div class="voice-featured fade-in">
-        <!-- 左: 引用カード (ネイビー) -->
-        <div class="voice-feat-card">
-          <div class="voice-feat-label">Bespoke Suits / M 様</div>
-          <blockquote class="voice-feat-quote">「見られ方が<br>変わってきた」</blockquote>
-          <p class="voice-feat-meta">── 着用から3週間後のご報告</p>
-          <p class="voice-feat-desc">大手企業の若手有望株のM様。<br>ご友人のご紹介でご来店いただき、<br>目指すご自身像を一着に翻訳しました。</p>
-        </div>
-
-        <!-- 右: 3つの変化 -->
-        <div class="voice-feat-reports">
-          <div class="voice-feat-report">
-            <div class="voice-feat-num">01</div>
-            <p>部長陣から「なんかベスト着けてたり、ネクタイがしっかりしてるね」と注目され始めた。見られ方が変わってきた。</p>
-          </div>
-          <div class="voice-feat-report">
-            <div class="voice-feat-num">02</div>
-            <p>副社長から突然、「リーダーシップをテーマに、1on1しよう」と打診をいただいた。</p>
-          </div>
-          <div class="voice-feat-report">
-            <div class="voice-feat-num">03</div>
-            <p>周囲の社員からの見方が変わり、頼られたり、仕事を任されるのがよりスムーズになってきた。</p>
-          </div>
-          <div class="voice-feat-blog">
-            <a href="https://otonafashionblog.hatenablog.com/entry/2024/02/21/210000" target="_blank" rel="noopener" class="btn-secondary">詳細はブログでご紹介しています
-              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:inline; vertical-align:middle; margin-left:6px;"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+    <!-- M様 フィーチャード事例 -->
+    <div class="voice-featured fade-in">
+      <!-- 左: ネイビーカード + アバター -->
+      <div class="voice-feat-card">
+        <!--
+          【写真差し替え方法】
+          下の voice-avatar の div に style 属性を追加するだけ:
+          style="background-image: url('images/customer-m.jpg');"
+        -->
+        <div class="voice-feat-avatar-wrap">
+          <div class="voice-avatar" aria-label="M 様">M</div>
+          <div>
+            <p class="voice-feat-avatar-name">M 様</p>
+            <p class="voice-feat-avatar-sub">Bespoke Suits</p>
           </div>
         </div>
+        <blockquote class="voice-feat-quote">「見られ方が<br>変わってきた」</blockquote>
+        <p class="voice-feat-meta">── 着用から3週間後のご報告</p>
+        <p class="voice-feat-desc">大手企業の若手有望株のM様。<br>ご友人のご紹介でご来店いただき、<br>目指すご自身像を一着に翻訳しました。</p>
       </div>
 
-      <!-- Patine Shoes の声 -->
-      <div class="voice-shoes fade-in">
-        <div class="voice-shoes-divider">
-          <span>Patine Shoes</span>
+      <!-- 右: 3つの変化 -->
+      <div class="voice-feat-reports">
+        <div class="voice-feat-report">
+          <div class="voice-feat-num">01</div>
+          <p>部長陣から「なんかベスト着けてたり、ネクタイがしっかりしてるね」と注目され始めた。見られ方が変わってきた。</p>
         </div>
-        <p class="voice-shoes-head">パティーヌシューズをご注文のお客様より</p>
-        <div class="voice-shoes-grid">
-          <div class="voice-shoe-card">
-            <p class="voice-shoe-quote">「足馴染みが良く、長時間履いても疲れにくくなりました。見た目も美しく、知人からベ〇ルッティに間違われる程コストパフォーマンスが高く品質が良いと感じています」</p>
-            <p class="voice-shoe-name">R.T 様</p>
-          </div>
-          <div class="voice-shoe-card">
-            <p class="voice-shoe-quote">「靴だけでなく服装全体が整うような気がします。見た目への心配が薄れ、行動に自信がつきました。革を育てて年を重ねたい人、行動を起こして状況を変えたい人におすすめしたいです」</p>
-            <p class="voice-shoe-name">O.H 様</p>
-          </div>
-          <div class="voice-shoe-card">
-            <p class="voice-shoe-quote">「購入前のサイズフィットの心配はあったが、すぐに足になじんでくれたのは衝撃的でした。履いた瞬間に自分自身が上がる体験があります。パティーヌシューズを採用して一段と自身のプレゼンテーションが変わり、どんな場面でもいろいろな人からオシャレさをお褒めいただいています」</p>
-            <p class="voice-shoe-name">H.A 様</p>
-          </div>
+        <div class="voice-feat-report">
+          <div class="voice-feat-num">02</div>
+          <p>副社長から突然、「リーダーシップをテーマに、1on1しよう」と打診をいただいた。</p>
+        </div>
+        <div class="voice-feat-report">
+          <div class="voice-feat-num">03</div>
+          <p>周囲の社員からの見方が変わり、頼られたり、仕事を任されるのがよりスムーズになってきた。</p>
+        </div>
+        <div class="voice-feat-blog">
+          <a href="https://otonafashionblog.hatenablog.com/entry/2024/02/21/210000" target="_blank" rel="noopener" class="btn-secondary">詳細はブログでご紹介しています
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:inline;vertical-align:middle;margin-left:6px;"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
+    </div>
 
-      <!-- クロージング -->
+    <!-- Patine Shoes 縦並びカード -->
+    <div class="voice-shoes fade-in">
+      <div class="voice-shoes-divider"><span>Patine Shoes</span></div>
+      <p class="voice-shoes-head">パティーヌシューズをご注文のお客様より</p>
+
+      <div class="voice-card-list">
+
+        <!-- R.T 様 -->
+        <!--
+          【写真差し替え方法】
+          voice-avatar の div に style="background-image: url('images/customer-rt.jpg');" を追加
+        -->
+        <div class="voice-card">
+          <div class="voice-card-left">
+            <div class="voice-avatar" aria-label="R.T 様">R</div>
+            <p class="voice-card-name">R.T 様</p>
+          </div>
+          <div class="voice-card-body">
+            <p class="voice-card-keyphrase">知人からベ〇ルッティに間違われる程の品質</p>
+            <p class="voice-card-quote">「足馴染みが良く、長時間履いても疲れにくくなりました。見た目も美しく、知人からベ〇ルッティに間違われる程コストパフォーマンスが高く品質が良いと感じています」</p>
+          </div>
+        </div>
+
+        <!-- O.H 様 -->
+        <div class="voice-card">
+          <div class="voice-card-left">
+            <div class="voice-avatar" aria-label="O.H 様">O</div>
+            <p class="voice-card-name">O.H 様</p>
+          </div>
+          <div class="voice-card-body">
+            <p class="voice-card-keyphrase">行動に自信がつきました</p>
+            <p class="voice-card-quote">「靴だけでなく服装全体が整うような気がします。見た目への心配が薄れ、行動に自信がつきました。革を育てて年を重ねたい人、行動を起こして状況を変えたい人におすすめしたいです」</p>
+          </div>
+        </div>
+
+        <!-- H.A 様 -->
+        <div class="voice-card">
+          <div class="voice-card-left">
+            <div class="voice-avatar" aria-label="H.A 様">H</div>
+            <p class="voice-card-name">H.A 様</p>
+          </div>
+          <div class="voice-card-body">
+            <p class="voice-card-keyphrase">履いた瞬間に自分自身が上がる体験があります</p>
+            <p class="voice-card-quote">「購入前のサイズフィットの心配はあったが、すぐに足になじんでくれたのは衝撃的でした。履いた瞬間に自分自身が上がる体験があります。パティーヌシューズを採用して一段と自身のプレゼンテーションが変わり、どんな場面でもいろいろな人からオシャレさをお褒めいただいています」</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- クロージング -->
+    <div class="container">
       <div class="voice-closing fade-in">
         <p class="voice-closing-text">
           FIEROのお客様の多くは、<br>
@@ -3281,8 +3379,8 @@
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
-
     </div>
+
   </section>
 
   <!-- ===========================================
