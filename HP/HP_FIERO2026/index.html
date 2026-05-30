@@ -726,6 +726,20 @@
 
     .story-bg { display: none; }
 
+    /* 薄い背景：立ち姿をテキスト列の後ろにウォーターマーク的に */
+    .story::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/fujiiimage.png');
+      background-size: auto 88%;
+      background-position: left 6% center;
+      background-repeat: no-repeat;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
     /* 2カラムレイアウト：テキスト左・写真右 */
     .story-layout {
       position: relative;
@@ -899,12 +913,16 @@
       );
       pointer-events: none;
     }
-    /* B-2: 縦構図画像のため上寄せでスーツを見せる */
+    /* B-2: PC版は高さ拡大＋構図調整 */
+    .interlude-b2 {
+      height: 600px;
+    }
     .interlude-b2 .interlude-b1-img {
-      object-position: center 20%;
+      object-position: center 18%;
     }
     @media (max-width: 639px) {
       .interlude-b1 { height: 260px; }
+      .interlude-b2 { height: 300px; }
     }
 
     /* ============================================
@@ -1270,17 +1288,63 @@
       z-index: 1;
     }
 
+    /* Process ヘッダー：テキスト左・写真右の2カラム */
     .process-header {
-      text-align: center;
-      margin-bottom: var(--space-12);
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      max-width: 1000px;
+      margin: 0 auto var(--space-12);
+      padding: 0 40px;
+      text-align: left;
+    }
+    .process-header-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .process-header-img {
+      flex: 0 0 260px;
+      height: 340px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    .process-header-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .process-lead {
-      max-width: 640px;
-      margin: 0 auto var(--space-8);
+      max-width: 560px;
+      margin: 0 0 var(--space-8);
       font-size: var(--text-2xl);
       line-height: 2.2;
       color: var(--color-text-secondary);
+    }
+
+    @media (max-width: 1023px) {
+      .process-header {
+        flex-direction: column;
+        gap: 32px;
+        padding: 0 32px;
+        text-align: center;
+      }
+      .process-header-img {
+        flex: none;
+        width: 200px;
+        height: 260px;
+        margin: 0 auto;
+      }
+      .process-lead {
+        max-width: 480px;
+        margin: 0 auto var(--space-8);
+      }
+    }
+    @media (max-width: 639px) {
+      .process-header { padding: 0 20px; }
+      .process-header-img { width: 160px; height: 210px; }
     }
 
     .process-callout {
@@ -1313,7 +1377,7 @@
     .process-flow-num {
       width: 60px;
       height: 60px;
-      border: 1px solid var(--color-accent);
+      border: none;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1321,8 +1385,8 @@
       font-family: var(--font-serif-en);
       font-size: 1rem;
       font-weight: 500;
-      color: var(--color-accent-dark);
-      background-color: var(--color-background);
+      color: var(--color-text-on-dark);
+      background-color: var(--color-accent);
       letter-spacing: 0.05em;
       flex-shrink: 0;
     }
@@ -1378,7 +1442,7 @@
     .process-step-num {
       width: 72px;
       height: 72px;
-      border: 1px solid var(--color-accent);
+      border: none;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1386,8 +1450,8 @@
       font-family: var(--font-serif-en);
       font-size: var(--text-xl);
       font-weight: 500;
-      color: var(--color-accent-dark);
-      background-color: var(--color-background);
+      color: var(--color-text-on-dark);
+      background-color: var(--color-accent);
       letter-spacing: 0.05em;
     }
 
@@ -1423,6 +1487,35 @@
       font-size: var(--text-base);
       color: var(--color-text-muted);
       padding: var(--space-2) 0;
+    }
+
+    /* ステップ詳細内 画像レイアウト */
+    .process-step-body-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      margin-top: 4px;
+    }
+    .process-step-body-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .process-step-img-wrap {
+      flex: 0 0 160px;
+    }
+    .process-step-img {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border: 1px solid var(--color-border);
+    }
+    .process-step-img.img-fabric {
+      object-position: center 30%;
+    }
+    .process-step-img.img-atelier {
+      object-position: center 20%;
     }
 
     @media (max-width: 639px) {
@@ -1477,6 +1570,15 @@
       }
       .process-step-text {
         font-size: var(--text-sm);
+      }
+      /* SP：画像を本文の上に表示 */
+      .process-step-body-flex {
+        flex-direction: column-reverse;
+        gap: 16px;
+      }
+      .process-step-img-wrap {
+        flex: none;
+        width: 120px;
       }
     }
 
@@ -2822,11 +2924,20 @@
   <section class="process" id="process">
     <div class="container">
       <div class="process-header fade-in">
-        <span class="section-eyebrow">Process</span>
-        <h2 class="section-title">お仕立ては<br class="sp-br">対話から始まります。</h2>
-        <p class="process-lead">
-          あなたが目指す姿を伺うところから<br>お渡し後の長いお付き合いまで。<br class="pc-br"><br class="sp-br">一着が完成するまでの<br class="sp-br">全ステップをご紹介します。
-        </p>
+        <div class="process-header-text">
+          <span class="section-eyebrow">Process</span>
+          <h2 class="section-title">お仕立ては<br class="sp-br">対話から始まります。</h2>
+          <p class="process-lead">
+            あなたが目指す姿を伺うところから<br>お渡し後の長いお付き合いまで。<br class="pc-br"><br class="sp-br">一着が完成するまでの<br class="sp-br">全ステップをご紹介します。
+          </p>
+        </div>
+        <div class="process-header-img">
+          <img
+            src="images/owner.png"
+            alt="ファッションプロデューサー 藤井孝昌 — 対話から始まるお仕立て"
+            class="process-header-photo"
+          >
+        </div>
       </div>
 
       <div class="process-callout fade-in">
@@ -2892,9 +3003,16 @@
           <div class="process-step-num">02</div>
           <div class="process-step-body">
             <h3 class="process-step-title">個別相談<span class="step-meta">(1.5〜2時間)</span></h3>
-            <p class="process-step-text">町田の小さな一室にて、ゆっくりお話を伺います。</p>
-            <p class="process-step-text">どんな場面でその一着を着るのか。どう見られたいのか。5年後、どんな自分でいたいのか。──オーダースーツは&ldquo;作る前の対話&rdquo;が9割です。あなたの目指す姿を、私と一緒に言葉にしていきましょう。</p>
-            <p class="process-step-text">対話の最後に、ざっくりとしたご予算感をお伝えします。ここで「次に進みたい」と思ったときだけ、次のステップへ。その場で決められなくて構いません。</p>
+            <div class="process-step-body-flex">
+              <div class="process-step-body-text">
+                <p class="process-step-text">町田の小さな一室にて、ゆっくりお話を伺います。</p>
+                <p class="process-step-text">どんな場面でその一着を着るのか。どう見られたいのか。5年後、どんな自分でいたいのか。──オーダースーツは&ldquo;作る前の対話&rdquo;が9割です。あなたの目指す姿を、私と一緒に言葉にしていきましょう。</p>
+                <p class="process-step-text">対話の最後に、ざっくりとしたご予算感をお伝えします。ここで「次に進みたい」と思ったときだけ、次のステップへ。その場で決められなくて構いません。</p>
+              </div>
+              <div class="process-step-img-wrap">
+                <img src="images/consultation.png" alt="個別相談 — 生地サンプルを前に対話するFIERO" class="process-step-img">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2902,8 +3020,15 @@
           <div class="process-step-num">03</div>
           <div class="process-step-body">
             <h3 class="process-step-title">生地のご選定</h3>
-            <p class="process-step-text">国内外の生地ブランドから、ご相談時に伺った&ldquo;目指す姿&rdquo;に最適な一枚をご提案します。</p>
-            <p class="process-step-text">気に入った生地が見つかれば、その場で在庫を確認します。生地は今日在庫があっても明日も同様にあるかわかりません。ここでご購入の意向を確認させていただき、ご購入の意思があれば生地在庫を抑えます。</p>
+            <div class="process-step-body-flex">
+              <div class="process-step-body-text">
+                <p class="process-step-text">国内外の生地ブランドから、ご相談時に伺った&ldquo;目指す姿&rdquo;に最適な一枚をご提案します。</p>
+                <p class="process-step-text">気に入った生地が見つかれば、その場で在庫を確認します。生地は今日在庫があっても明日も同様にあるかわかりません。ここでご購入の意向を確認させていただき、ご購入の意思があれば生地在庫を抑えます。</p>
+              </div>
+              <div class="process-step-img-wrap">
+                <img src="images/price.png" alt="生地選定 — Ermenegildo Zegna 生地サンプル" class="process-step-img img-fabric">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2949,8 +3074,15 @@
           <div class="process-step-num">08</div>
           <div class="process-step-body">
             <h3 class="process-step-title">アフターケア</h3>
-            <p class="process-step-text">お渡しは、お付き合いの終わりではなく、始まりです。</p>
-            <p class="process-step-text">体型の変化に合わせたお直し、長く着ていただくためのメンテナンス、シーズンに合わせた着こなしのご相談──。「こんなこと聞いていいのかな」と思うことこそ、お気軽にどうぞ。一着を10年お付き合いいただけるよう、伴走いたします。</p>
+            <div class="process-step-body-flex">
+              <div class="process-step-body-text">
+                <p class="process-step-text">お渡しは、お付き合いの終わりではなく、始まりです。</p>
+                <p class="process-step-text">体型の変化に合わせたお直し、長く着ていただくためのメンテナンス、シーズンに合わせた着こなしのご相談──。「こんなこと聞いていいのかな」と思うことこそ、お気軽にどうぞ。一着を10年お付き合いいただけるよう、伴走いたします。</p>
+              </div>
+              <div class="process-step-img-wrap">
+                <img src="images/hero6.png" alt="アフターケア — FIEROアトリエ" class="process-step-img img-atelier">
+              </div>
+            </div>
           </div>
         </div>
 
