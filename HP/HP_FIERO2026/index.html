@@ -1038,8 +1038,12 @@
       font-family: var(--font-serif-en);
       font-size: 2.5rem;
       font-weight: 400;
-      color: #F4ECDA;
       letter-spacing: 0.08em;
+      /* 色反転ラベル */
+      display: inline-block;
+      background-color: rgba(244,236,218,0.92);
+      color: var(--color-accent);
+      padding: 3px 20px 3px 0;
     }
     .item-category-jp {
       font-family: var(--font-serif-jp);
@@ -1252,26 +1256,39 @@
 
     @media (max-width: 639px) {
       .items .section-title { font-size: 1.1875rem; }
+      .items-list { gap: var(--space-10); }
+      .item-category-head { margin-bottom: var(--space-4); }
+      .item-category-en {
+        font-size: 1.5rem;
+        padding: 2px 14px 2px 0;
+      }
+      .item-category-jp { font-size: var(--text-xs); }
       .item-table td {
         display: block;
         width: 100%;
-        padding: 6px 0;
+        padding: 2px 0;
+        font-size: var(--text-base);
       }
       .item-name {
         font-weight: 500;
-        padding-top: var(--space-4) !important;
+        font-size: var(--text-sm);
+        color: rgba(244,236,218,0.65);
+        padding-top: var(--space-3) !important;
       }
       .item-price {
         text-align: left;
-        padding-bottom: var(--space-4) !important;
+        padding-bottom: var(--space-3) !important;
       }
+      .item-price strong { font-size: 1.1rem; }
+      .price-tax { font-size: 0.7rem; }
+      .item-price .price-sub { font-size: 0.7rem; }
     }
 
     /* ============================================
        Process(8ステップ)
        ============================================ */
     .process {
-      background-color: var(--color-background);
+      background-color: var(--color-accent);
       padding: 100px 0;
       position: relative;
       overflow: hidden;
@@ -1285,7 +1302,7 @@
       background-image: url('images/hero6.png');
       background-size: cover;
       background-position: center 30%;
-      opacity: 0.06;
+      opacity: 0.07;
       pointer-events: none;
       z-index: 0;
     }
@@ -1647,6 +1664,49 @@
       .process-header .section-title {
         font-size: var(--text-2xl);
       }
+    }
+
+    /* ============================================
+       Process — ネイビー背景用テキスト・ボーダー調整
+       ============================================ */
+    .process .section-eyebrow { color: rgba(244,236,218,0.5); }
+    .process .section-title   { color: var(--color-text-on-dark); }
+    .process-header-img        { border-color: rgba(244,236,218,0.18); }
+    .process-lead              { color: var(--color-text-on-dark-soft); }
+    .process-callout {
+      background-color: rgba(255,255,255,0.05);
+      border-left-color: var(--color-divider);
+      color: var(--color-text-on-dark-soft);
+    }
+    .process-flow-num {
+      background-color: rgba(255,255,255,0.1);
+      border: 1px solid rgba(244,236,218,0.25);
+    }
+    .process-flow-label  { color: rgba(244,236,218,0.5); }
+    .process-flow-arrow  { color: rgba(244,236,218,0.3); }
+    .process-step::before {
+      background: linear-gradient(to bottom, rgba(244,236,218,0.2) 0%, rgba(244,236,218,0.2) 80%, transparent 100%);
+    }
+    .process-step:last-child::before {
+      background: linear-gradient(to bottom, rgba(244,236,218,0.2) 0%, transparent 100%);
+    }
+    .process-step-num {
+      background-color: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(244,236,218,0.3);
+    }
+    .process-step-title              { color: var(--color-text-on-dark); }
+    .process-step-title .step-meta   { color: rgba(244,236,218,0.4); }
+    .process-step-text               { color: var(--color-text-on-dark-soft); }
+    .process-step-text.note          { color: rgba(244,236,218,0.4); }
+    .process-step-img                { border-color: rgba(244,236,218,0.18); }
+    .process-step-diagram-img        { border-color: rgba(244,236,218,0.18); }
+    .process-step-link {
+      color: var(--color-divider);
+      border-bottom-color: rgba(201,169,97,0.35);
+    }
+    .process-step-link:hover {
+      color: #d4b870;
+      border-bottom-color: var(--color-divider);
     }
 
     /* ============================================
