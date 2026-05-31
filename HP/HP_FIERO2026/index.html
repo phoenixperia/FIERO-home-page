@@ -11,17 +11,58 @@
     gtag('js', new Date());
     gtag('config', 'G-ZDRSMLVP3W');
   </script>
-  <title>FIERO | 町田のオーダースーツ・パティーヌシューズ</title>
-  <meta name="description" content="装いは、未来から逆算する。経営者・ビジネスパーソンの「なりたい姿」を、対話から一着に翻訳します。完全予約制。ファッションプロデューサー 藤井孝昌。">
-  <meta name="keywords" content="オーダースーツ,町田,町田駅,ビスポーク,パティーヌシューズ,ファッションプロデューサー,経営者スーツ,リーダーシップ,ビジネススーツ,完全オーダー,装い,コーチング,40代スーツ,30代経営者,役員スーツ">
+  <title>FIERO | 町田・相模原のオーダースーツ｜神奈川・東京 完全予約制</title>
+  <meta name="description" content="町田・相模原・神奈川エリアのオーダースーツ専門店。ファッションプロデューサー藤井孝昌が「なりたい姿」から一着を仕立てます。小田急町田駅北口徒歩4分。完全予約制。LINEで気軽にご相談を。">
+  <meta name="keywords" content="オーダースーツ,町田,町田駅,相模原,相模原市,神奈川,神奈川県,ビスポーク,パティーヌシューズ,ファッションプロデューサー,経営者スーツ,ビジネススーツ,完全オーダー,40代スーツ,30代経営者,役員スーツ">
+  <link rel="canonical" href="https://fiero-suits.com/">
 
   <!-- OGP -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="FIERO | 町田のオーダースーツ・パティーヌシューズ">
-  <meta property="og:description" content="装いは、未来から逆算する。経営者・ビジネスパーソンの「なりたい姿」を、対話から一着に翻訳します。">
-  <meta property="og:image" content="images/owner.png">
+  <meta property="og:url" content="https://fiero-suits.com/">
+  <meta property="og:title" content="FIERO | 町田・相模原のオーダースーツ｜神奈川・東京 完全予約制">
+  <meta property="og:description" content="町田・相模原・神奈川エリアのオーダースーツ専門店。ファッションプロデューサー藤井孝昌が「なりたい姿」から一着を仕立てます。小田急町田駅北口徒歩4分。">
+  <meta property="og:image" content="https://fiero-suits.com/images/interlude-b2.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fiero-suits.com/images/interlude-b2.jpg">
+
+  <!-- 構造化データ: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "FIERO",
+    "description": "町田・相模原・神奈川エリアのオーダースーツ専門店。ファッションプロデューサー藤井孝昌によるビスポークスーツ・パティーヌシューズ。",
+    "url": "https://fiero-suits.com",
+    "telephone": "+81-90-4847-0487",
+    "email": "fiero878@gmail.com",
+    "priceRange": "¥¥¥",
+    "image": "https://fiero-suits.com/images/interlude-b2.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "中町1-2-5 3階（BIZcomfort町田 内）",
+      "addressLocality": "町田市",
+      "addressRegion": "東京都",
+      "postalCode": "194-0021",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.5436,
+      "longitude": 139.4461
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "11:00",
+      "closes": "20:00"
+    },
+    "hasMap": "https://maps.google.com/?q=東京都町田市中町1-2-5",
+    "areaServed": ["町田市","相模原市","神奈川県","東京都"],
+    "sameAs": ["https://line.me/R/ti/p/@538mhqlu"]
+  }
+  </script>
 
   <!-- Webフォント -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2346,6 +2387,55 @@
       }
     }
 
+    /* Googleマップ埋め込み */
+    .access-map-embed {
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto var(--space-6);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+    }
+
+    /* 近隣エリア注記 */
+    .access-area-note {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: var(--space-4);
+    }
+
+    /* スマホ LINE固定ボタン */
+    .line-fixed-btn {
+      display: none;
+    }
+    @media (max-width: 639px) {
+      .line-fixed-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: #06C755;
+        color: #fff;
+        font-family: var(--font-sans);
+        font-size: 0.9375rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        padding: 14px 20px;
+        text-decoration: none;
+        box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+        /* iPhoneのホームバーを避ける */
+        padding-bottom: max(14px, env(safe-area-inset-bottom));
+      }
+      /* 固定ボタン分の余白を本体下部に確保 */
+      body { padding-bottom: 60px; }
+    }
+
     .access-closing {
       font-family: var(--font-serif-jp);
       font-size: var(--text-base);
@@ -2860,14 +2950,14 @@
           <span class="h1-resolution"><span class="brand-mark">FIERO</span> はあなたの目指す姿から<br>一着を仕立てます。</span>
         </h1>
       </div>
-      <p class="hero-sub">町田 ・ 完全予約制 ・ オーダースーツ 8年</p>
+      <p class="hero-sub">町田 ・ 相模原 ・ 神奈川 ・ 完全予約制 ・ オーダースーツ 8年</p>
       <a href="patine.html" class="hero-patine-badge">
         <span class="hero-patine-badge-dot"></span>
         パティーヌシューズも承っています
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
       </a>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
+        <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn btn-primary">自分に似合う一着を相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="#story" class="btn btn-secondary">FIEROについて知る
@@ -3438,7 +3528,7 @@
         </p>
         <p class="voice-closing-emphasis">「あの人、最近なんだか違うな」</p>
         <p class="voice-closing-cta">そう思わせる一着を、あなたにも。</p>
-        <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
+        <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn btn-primary">自分に似合う一着を相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -3461,6 +3551,16 @@
         東京都町田市中町1-2-5<br>
         3階(BIZcomfort町田 内)
       </p>
+
+      <!-- Googleマップ埋め込み -->
+      <div class="access-map-embed">
+        <iframe
+          src="https://maps.google.com/maps?q=東京都町田市中町1-2-5&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="FIEROアクセスマップ — 東京都町田市中町1-2-5">
+        </iframe>
+      </div>
 
       <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%94%BA%E7%94%B0%E5%B8%82%E4%B8%AD%E7%94%BA1-2-5" target="_blank" rel="noopener" class="access-map-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
@@ -3487,12 +3587,14 @@
         </div>
       </div>
 
+      <p class="access-area-note">町田駅北口より徒歩4分。相模原・神奈川・多摩エリアからもアクセス便利です。</p>
+
       <p class="access-closing">
         ご来店は、完全予約制です。<br>
-        個別相談のご予約は、フォームまたはお電話にて承っております。
+        個別相談のご予約は、LINEまたはお電話にて承っております。
       </p>
 
-      <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
+      <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn btn-primary">自分に似合う一着を相談する
         <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -3607,7 +3709,7 @@
 
       <div class="footer-cta">
         <p class="footer-cta-title">あなたの&ldquo;なりたい姿&rdquo;を、お聞かせください。</p>
-        <a href="#contact" class="btn btn-primary">自分に似合う一着を相談する
+        <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn btn-primary">自分に似合う一着を相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -4358,6 +4460,11 @@
   })();
   </script>
 
+  <!-- スマホ専用 LINE固定バナー（モバイルのみ表示） -->
+  <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="line-fixed-btn" aria-label="LINEで相談する">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
+    LINEで無料相談する
+  </a>
 
 </body>
 </html>
