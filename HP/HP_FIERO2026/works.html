@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDRSMLVP3W"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,729 +10,155 @@
     gtag('js', new Date());
     gtag('config', 'G-ZDRSMLVP3W');
   </script>
-  <title>Works — 仕上がりの記録 | FIERO</title>
-  <meta name="description" content="FIEROが手がけたビスポークスーツ・パティーヌシューズの仕上がり事例。一着ずつ、対話から生まれた装いをご覧ください。東京・町田 FIERO。">
-
+  <title>Works — 準備中 | FIERO</title>
+  <meta name="description" content="FIEROが手がけたビスポークスーツ・パティーヌシューズの仕上がり事例。現在準備中です。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <style>
-    /* ============================================
-       CSS変数（メインHPと共通）
-       ============================================ */
-    :root {
-      --color-background: #FFFFFF;
-      --color-background-alt: #FAF8F3;
-      --color-surface: #FFFFFF;
-      --color-accent: #1A2942;
-      --color-accent-light: #2A3A52;
-      --color-accent-dark: #0F1C30;
-      --color-text-primary: #2A2620;
-      --color-text-secondary: #6B6358;
-      --color-text-muted: #9C9388;
-      --color-text-on-dark: #F4ECDA;
-      --color-text-on-dark-soft: #D9CDB3;
-      --color-border: #E5DCC8;
-      --color-divider: #C9A961;
-      --font-serif-jp: "Noto Serif JP", "Yu Mincho", "游明朝", serif;
-      --font-serif-en: "Cormorant Garamond", "Times New Roman", serif;
-      --font-sans-en: "Inter", "Helvetica Neue", sans-serif;
-      --text-xs: 0.75rem;
-      --text-sm: 0.875rem;
-      --text-base: 1rem;
-      --text-lg: 1.125rem;
-      --text-xl: 1.25rem;
-      --text-2xl: 1.5rem;
-      --text-3xl: 1.875rem;
-      --text-4xl: 2.25rem;
-      --text-5xl: 3rem;
-      --max-width-content: 1080px;
-      --max-width-wide: 1280px;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-    }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    :root {
+      --color-accent: #1A2942;
+      --color-divider: #C9A961;
+      --color-text-primary: #2A2620;
+      --color-text-muted: #9C9388;
+      --color-bg-alt: #FAF8F3;
+    }
     body {
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-base);
-      line-height: 2.0;
+      font-family: 'Noto Serif JP', serif;
+      background-color: #fff;
       color: var(--color-text-primary);
-      background-color: var(--color-background);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-    /* ============================================
-       ヘッダー
-       ============================================ */
+    /* ヘッダー */
     .header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid var(--color-border);
-      backdrop-filter: blur(8px);
-    }
-    .header-inner {
-      max-width: var(--max-width-wide);
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 72px;
+      padding: 20px 32px;
+      border-bottom: 1px solid #E5DCC8;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .logo {
-      font-family: var(--font-serif-en);
+    .header-logo {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
+      font-weight: 600;
+      letter-spacing: 0.3em;
       color: var(--color-accent);
-    }
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
+      text-decoration: none;
     }
     .header-back {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-sm);
-      letter-spacing: 0.15em;
-      color: var(--color-text-secondary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      letter-spacing: 0.12em;
+      color: var(--color-text-muted);
+      text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       transition: color 0.2s;
     }
     .header-back:hover { color: var(--color-accent); }
-    .header-back svg { width: 14px; height: 14px; }
 
-    /* ============================================
-       共通パーツ
-       ============================================ */
-    .container { max-width: var(--max-width-content); margin: 0 auto; padding: 0 24px; }
-    .container-wide { max-width: var(--max-width-wide); margin: 0 auto; padding: 0 24px; }
-    section { padding: 80px 0; }
-
-    .section-eyebrow {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-sm);
-      font-weight: 500;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--color-text-secondary);
-      margin-bottom: var(--space-6);
-      display: inline-block;
-      position: relative;
-      padding-bottom: var(--space-3);
-    }
-    .section-eyebrow::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 24px; height: 1px;
-      background-color: var(--color-divider);
-    }
-    .section-title {
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-3xl);
-      font-weight: 500;
-      line-height: 1.5;
-      letter-spacing: 0.04em;
-      color: var(--color-text-primary);
-      margin-bottom: var(--space-8);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 32px;
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-base);
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      line-height: 1;
-      border-radius: 0;
-      transition: background-color 0.25s, color 0.25s, border-color 0.25s;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn-primary {
-      background-color: var(--color-accent);
-      color: var(--color-text-on-dark);
-      border: 1px solid var(--color-accent);
-    }
-    .btn-primary:hover { background-color: var(--color-accent-light); border-color: var(--color-accent-light); }
-    .btn-arrow { width: 18px; height: 18px; flex-shrink: 0; }
-
-    /* ============================================
-       ページヒーロー
-       ============================================ */
-    .page-hero {
-      padding-top: 140px;
-      padding-bottom: 60px;
-      background-color: var(--color-accent);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: 'WORKS';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--font-serif-en);
-      font-size: clamp(80px, 18vw, 220px);
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.04);
-      white-space: nowrap;
-      pointer-events: none;
-    }
-    .page-hero-eyebrow {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-sm);
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--color-text-on-dark-soft);
-      margin-bottom: var(--space-4);
-      position: relative;
-      z-index: 1;
-    }
-    .page-hero-title {
-      font-family: var(--font-serif-en);
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      line-height: 1.1;
-      color: var(--color-text-on-dark);
-      margin-bottom: var(--space-6);
-      position: relative;
-      z-index: 1;
-    }
-    .page-hero-sub {
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-lg);
-      color: var(--color-text-on-dark-soft);
-      line-height: 2.0;
-      max-width: 480px;
-      margin: 0 auto var(--space-8);
-      position: relative;
-      z-index: 1;
-    }
-    .page-hero-divider {
-      width: 40px; height: 1px;
-      background: var(--color-divider);
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ============================================
-       ギャラリーセクション
-       ============================================ */
-    .gallery-section {
-      background-color: var(--color-background);
-    }
-
-    /* カテゴリータイトル */
-    .gallery-category-header {
-      display: flex;
-      align-items: baseline;
-      gap: 20px;
-      margin-bottom: var(--space-10);
-      padding-bottom: var(--space-6);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .gallery-category-en {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-4xl);
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      color: var(--color-accent);
-    }
-    .gallery-category-jp {
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      letter-spacing: 0.1em;
-    }
-    .gallery-category-count {
-      margin-left: auto;
-      font-family: var(--font-serif-en);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      letter-spacing: 0.15em;
-    }
-
-    /* グリッド */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: var(--space-20);
-    }
-
-    /* カード */
-    .works-card {
-      display: flex;
-      flex-direction: column;
-      cursor: default;
-    }
-
-    /* ============================================
-       写真プレースホルダー
-       写真差し替え時:
-       .works-placeholder を削除し、
-       <img src="images/works-XX.jpg" alt="説明" class="works-photo">
-       を同じ位置に追加してください。
-       ============================================ */
-    .works-placeholder {
-      aspect-ratio: 3 / 4;
-      background-color: var(--color-background-alt);
-      border: 1px solid var(--color-border);
+    /* メインコンテンツ */
+    .main {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 16px;
-      color: var(--color-text-muted);
-      transition: border-color 0.25s, background-color 0.25s;
+      padding: 80px 24px;
+      text-align: center;
     }
-    .works-placeholder svg {
-      width: 32px;
-      height: 32px;
-      opacity: 0.4;
-    }
-    .works-placeholder-label {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-xs);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      opacity: 0.5;
-    }
-
-    /* 実際の写真（プレースホルダーと差し替え） */
-    .works-photo {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      display: block;
-      border: 1px solid var(--color-border);
-      transition: opacity 0.3s;
-    }
-    .works-card:hover .works-photo { opacity: 0.92; }
-
-    /* キャプション */
-    .works-caption {
-      padding: var(--space-4) 0 var(--space-3);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .works-caption-category {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-xs);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+    .coming-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8125rem;
+      letter-spacing: 0.35em;
       color: var(--color-divider);
-      margin-bottom: 6px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
     }
-    .works-caption-desc {
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-sm);
-      color: var(--color-text-secondary);
-      line-height: 1.7;
-    }
-
-    /* カテゴリー区切り */
-    .gallery-divider {
-      margin: 0 0 var(--space-16);
-      border: none;
-      border-top: 1px solid var(--color-border);
-    }
-
-    /* ============================================
-       CTA
-       ============================================ */
-    .cta-section {
-      background-color: var(--color-background-alt);
-      text-align: center;
-      border-top: 1px solid var(--color-border);
-    }
-    .cta-title {
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-3xl);
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--color-text-primary);
-      margin-bottom: var(--space-6);
-      line-height: 1.6;
-    }
-    .cta-note {
-      font-size: var(--text-base);
-      color: var(--color-text-secondary);
-      line-height: 2.0;
-      margin-bottom: var(--space-10);
-    }
-    .cta-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-4);
-    }
-    .cta-sub {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      letter-spacing: 0.05em;
-    }
-
-    /* ============================================
-       フッター
-       ============================================ */
-    .footer {
-      background-color: var(--color-accent-dark);
-      padding: 60px 0 32px;
-    }
-    .footer-top {
-      text-align: center;
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(244,236,218,0.12);
-    }
-    .footer-logo {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-4xl);
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      color: var(--color-text-on-dark);
-      margin-bottom: var(--space-3);
-    }
-    .footer-philosophy {
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-sm);
-      color: var(--color-text-on-dark-soft);
+    .coming-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
       letter-spacing: 0.15em;
+      color: var(--color-accent);
+      margin-bottom: 24px;
+      line-height: 1.3;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      margin-bottom: 48px;
+    .coming-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--color-divider);
+      margin: 0 auto 28px;
     }
-    .footer-block-title {
-      font-family: var(--font-serif-en);
-      font-size: var(--text-xs);
+    .coming-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 2.0;
+      color: var(--color-text-muted);
+      max-width: 360px;
+      margin: 0 auto 48px;
+    }
+    .coming-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background-color: #06C755;
+      color: #fff;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.9375rem;
       font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--color-divider);
-      margin-bottom: var(--space-4);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: opacity 0.2s;
     }
-    .footer-block-content {
-      font-size: var(--text-sm);
-      color: var(--color-text-on-dark-soft);
-      line-height: 2.2;
-    }
-    .footer-block-content a:hover { color: var(--color-text-on-dark); }
-    .footer-menu-list { list-style: none; }
-    .footer-credit {
+    .coming-btn:hover { opacity: 0.85; }
+
+    /* フッター */
+    .footer {
+      padding: 24px 32px;
+      border-top: 1px solid #E5DCC8;
       text-align: center;
-      font-size: var(--text-xs);
-      color: rgba(244,236,218,0.35);
-      letter-spacing: 0.08em;
-      padding-top: 32px;
-      border-top: 1px solid rgba(244,236,218,0.08);
-    }
-
-    /* ============================================
-       レスポンシブ
-       ============================================ */
-    @media (max-width: 1023px) {
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 639px) {
-      section { padding: 60px 0; }
-
-      .header-back span { display: none; }
-
-      .page-hero { padding-top: 110px; padding-bottom: 48px; }
-      .page-hero-title { font-size: 3rem; letter-spacing: 0.1em; }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-      .gallery-category-en { font-size: var(--text-2xl); }
-
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
-      .footer-logo { font-size: 2rem; }
-
-      .cta-title { font-size: var(--text-2xl); }
-      .btn { width: 100%; justify-content: center; }
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
     }
   </style>
 </head>
 <body>
 
-  <!-- ヘッダー -->
   <header class="header">
-    <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="FIERO トップページ">FIERO</a>
-      <nav class="header-nav">
-        <a href="index.html" class="header-back">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12H4M10 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Back to Home</span>
-        </a>
-        <a href="index.html#contact" class="btn btn-primary" style="padding: 12px 24px; font-size: 0.875rem;">
-          相談する
-          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </nav>
-    </div>
+    <a href="index.html" class="header-logo">FIERO</a>
+    <a href="index.html" class="header-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12H4M10 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      トップに戻る
+    </a>
   </header>
 
-  <!-- ページヒーロー -->
-  <div class="page-hero">
-    <div class="container">
-      <p class="page-hero-eyebrow">Portfolio</p>
-      <h1 class="page-hero-title">Works</h1>
-      <p class="page-hero-sub">
-        対話から生まれた一着を、<br>ここに記録します。
-      </p>
-      <div class="page-hero-divider"></div>
-    </div>
-  </div>
+  <main class="main">
+    <p class="coming-eyebrow">Coming Soon</p>
+    <h1 class="coming-title">Works</h1>
+    <div class="coming-divider"></div>
+    <p class="coming-text">
+      FIEROが手がけた一着の記録を<br>
+      準備しています。<br>
+      しばらくお待ちください。
+    </p>
+    <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="coming-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
+      LINEでご相談はこちら
+    </a>
+  </main>
 
-  <!-- ギャラリー -->
-  <section class="gallery-section">
-    <div class="container">
-
-      <!-- ==============================
-           Bespoke Suits
-           ============================== -->
-      <div class="gallery-category-header">
-        <span class="gallery-category-en">Bespoke Suits</span>
-        <span class="gallery-category-jp">ビスポークスーツ</span>
-        <span class="gallery-category-count">— 5 items</span>
-      </div>
-
-      <div class="gallery-grid">
-
-        <div class="works-card">
-          <!--
-            写真差し替え方法:
-            下の .works-placeholder ブロックを削除して、
-            <img src="images/works-suit-01.jpg" alt="説明" class="works-photo">
-            に置き換えてください。
-          -->
-          <div class="works-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="works-placeholder-label">Photo</span>
-          </div>
-          <div class="works-caption">
-            <p class="works-caption-category">Bespoke Suit</p>
-            <p class="works-caption-desc">キャプションを入れてください</p>
-          </div>
-        </div>
-
-        <div class="works-card">
-          <div class="works-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="works-placeholder-label">Photo</span>
-          </div>
-          <div class="works-caption">
-            <p class="works-caption-category">Bespoke Suit</p>
-            <p class="works-caption-desc">キャプションを入れてください</p>
-          </div>
-        </div>
-
-        <div class="works-card">
-          <div class="works-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="works-placeholder-label">Photo</span>
-          </div>
-          <div class="works-caption">
-            <p class="works-caption-category">Bespoke Suit</p>
-            <p class="works-caption-desc">キャプションを入れてください</p>
-          </div>
-        </div>
-
-        <div class="works-card">
-          <div class="works-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="works-placeholder-label">Photo</span>
-          </div>
-          <div class="works-caption">
-            <p class="works-caption-category">Bespoke Suit</p>
-            <p class="works-caption-desc">キャプションを入れてください</p>
-          </div>
-        </div>
-
-        <div class="works-card">
-          <div class="works-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="works-placeholder-label">Photo</span>
-          </div>
-          <div class="works-caption">
-            <p class="works-caption-category">Bespoke Suit</p>
-            <p class="works-caption-desc">キャプションを入れてください</p>
-          </div>
-        </div>
-
-      </div><!-- /gallery-grid Suits -->
-
-      <hr class="gallery-divider">
-
-      <!-- ==============================
-           Patine Shoes
-           ============================== -->
-      <div class="gallery-category-header">
-        <span class="gallery-category-en">Patine Shoes</span>
-        <span class="gallery-category-jp">パティーヌシューズ</span>
-        <span class="gallery-category-count">— 3 items</span>
-      </div>
-
-      <div class="gallery-grid">
-
-        <div class="works-card">
-          <div class="works-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="works-placeholder-label">Photo</span>
-          </div>
-          <div class="works-caption">
-            <p class="works-caption-category">Patine Shoes</p>
-            <p class="works-caption-desc">キャプションを入れてください</p>
-          </div>
-        </div>
-
-        <div class="works-card">
-          <div class="works-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="works-placeholder-label">Photo</span>
-          </div>
-          <div class="works-caption">
-            <p class="works-caption-category">Patine Shoes</p>
-            <p class="works-caption-desc">キャプションを入れてください</p>
-          </div>
-        </div>
-
-        <div class="works-card">
-          <div class="works-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="works-placeholder-label">Photo</span>
-          </div>
-          <div class="works-caption">
-            <p class="works-caption-category">Patine Shoes</p>
-            <p class="works-caption-desc">キャプションを入れてください</p>
-          </div>
-        </div>
-
-      </div><!-- /gallery-grid Shoes -->
-
-    </div><!-- /container -->
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <h2 class="cta-title">あなたの一着を、一緒に作りましょう。</h2>
-      <p class="cta-note">
-        まずは対話から。ご予約はLINEで承っています。
-      </p>
-      <div class="cta-actions">
-        <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn btn-primary">
-          自分に似合う一着を相談する
-          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <p class="cta-sub">東京都町田市 ／ 完全予約制 ／ 11:00 – 20:00</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- フッター -->
   <footer class="footer">
-    <div class="container-wide">
-      <div class="footer-top">
-        <div class="footer-logo">FIERO</div>
-        <p class="footer-philosophy">装いは、未来から逆算する。</p>
-      </div>
-      <div class="footer-grid">
-        <div class="footer-block">
-          <h4 class="footer-block-title">Store</h4>
-          <div class="footer-block-content">
-            FIERO<br>
-            〒194-0021<br>
-            東京都町田市中町1-2-5<br>
-            3階(BIZcomfort町田 内)
-          </div>
-        </div>
-        <div class="footer-block">
-          <h4 class="footer-block-title">Hours</h4>
-          <div class="footer-block-content">
-            11:00 - 20:00<br>
-            完全予約制
-          </div>
-        </div>
-        <div class="footer-block">
-          <h4 class="footer-block-title">Contact</h4>
-          <div class="footer-block-content">
-            TEL <a href="tel:09048470487">090-4847-0487</a><br>
-            MAIL <a href="mailto:fiero878@gmail.com">fiero878@gmail.com</a>
-          </div>
-        </div>
-        <div class="footer-block">
-          <h4 class="footer-block-title">Menu</h4>
-          <ul class="footer-menu-list footer-block-content">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="works.html">Works</a></li>
-            <li><a href="index.html#process">Process</a></li>
-            <li><a href="naoshi.html">Alteration</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="footer-credit">
-        ファッションプロデューサー <span style="letter-spacing:0.1em;">藤井 孝昌 / Takamasa Fujii</span>
-      </p>
-    </div>
+    © 2026 FIERO. All rights reserved.
   </footer>
 
 </body>
