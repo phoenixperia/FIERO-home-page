@@ -10,24 +10,32 @@
     gtag('js', new Date());
     gtag('config', 'G-ZDRSMLVP3W');
   </script>
-  <title>Style Log — 準備中 | FIERO</title>
-  <meta name="description" content="FIEROが手がけたビスポークスーツ・パティーヌシューズの仕上がり記録。現在準備中です。">
+  <title>Style Log | FIERO — オーダースーツ・レディーススタイル記録</title>
+  <meta name="description" content="FIEROが手がけたオーダースーツ・レディースウェアの仕上がり記録。ペイズリージャケットからグレンチェックまで、一着ごとのストーリー。">
+  <link rel="canonical" href="https://fiero-suits.com/works.html">
+  <meta property="og:title" content="Style Log | FIERO">
+  <meta property="og:description" content="FIEROが手がけた一着の記録。">
+  <meta property="og:url" content="https://fiero-suits.com/works.html">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --color-accent: #1A2942;
-      --color-divider: #C9A961;
-      --color-text-primary: #2A2620;
-      --color-text-muted: #9C9388;
-      --color-bg-alt: #FAF8F3;
+      --navy: #1A2942;
+      --gold: #C9A961;
+      --text: #2A2620;
+      --muted: #9C9388;
+      --bg-alt: #FAF8F3;
+      --border: #E5DCC8;
     }
+
     body {
       font-family: 'Noto Serif JP', serif;
-      background-color: #fff;
-      color: var(--color-text-primary);
+      background: #fff;
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -35,8 +43,8 @@
 
     /* ヘッダー */
     .header {
-      padding: 20px 32px;
-      border-bottom: 1px solid #E5DCC8;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -46,70 +54,242 @@
       font-size: 1.5rem;
       font-weight: 600;
       letter-spacing: 0.3em;
-      color: var(--color-accent);
+      color: var(--navy);
       text-decoration: none;
     }
     .header-back {
       font-family: 'Inter', sans-serif;
       font-size: 0.8125rem;
       letter-spacing: 0.12em;
-      color: var(--color-text-muted);
+      color: var(--muted);
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 6px;
       transition: color 0.2s;
     }
-    .header-back:hover { color: var(--color-accent); }
+    .header-back:hover { color: var(--navy); }
 
-    /* メインコンテンツ */
-    .main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 24px;
+    /* ページタイトルエリア */
+    .page-hero {
+      padding: 72px 40px 56px;
       text-align: center;
+      border-bottom: 1px solid var(--border);
     }
-    .coming-eyebrow {
+    .page-eyebrow {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8125rem;
-      letter-spacing: 0.35em;
-      color: var(--color-divider);
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
       text-transform: uppercase;
-      margin-bottom: 32px;
+      margin-bottom: 20px;
     }
-    .coming-title {
+    .page-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-size: clamp(2.8rem, 5vw, 4rem);
       font-weight: 300;
-      letter-spacing: 0.15em;
-      color: var(--color-accent);
-      margin-bottom: 24px;
-      line-height: 1.3;
+      letter-spacing: 0.2em;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.2;
     }
-    .coming-divider {
+    .page-divider {
       width: 40px;
       height: 1px;
-      background: var(--color-divider);
-      margin: 0 auto 28px;
+      background: var(--gold);
+      margin: 0 auto 20px;
+    }
+    .page-desc {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      line-height: 2;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* タブナビゲーション */
+    .tab-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+    .tab-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 20px 48px;
+      border: none;
+      border-bottom: 2px solid transparent;
+      background: none;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      position: relative;
+      top: 1px;
+    }
+    .tab-btn:hover { color: var(--navy); }
+    .tab-btn.active {
+      color: var(--navy);
+      border-bottom-color: var(--navy);
+    }
+    .tab-badge {
+      font-size: 0.625rem;
+      letter-spacing: 0.05em;
+      background: var(--gold);
+      color: #fff;
+      padding: 2px 6px;
+      margin-left: 6px;
+      vertical-align: middle;
+      text-transform: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* メインコンテンツ */
+    .main { flex: 1; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ギャラリーグリッド */
+    .gallery-section {
+      padding: 64px 40px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px 40px;
+    }
+
+    /* カード */
+    .style-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card-img-wrap {
+      overflow: hidden;
+      background: var(--bg-alt);
+      margin-bottom: 20px;
+      aspect-ratio: 3 / 4;
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+    .style-card:hover .card-img-wrap img {
+      transform: scale(1.03);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .card-category {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6875rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .card-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3125rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .card-detail {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.8125rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    /* メンズ準備中 */
+    .coming-panel {
+      padding: 100px 40px;
+      text-align: center;
+    }
+    .coming-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+    }
+    .coming-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .coming-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: var(--navy);
+      margin-bottom: 16px;
     }
     .coming-text {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1rem;
+      font-size: 0.9375rem;
       font-weight: 300;
-      line-height: 2.0;
-      color: var(--color-text-muted);
-      max-width: 360px;
-      margin: 0 auto 48px;
+      line-height: 2;
+      color: var(--muted);
     }
-    .coming-btn {
+
+    /* CTAバナー */
+    .cta-banner {
+      background: var(--navy);
+      padding: 56px 40px;
+      text-align: center;
+    }
+    .cta-banner-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .cta-banner-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: #fff;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .cta-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 16px 36px;
-      background-color: #06C755;
+      padding: 16px 40px;
+      background: #06C755;
       color: #fff;
       font-family: 'Noto Serif JP', serif;
       font-size: 0.9375rem;
@@ -118,48 +298,155 @@
       text-decoration: none;
       transition: opacity 0.2s;
     }
-    .coming-btn:hover { opacity: 0.85; }
+    .cta-btn:hover { opacity: 0.85; }
 
     /* フッター */
     .footer {
-      padding: 24px 32px;
-      border-top: 1px solid #E5DCC8;
+      padding: 24px 40px;
+      border-top: 1px solid var(--border);
       text-align: center;
       font-family: 'Inter', sans-serif;
       font-size: 0.75rem;
       letter-spacing: 0.1em;
-      color: var(--color-text-muted);
+      color: var(--muted);
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 639px) {
+      .header { padding: 16px 20px; }
+      .page-hero { padding: 48px 20px 40px; }
+      .tab-btn { padding: 16px 24px; font-size: 0.75rem; }
+      .gallery-section { padding: 40px 20px 60px; }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .coming-panel { padding: 64px 20px; }
+      .cta-banner { padding: 48px 20px; }
+      .footer { padding: 20px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- ヘッダー -->
   <header class="header">
     <a href="index.html" class="header-logo">FIERO</a>
     <a href="index.html" class="header-back">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12H4M10 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg>
       トップに戻る
     </a>
   </header>
 
+  <!-- ページタイトル -->
+  <section class="page-hero">
+    <p class="page-eyebrow">Works</p>
+    <h1 class="page-title">Style Log</h1>
+    <div class="page-divider"></div>
+    <p class="page-desc">FIEROが手がけた一着の記録。<br>素材と対話から生まれた、それぞれのスタイル。</p>
+  </section>
+
+  <!-- タブナビゲーション -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('ladies', this)">
+      Ladies<span class="tab-badge">2</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('mens', this)">
+      Men's
+    </button>
+  </nav>
+
   <main class="main">
-    <p class="coming-eyebrow">Coming Soon</p>
-    <h1 class="coming-title">Style Log</h1>
-    <div class="coming-divider"></div>
-    <p class="coming-text">
-      FIEROが手がけた一着の記録を<br>
-      準備しています。<br>
-      しばらくお待ちください。
-    </p>
-    <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="coming-btn">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
-      LINEでご相談はこちら
-    </a>
+
+    <!-- レディースパネル -->
+    <div id="tab-ladies" class="tab-panel active">
+      <div class="gallery-section">
+        <div class="gallery-grid">
+
+          <!-- LADIES2: ピンクペイズリーセットアップ（着用写真） -->
+          <div class="style-card">
+            <div class="card-img-wrap">
+              <img
+                src="images/style-log/ladies/LADIES2.jpg"
+                alt="ピンクペイズリージャケット × シルバーブロケードパンツ — FIEROレディースオーダー"
+              >
+            </div>
+            <div class="card-meta">
+              <span class="card-category">Ladies Order</span>
+              <span class="card-line"></span>
+            </div>
+            <h2 class="card-title">Paisley Jacket &amp; Brocade Trousers</h2>
+            <p class="card-detail">
+              ピンクペイズリーのジャケットに<br>
+              シルバーブロケードのパンツを合わせた<br>
+              華やかなレディースセットアップ。
+            </p>
+          </div>
+
+          <!-- LADIES1: グレンチェックジャケット（マネキン） -->
+          <div class="style-card">
+            <div class="card-img-wrap">
+              <img
+                src="images/style-log/ladies/LADIES1.jpg"
+                alt="グレンチェック × ハウンドトゥース ジャケット — FIEROレディースオーダー"
+              >
+            </div>
+            <div class="card-meta">
+              <span class="card-category">Ladies Order</span>
+              <span class="card-line"></span>
+            </div>
+            <h2 class="card-title">Glen Check Jacket</h2>
+            <p class="card-detail">
+              ブラック × ホワイトのグレンチェックに<br>
+              ブルーオーバーチェックが映える<br>
+              シングル1つボタン ジャケット。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- メンズパネル -->
+    <div id="tab-mens" class="tab-panel">
+      <div class="coming-panel">
+        <div class="coming-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
+        </div>
+        <p class="coming-label">Coming Soon</p>
+        <h2 class="coming-h2">Men's Style Log</h2>
+        <p class="coming-text">
+          メンズのスタイル記録を<br>
+          準備しています。
+        </p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- CTAバナー -->
+  <section class="cta-banner">
+    <p class="cta-banner-label">Reservation</p>
+    <p class="cta-banner-title">あなたの一着を、一緒に考えましょう。</p>
+    <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="cta-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
+      自分に似合う一着を相談する
+    </a>
+  </section>
+
+  <!-- フッター -->
   <footer class="footer">
     © 2026 FIERO. All rights reserved.
   </footer>
+
+  <script>
+    function switchTab(id, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
