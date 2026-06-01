@@ -364,10 +364,11 @@
     .header-inner {
       max-width: var(--max-width-wide);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
       height: 72px;
       display: flex;
       align-items: center;
+      gap: 32px;
       justify-content: space-between;
     }
 
@@ -383,18 +384,19 @@
     .nav-list {
       display: flex;
       align-items: center;
-      gap: var(--space-8);
+      gap: 1.25rem;
       list-style: none;
     }
 
     .nav-link {
       font-family: var(--font-serif-en);
-      font-size: var(--text-sm);
+      font-size: 0.8rem;
       font-weight: 400;
-      letter-spacing: 0.26em;      /* ⑤ 少し広げて上品に */
+      letter-spacing: 0.14em;
       color: var(--color-text-secondary);
-      opacity: 0.87;               /* ⑤ クッキリ感を抑える */
+      opacity: 0.87;
       text-transform: uppercase;
+      white-space: nowrap;
       transition: color 0.2s ease, opacity 0.2s ease;
       position: relative;
       padding: 6px 0;
@@ -2456,6 +2458,79 @@
     /* ============================================
        Contact Form
        ============================================ */
+    /* ブログ誘導セクション */
+    .blog-bridge {
+      background: #fff;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding: 72px 0;
+    }
+    .blog-bridge-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 var(--space-8);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+    .blog-bridge-eyebrow {
+      font-family: var(--font-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.35em;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .blog-bridge-title {
+      font-family: var(--font-en);
+      font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--color-navy);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .blog-bridge-body {
+      font-size: var(--text-sm);
+      font-weight: 300;
+      line-height: 2;
+      color: var(--color-text-muted);
+      margin-bottom: 28px;
+    }
+    .blog-bridge-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 32px;
+      border: 1px solid var(--color-navy);
+      color: var(--color-navy);
+      font-family: var(--font-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.18em;
+      text-decoration: none;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .blog-bridge-btn:hover {
+      background-color: var(--color-navy);
+      color: #fff;
+    }
+    .blog-bridge-deco {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      opacity: 0.12;
+    }
+    @media (max-width: 639px) {
+      .blog-bridge-inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .blog-bridge-deco { display: none; }
+      .blog-bridge { padding: 56px 0; }
+    }
+
     .contact {
       background-color: var(--color-background-alt);
       padding: 100px 0;
@@ -2901,12 +2976,13 @@
       <nav>
         <ul class="nav-list" id="navList">
           <li><a href="#story" class="nav-link">Story</a></li>
-          <li><a href="#items" class="nav-link">Items</a></li>
+          <li><a href="#items" class="nav-link">Items &amp; Price</a></li>
           <li><a href="#process" class="nav-link">Process</a></li>
           <li><a href="#voice" class="nav-link">Voice</a></li>
           <li><a href="works.html" class="nav-link nav-link-patine">Style Log</a></li>
           <li><a href="naoshi.html" class="nav-link nav-link-patine">Naoshi</a></li>
           <li><a href="patine.html" class="nav-link nav-link-patine">Patine</a></li>
+          <li><a href="https://otonafashionblog.hatenablog.com/" target="_blank" rel="noopener" class="nav-link nav-link-patine">Blog</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <li><a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn btn-primary nav-cta">自分に似合う一着を相談する
             <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -3591,6 +3667,39 @@
   </section>
 
   <!-- ===========================================
+       Blog Bridge（ブログ誘導）
+       =========================================== -->
+  <section class="blog-bridge">
+    <div class="blog-bridge-inner">
+      <div>
+        <p class="blog-bridge-eyebrow">Fashion Column</p>
+        <h2 class="blog-bridge-title">ファッションのことを<br>もっと知りたい方へ</h2>
+        <p class="blog-bridge-body">
+          着こなしのヒントから素材の話まで。<br>
+          ファッションプロデューサー 藤井孝昌が<br>
+          日々の気づきをつづるコラム。
+        </p>
+        <a href="https://otonafashionblog.hatenablog.com/" target="_blank" rel="noopener" class="blog-bridge-btn">
+          ブログを読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="blog-bridge-deco" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1A2942" stroke-width="1.2">
+          <path d="M12 8h40v48H12z"/>
+          <path d="M20 20h24M20 28h24M20 36h16"/>
+        </svg>
+        <svg width="1" height="80" viewBox="0 0 1 80"><line x1="0.5" y1="0" x2="0.5" y2="80" stroke="#C9A961" stroke-width="1"/></svg>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1A2942" stroke-width="1.2">
+          <circle cx="32" cy="32" r="20"/>
+          <path d="M24 32c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8"/>
+          <circle cx="32" cy="32" r="2" fill="#1A2942"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================
        Contact Form
        =========================================== -->
   <section class="contact" id="contact">
@@ -3685,7 +3794,7 @@
           <h4 class="footer-block-title">Menu</h4>
           <ul class="footer-menu-list footer-block-content">
             <li><a href="#story">Story</a></li>
-            <li><a href="#items">Items</a></li>
+            <li><a href="#items">Items &amp; Price</a></li>
             <li><a href="#process">Process</a></li>
             <li><a href="#voice">Voice</a></li>
             <li><a href="#contact">Contact</a></li>
