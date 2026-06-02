@@ -4164,15 +4164,15 @@
     }
     .cb-send:hover { background: var(--color-accent-dark); }
 
-    /* スマホ対応 */
+    /* スマホ対応 — LINEの固定バー（約64px）の上に配置 */
     @media (max-width: 639px) {
-      .cb-fab  { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+      .cb-fab  { bottom: 80px; right: 16px; width: 52px; height: 52px; }
       .cb-window {
-        bottom: 84px;
+        bottom: 144px;
         right: 12px;
         left: 12px;
         width: auto;
-        max-height: 72vh;
+        max-height: 65vh;
       }
     }
   </style>
