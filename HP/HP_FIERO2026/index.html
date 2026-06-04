@@ -1610,6 +1610,14 @@
     .process-step-img-wrap.img-wrap-wide {
       flex: 0 0 300px;
     }
+    /* 3:2比率タイプ（裏地・ボタンなど） */
+    .process-step-img-wrap.img-wrap-lining {
+      flex: 0 0 340px;
+    }
+    .process-step-img-wrap.img-wrap-lining .process-step-img {
+      aspect-ratio: 3 / 2;
+      object-position: center center;
+    }
     .process-step-img {
       width: 100%;
       aspect-ratio: 2 / 3;
@@ -1700,6 +1708,11 @@
       }
       /* SP：横長タイプは全幅表示 */
       .process-step-img-wrap.img-wrap-wide {
+        flex: none;
+        width: 100%;
+      }
+      /* SP：3:2タイプも全幅表示 */
+      .process-step-img-wrap.img-wrap-lining {
         flex: none;
         width: 100%;
       }
@@ -3368,7 +3381,7 @@
                 <p class="process-step-text">裏地、ボタン、ステッチ、襟の角度まで。ひとつひとつの選択を、私と対話しながら決めていきます。これは、あなたの一着をあなた自身が設計する時間です。</p>
                 <p class="process-step-text">仕様が固まったところで、最終的な価格をご提示します。どのようにお支払いするのかここでお伝えください。</p>
               </div>
-              <div class="process-step-img-wrap img-wrap-wide">
+              <div class="process-step-img-wrap img-wrap-lining">
                 <img src="images/lining-button.png" loading="lazy" alt="仕様選定 — 裏地・ボタンのバリエーション" class="process-step-img">
               </div>
             </div>
