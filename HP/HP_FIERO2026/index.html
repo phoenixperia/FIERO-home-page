@@ -1737,6 +1737,19 @@
       background-color: var(--color-background-alt);
       padding: 120px 0;
     }
+    .bespoke-header-photo {
+      width: 100%;
+      max-width: 960px;
+      height: 420px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      margin: 0 auto var(--space-16);
+      border: 1px solid var(--color-border);
+    }
+    @media (max-width: 639px) {
+      .bespoke-header-photo { height: 240px; }
+    }
 
     .bespoke-header {
       text-align: center;
@@ -3467,6 +3480,7 @@
   <section class="bespoke-section" id="bespoke">
     <div class="container">
       <div class="bespoke-header fade-in">
+        <img src="images/patine-craftsman.png" alt="職人による丁寧な仕立て — FIERO Bespoke" class="bespoke-header-photo" loading="lazy">
         <span class="section-eyebrow">Bespoke Card</span>
         <h2 class="section-title">5年後のあなたを<br class="sp-br">覚えているテーラー</h2>
         <p class="bespoke-lead">FIEROでは初回のご来店時に<br class="sp-br">あなただけの<br class="pc-br">「Bespoke Card」<br class="sp-br">を作成します。</p>
