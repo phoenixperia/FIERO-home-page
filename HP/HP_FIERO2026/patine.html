@@ -816,7 +816,11 @@
       font-weight: 500;
       letter-spacing: 0.1em;
       flex-shrink: 0;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
     }
+    .testimonial-avatar[style*="background-image"] { color: transparent; }
     .testimonial-name {
       font-family: var(--font-serif-en);
       font-size: var(--text-base);
@@ -1228,15 +1232,15 @@
   <div class="inner">
     <div class="craftsman-inner">
       <div>
-        <img src="patine-images/craftsman.jpg" alt="職人がパティーヌを施す様子" class="craftsman-img">
+        <img src="images/patine-craftsman.jpg" alt="職人がパティーヌを施す様子" class="craftsman-img">
       </div>
       <div class="craftsman-text">
         <span class="eyebrow">Craftsman</span>
-        <h2 class="sec-title-en">職人が、<br>一点一点。</h2>
+        <h2 class="sec-title-en">職人が一点一点。</h2>
         <div class="divider-gold"></div>
         <p>色の重なり、ムラの妙。<br>機械では決して出せない奥行きを、職人の手が生み出します。</p>
-        <p>一足一足に向き合い、革と対話するように色を入れていく。<br>だからこそ、同じ仕上がりは二度とない。</p>
-        <p>あなたの一足は、あなただけのものになります。</p>
+        <p>一足一足に向き合い、革と対話するように色を入れていく。</p>
+        <p>だからこそ、同じ仕上がりは二度とない。</p>
       </div>
     </div>
   </div>
@@ -1355,7 +1359,7 @@
       </div>
       <div class="testimonial-card">
         <div class="testimonial-header">
-          <div class="testimonial-avatar">O.H</div>
+          <div class="testimonial-avatar" style="background-image: url('images/style-log/mens/mens-06.png');"></div>
           <div class="testimonial-name">O・H 様</div>
         </div>
         <div class="testimonial-qa">
@@ -1373,7 +1377,7 @@
       </div>
       <div class="testimonial-card">
         <div class="testimonial-header">
-          <div class="testimonial-avatar">H.A</div>
+          <div class="testimonial-avatar" style="background-image: url('images/voice-ha.jpg');"></div>
           <div class="testimonial-name">H・A 様</div>
         </div>
         <div class="testimonial-qa">
