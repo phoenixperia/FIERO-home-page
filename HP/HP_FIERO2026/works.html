@@ -10,18 +10,18 @@
     gtag('js', new Date());
     gtag('config', 'G-ZDRSMLVP3W');
   </script>
-  <title>Style Log | FIERO — オーダースーツ・レディーススタイル記録</title>
-  <meta name="description" content="FIEROが手がけたオーダースーツ・レディースウェアの仕上がり記録。ペイズリージャケットからグレンチェックまで、一着ごとのストーリー。">
+  <title>Style Log | FIERO — オーダースーツ・スタイル記録</title>
+  <meta name="description" content="FIEROが手がけたオーダースーツ・レディースウェア・パティーヌシューズ・レザー小物の仕上がり記録。一着ごとのストーリー。">
   <link rel="canonical" href="https://fiero-suits.com/works.html">
   <meta name="keywords" content="オーダースーツ,ビスポーク,レディースオーダー,スタイルログ,FIERO,藤井孝昌,町田,相模原">
-  <meta property="og:title" content="Style Log | FIERO — オーダースーツ仕上がり記録">
+  <meta property="og:title" content="Style Log | FIERO — スタイル仕上がり記録">
   <meta property="og:description" content="FIEROが手がけたオーダースーツ・レディースウェアの仕上がり記録。一着ごとのストーリー。">
   <meta property="og:url" content="https://fiero-suits.com/works.html">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://fiero-suits.com/images/style-log/ladies/ladies-02.jpg">
+  <meta property="og:image" content="https://fiero-suits.com/images/style-log/mens/mens-01.jpg">
   <meta property="og:site_name" content="FIERO">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://fiero-suits.com/images/style-log/ladies/ladies-02.jpg">
+  <meta name="twitter:image" content="https://fiero-suits.com/images/style-log/mens/mens-01.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,7 +33,7 @@
       "@type": "LocalBusiness",
       "name": "FIERO",
       "url": "https://fiero-suits.com",
-      "image": "https://fiero-suits.com/images/style-log/ladies/ladies-02.jpg",
+      "image": "https://fiero-suits.com/images/style-log/mens/mens-01.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "中町1-2-5 3階（BIZcomfort町田内）",
@@ -41,8 +41,7 @@
         "addressRegion": "東京都",
         "postalCode": "194-0021",
         "addressCountry": "JP"
-      },
-      "telephone": "090-4847-0487"
+      }
     }
   }
   </script>
@@ -144,6 +143,8 @@
       gap: 0;
       border-bottom: 1px solid var(--border);
       background: #fff;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .tab-btn {
       font-family: 'Inter', sans-serif;
@@ -151,7 +152,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
-      padding: 20px 48px;
+      padding: 20px 40px;
       border: none;
       border-bottom: 2px solid transparent;
       background: none;
@@ -159,6 +160,8 @@
       transition: color 0.2s, border-color 0.2s;
       position: relative;
       top: 1px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .tab-btn:hover { color: var(--navy); }
     .tab-btn.active {
@@ -190,6 +193,10 @@
     }
     .gallery-grid {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px 32px;
+    }
+    .gallery-grid.col-2 {
       grid-template-columns: repeat(2, 1fr);
       gap: 48px 40px;
     }
@@ -229,6 +236,7 @@
       letter-spacing: 0.25em;
       color: var(--gold);
       text-transform: uppercase;
+      white-space: nowrap;
     }
     .card-line {
       flex: 1;
@@ -252,7 +260,7 @@
       color: var(--muted);
     }
 
-    /* メンズ準備中 */
+    /* Coming Soon パネル */
     .coming-panel {
       padding: 100px 40px;
       text-align: center;
@@ -341,15 +349,17 @@
     }
 
     /* レスポンシブ */
+    @media (max-width: 1023px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
+      .gallery-grid.col-2 { gap: 40px 24px; }
+    }
     @media (max-width: 639px) {
       .header { padding: 16px 20px; }
       .page-hero { padding: 48px 20px 40px; }
-      .tab-btn { padding: 16px 24px; font-size: 0.75rem; }
+      .tab-btn { padding: 16px 20px; font-size: 0.75rem; letter-spacing: 0.1em; }
       .gallery-section { padding: 40px 20px 60px; }
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+      .gallery-grid { grid-template-columns: 1fr; gap: 40px; }
+      .gallery-grid.col-2 { grid-template-columns: 1fr; gap: 40px; }
       .coming-panel { padding: 64px 20px; }
       .cta-banner { padding: 48px 20px; }
       .footer { padding: 20px; }
@@ -377,28 +387,119 @@
 
   <!-- タブナビゲーション -->
   <nav class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('ladies', this)">
+    <button class="tab-btn active" onclick="switchTab('mens', this)">
+      Men's<span class="tab-badge">5</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('ladies', this)">
       Ladies<span class="tab-badge">2</span>
     </button>
-    <button class="tab-btn" onclick="switchTab('mens', this)">
-      Men's
+    <button class="tab-btn" onclick="switchTab('shoes', this)">
+      Shoes
+    </button>
+    <button class="tab-btn" onclick="switchTab('bags', this)">
+      Bags
     </button>
   </nav>
 
   <main class="main">
 
-    <!-- レディースパネル -->
-    <div id="tab-ladies" class="tab-panel active">
+    <!-- メンズパネル -->
+    <div id="tab-mens" class="tab-panel active">
       <div class="gallery-section">
         <div class="gallery-grid">
 
-          <!-- LADIES2: ピンクペイズリーセットアップ（着用写真） -->
           <div class="style-card">
             <div class="card-img-wrap">
-              <img
-                src="images/style-log/ladies/ladies-02.jpg"
-                alt="ピンクペイズリージャケット × シルバーブロケードパンツ — FIEROレディースオーダー"
-              >
+              <img src="images/style-log/mens/mens-01.jpg" loading="lazy" alt="グレーヘリンボーン スーツ — FIEROメンズオーダー">
+            </div>
+            <div class="card-meta">
+              <span class="card-category">Men's Order</span>
+              <span class="card-line"></span>
+            </div>
+            <h2 class="card-title">Grey Herringbone Suit</h2>
+            <p class="card-detail">
+              クラシックなグレーヘリンボーンを<br>
+              現代的なシルエットで仕立てた<br>
+              ビジネスの場で映えるスーツ。
+            </p>
+          </div>
+
+          <div class="style-card">
+            <div class="card-img-wrap">
+              <img src="images/style-log/mens/mens-02.jpg" loading="lazy" alt="ホワイト オーダージャケット — FIEROメンズオーダー">
+            </div>
+            <div class="card-meta">
+              <span class="card-category">Men's Order</span>
+              <span class="card-line"></span>
+            </div>
+            <h2 class="card-title">White Order Jacket</h2>
+            <p class="card-detail">
+              清潔感と存在感を両立した<br>
+              ホワイト系ジャケット。<br>
+              素材の光沢が品格を引き立てる。
+            </p>
+          </div>
+
+          <div class="style-card">
+            <div class="card-img-wrap">
+              <img src="images/style-log/mens/mens-03.jpg" loading="lazy" alt="ネイビー ドットジャケット — FIEROメンズオーダー">
+            </div>
+            <div class="card-meta">
+              <span class="card-category">Men's Order</span>
+              <span class="card-line"></span>
+            </div>
+            <h2 class="card-title">Navy Dot Jacket</h2>
+            <p class="card-detail">
+              ネイビーベースに細かなドットが<br>
+              アクセントになった個性的な一着。<br>
+              遊び心ある大人のスタイル。
+            </p>
+          </div>
+
+          <div class="style-card">
+            <div class="card-img-wrap">
+              <img src="images/style-log/mens/mens-04.jpg" loading="lazy" alt="ダーク ベストスタイル — FIEROメンズオーダー">
+            </div>
+            <div class="card-meta">
+              <span class="card-category">Men's Order</span>
+              <span class="card-line"></span>
+            </div>
+            <h2 class="card-title">Dark Waistcoat Suit</h2>
+            <p class="card-detail">
+              ダークトーンのベスト付きスーツ。<br>
+              ウエストの絞りとベストの組み合わせが<br>
+              紳士的な佇まいを演出する。
+            </p>
+          </div>
+
+          <div class="style-card">
+            <div class="card-img-wrap">
+              <img src="images/style-log/mens/mens-05.jpg" loading="lazy" alt="ネイビー スリーピーススーツ — FIEROメンズオーダー">
+            </div>
+            <div class="card-meta">
+              <span class="card-category">Men's Order</span>
+              <span class="card-line"></span>
+            </div>
+            <h2 class="card-title">Navy 3-Piece Suit</h2>
+            <p class="card-detail">
+              深みのあるネイビーで仕立てた<br>
+              スリーピーススーツ。<br>
+              格式と洗練を兼ね備えた一着。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- レディースパネル -->
+    <div id="tab-ladies" class="tab-panel">
+      <div class="gallery-section">
+        <div class="gallery-grid col-2">
+
+          <div class="style-card">
+            <div class="card-img-wrap">
+              <img src="images/style-log/ladies/ladies-02.jpg" loading="lazy" alt="ピンクペイズリージャケット × シルバーブロケードパンツ — FIEROレディースオーダー">
             </div>
             <div class="card-meta">
               <span class="card-category">Ladies Order</span>
@@ -412,13 +513,9 @@
             </p>
           </div>
 
-          <!-- LADIES1: グレンチェックジャケット（マネキン） -->
           <div class="style-card">
             <div class="card-img-wrap">
-              <img
-                src="images/style-log/ladies/ladies-01.jpg"
-                alt="グレンチェック × ハウンドトゥース ジャケット — FIEROレディースオーダー"
-              >
+              <img src="images/style-log/ladies/ladies-01.jpg" loading="lazy" alt="グレンチェック × ハウンドトゥース ジャケット — FIEROレディースオーダー">
             </div>
             <div class="card-meta">
               <span class="card-category">Ladies Order</span>
@@ -436,17 +533,32 @@
       </div>
     </div>
 
-    <!-- メンズパネル -->
-    <div id="tab-mens" class="tab-panel">
+    <!-- シューズパネル -->
+    <div id="tab-shoes" class="tab-panel">
       <div class="coming-panel">
         <div class="coming-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
         </div>
         <p class="coming-label">Coming Soon</p>
-        <h2 class="coming-h2">Men's Style Log</h2>
+        <h2 class="coming-h2">Shoes Style Log</h2>
         <p class="coming-text">
-          メンズのスタイル記録を<br>
-          準備しています。
+          パティーヌオーダーシューズの<br>
+          スタイル記録を準備しています。
+        </p>
+      </div>
+    </div>
+
+    <!-- バッグパネル -->
+    <div id="tab-bags" class="tab-panel">
+      <div class="coming-panel">
+        <div class="coming-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
+        </div>
+        <p class="coming-label">Coming Soon</p>
+        <h2 class="coming-h2">Bags &amp; Leather Style Log</h2>
+        <p class="coming-text">
+          レザー小物・バッグの<br>
+          スタイル記録を準備しています。
         </p>
       </div>
     </div>
