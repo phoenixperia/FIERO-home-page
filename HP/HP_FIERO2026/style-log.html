@@ -920,12 +920,24 @@
   </footer>
 
   <script>
+    const VALID_TABS = ['mens', 'ladies', 'shoes', 'bags', 'coats', 'memories'];
+
     function switchTab(id, btn) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.getElementById('tab-' + id).classList.add('active');
       btn.classList.add('active');
+      history.replaceState(null, '', '#' + id);
     }
+
+    // ハッシュからタブを開く
+    (function() {
+      const hash = location.hash.replace('#', '');
+      if (VALID_TABS.includes(hash)) {
+        const btn = document.querySelector('.tab-btn[onclick*="' + hash + '"]');
+        if (btn) switchTab(hash, btn);
+      }
+    })();
   </script>
 
 </body>
