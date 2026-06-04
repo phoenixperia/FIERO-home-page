@@ -348,12 +348,16 @@
       color: var(--muted);
     }
 
+    /* 改行制御 */
+    .sp-br { display: none; }
+
     /* レスポンシブ */
     @media (max-width: 1023px) {
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
       .gallery-grid.col-2 { gap: 40px 24px; }
     }
     @media (max-width: 639px) {
+      .sp-br { display: inline; }
       .header { padding: 16px 20px; }
       .page-hero { padding: 48px 20px 40px; }
       .tab-btn { padding: 16px 20px; font-size: 0.75rem; letter-spacing: 0.1em; }
@@ -681,7 +685,7 @@
   <!-- CTAバナー -->
   <section class="cta-banner">
     <p class="cta-banner-label">Reservation</p>
-    <p class="cta-banner-title">あなたの一着を、一緒に考えましょう。</p>
+    <p class="cta-banner-title">あなたの一着を<br class="sp-br">一緒に考えましょう。</p>
     <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="cta-btn">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
       自分に似合う一着を相談する
