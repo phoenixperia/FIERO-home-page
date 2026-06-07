@@ -191,13 +191,16 @@
       max-width: 1100px;
       margin: 0 auto;
     }
+    /* グリッド：6列ベース
+       縦カード → span 2（3枚/行）
+       横カード → span 3（2枚/行）
+       混在しても自動で折り返す */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 48px 32px;
     }
     .gallery-grid.col-2 {
-      grid-template-columns: repeat(2, 1fr);
       gap: 48px 40px;
     }
 
@@ -206,12 +209,19 @@
       display: block;
       text-decoration: none;
       color: inherit;
+      grid-column: span 2; /* 縦：3枚/行 */
+    }
+    .style-card.landscape {
+      grid-column: span 3; /* 横：2枚/行 */
     }
     .card-img-wrap {
       overflow: hidden;
       background: var(--bg-alt);
       margin-bottom: 20px;
       aspect-ratio: 3 / 4;
+    }
+    .style-card.landscape .card-img-wrap {
+      aspect-ratio: 4 / 3; /* 横画像は横長で表示 */
     }
     .card-img-wrap img {
       width: 100%;
@@ -737,7 +747,7 @@
             </p>
           </div>
 
-          <div class="style-card">
+          <div class="style-card landscape">
             <div class="card-img-wrap">
               <img src="images/style-log/shoes/patine-05.png" loading="lazy" alt="パティーヌ オーダーシューズ 05 — FIERO">
             </div>
@@ -753,7 +763,7 @@
             </p>
           </div>
 
-          <div class="style-card">
+          <div class="style-card landscape">
             <div class="card-img-wrap">
               <img src="images/style-log/shoes/patine-06.png" loading="lazy" alt="パティーヌ オーダーシューズ 06 — FIERO">
             </div>
