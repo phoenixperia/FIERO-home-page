@@ -212,7 +212,7 @@
       grid-column: span 2; /* 縦：3枚/行 */
     }
     .style-card.landscape {
-      grid-column: span 1; /* 横画像は通常グリッドセル */
+      grid-column: span 3; /* 横：2枚/行 */
     }
     .card-img-wrap {
       overflow: hidden;
@@ -446,6 +446,9 @@
     @media (max-width: 1023px) {
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
       .gallery-grid.col-2 { gap: 40px 24px; }
+      /* タブレット: 縦1枚/行、横1枚/行 */
+      .style-card { grid-column: span 2; }
+      .style-card.landscape { grid-column: span 2; }
     }
     @media (max-width: 639px) {
       .sp-br { display: inline; }
@@ -455,6 +458,8 @@
       .gallery-section { padding: 40px 20px 60px; }
       .gallery-grid { grid-template-columns: 1fr; gap: 40px; }
       .gallery-grid.col-2 { grid-template-columns: 1fr; gap: 40px; }
+      .style-card { grid-column: span 1; }
+      .style-card.landscape { grid-column: span 1; }
       .coming-panel { padding: 64px 20px; }
       .cta-banner { padding: 48px 20px; }
       .footer { padding: 20px; }
