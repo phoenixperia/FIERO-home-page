@@ -425,12 +425,10 @@
     .memory-photo.wide { grid-column: span 2; }
     /* featured: 縦2倍 */
     .memory-photo.tall { grid-row: span 2; aspect-ratio: auto; }
-    /* フィレンツェ: PC は横長2:1で上半分(街並み)のみ表示、スマホは16:9で街並みにフォーカス */
-    .memory-photo.florence { aspect-ratio: 8/3; }
-    .memory-photo.florence img { object-position: center 20%; }
+    /* フィレンツェ: スマホ・タブレットのみ16:9にして街並みにフォーカス（PCはデフォルト4/3のまま） */
     @media (max-width: 1023px) {
       .memory-photo.florence { aspect-ratio: 16/9; }
-      .memory-photo.florence img { object-position: center 35%; }
+      .memory-photo.florence img { object-position: center 55%; }
     }
     @media (max-width: 1023px) {
       .memories-grid { grid-template-columns: repeat(2, 1fr); }
