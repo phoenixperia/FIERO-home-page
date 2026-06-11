@@ -138,6 +138,46 @@
       margin-top: 2px;
     }
     .header-contact { text-align: right; }
+    /* ヘッダー お問い合わせボタン */
+    .header-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 9px 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+      margin-left: 20px;
+      white-space: nowrap;
+    }
+    .header-cta-btn:hover { background: var(--primary); transform: translateY(-1px); }
+    /* ナビバー 所属団体リンクボタン */
+    .pnav-btn--org {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-mid);
+      border: 1px solid rgba(58,36,16,0.14);
+      border-radius: 4px;
+      background: var(--white);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .pnav-btn--org:first-of-type { margin-left: auto; }
+    .pnav-btn--org + .pnav-btn--org { margin-left: 6px; }
+    .pnav-btn--org:hover { border-color: var(--accent); color: var(--accent); }
+    .pnav-org-logo { height: 18px; width: auto; display: block; }
     .header-area {
       font-size: 22px; /* 変更前: 11px */
       color: var(--text-light);
@@ -1089,7 +1129,8 @@
 
       .page-nav-inner { padding: 0 16px; justify-content: space-around; }
       .pnav-btn { font-size: 12px; padding: 10px 12px; }
-      .pnav-btn--contact { display: none; } /* スマホはヒーローに電話番号があるので非表示 */
+      .pnav-btn--org { display: none; } /* スマホはナビに所属団体ボタン非表示 */
+      .header-cta-btn { display: none; } /* スマホはヘッダーCTAボタン非表示 */
 
       .suberan-banner { flex-direction: column; padding: 28px 24px; gap: 24px; }
       .suberan-right { width: 100%; }
@@ -1282,6 +1323,10 @@
           </svg>
           <span>042-711-7210</span>
           <span class="header-tel-note">受付 9:00〜17:00</span>
+          <a href="#contact" class="header-cta-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+            お問い合わせ
+          </a>
         </div>
       </div>
     </div>
@@ -1309,9 +1354,13 @@
         新着情報
       </a>
       -->
-      <a href="#contact" class="pnav-btn pnav-btn--contact">
-        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
-        お問い合わせ
+      <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="pnav-btn--org">
+        <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="pnav-org-logo">
+        全日本瓦工事業連盟
+      </a>
+      <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="pnav-btn--org">
+        <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="pnav-org-logo">
+        神奈川県瓦屋根工業連合会
       </a>
     </div>
   </nav>
