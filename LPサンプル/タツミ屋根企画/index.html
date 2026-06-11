@@ -1175,8 +1175,8 @@
 
       /* 所属団体バナー スマホ */
       .org-banners-section { padding: 44px 0; }
-      .org-banners-grid { grid-template-columns: 1fr; }
-      .org-banner-link { padding: 20px 20px; gap: 16px; }
+      .org-banners-grid { grid-template-columns: 1fr !important; } /* メインCSSより後に書かれているため !important で上書き */
+      .org-banner-link { flex-direction: row; padding: 20px; gap: 16px; }
       .org-banner-logo { height: 48px; max-width: 90px; }
       .org-banner-name { font-size: 14px; }
     }
