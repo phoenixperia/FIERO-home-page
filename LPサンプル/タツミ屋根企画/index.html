@@ -169,6 +169,36 @@
       margin-bottom: 5px;
       transition: border-color 0.2s ease;
     }
+    /* スマホ専用 所属団体バー */
+    .mobile-orgs-bar { display: none; }
+    .mobile-orgs-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-mid);
+      white-space: nowrap;
+      padding-right: 8px;
+      border-right: 1px solid rgba(58,36,16,0.15);
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+    .mobile-org-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px 3px 4px;
+      background: var(--white);
+      border: 1px solid rgba(58,36,16,0.15);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-mid);
+      white-space: nowrap;
+      transition: border-color 0.2s;
+    }
+    .mobile-org-btn:hover { border-color: var(--accent); }
+    .mobile-org-logo { height: 18px; width: auto; border-radius: 2px; }
+
     .pnav-orgs-group {
       display: flex;
       align-items: center;
@@ -1261,6 +1291,17 @@
       .pnav-btn { font-size: 12px; padding: 10px 12px; }
       .pnav-btn--org { display: none; } /* スマホはナビに所属団体ボタン非表示 */
       .pnav-orgs-group { display: none; } /* スマホはグループごと非表示 */
+      .mobile-orgs-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 16px;
+        background: var(--bg-warm);
+        border-bottom: 1px solid rgba(58,36,16,0.08);
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .mobile-orgs-bar::-webkit-scrollbar { display: none; }
       .header-cta-btn { display: none; } /* スマホはヘッダーCTAボタン非表示 */
 
       .suberan-banner { flex-direction: column; padding: 28px 24px; gap: 24px; }
@@ -1507,7 +1548,18 @@
   </nav>
 
 
-  <!-- 所属団体バー削除済み（ナビバーに統合） -->
+  <!-- スマホ専用 所属団体バー -->
+  <div class="mobile-orgs-bar">
+    <span class="mobile-orgs-label">所属団体</span>
+    <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="mobile-org-btn">
+      <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="mobile-org-logo">
+      全日本瓦工事業連盟
+    </a>
+    <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="mobile-org-btn">
+      <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="mobile-org-logo">
+      神奈川県瓦屋根工業連合会
+    </a>
+  </div>
 
 
   <!-- ============================================ HERO -->
@@ -1542,8 +1594,8 @@
               <span class="hero-trust-num">10<span class="unit">市</span></span>
               <span class="hero-trust-label">対応エリア</span>
             </div>
-            <div class="hero-trust-item">
-              <span class="hero-trust-num" style="font-size:16px; line-height:1.2; font-weight:900; white-space:nowrap;">建設業許可取得済み</span>
+            <div class="hero-trust-item" style="flex-shrink:0;">
+              <span class="hero-trust-num" style="font-size:14px; line-height:1.2; font-weight:900; white-space:nowrap; letter-spacing:-0.02em;">建設業許可取得済み</span>
             </div>
           </div>
           <!-- 所属団体ロゴ＋テキストボタン -->
