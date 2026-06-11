@@ -159,24 +159,53 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 6px 14px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-mid);
+      padding: 5px 12px 5px 10px;
       border: 1px solid rgba(58,36,16,0.14);
       border-radius: 4px;
       background: var(--white);
       text-decoration: none;
-      white-space: nowrap;
       flex-shrink: 0;
-      margin-top: 6px;
-      margin-bottom: 6px;
-      transition: border-color 0.2s ease, color 0.2s ease;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      transition: border-color 0.2s ease;
     }
-    .pnav-btn--org:first-child { margin-left: auto; } /* 最初の1つを右に押し出す */
-    .pnav-btn--org + .pnav-btn--org { margin-left: 6px; margin-top: 6px; margin-bottom: 6px; }
-    .pnav-btn--org:hover { border-color: var(--accent); color: var(--accent); }
-    .pnav-org-logo { height: 18px; width: auto; display: block; }
+    .pnav-btn--org:first-child { margin-left: auto; }
+    .pnav-btn--org + .pnav-btn--org { margin-left: 6px; }
+    .pnav-btn--org:hover { border-color: var(--accent); }
+    .pnav-btn--org:hover .pnav-org-fullname { color: var(--accent); }
+    .pnav-org-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      writing-mode: horizontal-tb;
+    }
+    .pnav-org-sep {
+      width: 1px;
+      height: 26px;
+      background: rgba(58,36,16,0.12);
+      flex-shrink: 0;
+    }
+    .pnav-org-logo { height: 22px; width: auto; display: block; flex-shrink: 0; }
+    .pnav-org-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .pnav-org-corp {
+      font-size: 9px;
+      font-weight: 400;
+      color: rgba(58,36,16,0.5);
+      white-space: nowrap;
+    }
+    .pnav-org-fullname {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-mid);
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
     .header-area {
       font-size: 22px; /* 変更前: 11px */
       color: var(--text-light);
@@ -1430,12 +1459,22 @@
       </a>
       -->
       <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="pnav-btn--org" style="margin-left:auto;">
+        <span class="pnav-org-label">所属団体</span>
+        <span class="pnav-org-sep"></span>
         <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="pnav-org-logo">
-        全日本瓦工事業連盟
+        <span class="pnav-org-text">
+          <span class="pnav-org-corp">一般社団法人</span>
+          <span class="pnav-org-fullname">全日本瓦工事業連盟</span>
+        </span>
       </a>
       <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="pnav-btn--org">
+        <span class="pnav-org-label">所属団体</span>
+        <span class="pnav-org-sep"></span>
         <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="pnav-org-logo">
-        神奈川県瓦屋根工業連合会
+        <span class="pnav-org-text">
+          <span class="pnav-org-corp">神奈川県</span>
+          <span class="pnav-org-fullname">瓦屋根工業連合会</span>
+        </span>
       </a>
     </div>
   </nav>
@@ -1881,6 +1920,40 @@
   </section>
 
 
+
+
+  <!-- ============================================ 所属団体リンクバナー -->
+  <section class="org-banners-section">
+    <div class="container">
+      <div class="org-banners-title">MEMBER ORGANIZATION</div>
+      <div class="org-banners-grid">
+        <!-- 全日本瓦工事業連盟 -->
+        <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="org-banner-link">
+          <img src="./images/logo-zenkawaren.jpg" alt="一般社団法人 全日本瓦工事業連盟" class="org-banner-logo">
+          <div class="org-banner-info">
+            <div class="org-banner-label">所属団体</div>
+            <div class="org-banner-name">一般社団法人<br>全日本瓦工事業連盟</div>
+            <div class="org-banner-url">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm57.63,109.66-80,72A8,8,0,0,1,92,198.48V57.52a8,8,0,0,1,13.63-5.18l80,72a8,8,0,0,1,0,11.32Z"/></svg>
+              www.yane.or.jp
+            </div>
+          </div>
+        </a>
+        <!-- 神奈川県瓦屋根工業連合会 -->
+        <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="org-banner-link">
+          <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="org-banner-logo">
+          <div class="org-banner-info">
+            <div class="org-banner-label">所属団体</div>
+            <div class="org-banner-name">神奈川県<br>瓦屋根工業連合会</div>
+            <div class="org-banner-url">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm57.63,109.66-80,72A8,8,0,0,1,92,198.48V57.52a8,8,0,0,1,13.63-5.18l80,72a8,8,0,0,1,0,11.32Z"/></svg>
+              yanekana.jp
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
 
   <!-- ============================================ FOOTER -->
