@@ -164,7 +164,7 @@
     ============================================ */
     .hero {
       background: var(--bg-warm);
-      min-height: calc(100vh - 74px - 44px); /* ヘッダー74px + ナビバー44px */
+      min-height: calc(100vh - 74px - 44px - 54px); /* ヘッダー74px + ナビバー44px + 所属団体バー54px */
       position: relative;
       overflow: hidden;
       display: flex;
@@ -1017,8 +1017,8 @@
       .header-logo { width: 40px; height: 40px; }
       .header-name { font-size: 15px; }
 
-      /* ヒーロー高さをモバイルヘッダー56px＋ナビ40pxに合わせて再計算 */
-      .hero { min-height: calc(100vh - 56px - 40px); height: auto; }
+      /* ヒーロー高さをモバイルヘッダー56px＋ナビ40px＋所属団体バー46pxに合わせて再計算 */
+      .hero { min-height: calc(100vh - 56px - 40px - 46px); height: auto; }
 
       /* ===== モバイルヒーロー: 写真を背景にひく ===== */
       .hero {
@@ -1112,6 +1112,150 @@
 
       h2.section-title { font-size: clamp(24px, 7vw, 34px) !important; }
       img { max-width: 100%; }
+
+      /* 所属団体バー スマホ */
+      .member-bar-inner { padding: 0 16px; gap: 8px; }
+      .member-bar-label { display: none; }
+      .member-org { padding: 6px 12px; font-size: 12px; gap: 8px; }
+      .member-org-logo { height: 26px; }
+      .member-org-sub { display: none; }
+
+      /* 所属団体バナー スマホ */
+      .org-banners-section { padding: 44px 0; }
+      .org-banners-grid { grid-template-columns: 1fr; }
+      .org-banner-link { padding: 20px 20px; gap: 16px; }
+      .org-banner-logo { height: 48px; max-width: 90px; }
+      .org-banner-name { font-size: 14px; }
+    }
+
+    /* ============================================
+       所属団体バー（ページ上部）
+    ============================================ */
+    .member-bar {
+      background: var(--white);
+      border-bottom: 2px solid rgba(58,36,16,0.08);
+      padding: 10px 0;
+    }
+    .member-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .member-bar-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--text-light);
+      white-space: nowrap;
+      padding-right: 12px;
+      border-right: 1px solid rgba(58,36,16,0.12);
+    }
+    .member-org {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 18px 7px 12px;
+      background: var(--bg-warm);
+      border: 1px solid rgba(58,36,16,0.10);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .member-org:hover {
+      border-color: var(--accent);
+      background: var(--white);
+      box-shadow: 0 3px 14px rgba(200,132,60,0.18);
+    }
+    .member-org-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .member-org-text { line-height: 1.3; }
+    .member-org-sub {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    /* ============================================
+       所属団体リンクバナー（問い合わせ下）
+    ============================================ */
+    .org-banners-section {
+      background: var(--bg-alt);
+      padding: 64px 0;
+    }
+    .org-banners-title {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--text-light);
+      margin-bottom: 32px;
+    }
+    .org-banners-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .org-banner-link {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 28px 32px;
+      background: var(--white);
+      border: 2px solid rgba(58,36,16,0.08);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .org-banner-link:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(200,132,60,0.18);
+    }
+    .org-banner-logo {
+      height: 64px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .org-banner-info { flex: 1; min-width: 0; }
+    .org-banner-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .org-banner-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .org-banner-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1171,6 +1315,28 @@
       </a>
     </div>
   </nav>
+
+
+  <!-- ============================================ 所属団体バー -->
+  <div class="member-bar">
+    <div class="member-bar-inner">
+      <span class="member-bar-label">所属団体</span>
+      <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="member-org">
+        <img src="./images/logo-zenkawaren.jpg" alt="一般社団法人 全日本瓦工事業連盟" class="member-org-logo">
+        <span class="member-org-text">
+          一般社団法人 全日本瓦工事業連盟
+          <span class="member-org-sub">ZENGAREN — 全瓦連 正会員</span>
+        </span>
+      </a>
+      <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="member-org">
+        <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="member-org-logo">
+        <span class="member-org-text">
+          神奈川県瓦屋根工業連合会
+          <span class="member-org-sub">優良加盟店</span>
+        </span>
+      </a>
+    </div>
+  </div>
 
 
   <!-- ============================================ HERO -->
@@ -1591,6 +1757,40 @@
   </section>
 
 
+  <!-- ============================================ 所属団体リンクバナー -->
+  <section class="org-banners-section">
+    <div class="container">
+      <div class="org-banners-title">MEMBER ORGANIZATION</div>
+      <div class="org-banners-grid">
+        <!-- 全日本瓦工事業連盟 -->
+        <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="org-banner-link">
+          <img src="./images/logo-zenkawaren.jpg" alt="一般社団法人 全日本瓦工事業連盟" class="org-banner-logo">
+          <div class="org-banner-info">
+            <div class="org-banner-label">所属団体</div>
+            <div class="org-banner-name">一般社団法人<br>全日本瓦工事業連盟</div>
+            <div class="org-banner-url">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm57.63,109.66-80,72A8,8,0,0,1,92,198.48V57.52a8,8,0,0,1,13.63-5.18l80,72a8,8,0,0,1,0,11.32Z"/></svg>
+              www.yane.or.jp
+            </div>
+          </div>
+        </a>
+        <!-- 神奈川県瓦屋根工業連合会 -->
+        <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="org-banner-link">
+          <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="org-banner-logo">
+          <div class="org-banner-info">
+            <div class="org-banner-label">所属団体</div>
+            <div class="org-banner-name">神奈川県<br>瓦屋根工業連合会</div>
+            <div class="org-banner-url">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm57.63,109.66-80,72A8,8,0,0,1,92,198.48V57.52a8,8,0,0,1,13.63-5.18l80,72a8,8,0,0,1,0,11.32Z"/></svg>
+              yanekana.jp
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ============================================ FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -1639,12 +1839,19 @@
             <div class="footer-list-item">
               <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
                 <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
-              </svg>町田商工会議所
+              </svg>
+              <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5); text-decoration:none;">一般社団法人 全日本瓦工事業連盟</a>
             </div>
             <div class="footer-list-item">
               <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
                 <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
-              </svg>神奈川県瓦連盟
+              </svg>
+              <a href="https://yanekana.jp/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5); text-decoration:none;">神奈川県瓦屋根工業連合会</a>
+            </div>
+            <div class="footer-list-item">
+              <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
+              </svg>町田商工会議所
             </div>
           </div>
         </div>
