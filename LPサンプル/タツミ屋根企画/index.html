@@ -330,6 +330,35 @@
       margin-top: 5px;
     }
     /* 実績タグ列 */
+    .hero-orgs {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-org-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px 5px 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .hero-org-badge:hover { background: rgba(255,255,255,0.2); }
+    .hero-org-logo {
+      height: 24px;
+      width: auto;
+      border-radius: 2px;
+    }
+    .hero-org-name {
+      font-size: 11px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+      white-space: nowrap;
+    }
     .hero-trust {
       display: flex;
       gap: 0;
@@ -1197,6 +1226,7 @@
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
       h2.section-title { font-size: clamp(24px, 7vw, 34px) !important; }
+      .section-sub { font-size: 15.2px; }
       img { max-width: 100%; }
 
       /* 所属団体バー スマホ */
@@ -1450,6 +1480,17 @@
               <span class="hero-trust-num" style="font-size:18px; line-height:1.2; font-weight:900;">建設業許可</span>
               <span class="hero-trust-label">取得済み</span>
             </div>
+          </div>
+          <!-- 所属団体バッジ -->
+          <div class="hero-orgs">
+            <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="hero-org-badge">
+              <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="hero-org-logo">
+              <span class="hero-org-name">全日本瓦工事業連盟</span>
+            </a>
+            <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="hero-org-badge">
+              <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="hero-org-logo">
+              <span class="hero-org-name">神奈川県瓦屋根工業連合会</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1840,38 +1881,6 @@
   </section>
 
 
-  <!-- ============================================ 所属団体リンクバナー -->
-  <section class="org-banners-section">
-    <div class="container">
-      <div class="org-banners-title">MEMBER ORGANIZATION</div>
-      <div class="org-banners-grid">
-        <!-- 全日本瓦工事業連盟 -->
-        <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="org-banner-link">
-          <img src="./images/logo-zenkawaren.jpg" alt="一般社団法人 全日本瓦工事業連盟" class="org-banner-logo">
-          <div class="org-banner-info">
-            <div class="org-banner-label">所属団体</div>
-            <div class="org-banner-name">一般社団法人<br>全日本瓦工事業連盟</div>
-            <div class="org-banner-url">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm57.63,109.66-80,72A8,8,0,0,1,92,198.48V57.52a8,8,0,0,1,13.63-5.18l80,72a8,8,0,0,1,0,11.32Z"/></svg>
-              www.yane.or.jp
-            </div>
-          </div>
-        </a>
-        <!-- 神奈川県瓦屋根工業連合会 -->
-        <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="org-banner-link">
-          <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="org-banner-logo">
-          <div class="org-banner-info">
-            <div class="org-banner-label">所属団体</div>
-            <div class="org-banner-name">神奈川県<br>瓦屋根工業連合会</div>
-            <div class="org-banner-url">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm57.63,109.66-80,72A8,8,0,0,1,92,198.48V57.52a8,8,0,0,1,13.63-5.18l80,72a8,8,0,0,1,0,11.32Z"/></svg>
-              yanekana.jp
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
 
 
   <!-- ============================================ FOOTER -->
