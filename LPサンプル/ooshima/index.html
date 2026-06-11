@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大島ともみ — 津南町長候補</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== 大島カラー: 青（ポイント）× 赤 × 白ベース ===== */
+    :root {
+      --navy: #0d2244;        /* ネイビー（SNS・フッター背景） */
+      --blue: #0082c8;        /* メインブルー（ヘッダー・アクセント） */
+      --blue-light: #e8f4fc;  /* 薄い青（背景ポイント） */
+      --gold: #e60012;        /* 赤 */
+      --gold-light: #ff4455;  /* 明るい赤 */
+      --white: #ffffff;
+      --off-white: #f8f9fb;
+      --text: #1a1a2e;
+      --text-light: #5a6080;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+    }
+
+    .page-wrap {
+      max-width: 430px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    /* ===== ヘッダー ===== */
+    .header {
+      background: var(--blue);
+      padding: 16px 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 8px;
+    }
+
+    .name-block {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      padding: 0 0 16px;
+    }
+
+    .name-kanji {
+      font-size: 17vw;
+      display: block;
+      color: var(--gold);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 900;
+      line-height: 1.0;
+      white-space: nowrap;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 8px 8px;
+    }
+
+    .hero-text {
+      grid-column: 1;
+      grid-row: 1;
+      padding-bottom: 4px;
+    }
+
+    .hero-slogan {
+      font-size: 40px;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+      font-weight: 900;
+      font-family: 'Noto Serif JP', serif;
+      line-height: 1.5;
+    }
+
+    .slogan-yellow {
+      color: #ffd700;
+      font-weight: 900;
+    }
+
+    /* スマホのみ改行 */
+    br.sp-break { display: block; }
+
+    .hero-photo {
+      grid-column: 2;
+      grid-row: 1;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      object-position: center 15%;
+      border-radius: 8px 8px 0 0;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+      align-self: end;
+    }
+
+    .hero-photo-placeholder {
+      width: 160px;
+      height: 180px;
+      border-radius: 12px 12px 0 0;
+      background: linear-gradient(180deg, #009fe8 0%, #0082c8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 12px;
+    }
+
+    /* 経歴バナー */
+    .career-banner {
+      background: var(--gold);
+      padding: 8px 20px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== ごあいさつ ===== */
+    .greeting {
+      background: var(--white);
+      padding: 28px 20px 32px;
+      position: relative;
+    }
+
+    .greeting::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--gold) 0%, var(--navy) 100%);
+      border-radius: 2px;
+    }
+
+    .greeting-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-left: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .greeting-body {
+      font-size: 14px;
+      line-height: 2.0;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .greeting-sign {
+      text-align: right;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== 区切り ===== */
+    .divider {
+      height: 5px;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 50%, var(--navy) 100%);
+    }
+
+    /* ===== 重点政策 ===== */
+    .policy-section {
+      background: var(--white);
+      padding: 32px 20px;
+      border-top: 3px solid var(--blue-light);
+      border-bottom: 3px solid var(--blue-light);
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--blue);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .policy-badge {
+      background: var(--gold);
+      color: var(--white);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px 16px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+    }
+
+    .policy-desc {
+      font-size: 12px;
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+    }
+
+    .policy-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pillar {
+      background: var(--off-white);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .pillar-num {
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 13px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pillar-body {}
+
+    .pillar-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .pillar-text {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .policy-effect {
+      margin-top: 20px;
+      background: var(--blue-light);
+      border-left: 3px solid var(--blue);
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .policy-effect-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .policy-effect-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .policy-effect-list li {
+      font-size: 12px;
+      color: var(--text);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .policy-effect-list li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 8px;
+      top: 4px;
+    }
+
+    /* ===== 7つのチャレンジ ===== */
+    .challenge-section {
+      background: var(--white);
+      padding: 32px 20px;
+    }
+
+    .challenge-section .section-label { color: var(--blue); }
+    .challenge-section .section-title { color: var(--navy); margin-bottom: 20px; }
+
+    .challenge-img {
+      width: calc(100% - 24px);
+      height: auto;
+      display: block;
+      border-radius: 0;
+      margin: 0 auto;
+    }
+
+    .challenge-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .challenge-item {
+      background: var(--off-white);
+      border-radius: 12px;
+      padding: 16px;
+      border-left: 4px solid var(--blue);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .challenge-item:hover {
+      transform: translateX(4px);
+      box-shadow: 2px 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .challenge-num {
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 900;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .challenge-body {}
+
+    .challenge-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .challenge-sub {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ===== 公式SNS ===== */
+    .sns-section {
+      background: var(--blue);   /* 水色統一 */
+      padding: 32px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sns-section::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .sns-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .sns-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .sns-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+      transform: translateY(-3px);
+    }
+
+    .sns-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== 活動報告 ===== */
+    .report-section {
+      background: var(--blue-light);
+      padding: 28px 20px;
+    }
+
+    .report-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .report-title::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--blue);
+    }
+
+    .report-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .report-item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: var(--white);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 500;
+      border-left: 3px solid var(--blue);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .report-item a:hover {
+      transform: translateX(4px);
+      box-shadow: 2px 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .report-arrow { color: var(--blue); }
+
+    /* ===== 基本情報 ===== */
+    .info-section {
+      background: var(--white);
+      padding: 28px 20px;
+    }
+
+    .info-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-title::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--blue);
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .info-table tr { border-bottom: 1px solid #f0ede8; }
+
+    .info-table th {
+      padding: 12px 0;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      width: 80px;
+      vertical-align: top;
+    }
+
+    .info-table td {
+      padding: 12px 0;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ===== フッター ===== */
+    .footer {
+      background: var(--blue);  /* 水色統一 */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ===== PC: 拡大レイアウト ===== */
+    @media (min-width: 768px) {
+      /* page-wrapを全幅に。各セクションが画面端まで背景を広げる */
+      .page-wrap { max-width: 100%; }
+
+      /* コンテンツ幅を最大900pxに保ちつつ中央寄せ */
+      .header { padding: 40px max(60px, calc(50% - 450px)) 0; }
+      .label { font-size: 15px; letter-spacing: 0.3em; margin-bottom: 16px; }
+      .hero-slogan { font-size: 60px; line-height: 1.5; margin-bottom: 8px; }
+      .name-kanji { font-size: 92px; white-space: nowrap; }
+      .hero-text { padding-bottom: 0; }
+      .hero-photo { width: 320px; height: 460px; grid-row: 1 / span 2; align-self: end; object-position: center 10%; }
+      br.sp-break { display: none; }
+      .name-block { padding: 0 0 40px; grid-column: 1; grid-row: 2; }
+
+      .career-banner { font-size: 14px; padding: 14px max(60px, calc(50% - 450px)); line-height: 1.9; }
+
+      .greeting { padding: 64px max(80px, calc(50% - 450px)); }
+      .greeting-title { font-size: 20px; margin-bottom: 28px; }
+      .greeting-body { font-size: 18px; line-height: 2.2; margin-bottom: 32px; }
+      .greeting-sign { font-size: 30px; }
+
+      .policy-section { padding: 64px max(80px, calc(50% - 450px)); }
+      .section-label { font-size: 14px; letter-spacing: 0.36em; margin-bottom: 10px; }
+      .section-title { font-size: 36px; margin-bottom: 40px; }
+      .policy-badge { font-size: 18px; padding: 14px 24px; margin-bottom: 16px; }
+      .policy-desc { font-size: 15px; margin-bottom: 28px; }
+      .policy-pillars { gap: 14px; }
+      .pillar { padding: 20px 24px; gap: 16px; border-left-width: 4px; }
+      .pillar-num { width: 32px; height: 32px; font-size: 16px; }
+      .pillar-title { font-size: 17px; margin-bottom: 6px; }
+      .pillar-text { font-size: 14px; }
+      .policy-effect { margin-top: 28px; padding: 16px 20px; border-left-width: 4px; }
+      .policy-effect-title { font-size: 13px; margin-bottom: 10px; }
+      .policy-effect-list li { font-size: 14px; }
+
+      .challenge-section { padding: 64px max(40px, calc(50% - 520px)); }
+      .challenge-section .section-label,
+      .challenge-section .section-title { padding: 0; }
+      .challenge-img { width: calc(100% - 48px); max-width: 960px; margin: 0 auto; }
+      .challenge-img { border-radius: 0; }
+      .challenge-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .challenge-item { padding: 22px 20px; gap: 16px; }
+      .challenge-item--last { grid-column: 1 / -1; }
+      .challenge-num { width: 48px; height: 48px; font-size: 24px; }
+      .challenge-title { font-size: 17px; margin-bottom: 6px; }
+      .challenge-sub { font-size: 13px; }
+
+      .sns-section { padding: 64px max(80px, calc(50% - 450px)); }
+      .sns-grid { gap: 20px; max-width: 640px; margin: 0 auto; }
+      .sns-btn { padding: 32px 20px; font-size: 14px; gap: 14px; border-radius: 16px; }
+      .sns-icon { width: 56px; height: 56px; }
+      .sns-icon svg { width: 44px; height: 44px; }
+
+      .report-section { padding: 64px max(80px, calc(50% - 450px)); }
+      .report-title { font-size: 22px; margin-bottom: 24px; gap: 16px; }
+      .report-title::before { width: 36px; }
+      .report-list { gap: 12px; }
+      .report-item a { font-size: 18px; padding: 20px 28px; border-radius: 14px; border-left-width: 4px; }
+
+      .info-section { padding: 64px max(80px, calc(50% - 450px)); }
+      .info-title { font-size: 22px; margin-bottom: 24px; gap: 16px; }
+      .info-title::before { width: 36px; }
+      .info-table th { font-size: 15px; width: 100px; padding: 18px 0; }
+      .info-table td { font-size: 17px; padding: 18px 0; line-height: 1.8; }
+
+      .footer { padding: 36px max(80px, calc(50% - 450px)); }
+      .footer-name { font-size: 20px; margin-bottom: 8px; }
+      .footer-copy { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ===== PAGE 1: プロフィール ===== -->
+  <div class="page-1">
+
+  <div class="header">
+    <div class="hero-layout">
+      <div class="hero-text">
+        <div class="hero-slogan"><span class="slogan-yellow">実行力</span>で<br>つなん<br class="sp-break">再起動。</div>
+      </div>
+      <img class="hero-photo" src="images/photo.png" alt="大島ともみ">
+      <div class="name-block">
+        <span class="name-kanji">大島ともみ</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-banner">
+    南魚沼農業高校卒業／元津南町議会議員（6年間）／元津南小学校後援会長<br>
+    （株）ごはん・（株）SOL・（株）のけはし未来 代表取締役
+  </div>
+
+  <div class="greeting">
+    <div class="greeting-title">— 皆さまへ — ごあいさつ</div>
+    <div class="greeting-body">
+      　人口減少や少子高齢化、地域経済の衰退など、地方が直面している課題は山積しています。しかし、津南は、雪、山、農業、観光、医療と豊かな地域資源を持つポテンシャルの高い町です。<br><br>
+      　私はこの30年間にわたって事業家として地域に関わってまいりました。この経験を活かして、多くの皆様とともに、津南の再起動をめざしたいと思います。「実行力」で、つなんを動かす。皆さまのご支援を、どうぞよろしくお願いいたします。
+    </div>
+    <div class="greeting-sign">大島ともみ</div>
+  </div>
+
+  <div class="divider"></div>
+
+  </div><!-- /page-1 -->
+
+  <!-- ===== PAGE 2: 政策・SNS・活動報告 ===== -->
+  <div class="page-2">
+
+  <!-- 重点政策 -->
+  <div class="policy-section">
+    <div class="section-label">KEY POLICY</div>
+    <div class="section-title">重点政策</div>
+    <div class="policy-badge">「津南デジタル・エネルギーパーク構想」</div>
+    <p class="policy-desc">津南の未来を支える新しい産業の拠点づくり。<br>地域固有の豊かな自然・水資源を活用し、<br>次世代産業を津南に誘致します。</p>
+    <div class="policy-pillars">
+      <div class="pillar">
+        <div class="pillar-num">1</div>
+        <div class="pillar-body">
+          <div class="pillar-title">データセンター</div>
+          <div class="pillar-text">雪国の低温環境を活かした省エネ・安定稼働。国内屈指の低コスト冷却環境で企業誘致を実現。</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">2</div>
+        <div class="pillar-body">
+          <div class="pillar-title">系統用蓄電所</div>
+          <div class="pillar-text">再生可能エネルギーの集約・分配の要。エネルギー需要拡大への対応と地域収益化。</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">3</div>
+        <div class="pillar-body">
+          <div class="pillar-title">EV電池リユース工場</div>
+          <div class="pillar-text">EV普及で需要急増する電池のリユース・リサイクル。地元雇用と新産業を同時に創出。</div>
+        </div>
+      </div>
+    </div>
+    <div class="policy-effect">
+      <div class="policy-effect-title">津南町への効果</div>
+      <ul class="policy-effect-list">
+        <li>地元雇用：30〜80人創出</li>
+        <li>年1〜4億円規模の固定資産税収入</li>
+        <li>若者が誇りを持てる製造業の仕事づくり</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 7つのチャレンジ -->
+  <div class="challenge-section">
+    <div class="section-label">7 CHALLENGES</div>
+    <div class="section-title">大島ともみ　7つのチャレンジ</div>
+    <img class="challenge-img" src="images/challenges.jpg" alt="大島ともみ 7つのチャレンジ">
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 公式SNS -->
+  <div class="sns-section">
+    <div class="section-label">OFFICIAL SNS</div>
+    <div class="section-title">公式SNS</div>
+    <div class="sns-grid">
+      <a href="#" class="sns-btn">
+        <div class="sns-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,40,128,40,128,40S70.44,40,36.16,53.12A24,24,0,0,0,21.67,69.52,240.35,240.35,0,0,0,16,128a240.35,240.35,0,0,0,5.67,58.48,24,24,0,0,0,14.49,16.4C70.44,216,128,216,128,216s57.56,0,91.84-13.12a24,24,0,0,0,14.49-16.4A240.35,240.35,0,0,0,240,128,240.35,240.35,0,0,0,234.33,69.52Zm-72.11,61.44L108.33,163a8,8,0,0,1-12.33-6.73V99.76a8,8,0,0,1,12.33-6.73l53.89,32.48A8,8,0,0,1,162.22,130.96Z"/>
+          </svg>
+        </div>
+        YouTube
+      </a>
+      <a href="#" class="sns-btn">
+        <div class="sns-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/>
+          </svg>
+        </div>
+        Instagram
+      </a>
+      <a href="#" class="sns-btn">
+        <div class="sns-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M214.75,211.71l-62.6-98.36,61.77-67.95a8,8,0,0,0-11.84-10.76l-58.36,64.17L99.31,40.29A8,8,0,0,0,92.49,36H48a8,8,0,0,0-6.75,12.29l62.6,98.36L41.08,214.6a8,8,0,1,0,11.84,10.76l58.36-64.17,56.41,88.52A8,8,0,0,0,174.49,254H219a8,8,0,0,0,6.75-12.29ZM183.84,238,114.2,131.51l.12-.13L182.68,54l36.68,57.6Z"/>
+          </svg>
+        </div>
+        X
+      </a>
+    </div>
+  </div>
+
+  <!-- 活動報告 -->
+  <div class="report-section">
+    <div class="report-title">最新の活動報告</div>
+    <ul class="report-list">
+      <li class="report-item">
+        <a href="#">
+          2026年 活動報告
+          <span class="report-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor">
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/>
+            </svg>
+          </span>
+        </a>
+      </li>
+      <li class="report-item">
+        <a href="#">
+          これまでの活動（2021〜）
+          <span class="report-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor">
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/>
+            </svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 基本情報 -->
+  <div class="info-section">
+    <div class="info-title">基本情報</div>
+    <table class="info-table">
+      <tr>
+        <th>氏名</th>
+        <td>大島 ともみ（おおしま ともみ）</td>
+      </tr>
+      <tr>
+        <th>役職</th>
+        <td>津南町長候補</td>
+      </tr>
+      <tr>
+        <th>生年</th>
+        <td>1955年（昭和30年）津南町貝坂生まれ</td>
+      </tr>
+      <tr>
+        <th>学歴</th>
+        <td>南魚沼農業高校卒業</td>
+      </tr>
+      <tr>
+        <th>経歴</th>
+        <td>1991年（平成3年）株式会社ごはん 創業<br>元津南町議会議員（6年間）<br>元津南小学校後援会長<br>（株）ごはん 代表取締役<br>（株）SOL 代表取締役<br>（株）のけはし未来 代表取締役</td>
+      </tr>
+      <tr>
+        <th>出身</th>
+        <td>新潟県津南町</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <div class="footer-name">大島 ともみ</div>
+    <div class="footer-copy">大島ともみ後援会　TEL: 025-765-XXXX　※本ページはサンプル制作物です。</div>
+  </div>
+
+  </div><!-- /page-2 -->
+
+</div><!-- /page-wrap -->
+</body>
+</html>

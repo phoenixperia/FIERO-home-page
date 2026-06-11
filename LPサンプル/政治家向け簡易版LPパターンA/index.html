@@ -25,6 +25,9 @@
       font-family: 'Noto Sans JP', sans-serif;
       background: var(--off-white);
       color: var(--text);
+    }
+
+    .page-wrap {
       max-width: 430px;
       margin: 0 auto;
       min-height: 100vh;
@@ -377,11 +380,151 @@
       font-size: 11px;
       color: rgba(255,255,255,0.4);
     }
+
+    /* ===== PC: 拡大レイアウト ===== */
+    @media (min-width: 768px) {
+      .page-wrap {
+        max-width: 900px;
+      }
+
+      /* ヘッダー */
+      .header {
+        padding: 40px 60px 0;
+      }
+      .label {
+        font-size: 15px;
+        letter-spacing: 0.3em;
+        margin-bottom: 16px;
+      }
+      .name-yomi {
+        font-size: 64px;
+      }
+      .name-kanji {
+        font-size: 120px;
+      }
+      .hero-text {
+        padding-bottom: 32px;
+      }
+      .hero-photo {
+        width: 280px;
+        height: 320px;
+      }
+
+      /* 経歴バナー */
+      .career-banner {
+        font-size: 14px;
+        padding: 14px 60px;
+        letter-spacing: 0.05em;
+        line-height: 1.9;
+      }
+
+      /* ごあいさつ */
+      .greeting {
+        padding: 64px 80px;
+      }
+      .greeting-title {
+        font-size: 20px;
+        margin-bottom: 28px;
+      }
+      .greeting-body {
+        font-size: 18px;
+        line-height: 2.2;
+        margin-bottom: 32px;
+      }
+      .greeting-sign {
+        font-size: 30px;
+      }
+
+      /* SNS */
+      .sns-section {
+        padding: 64px 80px;
+      }
+      .section-label {
+        font-size: 14px;
+        letter-spacing: 0.36em;
+        margin-bottom: 10px;
+      }
+      .section-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+      }
+      .sns-grid {
+        gap: 20px;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .sns-btn {
+        padding: 32px 20px;
+        font-size: 14px;
+        gap: 14px;
+        border-radius: 16px;
+      }
+      .sns-icon {
+        width: 56px;
+        height: 56px;
+      }
+      .sns-icon svg {
+        width: 44px;
+        height: 44px;
+      }
+
+      /* 活動報告 */
+      .report-section {
+        padding: 64px 80px;
+      }
+      .report-title {
+        font-size: 22px;
+        margin-bottom: 24px;
+        gap: 16px;
+      }
+      .report-title::before { width: 36px; }
+      .report-list { gap: 12px; }
+      .report-item a {
+        font-size: 18px;
+        padding: 20px 28px;
+        border-radius: 14px;
+        border-left-width: 4px;
+      }
+
+      /* 基本情報 */
+      .info-section {
+        padding: 64px 80px;
+      }
+      .info-title {
+        font-size: 22px;
+        margin-bottom: 24px;
+        gap: 16px;
+      }
+      .info-title::before { width: 36px; }
+      .info-table th {
+        font-size: 15px;
+        width: 100px;
+        padding: 18px 0;
+      }
+      .info-table td {
+        font-size: 17px;
+        padding: 18px 0;
+        line-height: 1.8;
+      }
+
+      /* フッター */
+      .footer {
+        padding: 36px 80px;
+      }
+      .footer-name {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      .footer-copy { font-size: 13px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ===== SCREEN 1: プロフィール ===== -->
+<div class="page-wrap">
+
+  <!-- ===== PAGE 1: プロフィール ===== -->
+  <div class="page-1">
   <div class="header">
     <div class="hero-layout">
       <div class="hero-text">
@@ -411,8 +554,10 @@
   </div>
 
   <div class="divider"></div>
+  </div><!-- /page-1 -->
 
-  <!-- ===== SCREEN 2: SNS・活動報告 ===== -->
+  <!-- ===== PAGE 2: SNS・活動報告 ===== -->
+  <div class="page-2">
   <div class="sns-section">
     <div class="section-label">OFFICIAL SNS</div>
     <div class="section-title">公式SNS</div>
@@ -503,6 +648,8 @@
     <div class="footer-name">染谷 直人</div>
     <div class="footer-copy">© 2025 Naoto Someya. All rights reserved.</div>
   </div>
+  </div><!-- /page-2 -->
 
+</div><!-- /page-wrap -->
 </body>
 </html>
