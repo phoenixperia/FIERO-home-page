@@ -142,16 +142,16 @@
     .header-cta-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       background: var(--accent);
       color: var(--white);
-      padding: 9px 20px;
+      padding: 7px 15px;   /* 90%縮小 */
       border-radius: 4px;
-      font-size: 14px;
+      font-size: 12px;     /* 90%縮小 */
       font-weight: 700;
       text-decoration: none;
       transition: background 0.2s ease, transform 0.2s ease;
-      margin-left: 20px;
+      margin-left: 16px;
       white-space: nowrap;
     }
     .header-cta-btn:hover { background: var(--primary); transform: translateY(-1px); }
@@ -174,8 +174,8 @@
       margin-bottom: 6px;
       transition: border-color 0.2s ease, color 0.2s ease;
     }
-    .pnav-btn--org:first-of-type { margin-left: auto; }
-    .pnav-btn--org + .pnav-btn--org { margin-left: 6px; }
+    .pnav-btn--org:first-child { margin-left: auto; } /* 最初の1つを右に押し出す */
+    .pnav-btn--org + .pnav-btn--org { margin-left: 6px; margin-top: 6px; margin-bottom: 6px; }
     .pnav-btn--org:hover { border-color: var(--accent); color: var(--accent); }
     .pnav-org-logo { height: 18px; width: auto; display: block; }
     .header-area {
@@ -204,7 +204,7 @@
     ============================================ */
     .hero {
       background: var(--bg-warm);
-      min-height: clamp(520px, calc(100vh - 174px), 680px); /* コンテンツに合わせた高さ上限 680px */
+      min-height: clamp(520px, calc(100vh - 120px), 680px); /* ヘッダー74px + ナビ44px + 境界2px */
       position: relative;
       overflow: hidden;
       display: flex;
@@ -1057,8 +1057,8 @@
       .header-logo { width: 40px; height: 40px; }
       .header-name { font-size: 15px; }
 
-      /* ヒーロー高さをモバイルヘッダー56px＋ナビ40px＋所属団体バー46pxに合わせて再計算 */
-      .hero { min-height: calc(100vh - 56px - 40px - 46px); height: auto; }
+      /* ヒーロー高さをモバイルヘッダー56px＋ナビ40pxに合わせて再計算 */
+      .hero { min-height: calc(100vh - 56px - 40px); height: auto; }
 
       /* ===== モバイルヒーロー: 写真を背景にひく ===== */
       .hero {
@@ -1354,7 +1354,7 @@
         新着情報
       </a>
       -->
-      <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="pnav-btn--org">
+      <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="pnav-btn--org" style="margin-left:auto;">
         <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="pnav-org-logo">
         全日本瓦工事業連盟
       </a>
@@ -1366,26 +1366,7 @@
   </nav>
 
 
-  <!-- ============================================ 所属団体バー -->
-  <div class="member-bar">
-    <div class="member-bar-inner">
-      <span class="member-bar-label">所属団体</span>
-      <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="member-org">
-        <img src="./images/logo-zenkawaren.jpg" alt="一般社団法人 全日本瓦工事業連盟" class="member-org-logo">
-        <span class="member-org-text">
-          一般社団法人 全日本瓦工事業連盟
-          <span class="member-org-sub">ZENGAREN — 全瓦連 正会員</span>
-        </span>
-      </a>
-      <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="member-org">
-        <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="member-org-logo">
-        <span class="member-org-text">
-          神奈川県瓦屋根工業連合会
-          <span class="member-org-sub">優良加盟店</span>
-        </span>
-      </a>
-    </div>
-  </div>
+  <!-- 所属団体バー削除済み（ナビバーに統合） -->
 
 
   <!-- ============================================ HERO -->
