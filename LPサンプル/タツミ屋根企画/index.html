@@ -360,33 +360,36 @@
     }
     /* 実績タグ列 */
     .hero-orgs {
-      display: none; /* デスクトップでは非表示（ナビバーに表示済み） */
-      gap: 10px;
-      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
       flex-wrap: wrap;
     }
-    .hero-org-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 5px 10px 5px 6px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .hero-org-badge:hover { background: rgba(255,255,255,0.2); }
-    .hero-org-logo {
-      height: 24px;
-      width: auto;
-      border-radius: 2px;
-    }
-    .hero-org-name {
-      font-size: 11px;
-      color: rgba(255,255,255,0.75);
-      font-weight: 600;
+    .hero-orgs-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
       white-space: nowrap;
+      letter-spacing: 0.05em;
+      margin-right: 2px;
+    }
+    .hero-org-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      white-space: nowrap;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .hero-org-badge:hover {
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.45);
     }
     .hero-trust {
       display: flex;
@@ -1233,7 +1236,6 @@
       .page-nav-inner { padding: 0 16px; justify-content: space-around; }
       .pnav-btn { font-size: 12px; padding: 10px 12px; }
       .pnav-btn--org { display: none; } /* スマホはナビに所属団体ボタン非表示 */
-      .hero-orgs { display: flex; } /* スマホはヒーローに表示 */
       .header-cta-btn { display: none; } /* スマホはヘッダーCTAボタン非表示 */
 
       .suberan-banner { flex-direction: column; padding: 28px 24px; gap: 24px; }
@@ -1521,16 +1523,11 @@
               <span class="hero-trust-label">取得済み</span>
             </div>
           </div>
-          <!-- 所属団体バッジ -->
+          <!-- 所属団体テキストボタン -->
           <div class="hero-orgs">
-            <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="hero-org-badge">
-              <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="hero-org-logo">
-              <span class="hero-org-name">全日本瓦工事業連盟</span>
-            </a>
-            <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="hero-org-badge">
-              <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="hero-org-logo">
-              <span class="hero-org-name">神奈川県瓦屋根工業連合会</span>
-            </a>
+            <span class="hero-orgs-label">所属団体</span>
+            <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="hero-org-badge">全日本瓦工事業連盟</a>
+            <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="hero-org-badge">神奈川県瓦屋根工業連合会</a>
           </div>
         </div>
       </div>
