@@ -1053,6 +1053,39 @@
       font-size: 12px;
       color: rgba(255,255,255,0.25);
     }
+    .footer-org-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 8px 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .footer-org-link:hover {
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.04);
+    }
+    .footer-org-logo-wrap {
+      background: #fff;
+      border-radius: 4px;
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .footer-org-logo {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+    .footer-org-name {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+    }
 
     /* ============================================
        レスポンシブ
@@ -1881,19 +1914,19 @@
         <div>
           <div class="footer-col-title">所属団体</div>
           <div class="footer-list">
-            <div class="footer-list-item">
-              <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
-              </svg>
-              <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5); text-decoration:none;">一般社団法人 全日本瓦工事業連盟</a>
-            </div>
-            <div class="footer-list-item">
-              <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
-              </svg>
-              <a href="https://yanekana.jp/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5); text-decoration:none;">神奈川県瓦屋根工業連合会</a>
-            </div>
-            <div class="footer-list-item">
+            <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="footer-org-link">
+              <div class="footer-org-logo-wrap">
+                <img src="./images/logo-zenkawaren.jpg" alt="一般社団法人 全日本瓦工事業連盟" class="footer-org-logo">
+              </div>
+              <span class="footer-org-name">一般社団法人<br>全日本瓦工事業連盟</span>
+            </a>
+            <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="footer-org-link">
+              <div class="footer-org-logo-wrap">
+                <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="footer-org-logo">
+              </div>
+              <span class="footer-org-name">神奈川県<br>瓦屋根工業連合会</span>
+            </a>
+            <div class="footer-list-item" style="margin-top:4px;">
               <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
                 <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
               </svg>町田商工会議所
