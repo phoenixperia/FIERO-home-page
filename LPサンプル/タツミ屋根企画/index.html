@@ -169,8 +169,23 @@
       margin-bottom: 5px;
       transition: border-color 0.2s ease;
     }
-    .pnav-btn--org:first-child { margin-left: auto; }
-    .pnav-btn--org + .pnav-btn--org { margin-left: 6px; }
+    .pnav-orgs-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .pnav-orgs-heading {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-mid);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding-right: 4px;
+      border-right: 1px solid rgba(58,36,16,0.15);
+      margin-right: 2px;
+    }
     .pnav-btn--org:hover { border-color: var(--accent); }
     .pnav-btn--org:hover .pnav-org-fullname { color: var(--accent); }
     .pnav-org-label {
@@ -305,7 +320,7 @@
       background: var(--accent);
     }
     .hero-title {
-      font-size: clamp(44px, 5.8vw, 82px);
+      font-size: clamp(36px, 3.8vw, 52px);
       font-weight: 900;
       line-height: 1.1;
       color: var(--primary);
@@ -1469,24 +1484,23 @@
         新着情報
       </a>
       -->
-      <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="pnav-btn--org" style="margin-left:auto;">
-        <span class="pnav-org-label">所属団体</span>
-        <span class="pnav-org-sep"></span>
-        <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="pnav-org-logo">
-        <span class="pnav-org-text">
-          <span class="pnav-org-corp">一般社団法人</span>
-          <span class="pnav-org-fullname">全日本瓦工事業連盟</span>
-        </span>
-      </a>
-      <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="pnav-btn--org">
-        <span class="pnav-org-label">所属団体</span>
-        <span class="pnav-org-sep"></span>
-        <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="pnav-org-logo">
-        <span class="pnav-org-text">
-          <span class="pnav-org-corp">神奈川県</span>
-          <span class="pnav-org-fullname">瓦屋根工業連合会</span>
-        </span>
-      </a>
+      <div class="pnav-orgs-group">
+        <span class="pnav-orgs-heading">所属団体</span>
+        <a href="https://www.yane.or.jp/" target="_blank" rel="noopener" class="pnav-btn--org">
+          <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="pnav-org-logo">
+          <span class="pnav-org-text">
+            <span class="pnav-org-corp">一般社団法人</span>
+            <span class="pnav-org-fullname">全日本瓦工事業連盟</span>
+          </span>
+        </a>
+        <a href="https://yanekana.jp/" target="_blank" rel="noopener" class="pnav-btn--org">
+          <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="pnav-org-logo">
+          <span class="pnav-org-text">
+            <span class="pnav-org-corp">神奈川県</span>
+            <span class="pnav-org-fullname">瓦屋根工業連合会</span>
+          </span>
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -1505,7 +1519,7 @@
       <div class="hero-text">
         <div class="hero-label-tag">昭和62年創業　|　建設業許可取得</div>
         <h1 class="hero-title">
-          屋根で守る<br><span class="accent">39年</span>の信頼
+          屋根で守り続ける<br><span class="accent">40年</span>近い信頼と実績
         </h1>
         <p class="hero-sub">
           東京・神奈川の屋根工事ならタツミ屋根企画へ。<br>
