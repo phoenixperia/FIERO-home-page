@@ -511,8 +511,7 @@
     }
 
     /* 背景写真: 全面 */
-    .hero-photo,
-    .hero-photo-pc {
+    .hero-photo {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -982,25 +981,10 @@
       .interlude-b2 { height: 300px; }
     }
 
-    /* ============================================
-       スマホ用ヒーロー画像（A）
-       ============================================ */
-    .hero-photo-sp {
-      display: none;
-    }
+    /* スマホ: ヒーロー画像の表示位置を中央に変更 */
     @media (max-width: 639px) {
-      .hero-photo-pc { display: none; }
-      .hero-photo-sp {
-        display: block;
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .hero-photo {
         object-position: center center;
-        z-index: 0;
-        animation: heroZoom 14s ease-in-out infinite;
-        transform-origin: center center;
       }
     }
 
@@ -3032,17 +3016,11 @@
        =========================================== -->
   <section class="hero" id="hero">
 
-    <!-- 背景写真: PC・SP共通 -->
+    <!-- 背景写真: PC・SP共通（1枚でCSSにより表示位置を切り替え） -->
     <img
       src="images/hero-main.jpg"
       alt="FIEROアトリエ — オーダースーツ"
-      class="hero-photo hero-photo-pc"
-    >
-    <!-- SP用ヒーロー -->
-    <img
-      src="images/hero-main.jpg"
-      alt="FIEROアトリエ — オーダースーツ"
-      class="hero-photo hero-photo-sp"
+      class="hero-photo"
     >
 
     <!-- グラデーションオーバーレイ -->
