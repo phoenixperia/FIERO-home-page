@@ -1109,7 +1109,7 @@
   <section class="cta-banner">
     <p class="cta-banner-label">Reservation</p>
     <p class="cta-banner-title">あなたの一着を<br class="sp-br">一緒に考えましょう。</p>
-    <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="cta-btn">
+    <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta target="_blank" rel="noopener" class="cta-btn">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
       自分に似合う一着を相談する
     </a>
@@ -1121,7 +1121,15 @@
   </footer>
 
   <script>
+    /* LINE 予約URL — 変更する場合はこの1行だけ書き換えてください */
+    const LINE_URL = 'https://line.me/R/ti/p/@538mhqlu';
+
     const VALID_TABS = ['mens', 'ladies', 'shoes', 'bags', 'coats', 'memories'];
+
+    // LINE CTAリンクのhrefを一括セット
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('[data-line-cta]').forEach(function(el) { el.href = LINE_URL; });
+    });
 
     // タブバッジの数字をパネル内のカード数で自動更新
     document.addEventListener('DOMContentLoaded', function() {

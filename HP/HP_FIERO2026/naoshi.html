@@ -650,6 +650,13 @@
       padding-top: 32px;
       border-top: 1px solid rgba(244,236,218,0.08);
     }
+    .footer-copyright {
+      text-align: center;
+      font-size: var(--text-xs);
+      color: rgba(244,236,218,0.25);
+      letter-spacing: 0.08em;
+      margin-top: 12px;
+    }
 
     /* ============================================
        レスポンシブ
@@ -897,7 +904,7 @@
         お着用の衣類をお持ちいただければ、その場でご確認できます。
       </p>
       <div class="cta-actions">
-        <a href="https://line.me/R/ti/p/@538mhqlu" target="_blank" rel="noopener" class="btn btn-primary">
+        <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta target="_blank" rel="noopener" class="btn btn-primary">
           LINEで予約・相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -951,8 +958,16 @@
       <p class="footer-credit">
         ファッションプロデューサー <span style="letter-spacing:0.1em;">藤井 孝昌 / Takamasa Fujii</span>
       </p>
+      <p class="footer-copyright">© 2026 FIERO. All rights reserved.</p>
     </div>
   </footer>
 
+  <script>
+    /* LINE 予約URL — 変更する場合はこの1行だけ書き換えてください */
+    const LINE_URL = 'https://line.me/R/ti/p/@538mhqlu';
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('[data-line-cta]').forEach(function(el) { el.href = LINE_URL; });
+    });
+  </script>
 </body>
 </html>
