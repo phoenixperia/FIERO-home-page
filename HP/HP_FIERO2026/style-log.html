@@ -425,7 +425,10 @@
     .memory-photo.wide { grid-column: span 2; }
     /* featured: 縦2倍 */
     .memory-photo.tall { grid-row: span 2; aspect-ratio: auto; }
-    /* フィレンツェ: スマホは2:1で上(街並み)に固定、木をカット */
+    /* フィレンツェ: PC=上部(街並み)固定、スマホ=2:1で木をカット */
+    @media (min-width: 1024px) {
+      .memory-photo.florence img { object-position: center top; }
+    }
     @media (max-width: 1023px) {
       .memory-photo.florence { aspect-ratio: 2/1; }
       .memory-photo.florence img { object-position: center 15%; }
