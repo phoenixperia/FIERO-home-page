@@ -204,6 +204,34 @@
       gap: 48px 40px;
     }
 
+    /* セットラベル（同一素材・色でまとめた作品群の見出し行） */
+    .set-label {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-bottom: 4px;
+      margin-top: 8px;
+    }
+    .set-label-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #8a7145;
+      flex-shrink: 0;
+    }
+    .set-label-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(201,169,97,0.25);
+    }
+
     /* カード */
     .style-card {
       display: block;
@@ -781,36 +809,42 @@
 
           <!-- ▼ 新しい順 ▼ -->
 
-          <!-- 09とベルトを横並び -->
+          <!-- 09とベルト：同色セット -->
+          <div class="set-label">
+            <span class="set-label-dot"></span>
+            Khaki Brown — Shoes &amp; Belt Set
+            <span class="set-label-line"></span>
+          </div>
+
           <div class="style-card landscape">
             <div class="card-img-wrap">
-              <img src="images/style-log/shoes/patine-09.png" loading="lazy" alt="パティーヌ オーダーシューズ カーキ — FIERO">
+              <img src="images/style-log/shoes/patine-09.png" loading="lazy" alt="パティーヌ オーダーシューズ カーキブラウン — FIERO">
             </div>
             <div class="card-meta">
-              <span class="card-category">Patine Shoes</span>
+              <span class="card-category">Patine Shoes — Khaki Brown</span>
               <span class="card-line"></span>
             </div>
             <h2 class="card-title">Patine Shoes</h2>
             <p class="card-detail">
-              光の角度で表情を変える<br>
-              カーキ×ダークグリーンのパティーヌ。<br>
+              カーキブラウンのパティーヌ仕上げ。<br>
+              光の角度で表情を変える深みのある色が<br>
               ミラノのショールームで撮影。
             </p>
           </div>
 
           <div class="style-card landscape">
             <div class="card-img-wrap">
-              <img src="images/style-log/shoes/patine-10.png" loading="lazy" alt="パティーヌ レザーベルト — FIERO">
+              <img src="images/style-log/shoes/patine-10.png" loading="lazy" alt="パティーヌ レザーベルト カーキブラウン — FIERO">
             </div>
             <div class="card-meta">
-              <span class="card-category">Patine Belt</span>
+              <span class="card-category">Patine Belt — Khaki Brown</span>
               <span class="card-line"></span>
             </div>
             <h2 class="card-title">Patine Belt</h2>
             <p class="card-detail">
-              シューズと同じパティーヌ技法を<br>
-              ベルトに施した一本。<br>
-              深みのあるオリーブグリーンが主張しすぎず映える。
+              同色・同技法で仕上げたセットのベルト。<br>
+              カーキブラウンのパティーヌが<br>
+              装いに静かな統一感を添える。
             </p>
           </div>
 
