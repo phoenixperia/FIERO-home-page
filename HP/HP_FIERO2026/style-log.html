@@ -1055,6 +1055,18 @@
   <script>
     const VALID_TABS = ['mens', 'ladies', 'shoes', 'bags', 'coats', 'memories'];
 
+    // タブバッジの数字をパネル内のカード数で自動更新
+    document.addEventListener('DOMContentLoaded', function() {
+      VALID_TABS.forEach(function(id) {
+        const panel  = document.getElementById('tab-' + id);
+        const btn    = document.querySelector('.tab-btn[onclick*="\'' + id + '\'"]');
+        const badge  = btn ? btn.querySelector('.tab-badge') : null;
+        if (!panel || !badge) return;
+        const selector = id === 'memories' ? '.memory-photo' : '.style-card';
+        badge.textContent = panel.querySelectorAll(selector).length;
+      });
+    });
+
     function switchTab(id, btn) {
       if (!VALID_TABS.includes(id)) return;
       const panel = document.getElementById('tab-' + id);
