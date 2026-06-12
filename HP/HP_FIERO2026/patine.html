@@ -996,6 +996,7 @@
       .footer-nav { flex-wrap: wrap; justify-content: center; }
     }
   </style>
+  <script src="site-config.js"></script>
 </head>
 <body>
 
@@ -1457,11 +1458,11 @@
     </div>
     <dl class="footer-info">
       <dt>Address</dt>
-      <dd>〒194-0021 東京都町田市中町1-2-5 3階<br>（BIZcomfort町田 内）</dd>
+      <dd data-fiero-address>〒194-0021 東京都町田市中町1-2-5 3階<br>（BIZcomfort町田 内）</dd>
       <dt>Hours</dt>
-      <dd>11:00 - 20:00（完全予約制）</dd>
+      <dd data-fiero-hours>11:00 - 20:00（完全予約制）</dd>
       <dt>Contact</dt>
-      <dd>090-4847-0487 / fiero878@gmail.com</dd>
+      <dd data-fiero-contact>090-4847-0487 / fiero878@gmail.com</dd>
     </dl>
   </div>
   <div class="footer-bottom">
@@ -1544,14 +1545,6 @@
       if (e.key === 'ArrowRight') next();
     });
   })();
-</script>
-
-<script>
-  /* LINE 予約URL — 変更する場合はこの1行だけ書き換えてください */
-  const LINE_URL = 'https://line.me/R/ti/p/@538mhqlu';
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('[data-line-cta]').forEach(function(el) { el.href = LINE_URL; });
-  });
 </script>
 
 <script>

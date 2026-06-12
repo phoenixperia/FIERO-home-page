@@ -15,6 +15,7 @@
   <meta name="description" content="町田・相模原・神奈川エリアのオーダースーツ専門店。ファッションプロデューサー藤井孝昌が「なりたい姿」から一着を仕立てます。小田急町田駅北口徒歩4分。完全予約制。LINEで気軽にご相談を。">
   <meta name="keywords" content="オーダースーツ,町田,町田駅,相模原,相模原市,神奈川,神奈川県,ビスポーク,パティーヌシューズ,ファッションプロデューサー,経営者スーツ,ビジネススーツ,完全オーダー,40代スーツ,30代経営者,役員スーツ">
   <link rel="canonical" href="https://fiero-suits.com/">
+  <script src="site-config.js"></script>
 
   <!-- OGP -->
   <meta property="og:type" content="website">
@@ -3625,7 +3626,7 @@
 
       <div class="access-store-name">FIERO</div>
 
-      <p class="access-address">
+      <p class="access-address" data-fiero-address>
         〒194-0021<br>
         東京都町田市中町1-2-5<br>
         3階(BIZcomfort町田 内)
@@ -3654,11 +3655,11 @@
         </div>
         <div class="access-info-block">
           <div class="access-info-label">Hours</div>
-          <div class="access-info-value">11:00 - 20:00<br>完全予約制</div>
+          <div class="access-info-value" data-fiero-hours>11:00 - 20:00<br>完全予約制</div>
         </div>
         <div class="access-info-block">
           <div class="access-info-label">Mail</div>
-          <div class="access-info-value"><a href="mailto:fiero878@gmail.com">fiero878@gmail.com</a></div>
+          <div class="access-info-value"><a href="mailto:fiero878@gmail.com" data-fiero-mail>fiero878@gmail.com</a></div>
         </div>
       </div>
 
@@ -3776,16 +3777,14 @@
           <h4 class="footer-block-title">Store</h4>
           <div class="footer-block-content">
             FIERO<br>
-            〒194-0021<br>
-            東京都町田市中町1-2-5<br>
-            3階(BIZcomfort町田 内)<br>
+            <span data-fiero-address>〒194-0021<br>東京都町田市中町1-2-5<br>3階(BIZcomfort町田 内)</span><br>
             <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%94%BA%E7%94%B0%E5%B8%82%E4%B8%AD%E7%94%BA1-2-5" target="_blank" rel="noopener" class="footer-map-btn">Google Mapで開く →</a>
           </div>
         </div>
 
         <div class="footer-block">
           <h4 class="footer-block-title">Hours</h4>
-          <div class="footer-block-content">
+          <div class="footer-block-content" data-fiero-hours>
             11:00 - 20:00<br>
             完全予約制
           </div>
@@ -3794,7 +3793,7 @@
         <div class="footer-block">
           <h4 class="footer-block-title">Contact</h4>
           <div class="footer-block-content">
-            MAIL <a href="mailto:fiero878@gmail.com">fiero878@gmail.com</a>
+            MAIL <a href="mailto:fiero878@gmail.com" data-fiero-mail>fiero878@gmail.com</a>
           </div>
         </div>
 
@@ -3834,18 +3833,6 @@
        Scripts
        =========================================== -->
   <script>
-    /* ============================================================
-       LINE 予約URL — 変更する場合はこの1行だけ書き換えてください
-       ============================================================ */
-    const LINE_URL = 'https://line.me/R/ti/p/@538mhqlu';
-
-    // LINE CTAリンクのhrefを一括セット
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('[data-line-cta]').forEach(function(el) {
-        el.href = LINE_URL;
-      });
-    });
-
     // モバイルメニュー開閉
     const navToggle = document.getElementById('navToggle');
     const navList = document.getElementById('navList');
@@ -4331,18 +4318,18 @@
       },
       {
         match: ['予約','申し込み','ライン','line','ご予約','相談したい','問い合わせ','連絡','メッセージ'],
-        reply: 'ご予約・ご相談はLINEからお気軽にどうぞ。\n\nMAIL: fiero878@gmail.com\n\nLINEからのご予約でBespoke Card作成費が無料になります。',
+        reply: `ご予約・ご相談はLINEからお気軽にどうぞ。\n\nMAIL: ${FIERO.mail}\n\nLINEからのご予約でBespoke Card作成費が無料になります。`,
         chips: ['初回相談について', '場所・アクセス'],
         showLine: true
       },
       {
         match: ['場所','アクセス','住所','どこ','地図','map','マップ','行き方','町田'],
-        reply: '【店舗情報】\nFIERO\n〒194-0021 東京都町田市中町1-2-5\n3階（BIZcomfort町田 内）\n\n町田駅から徒歩圏内です。\nページ下部「Access」セクションにGoogle Mapがございます。',
+        reply: `【店舗情報】\nFIERO\n${FIERO.zip} ${FIERO.address1}\n${FIERO.address2}\n\n町田駅から徒歩圏内です。\nページ下部「Access」セクションにGoogle Mapがございます。`,
         chips: ['営業時間', 'ご予約・相談']
       },
       {
         match: ['営業時間','時間','何時','open','定休日','休み'],
-        reply: '営業時間：11:00〜20:00\n\n完全予約制です。\nご来店は事前にLINEでご予約ください。',
+        reply: `営業時間：${FIERO.hours}\n\n${FIERO.hoursNote}です。\nご来店は事前にLINEでご予約ください。`,
         chips: ['ご予約・相談', '場所・アクセス']
       },
       {
@@ -4484,7 +4471,7 @@
       lineArea.innerHTML = '';
       var a = document.createElement('a');
       a.className = 'cb-line-btn';
-      a.href = LINE_URL;
+      a.href = FIERO.line;
       a.target = '_blank';
       a.rel = 'noopener';
       a.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>LINEで個別相談を申し込む';

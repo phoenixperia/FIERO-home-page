@@ -524,6 +524,7 @@
       .footer { padding: 20px; }
     }
   </style>
+  <script src="site-config.js"></script>
 </head>
 <body>
 
@@ -1121,15 +1122,7 @@
   </footer>
 
   <script>
-    /* LINE 予約URL — 変更する場合はこの1行だけ書き換えてください */
-    const LINE_URL = 'https://line.me/R/ti/p/@538mhqlu';
-
     const VALID_TABS = ['mens', 'ladies', 'shoes', 'bags', 'coats', 'memories'];
-
-    // LINE CTAリンクのhrefを一括セット
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('[data-line-cta]').forEach(function(el) { el.href = LINE_URL; });
-    });
 
     // タブバッジの数字をパネル内のカード数で自動更新
     document.addEventListener('DOMContentLoaded', function() {

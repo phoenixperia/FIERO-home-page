@@ -694,6 +694,7 @@
       .price-examples { gap: 8px 12px; }
     }
   </style>
+  <script src="site-config.js"></script>
 </head>
 <body>
 
@@ -925,14 +926,12 @@
           <h4 class="footer-block-title">Store</h4>
           <div class="footer-block-content">
             FIERO<br>
-            〒194-0021<br>
-            東京都町田市中町1-2-5<br>
-            3階(BIZcomfort町田 内)
+            <span data-fiero-address>〒194-0021<br>東京都町田市中町1-2-5<br>3階(BIZcomfort町田 内)</span>
           </div>
         </div>
         <div class="footer-block">
           <h4 class="footer-block-title">Hours</h4>
-          <div class="footer-block-content">
+          <div class="footer-block-content" data-fiero-hours>
             11:00 - 20:00<br>
             完全予約制
           </div>
@@ -940,8 +939,8 @@
         <div class="footer-block">
           <h4 class="footer-block-title">Contact</h4>
           <div class="footer-block-content">
-            TEL <a href="tel:09048470487">090-4847-0487</a><br>
-            MAIL <a href="mailto:fiero878@gmail.com">fiero878@gmail.com</a>
+            TEL <a href="tel:09048470487" data-fiero-tel>090-4847-0487</a><br>
+            MAIL <a href="mailto:fiero878@gmail.com" data-fiero-mail>fiero878@gmail.com</a>
           </div>
         </div>
         <div class="footer-block">
@@ -962,12 +961,5 @@
     </div>
   </footer>
 
-  <script>
-    /* LINE 予約URL — 変更する場合はこの1行だけ書き換えてください */
-    const LINE_URL = 'https://line.me/R/ti/p/@538mhqlu';
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('[data-line-cta]').forEach(function(el) { el.href = LINE_URL; });
-    });
-  </script>
 </body>
 </html>
