@@ -402,6 +402,57 @@
       text-align: right;
       max-width: 300px;
     }
+    /* Memories サブタブ */
+    .mem-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(201,169,97,0.3);
+      padding: 0 40px;
+      margin-bottom: 0;
+    }
+    .mem-tab-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 16px 24px;
+      border: none;
+      border-bottom: 2px solid transparent;
+      background: none;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      position: relative;
+      bottom: -1px;
+      white-space: nowrap;
+    }
+    .mem-tab-btn:hover { color: var(--navy); }
+    .mem-tab-btn.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+    }
+    .mem-badge {
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      background: var(--gold);
+      color: #fff;
+      padding: 2px 5px;
+      margin-left: 6px;
+      vertical-align: middle;
+      text-transform: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .mem-panel { display: none; }
+    .mem-panel.active { display: block; }
+    /* 写真未登録時のプレースホルダー */
+    .mem-empty {
+      text-align: center;
+      padding: 80px 40px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+    }
+
     .memories-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -975,7 +1026,18 @@
     <!-- Memoriesパネル -->
     <div id="tab-memories" class="tab-panel">
 
-      <!-- Italy 2025 -->
+      <!-- Memories サブタブ -->
+      <div class="mem-tabs">
+        <button class="mem-tab-btn active" onclick="switchMemTab('italy', this)">
+          イタリア旅行<span class="mem-badge">14</span>
+        </button>
+        <button class="mem-tab-btn" onclick="switchMemTab('party', this)">
+          FIEROパーティー<span class="mem-badge">0</span>
+        </button>
+      </div>
+
+      <!-- イタリア旅行 -->
+      <div id="mem-italy" class="mem-panel active">
       <div class="memories-collection">
         <div class="memories-header">
           <div>
@@ -1032,6 +1094,12 @@
           </div>
         </div>
       </div>
+      </div><!-- /mem-italy -->
+
+      <!-- FIEROパーティー -->
+      <div id="mem-party" class="mem-panel">
+        <p class="mem-empty">写真を追加予定</p>
+      </div>
 
     </div>
 
@@ -1065,7 +1133,25 @@
         const selector = id === 'memories' ? '.memory-photo' : '.style-card';
         badge.textContent = panel.querySelectorAll(selector).length;
       });
+
+      // Memories サブタブのバッジを自動カウント
+      ['italy', 'party'].forEach(function(id) {
+        const panel = document.getElementById('mem-' + id);
+        const btn   = document.querySelector('.mem-tab-btn[onclick*="\'' + id + '\'"]');
+        const badge = btn ? btn.querySelector('.mem-badge') : null;
+        if (!panel || !badge) return;
+        badge.textContent = panel.querySelectorAll('.memory-photo').length;
+      });
     });
+
+    // Memories サブタブの切り替え
+    function switchMemTab(id, btn) {
+      document.querySelectorAll('.mem-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.mem-tab-btn').forEach(b => b.classList.remove('active'));
+      const panel = document.getElementById('mem-' + id);
+      if (panel) panel.classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
 
     function switchTab(id, btn) {
       if (!VALID_TABS.includes(id)) return;
