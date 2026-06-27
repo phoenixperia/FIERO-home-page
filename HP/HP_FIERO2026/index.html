@@ -2642,18 +2642,6 @@
       line-height: 2.1;
       letter-spacing: 0.03em;
     }
-    .contact-line-promo {
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-sm);
-      letter-spacing: 0.08em;
-      color: var(--color-accent);
-      font-weight: 500;
-      margin-bottom: var(--space-8);
-      padding: var(--space-2) var(--space-6);
-      border: 1px solid rgba(26, 41, 66, 0.25);
-      display: inline-block;
-    }
-
     @media (min-width: 1024px) {
       .contact-lead { font-size: var(--text-lg); }
       .contact-line-step { font-size: var(--text-base); }
@@ -2840,39 +2828,128 @@
       }
     }
 
-    /* 「LINEで申し込む」/「フォームで申し込む」の2択構成 */
-    .contact-method-title {
-      text-align: center;
-      font-family: var(--font-serif-jp);
-      font-size: var(--text-lg);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--color-text-primary);
-      margin-bottom: var(--space-8);
+    /* 「LINEで相談する」/「フォームで相談する」の2択カード */
+    .contact-choice {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .contact-divider-or {
+    .contact-choice-radio {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .contact-choice-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+    }
+
+    .contact-choice-card {
       display: flex;
       align-items: center;
       gap: var(--space-4);
-      max-width: 480px;
-      margin: var(--space-12) auto;
-      font-family: var(--font-serif-en);
-      font-size: var(--text-xs);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
+      padding: var(--space-6);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .contact-divider-or::before,
-    .contact-divider-or::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background-color: var(--color-border);
+
+    .choice-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background-color: #06C755;
+      color: #FFFFFF;
+    }
+    .choice-card-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .choice-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .choice-card-title {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      font-weight: 500;
+      color: var(--color-text-primary);
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .choice-card-badge {
+      font-family: var(--font-serif-en);
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background-color: var(--color-gold);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .choice-card-sub {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      letter-spacing: 0.03em;
+    }
+
+    /* LINE: 主役カード */
+    .contact-choice-card-line {
+      background-color: var(--color-surface);
+      border: 2px solid var(--color-gold);
+    }
+    .contact-choice-card-line:hover {
+      background-color: var(--color-background);
+    }
+    #choice-line:checked ~ .contact-choice-cards .contact-choice-card-line {
+      box-shadow: 0 0 0 1px var(--color-gold) inset;
+    }
+
+    /* フォーム: 控えめなカード */
+    .contact-choice-card-form {
+      background-color: transparent;
+      border: 1px solid var(--color-border);
+    }
+    .contact-choice-card-form:hover {
+      border-color: var(--color-accent);
+    }
+    #choice-form:checked ~ .contact-choice-cards .contact-choice-card-form {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 1px var(--color-accent) inset;
+    }
+
+    /* 開閉パネル */
+    .contact-choice-panel {
+      display: none;
+      padding-top: var(--space-12);
+    }
+    #choice-line:checked ~ .contact-choice-panel-line,
+    #choice-form:checked ~ .contact-choice-panel-form {
+      display: block;
     }
 
     .contact-form-wrap {
-      padding-top: var(--space-4);
+      padding-top: 0;
+    }
+
+    @media (max-width: 639px) {
+      .contact-choice-cards { grid-template-columns: 1fr; }
     }
 
     .contact-form-lead {
@@ -2915,10 +2992,6 @@
     }
     .form-vision-text:last-of-type {
       margin-bottom: 0;
-    }
-
-    @media (max-width: 639px) {
-      .contact-divider-or { max-width: 100%; }
     }
 
     /* ============================================
@@ -3802,56 +3875,70 @@
       <div class="contact-header fade-in">
         <span class="section-eyebrow">Contact</span>
         <h2 class="section-title">個別相談のお申し込み</h2>
-        <p class="contact-lead">
-          ご相談は完全無料、<br class="sp-br">ご購入の義務はございません。<br><br>
-          「まずは話を聞いてみたい」だけでも、<br class="sp-br">お気軽にどうぞ。<br><br>
-          お申し込み後、1〜2営業日以内に<br>
-          ファッションプロデューサー 藤井より<br class="sp-br">ご連絡させて頂きます。
-        </p>
+        <p class="contact-lead">ご相談は無料、ご購入の義務はございません。まずはお気軽に。</p>
       </div>
 
-      <div class="contact-line-wrap fade-in">
-        <p class="contact-method-title">LINEで申し込む</p>
+      <!-- LINE/フォーム 2択カード -->
+      <div class="contact-choice fade-in">
+        <input type="radio" name="contact-method" id="choice-line" class="contact-choice-radio">
+        <input type="radio" name="contact-method" id="choice-form" class="contact-choice-radio">
 
-        <!-- ステップ説明 -->
-        <div class="contact-line-steps">
-          <div class="contact-line-step">
-            <div class="contact-line-step-num">01</div>
-            <span>LINEを友だち追加</span>
-          </div>
-          <div class="contact-line-arrow">→</div>
-          <div class="contact-line-step">
-            <div class="contact-line-step-num">02</div>
-            <span>メッセージで希望日を送る</span>
-          </div>
-          <div class="contact-line-arrow">→</div>
-          <div class="contact-line-step">
-            <div class="contact-line-step-num">03</div>
-            <span>藤井より日程確認のご連絡</span>
+        <div class="contact-choice-cards">
+          <label for="choice-line" class="contact-choice-card contact-choice-card-line">
+            <span class="choice-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9zm-3.5 11.5h-1.5v-5h1.5v5zm3 0h-1.5v-5H11.5v5zm4.5 0h-1.5v-2.5l-1.5-2.5H16l.75 1.5.75-1.5h1.5l-1.5 2.5v2.5z"/>
+              </svg>
+            </span>
+            <span class="choice-card-body">
+              <span class="choice-card-title">LINEで相談する<span class="choice-card-badge">おすすめ</span></span>
+              <span class="choice-card-sub">最短距離でご相談いただけます</span>
+            </span>
+          </label>
+
+          <label for="choice-form" class="contact-choice-card contact-choice-card-form">
+            <span class="choice-card-body">
+              <span class="choice-card-title">フォームで相談する</span>
+              <span class="choice-card-sub">メールでじっくり書きたい方へ</span>
+            </span>
+          </label>
+        </div>
+
+        <!-- LINEの中身 -->
+        <div class="contact-choice-panel contact-choice-panel-line">
+          <div class="contact-line-wrap">
+            <!-- ステップ説明 -->
+            <div class="contact-line-steps">
+              <div class="contact-line-step">
+                <div class="contact-line-step-num">01</div>
+                <span>LINEを友だち追加</span>
+              </div>
+              <div class="contact-line-arrow">→</div>
+              <div class="contact-line-step">
+                <div class="contact-line-step-num">02</div>
+                <span>メッセージで希望日を送る</span>
+              </div>
+              <div class="contact-line-arrow">→</div>
+              <div class="contact-line-step">
+                <div class="contact-line-step-num">03</div>
+                <span>藤井より日程確認のご連絡</span>
+              </div>
+            </div>
+
+            <!-- LINEボタン -->
+            <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="contact" target="_blank" rel="noopener" class="btn-line">
+              <!-- LINE icon -->
+              <svg class="btn-line-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9zm-3.5 11.5h-1.5v-5h1.5v5zm3 0h-1.5v-5H11.5v5zm4.5 0h-1.5v-2.5l-1.5-2.5H16l.75 1.5.75-1.5h1.5l-1.5 2.5v2.5z"/>
+              </svg>
+              LINEで個別相談を申し込む
+            </a>
           </div>
         </div>
 
-        <!-- LINE予約特典 -->
-        <p class="contact-line-promo">LINEからのご予約で Bespoke Card 作成費無料</p>
-
-        <!-- LINEボタン -->
-        <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="contact" target="_blank" rel="noopener" class="btn-line">
-          <!-- LINE icon -->
-          <svg class="btn-line-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9zm-3.5 11.5h-1.5v-5h1.5v5zm3 0h-1.5v-5H11.5v5zm4.5 0h-1.5v-2.5l-1.5-2.5H16l.75 1.5.75-1.5h1.5l-1.5 2.5v2.5z"/>
-          </svg>
-          LINEで個別相談を申し込む
-        </a>
-
-      </div>
-
-      <!-- または -->
-      <div class="contact-divider-or fade-in"><span>または</span></div>
-
-      <!-- フォームでのお申し込み -->
-      <div class="contact-form-wrap fade-in">
-        <p class="contact-method-title">フォームで申し込む</p>
-
+        <!-- フォームの中身 -->
+        <div class="contact-choice-panel contact-choice-panel-form">
+        <div class="contact-form-wrap">
         <div class="contact-form">
           <p class="contact-form-lead">ご相談は無料、ご購入の義務はございません。まずはお気軽に。</p>
 
@@ -3903,6 +3990,8 @@
               </button>
             </div>
           </form>
+        </div>
+        </div>
         </div>
       </div>
     </div>
