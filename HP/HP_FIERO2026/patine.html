@@ -1484,7 +1484,7 @@
     ご相談は完全無料、ご購入の義務はございません。<br>
     「まずは話を聞いてみたい」だけでも、お気軽にどうぞ。
   </p>
-  <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta target="_blank" rel="noopener" class="btn-line">
+  <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="contact" target="_blank" rel="noopener" class="btn-line">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
     LINEで個別相談を申し込む
   </a>
@@ -1606,6 +1606,21 @@
     }
     window.addEventListener('scroll', update, { passive: true });
     update();
+  })();
+</script>
+
+<!-- LINEタップ計測 (GA4: line_tap) -->
+<script>
+  (function () {
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[data-line-cta]');
+      if (!link) return;
+      if (typeof gtag !== 'function') return;
+      gtag('event', 'line_tap', {
+        cta_location: link.getAttribute('data-cta') || '',
+        page_path: location.pathname
+      });
+    });
   })();
 </script>
 

@@ -905,7 +905,7 @@
         お着用の衣類をお持ちいただければ、その場でご確認できます。
       </p>
       <div class="cta-actions">
-        <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta target="_blank" rel="noopener" class="btn btn-primary">
+        <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="contact" target="_blank" rel="noopener" class="btn btn-primary">
           LINEで予約・相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -960,6 +960,21 @@
       <p class="footer-copyright">© 2026 FIERO. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- LINEタップ計測 (GA4: line_tap) -->
+  <script>
+    (function () {
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[data-line-cta]');
+        if (!link) return;
+        if (typeof gtag !== 'function') return;
+        gtag('event', 'line_tap', {
+          cta_location: link.getAttribute('data-cta') || '',
+          page_path: location.pathname
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
