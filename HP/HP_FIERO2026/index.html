@@ -2840,6 +2840,87 @@
       }
     }
 
+    /* 「LINEで申し込む」/「フォームで申し込む」の2択構成 */
+    .contact-method-title {
+      text-align: center;
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    .contact-divider-or {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      max-width: 480px;
+      margin: var(--space-12) auto;
+      font-family: var(--font-serif-en);
+      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+    .contact-divider-or::before,
+    .contact-divider-or::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: var(--color-border);
+    }
+
+    .contact-form-wrap {
+      padding-top: var(--space-4);
+    }
+
+    .contact-form-lead {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: 1.9;
+      letter-spacing: 0.03em;
+      text-align: center;
+      margin-bottom: var(--space-10);
+    }
+
+    .form-label .req {
+      font-size: var(--text-xs);
+      color: var(--color-accent-dark);
+      letter-spacing: 0.08em;
+      font-weight: 400;
+      margin-left: var(--space-2);
+    }
+    .form-label .opt {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      letter-spacing: 0.08em;
+      font-weight: 400;
+      margin-left: var(--space-2);
+    }
+
+    .form-input select,
+    select.form-input {
+      cursor: pointer;
+    }
+
+    .form-vision-text {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-sm);
+      color: var(--color-text-primary);
+      line-height: 2.0;
+      letter-spacing: 0.02em;
+      margin-bottom: var(--space-3);
+    }
+    .form-vision-text:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 639px) {
+      .contact-divider-or { max-width: 100%; }
+    }
+
     /* ============================================
        Footer(白基調)
        ============================================ */
@@ -3730,6 +3811,8 @@
       </div>
 
       <div class="contact-line-wrap fade-in">
+        <p class="contact-method-title">LINEで申し込む</p>
+
         <!-- ステップ説明 -->
         <div class="contact-line-steps">
           <div class="contact-line-step">
@@ -3760,6 +3843,67 @@
           LINEで個別相談を申し込む
         </a>
 
+      </div>
+
+      <!-- または -->
+      <div class="contact-divider-or fade-in"><span>または</span></div>
+
+      <!-- フォームでのお申し込み -->
+      <div class="contact-form-wrap fade-in">
+        <p class="contact-method-title">フォームで申し込む</p>
+
+        <div class="contact-form">
+          <p class="contact-form-lead">ご相談は無料、ご購入の義務はございません。まずはお気軽に。</p>
+
+          <form class="contact-form-fields">
+            <div class="form-row">
+              <label class="form-label" for="cf-name">お名前<span class="req">必須</span></label>
+              <input type="text" id="cf-name" name="name" class="form-input" required>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="cf-email">メールアドレス<span class="req">必須</span></label>
+              <input type="email" id="cf-email" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="cf-topic">ご相談内容<span class="req">必須</span></label>
+              <select id="cf-topic" name="topic" class="form-input" required>
+                <option value="まずは話を聞いてみたい" selected>まずは話を聞いてみたい（おすすめ）</option>
+                <option value="スーツ・ジャケットの相談">スーツ・ジャケットの相談</option>
+                <option value="シャツ・コートの相談">シャツ・コートの相談</option>
+                <option value="パティーヌシューズ・革小物の相談">パティーヌシューズ・革小物の相談</option>
+                <option value="お直しの相談">お直しの相談</option>
+                <option value="出張での対応を相談したい">出張での対応を相談したい</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+
+            <!-- 出張対応の説明 -->
+            <div class="form-vision-help">
+              <div class="form-vision-help-label">出張でのお仕立てについて</div>
+              <p class="form-vision-text">経営者・エグゼクティブの皆様には、オフィスやご自宅へ伺う出張採寸も承っております。あなた専属のテーラーとして、その場でお仕立てのご相談から採寸まで完結。お直しのお預かりや、ご家族の分のご相談も、まとめて承れます。</p>
+              <p class="form-vision-supplement">※出張は、お仕立てを前向きにお考えの方を対象とさせていただきます。</p>
+              <p class="form-vision-supplement">※別途、出張費を申し受けます（地域により異なります。ご相談時にご案内）。</p>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="cf-message">ご相談の詳細・ご希望<span class="opt">任意</span></label>
+              <textarea id="cf-message" name="message" class="form-textarea"></textarea>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="cf-referrer">ご紹介者のお名前<span class="opt">任意</span></label>
+              <input type="text" id="cf-referrer" name="referrer" class="form-input">
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-primary">
+                無料で相談を申し込む
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
