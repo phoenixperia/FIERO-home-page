@@ -1281,7 +1281,7 @@
   <script>
     (function () {
       document.addEventListener('click', function (e) {
-        var link = e.target.closest('a[data-line-cta]');
+        var link = e.target.closest('a[data-cta]') || e.target.closest('a[href*="line.me"]');
         if (!link) return;
         if (typeof gtag !== 'function') return;
         gtag('event', 'line_tap', {
