@@ -2834,44 +2834,47 @@
       margin: 0 auto;
     }
 
-    .contact-choice-radio {
-      position: absolute;
-      width: 0;
-      height: 0;
-      opacity: 0;
-      pointer-events: none;
-    }
-
     .contact-choice-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-6);
+      align-items: stretch;
     }
 
     .contact-choice-card {
       display: flex;
       align-items: center;
       gap: var(--space-4);
-      padding: var(--space-6);
+      width: 100%;
+      padding: var(--space-8) var(--space-6);
       text-align: left;
       cursor: pointer;
-      transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+      font-family: inherit;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+    }
+    .contact-choice-card:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+    .contact-choice-card:active {
+      transform: translateY(0) !important;
     }
 
     .choice-card-icon {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      background-color: #06C755;
-      color: #FFFFFF;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
     .choice-card-icon svg {
-      width: 22px;
-      height: 22px;
+      width: 23px;
+      height: 23px;
     }
 
     .choice-card-body {
@@ -2882,13 +2885,13 @@
 
     .choice-card-title {
       font-family: var(--font-serif-jp);
-      font-size: var(--text-base);
+      font-size: var(--text-lg);
       font-weight: 500;
-      color: var(--color-text-primary);
       letter-spacing: 0.04em;
       display: flex;
       align-items: center;
       gap: var(--space-2);
+      transition: color 0.2s ease;
     }
 
     .choice-card-badge {
@@ -2896,51 +2899,73 @@
       font-size: 0.625rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #FFFFFF;
-      background-color: var(--color-gold);
+      color: var(--color-gold);
+      background-color: #FFFFFF;
       padding: 3px 8px;
       border-radius: 2px;
     }
 
     .choice-card-sub {
       font-family: var(--font-serif-jp);
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
+      font-size: var(--text-sm);
       letter-spacing: 0.03em;
+      transition: color 0.2s ease;
     }
 
-    /* LINE: 主役カード */
+    /* LINE: 主役カード（しっかり塗りの押せるボタン） */
     .contact-choice-card-line {
-      background-color: var(--color-surface);
-      border: 2px solid var(--color-gold);
+      background-color: #06C755;
+      border: 2px solid #06C755;
+      color: #FFFFFF;
+    }
+    .contact-choice-card-line .choice-card-icon {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+    }
+    .contact-choice-card-line .choice-card-sub {
+      color: rgba(255, 255, 255, 0.88);
     }
     .contact-choice-card-line:hover {
-      background-color: var(--color-background);
-    }
-    #choice-line:checked ~ .contact-choice-cards .contact-choice-card-line {
-      box-shadow: 0 0 0 1px var(--color-gold) inset;
+      background-color: #05a648;
+      border-color: #05a648;
+      box-shadow: 0 8px 20px rgba(6, 199, 85, 0.3);
+      transform: translateY(-2px);
     }
 
-    /* フォーム: 控えめなカード */
+    /* フォーム: ネイビー基調・控えめだが明確に押せるカード */
     .contact-choice-card-form {
+      background-color: var(--color-surface);
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+    }
+    .contact-choice-card-form .choice-card-icon {
       background-color: transparent;
-      border: 1px solid var(--color-border);
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+    }
+    .contact-choice-card-form .choice-card-sub {
+      color: var(--color-text-secondary);
     }
     .contact-choice-card-form:hover {
-      border-color: var(--color-accent);
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      box-shadow: 0 8px 20px rgba(26, 41, 66, 0.25);
+      transform: translateY(-2px);
     }
-    #choice-form:checked ~ .contact-choice-cards .contact-choice-card-form {
-      border-color: var(--color-accent);
-      box-shadow: 0 0 0 1px var(--color-accent) inset;
+    .contact-choice-card-form:hover .choice-card-icon {
+      border-color: #FFFFFF;
+      color: #FFFFFF;
+    }
+    .contact-choice-card-form:hover .choice-card-sub {
+      color: rgba(255, 255, 255, 0.88);
     }
 
-    /* 開閉パネル */
+    /* 開閉パネル（フォーム側） */
     .contact-choice-panel {
       display: none;
       padding-top: var(--space-12);
     }
-    #choice-line:checked ~ .contact-choice-panel-line,
-    #choice-form:checked ~ .contact-choice-panel-form {
+    .contact-choice-panel.is-open {
       display: block;
     }
 
@@ -2948,8 +2973,13 @@
       padding-top: 0;
     }
 
+    #cf-name {
+      scroll-margin-top: 96px;
+    }
+
     @media (max-width: 639px) {
       .contact-choice-cards { grid-template-columns: 1fr; }
+      .contact-choice-card { padding: var(--space-6); }
     }
 
     .contact-form-lead {
@@ -3880,11 +3910,8 @@
 
       <!-- LINE/フォーム 2択カード -->
       <div class="contact-choice fade-in">
-        <input type="radio" name="contact-method" id="choice-line" class="contact-choice-radio">
-        <input type="radio" name="contact-method" id="choice-form" class="contact-choice-radio">
-
         <div class="contact-choice-cards">
-          <label for="choice-line" class="contact-choice-card contact-choice-card-line">
+          <button type="button" class="contact-choice-card contact-choice-card-line" id="btn-choice-line">
             <span class="choice-card-icon">
               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9zm-3.5 11.5h-1.5v-5h1.5v5zm3 0h-1.5v-5H11.5v5zm4.5 0h-1.5v-2.5l-1.5-2.5H16l.75 1.5.75-1.5h1.5l-1.5 2.5v2.5z"/>
@@ -3894,50 +3921,24 @@
               <span class="choice-card-title">LINEで相談する<span class="choice-card-badge">おすすめ</span></span>
               <span class="choice-card-sub">最短距離でご相談いただけます</span>
             </span>
-          </label>
+          </button>
 
-          <label for="choice-form" class="contact-choice-card contact-choice-card-form">
+          <button type="button" class="contact-choice-card contact-choice-card-form" id="btn-choice-form">
+            <span class="choice-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3.5 6.5l8.5 6 8.5-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
             <span class="choice-card-body">
               <span class="choice-card-title">フォームで相談する</span>
               <span class="choice-card-sub">メールでじっくり書きたい方へ</span>
             </span>
-          </label>
-        </div>
-
-        <!-- LINEの中身 -->
-        <div class="contact-choice-panel contact-choice-panel-line">
-          <div class="contact-line-wrap">
-            <!-- ステップ説明 -->
-            <div class="contact-line-steps">
-              <div class="contact-line-step">
-                <div class="contact-line-step-num">01</div>
-                <span>LINEを友だち追加</span>
-              </div>
-              <div class="contact-line-arrow">→</div>
-              <div class="contact-line-step">
-                <div class="contact-line-step-num">02</div>
-                <span>メッセージで希望日を送る</span>
-              </div>
-              <div class="contact-line-arrow">→</div>
-              <div class="contact-line-step">
-                <div class="contact-line-step-num">03</div>
-                <span>藤井より日程確認のご連絡</span>
-              </div>
-            </div>
-
-            <!-- LINEボタン -->
-            <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="contact" target="_blank" rel="noopener" class="btn-line">
-              <!-- LINE icon -->
-              <svg class="btn-line-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9zm-3.5 11.5h-1.5v-5h1.5v5zm3 0h-1.5v-5H11.5v5zm4.5 0h-1.5v-2.5l-1.5-2.5H16l.75 1.5.75-1.5h1.5l-1.5 2.5v2.5z"/>
-              </svg>
-              LINEで個別相談を申し込む
-            </a>
-          </div>
+          </button>
         </div>
 
         <!-- フォームの中身 -->
-        <div class="contact-choice-panel contact-choice-panel-form">
+        <div class="contact-choice-panel contact-choice-panel-form" id="contact-form-panel">
         <div class="contact-form-wrap">
         <div class="contact-form">
           <p class="contact-form-lead">ご相談は無料、ご購入の義務はございません。まずはお気軽に。</p>
@@ -4830,6 +4831,41 @@
           page_path: location.pathname
         });
       });
+    })();
+  </script>
+
+  <!-- Contact 2択カード: クリック動作 -->
+  <script>
+    (function () {
+      var lineBtn = document.getElementById('btn-choice-line');
+      var formBtn = document.getElementById('btn-choice-form');
+      var formPanel = document.getElementById('contact-form-panel');
+      var nameInput = document.getElementById('cf-name');
+
+      if (lineBtn) {
+        lineBtn.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'line_tap', { cta_location: 'contact', page_path: location.pathname });
+          }
+          window.open('https://line.me/R/ti/p/@538mhqlu', '_blank', 'noopener');
+        });
+      }
+
+      if (formBtn && formPanel && nameInput) {
+        formBtn.addEventListener('click', function () {
+          formPanel.classList.add('is-open');
+          nameInput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          var focused = false;
+          function focusName() {
+            if (focused) return;
+            focused = true;
+            nameInput.focus({ preventScroll: true });
+          }
+          window.addEventListener('scrollend', focusName, { once: true });
+          setTimeout(focusName, 700);
+        });
+      }
     })();
   </script>
 
