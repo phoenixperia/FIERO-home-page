@@ -5054,6 +5054,9 @@
         statusEl.textContent = message;
         statusEl.classList.remove('is-success', 'is-error');
         statusEl.classList.add('is-visible', type === 'success' ? 'is-success' : 'is-error');
+        setTimeout(function () {
+          statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 50);
       }
 
       form.addEventListener('submit', function (e) {
