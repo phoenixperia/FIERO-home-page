@@ -16,6 +16,7 @@
   <meta name="keywords" content="オーダースーツ,町田,町田駅,相模原,相模原市,神奈川,神奈川県,ビスポーク,パティーヌシューズ,ファッションプロデューサー,経営者スーツ,ビジネススーツ,完全オーダー,40代スーツ,30代経営者,役員スーツ">
   <link rel="canonical" href="https://fiero-suits.com/">
   <script src="site-config.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <!-- OGP -->
   <meta property="og:type" content="website">
@@ -2768,6 +2769,12 @@
     }
     .form-row:last-child { margin-bottom: 0; }
 
+    .cf-turnstile {
+      margin: var(--space-6) 0;
+      display: flex;
+      justify-content: center;
+    }
+
     .form-label {
       display: block;
       font-family: var(--font-serif-jp);
@@ -4113,6 +4120,8 @@
               <input type="text" id="cf-referrer" name="referrer" class="form-input">
             </div>
 
+            <div class="cf-turnstile" id="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY_PLACEHOLDER"></div>
+
             <div class="form-actions">
               <button type="submit" id="cf-submit" class="btn btn-primary">
                 無料で相談を申し込む
@@ -5067,6 +5076,12 @@
           return;
         }
 
+        var turnstileToken = form.querySelector('[name="cf-turnstile-response"]');
+        if (!turnstileToken || !turnstileToken.value) {
+          showStatus('ボット確認の準備中です。数秒待ってから再度お試しください。', 'error');
+          return;
+        }
+
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.textContent = '送信中...';
@@ -5089,6 +5104,9 @@
             showStatus('送信を完了しました。', 'success');
           })
           .catch(function () {
+            if (window.turnstile) {
+              window.turnstile.reset();
+            }
             showStatus('送信に失敗しました。お手数ですが、LINEからご連絡ください。', 'error');
           })
           .finally(function () {

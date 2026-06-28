@@ -6,6 +6,20 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+async function verifyTurnstile(token, secretKey, remoteIp) {
+  const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      secret: secretKey,
+      response: token,
+      remoteip: remoteIp
+    })
+  });
+  const result = await res.json();
+  return result.success === true;
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -30,6 +44,33 @@ export async function onRequestPost(context) {
   const inquiry = (data.inquiry || '').toString().trim();
   const detail = (data.detail || '').toString().trim();
   const referrer = (data.referrer || '').toString().trim();
+  const turnstileToken = (data['cf-turnstile-response'] || '').toString().trim();
+
+  if (!env.TURNSTILE_SECRET_KEY) {
+    return new Response(JSON.stringify({ error: 'サーバー設定が未完了です' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  if (!turnstileToken) {
+    return new Response(JSON.stringify({ error: 'ボット確認に失敗しました' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  const isHuman = await verifyTurnstile(
+    turnstileToken,
+    env.TURNSTILE_SECRET_KEY,
+    request.headers.get('CF-Connecting-IP')
+  );
+  if (!isHuman) {
+    return new Response(JSON.stringify({ error: 'ボット確認に失敗しました' }), {
+      status: 403,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 
   if (!name || !email || !inquiry) {
     return new Response(JSON.stringify({ error: '必須項目が未入力です' }), {
