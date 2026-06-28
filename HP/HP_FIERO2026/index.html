@@ -5083,7 +5083,7 @@
             if (!res.ok) throw new Error('送信に失敗しました');
             form.reset();
             form.style.display = 'none';
-            showStatus('送信しました。1〜2営業日以内にご連絡いたします。', 'success');
+            showStatus('送信を完了しました。', 'success');
           })
           .catch(function () {
             showStatus('送信に失敗しました。お手数ですが、LINEからご連絡ください。', 'error');
