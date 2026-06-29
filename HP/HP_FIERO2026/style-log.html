@@ -528,6 +528,12 @@
     .memory-photo.wide { grid-column: span 2; }
     /* featured: 縦2倍 */
     .memory-photo.tall { grid-row: span 2; aspect-ratio: auto; }
+    /* 1マスを2枚に縦分割（横長写真と高さを揃える） */
+    .memory-photo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
     /* フィレンツェ: PC=上部(街並み)固定、スマホ=2:1で木をカット */
     @media (min-width: 1024px) {
       .memory-photo.florence img { object-position: center top; }
@@ -1204,11 +1210,13 @@
           <div class="memory-photo wide florence">
             <img src="images/italy/italy-10.jpg" loading="lazy" alt="Italy 2025 — 10">
           </div>
-          <div class="memory-photo">
-            <img src="images/italy/italy-09.jpg" loading="lazy" alt="Italy 2025 — 09">
-          </div>
-          <div class="memory-photo">
-            <img src="images/italy/italy-11.jpg" loading="lazy" alt="Italy 2025 — 11">
+          <div class="memory-photo-stack">
+            <div class="memory-photo">
+              <img src="images/italy/italy-09.jpg" loading="lazy" alt="Italy 2025 — 09">
+            </div>
+            <div class="memory-photo">
+              <img src="images/italy/italy-11.jpg" loading="lazy" alt="Italy 2025 — 11">
+            </div>
           </div>
           <div class="memory-photo">
             <img src="images/italy/italy-12.jpg" loading="lazy" alt="Italy 2025 — 12">
