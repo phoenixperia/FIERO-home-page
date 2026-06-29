@@ -610,6 +610,18 @@
       align-items: center;
       gap: var(--space-4);
     }
+    /* LINE CTAに添える「フォームでも相談できます」リンク */
+    .cta-form-link {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+    .cta-form-link:hover {
+      color: var(--color-text-primary);
+      text-decoration-color: currentColor;
+    }
     .cta-sub {
       font-size: var(--text-sm);
       color: var(--color-text-muted);
@@ -933,6 +945,7 @@
           LINEで予約・相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <a href="index.html#contact-form" class="cta-form-link">フォームでも相談できます</a>
         <p class="cta-sub">東京都町田市 ／ 完全予約制 ／ 11:00 – 20:00</p>
       </div>
     </div>

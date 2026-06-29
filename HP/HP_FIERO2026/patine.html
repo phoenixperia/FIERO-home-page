@@ -941,6 +941,20 @@
     }
     .cta-section .eyebrow { color: var(--color-gold); margin-bottom: var(--space-6); }
     .cta-section .eyebrow::after { background-color: var(--color-gold); }
+    /* LINE CTAに添える「フォームでも相談できます」リンク */
+    .cta-form-link {
+      display: block;
+      margin-top: 16px;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+    .cta-form-link:hover {
+      color: var(--color-text-primary);
+      text-decoration-color: currentColor;
+    }
     .cta-section h2 {
       font-family: var(--font-serif-jp);
       font-size: clamp(1.75rem, 3vw, 2.25rem);
@@ -1511,6 +1525,7 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.52 2.1 6.59 5.25 8.38-.18.67-.67 2.43-.77 2.81-.12.46.17.46.36.33.15-.1 2.36-1.56 3.32-2.19.54.08 1.09.12 1.64.12 5.52 0 10-4.03 10-9 0-4.97-4.48-9-10-9z"/></svg>
     LINEで個別相談を申し込む
   </a>
+  <a href="index.html#contact-form" class="cta-form-link">フォームでも相談できます</a>
 </section>
 
 

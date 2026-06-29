@@ -700,6 +700,21 @@
       flex-wrap: wrap;
     }
 
+    /* LINE CTAに添える「フォームでも相談できます」リンク */
+    .cta-form-link {
+      display: block;
+      margin-top: 14px;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+    .cta-form-link:hover {
+      color: var(--color-text-primary);
+      text-decoration-color: currentColor;
+    }
+
     /* ヒーローCTAのみサイズ拡大 */
     .hero-actions .btn-primary {
       padding: 24px 58px;          /* ④ +7px縦 / +12px横 */
@@ -3352,6 +3367,7 @@
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16M6 14l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
+      <a href="#contact-form" class="cta-form-link">フォームでも相談できます</a>
       <p class="hero-sub">町田 ・ 相模原 ・ 神奈川 ・ 完全予約制 ・ オーダースーツ 8年</p>
       <a href="patine.html" class="hero-patine-badge">
         <span class="hero-patine-badge-dot"></span>
@@ -3740,6 +3756,7 @@
         自分に似合う一着を相談する
         <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+      <a href="#contact-form" class="cta-form-link">フォームでも相談できます</a>
     </div>
   </section>
 
@@ -3919,6 +3936,7 @@
         <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="voice" target="_blank" rel="noopener" class="btn btn-primary">自分に似合う一着を相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <a href="#contact-form" class="cta-form-link">フォームでも相談できます</a>
       </div>
     </div>
 
@@ -3981,6 +3999,7 @@
       <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="access" target="_blank" rel="noopener" class="btn btn-primary">自分に似合う一着を相談する
         <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+      <a href="#contact-form" class="cta-form-link">フォームでも相談できます</a>
     </div>
   </section>
 
@@ -4195,6 +4214,7 @@
         <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="footer" target="_blank" rel="noopener" class="btn btn-primary">自分に似合う一着を相談する
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <a href="#contact-form" class="cta-form-link">フォームでも相談できます</a>
       </div>
 
       <p class="footer-credit">
@@ -5029,6 +5049,23 @@
           setTimeout(focusName, 700);
         });
       }
+
+      // 「フォームでも相談できます」リンク（#contact-form）から来た場合は自動でフォームを開く
+      function openFormIfHashMatches() {
+        if (location.hash === '#contact-form' && formBtn) {
+          formBtn.click();
+        }
+      }
+      openFormIfHashMatches();
+
+      // 同一ページ内の「フォームでも相談できます」リンクは即時にフォームを開く
+      document.querySelectorAll('a.cta-form-link[href="#contact-form"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          history.replaceState(null, '', '#contact-form');
+          openFormIfHashMatches();
+        });
+      });
     })();
   </script>
 
