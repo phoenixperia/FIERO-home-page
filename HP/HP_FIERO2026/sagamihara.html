@@ -652,6 +652,21 @@
       font-weight: 700;
     }
 
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .area-tag {
+      font-family: var(--font-serif-jp);
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      padding: 0.375rem 0.875rem;
+      letter-spacing: 0.05em;
+    }
+
     /* ============================================
        お客様の声（白背景）
        ============================================ */
@@ -1226,81 +1241,29 @@
     </div>
   </section>
 
-  <!-- ④ 相模原からのアクセス -->
+  <!-- ④ アクセス -->
   <section class="access-section" id="access">
     <div class="section-inner">
-      <p class="section-eyebrow">Access from Sagamihara</p>
-      <h2 class="section-title">相模原から、<br>思ったより近いです。</h2>
+      <p class="section-eyebrow">Access</p>
+      <h2 class="section-title">アクセス</h2>
       <div class="section-divider"></div>
 
       <div class="access-layout">
-        <div>
-          <div class="station-list">
-            <div class="station-row">
-              <span class="station-name">相模大野駅</span>
-              <span class="station-line">小田急江ノ島線</span>
-              <span class="station-time">約10分<span>電車</span></span>
-            </div>
-            <div class="station-row">
-              <span class="station-name">古淵駅</span>
-              <span class="station-line">JR横浜線</span>
-              <span class="station-time">約6分<span>電車</span></span>
-            </div>
-            <div class="station-row">
-              <span class="station-name">小田急相模原駅</span>
-              <span class="station-line">小田急江ノ島線</span>
-              <span class="station-time">約13分<span>電車</span></span>
-            </div>
-            <div class="station-row">
-              <span class="station-name">淵野辺駅</span>
-              <span class="station-line">JR横浜線</span>
-              <span class="station-time">約8分<span>電車</span></span>
-            </div>
-            <div class="station-row">
-              <span class="station-name">相武台前駅</span>
-              <span class="station-line">小田急江ノ島線</span>
-              <span class="station-time">約17分<span>電車</span></span>
-            </div>
-            <div class="station-row">
-              <span class="station-name">矢部駅</span>
-              <span class="station-line">JR横浜線</span>
-              <span class="station-time">約10分<span>電車</span></span>
-            </div>
-            <div class="station-row">
-              <span class="station-name">相模原駅</span>
-              <span class="station-line">JR横浜線</span>
-              <span class="station-time">約14分<span>電車</span></span>
-            </div>
-            <div class="station-row">
-              <span class="station-name">橋本駅</span>
-              <span class="station-line">JR横浜線・京王相模原線</span>
-              <span class="station-time">約20分<span>電車</span></span>
-            </div>
-          </div>
-          <p style="margin-top: var(--space-4); font-size: 0.6875rem; color: var(--color-text-muted);">
-            ※町田駅までの電車乗車時間の目安です。町田駅からサロンまで徒歩4分。
-          </p>
-        </div>
-
         <div class="access-detail">
-          <div class="access-catchphrase">
-            <p>
-              「相模原から来るのは遠い？」<br>
-              と思っていませんか。<br><br>
-              相模大野から電車で<strong>10分</strong>。<br>
-              古淵からは<strong>6分</strong>。<br><br>
-              町田駅に着いたら、<br>
-              そこから<strong>徒歩4分</strong>でFIEROです。
-            </p>
-          </div>
-
           <div class="access-info-block">
             <p class="access-info-label">Address</p>
             <p class="access-info-text">
               〒194-0021<br>
               <strong>東京都町田市中町1-2-5 3階</strong><br>
-              BIZcomfort町田 内<br>
-              （小田急町田駅 北口 徒歩4分）
+              BIZcomfort町田 内
+            </p>
+          </div>
+
+          <div class="access-info-block">
+            <p class="access-info-label">Station</p>
+            <p class="access-info-text">
+              小田急線ご利用の方 → <strong>小田急町田駅 北口から徒歩4分</strong><br>
+              JR線ご利用の方 → <strong>JR町田駅から徒歩約8分</strong>
             </p>
           </div>
 
@@ -1317,8 +1280,7 @@
             <p class="access-info-label">Parking</p>
             <p class="access-info-text">
               専用駐車場はありません。<br>
-              周辺にコインパーキングが多数あります。<br>
-              お車でのご来店も可能です。
+              周辺にコインパーキングが多数あります。
             </p>
           </div>
 
@@ -1326,6 +1288,25 @@
              style="display: inline-flex; align-items: center; gap: 0.5em; font-family: var(--font-serif-jp); font-size: 0.875rem; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border); padding-bottom: 2px; transition: color 0.2s; width: fit-content;">
             Google マップで見る →
           </a>
+        </div>
+
+        <div>
+          <div class="access-info-block" style="margin-bottom: var(--space-6);">
+            <p class="access-info-label">Area</p>
+            <p class="access-info-text" style="color: var(--color-text-muted); font-size: 0.875rem;">
+              相模原市各エリアからご来店いただけます
+            </p>
+          </div>
+          <div class="area-tags">
+            <span class="area-tag">相模大野</span>
+            <span class="area-tag">古淵</span>
+            <span class="area-tag">小田急相模原</span>
+            <span class="area-tag">淵野辺</span>
+            <span class="area-tag">相武台前</span>
+            <span class="area-tag">矢部</span>
+            <span class="area-tag">相模原</span>
+            <span class="area-tag">橋本</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1411,7 +1392,7 @@
             <span class="faq-a-mark">A</span>
             <span class="faq-a-text">
               専用駐車場はありませんが、サロン周辺にコインパーキングが複数あります。
-              お車でのご来店も可能です。電車では相模大野から10分、古淵からは6分です。
+              お車でのご来店も可能です。
             </span>
           </div>
         </div>
