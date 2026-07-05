@@ -693,6 +693,13 @@
       letter-spacing: 0.2em;
     }
 
+    .hero-trust-badges {
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.05em;
+      margin: var(--space-3) 0 var(--space-5);
+    }
+
     .hero-actions {
       display: flex;
       align-items: center;
@@ -1068,6 +1075,61 @@
     /* ============================================
        Order Items（ダーク背景）
        ============================================ */
+    .body-empathy {
+      background-color: #1A1610;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .body-empathy-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .body-empathy-lead {
+      font-family: var(--font-serif-en);
+      font-size: clamp(0.75rem, 1vw, 0.875rem);
+      letter-spacing: 0.2em;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      margin: 0 0 28px;
+    }
+
+    .body-empathy-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .body-empathy-list li {
+      font-family: var(--font-serif-jp);
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.8;
+      color: var(--color-text-on-dark);
+      padding: 16px 24px;
+      border: 1px solid rgba(201, 169, 97, 0.25);
+    }
+
+    .body-empathy-copy {
+      font-family: var(--font-serif-jp);
+      font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+      line-height: 2;
+      color: var(--color-text-on-dark-soft);
+      margin: 0 0 32px;
+    }
+
+    .body-empathy-solution {
+      font-family: var(--font-serif-jp);
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 2;
+      color: var(--color-gold-light);
+      font-weight: 500;
+      margin: 0;
+    }
+
     .items {
       position: relative;
       overflow: hidden;
@@ -1130,6 +1192,16 @@
       display: flex;
       flex-direction: column;
       gap: var(--space-16);
+    }
+
+    .items-price-note {
+      font-family: var(--font-serif-jp);
+      font-size: clamp(0.875rem, 1.2vw, 1rem);
+      line-height: 2;
+      color: var(--color-gold-light);
+      margin-bottom: var(--space-10);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid rgba(201, 169, 97, 0.3);
     }
 
     .item-category {
@@ -3369,6 +3441,7 @@
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16M6 14l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
+      <p class="hero-trust-badges">✓ 初回相談無料&ensp;✓ 購入義務なし&ensp;✓ 押し売りなし</p>
       <a href="#contact-form" class="cta-form-link">フォームでも相談できます</a>
       <p class="hero-sub">町田 ・ 相模原 ・ 神奈川 ・ 完全予約制 ・ オーダースーツ 8年</p>
       <a href="patine.html" class="hero-patine-badge">
@@ -3503,6 +3576,20 @@
   <!-- ===========================================
        Order Items
        =========================================== -->
+  <!-- 体型共感ブロック -->
+  <section class="body-empathy" id="body-empathy">
+    <div class="body-empathy-inner">
+      <p class="body-empathy-lead">こんなお悩み、ありませんか？</p>
+      <ul class="body-empathy-list">
+        <li>「肩は合うのに、お腹まわりがきつい」</li>
+        <li>「袖丈だけいつも直している」</li>
+        <li>「なで肩でジャケットの見た目が決まらない」</li>
+      </ul>
+      <p class="body-empathy-copy">既製服が合わないのは、あなたの体型のせいではありません。<br>服が"平均値"でつくられているだけです。</p>
+      <p class="body-empathy-solution">FIEROでは20ヶ所以上の採寸で、<br>その"合わない"を一つずつ解消します。</p>
+    </div>
+  </section>
+
   <section class="items" id="items">
     <div class="items-bg" aria-hidden="true"></div>
     <div class="container">
@@ -3517,6 +3604,8 @@
       </div>
 
       <div class="items-list fade-in">
+
+        <p class="items-price-note">FIEROで最も多いご注文はビジネススーツ、生地・オプション込みで¥150,000前後です。<br>ご予算を先にお聞きし、その範囲内でのみご提案します。</p>
 
         <div class="item-category">
           <div class="item-category-head">
@@ -3726,7 +3815,7 @@
             <h3 class="process-step-title">個別相談<span class="step-meta">(1.5〜2時間)</span></h3>
             <div class="process-step-body-flex">
               <div class="process-step-body-text">
-                <p class="process-step-text">町田の小さな一室にて、ゆっくりお話を伺います。</p>
+                <p class="process-step-text">完全予約制。代表が最初から最後まで、マンツーマンでご担当します。</p>
                 <p class="process-step-text">どんな場面でその一着を着るのか。どう見られたいのか。5年後、どんな自分でいたいのか。<br>──オーダースーツは&ldquo;作る前の対話&rdquo;が9割です。<br>あなたの目指す姿を、私と一緒に言葉にしていきましょう。</p>
                 <p class="process-step-text">対話の最後に、ざっくりとしたご予算感をお伝えします。<br>ここで「次に進みたい」と思ったときだけ、次のステップへ。その場で決められなくて構いません。</p>
               </div>
@@ -3773,10 +3862,8 @@
           <div class="process-step-num">05</div>
           <div class="process-step-body">
             <h3 class="process-step-title">お支払い・採寸</h3>
-            <p class="process-step-text">ご納得いただけたら、その場でお手続きいただきます。お支払いは、PayPal・現金・お振込みからお選びください。</p>
-            <p class="process-step-text note">※PayPalご希望の場合は、事前にアカウント作成が必要になっているのでお見積り前にお伝えいただけますと助かります。<br>※初めてご利用の方は、別途 Bespoke Card 作成費として ¥5,000 を頂戴しております。</p>
-            <p class="process-step-text">ご入金確認後、丁寧にお採寸し、あなたのためだけに生地を発注、制作がスタートします。</p>
-            <p class="process-step-text note">※ご入金後は、お客様だけのために生地を発注し、制作に着手するため、キャンセル・ご返金はお受けできかねます。何卒ご理解ください。</p>
+            <p class="process-step-text">あなた専用に生地を発注するため、ご成約後のキャンセルはお受けできません。大切なご注文だからこそ、発注前に必ずご確認をお取りします。</p>
+            <p class="process-step-text">お支払いはBespoke Card（¥5,000）にて承ります。お支払い方法の詳細はご相談時にご案内します。</p>
           </div>
         </div>
 
