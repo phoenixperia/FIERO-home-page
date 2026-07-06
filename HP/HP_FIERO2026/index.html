@@ -390,14 +390,32 @@
       color: var(--color-text-primary) !important;
       opacity: 1 !important;
       text-transform: uppercase;
-      white-space: nowrap;
       transition: color 0.2s ease;
       position: relative;
       padding: 6px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .nav-link:hover {
       color: var(--color-accent-dark);
       opacity: 1;
+    }
+    .nav-link-en {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+    .nav-link-ja {
+      font-family: var(--font-serif-jp);
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      text-transform: none;
+      white-space: nowrap;
+      margin-top: 2px;
     }
     /* パティーヌシューズはゴールドで差別化 */
     .nav-link-patine {
@@ -418,9 +436,9 @@
       position: relative;
     }
     .nav-dropdown-toggle {
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 4px;
       background: none;
       border: none;
       cursor: pointer;
@@ -462,6 +480,7 @@
       padding: 10px 20px;
       text-align: left;
       white-space: nowrap;
+      font-size: 0.75rem;
     }
 
     /* ハンバーガー */
@@ -3381,10 +3400,11 @@
       <a href="#hero" class="logo" aria-label="FIERO ホーム">FIERO</a>
       <nav>
         <ul class="nav-list" id="navList">
-          <li><a href="#story" class="nav-link">Story</a></li>
+          <li><a href="#story" class="nav-link"><span class="nav-link-en">Story</span><span class="nav-link-ja">オーナーについて</span></a></li>
           <li class="nav-dropdown">
             <button type="button" class="nav-link nav-dropdown-toggle" id="navItemsToggle" aria-haspopup="true" aria-expanded="false">
-              Items<span class="nav-dropdown-caret">▾</span>
+              <span class="nav-link-en">Items<span class="nav-dropdown-caret">▾</span></span>
+              <span class="nav-link-ja">アイテム＆価格</span>
             </button>
             <ul class="nav-dropdown-menu">
               <li><a href="#items" class="nav-link">Items &amp; Price</a></li>
@@ -3392,11 +3412,11 @@
               <li><a href="patine.html" class="nav-link nav-link-patine">Patine</a></li>
             </ul>
           </li>
-          <li><a href="#process" class="nav-link">Process</a></li>
-          <li><a href="#voice" class="nav-link">Voice</a></li>
-          <li><a href="style-log.html" class="nav-link nav-link-patine">Style Log</a></li>
-          <li><a href="https://otonafashionblog.hatenablog.com/" target="_blank" rel="noopener" class="nav-link nav-link-patine">Blog</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#process" class="nav-link"><span class="nav-link-en">Process</span><span class="nav-link-ja">オーダーの流れ</span></a></li>
+          <li><a href="#voice" class="nav-link"><span class="nav-link-en">Voice</span><span class="nav-link-ja">お客様の声</span></a></li>
+          <li><a href="style-log.html" class="nav-link nav-link-patine"><span class="nav-link-en">Style Log</span><span class="nav-link-ja">スタイルログ</span></a></li>
+          <li><a href="https://otonafashionblog.hatenablog.com/" target="_blank" rel="noopener" class="nav-link nav-link-patine"><span class="nav-link-en">Blog</span><span class="nav-link-ja">ブログ</span></a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-link-en">Contact</span><span class="nav-link-ja">ご予約・お問い合わせ</span></a></li>
           <li><a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="header" target="_blank" rel="noopener" class="btn btn-primary nav-cta">自分に似合う一着を相談する
             <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a></li>
