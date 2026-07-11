@@ -848,6 +848,12 @@
       }
     }
 
+    @media (max-width: 639px) {
+      #for-you { padding: 56px 20px !important; }
+      #for-you ul { grid-template-columns: 1fr !important; }
+      #for-you ul li { border-right: none !important; padding-right: 0 !important; padding-left: 0 !important; }
+    }
+
     /* ============================================
        Empathy
        ============================================ */
@@ -3474,6 +3480,51 @@
   </section>
 
   <!-- ===========================================
+       For You — こんな方のためのサロンです
+       =========================================== -->
+  <section id="for-you" style="background: #fff; padding: 80px 24px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <span class="section-eyebrow">For You</span>
+      <h2 class="section-title" style="margin-bottom: 56px;">こんな方のための<br class="sp-br">サロンです</h2>
+      <ul style="
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        text-align: left;
+        border-top: 1px solid #E8E2D9;
+      ">
+        <li style="padding: 24px 24px 24px 0; border-bottom: 1px solid #E8E2D9; border-right: 1px solid #E8E2D9; display: flex; gap: 16px; align-items: flex-start;">
+          <span style="color: #C9A961; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; flex-shrink: 0; margin-top: 2px;">—</span>
+          <span style="font-family: 'Noto Serif JP', serif; font-size: 0.9375rem; line-height: 1.8; color: #2A2620;">経営者・役員として<br>第一印象で差をつけたい方</span>
+        </li>
+        <li style="padding: 24px 0 24px 24px; border-bottom: 1px solid #E8E2D9; display: flex; gap: 16px; align-items: flex-start;">
+          <span style="color: #C9A961; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; flex-shrink: 0; margin-top: 2px;">—</span>
+          <span style="font-family: 'Noto Serif JP', serif; font-size: 0.9375rem; line-height: 1.8; color: #2A2620;">「なんかいいね」と<br>言われる着こなしを身につけたい方</span>
+        </li>
+        <li style="padding: 24px 24px 24px 0; border-bottom: 1px solid #E8E2D9; border-right: 1px solid #E8E2D9; display: flex; gap: 16px; align-items: flex-start;">
+          <span style="color: #C9A961; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; flex-shrink: 0; margin-top: 2px;">—</span>
+          <span style="font-family: 'Noto Serif JP', serif; font-size: 0.9375rem; line-height: 1.8; color: #2A2620;">既製品では体型が合わず<br>長年悩んでいる方</span>
+        </li>
+        <li style="padding: 24px 0 24px 24px; border-bottom: 1px solid #E8E2D9; display: flex; gap: 16px; align-items: flex-start;">
+          <span style="color: #C9A961; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; flex-shrink: 0; margin-top: 2px;">—</span>
+          <span style="font-family: 'Noto Serif JP', serif; font-size: 0.9375rem; line-height: 1.8; color: #2A2620;">スーツを特別な一着として<br>長く付き合いたい方</span>
+        </li>
+        <li style="padding: 24px 24px 0 0; border-right: 1px solid #E8E2D9; display: flex; gap: 16px; align-items: flex-start;">
+          <span style="color: #C9A961; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; flex-shrink: 0; margin-top: 2px;">—</span>
+          <span style="font-family: 'Noto Serif JP', serif; font-size: 0.9375rem; line-height: 1.8; color: #2A2620;">相模原・町田エリアで<br>本物のオーダーを体験したい方</span>
+        </li>
+        <li style="padding: 24px 0 0 24px; display: flex; gap: 16px; align-items: flex-start;">
+          <span style="color: #C9A961; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; flex-shrink: 0; margin-top: 2px;">—</span>
+          <span style="font-family: 'Noto Serif JP', serif; font-size: 0.9375rem; line-height: 1.8; color: #2A2620;">「押し売りなし」で<br>じっくり相談したい方</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===========================================
        FIEROの約束
        =========================================== -->
   <section id="promise" style="
@@ -3883,7 +3934,7 @@
           <div class="process-step-body">
             <h3 class="process-step-title">お支払い・採寸</h3>
             <p class="process-step-text">あなた専用に生地を発注するため、ご成約後のキャンセルはお受けできません。大切なご注文だからこそ、発注前に必ずご確認をお取りします。</p>
-            <p class="process-step-text">お支払いはBespoke Card（¥5,000）にて承ります。お支払い方法の詳細はご相談時にご案内します。</p>
+            <p class="process-step-text">ご成約後、採寸を行い正式に発注いたします。お支払い方法（現金・お振込み・PayPal）の詳細はご相談時にご案内します。</p>
           </div>
         </div>
 
