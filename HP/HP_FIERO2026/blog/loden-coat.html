@@ -31,6 +31,17 @@
     "image": "https://fiero-suits.com/images/blog/loden-hero-og.webp"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "FIERO", "item": "https://fiero-suits.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://fiero-suits.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "ローデンクロスコート完全ガイド", "item": "https://fiero-suits.com/blog/loden-coat.html" }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -478,6 +489,37 @@
       margin-bottom: 1rem;
     }
     .article-summary-box p:last-child { margin-bottom: 0; }
+
+    /* 関連記事 */
+    .related-links {
+      border: 1px solid var(--color-border);
+      background: var(--color-background-alt);
+      padding: 24px 28px;
+      margin: 3rem 0 0;
+    }
+    .related-links-title {
+      font-family: var(--font-serif-en);
+      font-size: 0.6875rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.75rem;
+    }
+    .related-links a {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-family: var(--font-serif-jp);
+      font-size: 1rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: color 0.2s ease;
+    }
+    .related-links a:last-child { border-bottom: none; }
+    .related-links a:hover { color: var(--color-gold); }
+    .related-links a::before { content: '→'; color: var(--color-gold); flex-shrink: 0; }
 
     /* 著者プロフィール */
     .article-author {
@@ -931,6 +973,12 @@
           <p>ローデンクロスは、伝統・機能・美しさを兼ね備えた特別な生地です。厚みや混率を選ぶことで、用途やライフスタイルにフィットした理想のコートを仕立てられます。</p>
           <p>特にアルパカ混のミディアムは、バランスの良さと表情の豊かさから、最初の一着に選ばれる方が多いタイプです。そして何より、高騰が続く生地市場において、最高級の仕立てで20万円前後という価格の安定性は大きな価値といえます。</p>
           <p>ローデンクロスコートは、「長く愛せる一着を持ちたい」と思ったときの最良の答え。冬の装いを格段に引き上げる、頼れる相棒になってくれるはずです。</p>
+        </div>
+
+        <!-- 関連記事 -->
+        <div class="related-links">
+          <p class="related-links-title">関連記事</p>
+          <a href="coat-guide.html">オーダーコート完全ガイド【保存版】｜7種のデザインと価格・流れ</a>
         </div>
 
         <!-- 著者プロフィール -->
