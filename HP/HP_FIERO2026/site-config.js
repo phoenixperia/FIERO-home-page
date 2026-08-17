@@ -47,20 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
     el.innerHTML = FIERO.hours + '<br>' + FIERO.hoursNote;
   });
 
-  /* 電話リンク */
-  document.querySelectorAll('[data-fiero-tel]').forEach(function (el) {
-    el.href = FIERO.telHref;
-    el.textContent = FIERO.tel;
-  });
-
   /* メールリンク */
   document.querySelectorAll('[data-fiero-mail]').forEach(function (el) {
     el.href = FIERO.mailHref;
     el.textContent = FIERO.mail;
   });
 
-  /* 電話+メール混在テキスト（patine.html フッターなど） */
+  /* 連絡先テキスト（電話は非表示・メールのみ） */
   document.querySelectorAll('[data-fiero-contact]').forEach(function (el) {
-    el.innerHTML = FIERO.tel + ' / ' + FIERO.mail;
+    el.innerHTML = FIERO.mail;
   });
 });
