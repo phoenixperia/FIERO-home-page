@@ -449,6 +449,75 @@
     }
 
     /* ============================================
+       FIEROのお直しとは
+       ============================================ */
+    .about-section { background-color: var(--color-background-alt); }
+    .about-inner { max-width: 760px; margin: 0 auto; }
+    .about-head { text-align: center; margin-bottom: var(--space-10); }
+    .about-head .section-title { margin-bottom: 0; }
+    .about-text p {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: 2.1;
+      margin-bottom: var(--space-6);
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* ============================================
+       料金の目安
+       ============================================ */
+    .price-guide-section { background-color: var(--color-background); }
+    .price-guide-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto var(--space-12);
+    }
+    .price-guide-intro p {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      line-height: 2.0;
+    }
+    .price-guide-table {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      border-top: 1px solid var(--color-border);
+    }
+    .price-guide-table tr { border-bottom: 1px solid var(--color-border); }
+    .price-guide-table td {
+      padding: var(--space-6) var(--space-4);
+      vertical-align: middle;
+    }
+    .pg-name {
+      font-family: var(--font-serif-jp);
+      font-size: var(--text-lg);
+      color: var(--color-text-primary);
+      letter-spacing: 0.03em;
+    }
+    .pg-price {
+      text-align: right;
+      font-family: var(--font-serif-jp);
+      color: var(--color-text-secondary);
+      white-space: nowrap;
+    }
+    .pg-price strong {
+      font-family: var(--font-serif-en);
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      letter-spacing: 0.02em;
+    }
+    .pg-estimate { font-size: var(--text-sm); color: var(--color-text-secondary); }
+    .price-guide-notes {
+      max-width: 720px;
+      margin: var(--space-8) auto 0;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 2.0;
+    }
+
+    /* ============================================
        ご利用の流れ
        ============================================ */
     .flow-section {
@@ -730,6 +799,10 @@
       .btn { width: 100%; justify-content: center; }
 
       .price-examples { gap: 8px 12px; }
+
+      .price-guide-table td { padding: var(--space-4) var(--space-2); }
+      .pg-name { font-size: var(--text-base); }
+      .pg-price strong { font-size: 1.25rem; }
     }
   </style>
   <script src="site-config.js"></script>
@@ -765,6 +838,24 @@
       <div class="page-hero-divider"></div>
     </div>
   </div>
+
+  <!-- FIEROのお直しとは -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-head">
+          <span class="section-eyebrow">Our Approach</span>
+          <h2 class="section-title">FIEROのお直しとは</h2>
+        </div>
+        <div class="about-text">
+          <p>スーツのお直しは「縫い目を変える」だけではありません。シルエット全体のバランス、生地の張り、着たときの動きやすさ。これらを考慮しながら、最適な直し方を提案するのが専門家の仕事です。</p>
+          <p>FIEROは提携する専門職人とともに、お客様のご要望を丁寧にヒアリングし、「どうやったら実現できるか」を一緒に考えます。単に直すのではなく、お客様と職人の間に立ってコーディネートする。それがFIEROのお直しのスタイルです。</p>
+          <p>格安チェーンとの違いは「ヒアリング」にあります。なぜ直したいのか、どう着たいのか。その答えを聞いてから初めて、最適なお直し箇所と方法が決まります。</p>
+          <p>町田・相模原・神奈川エリアで「このスーツをまだ着たい」と思ったら、まずご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 図解セクション -->
   <section class="diagram-section">
@@ -846,6 +937,31 @@
           </ul>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金の目安 -->
+  <section class="price-guide-section">
+    <div class="container">
+      <div class="price-guide-intro">
+        <span class="section-eyebrow">Price Guide</span>
+        <h2 class="section-title">料金の目安</h2>
+        <p>お直しの内容・生地の状態・作業の難易度によって料金が変わります。<br>以下はあくまで目安です。まずはお持ちいただき、現物を確認した上でお見積りします。</p>
+      </div>
+      <table class="price-guide-table">
+        <tbody>
+          <tr><td class="pg-name">裾上げ</td><td class="pg-price"><strong>¥1,500〜</strong></td></tr>
+          <tr><td class="pg-name">パンツウエスト調整</td><td class="pg-price"><strong>¥3,500〜</strong></td></tr>
+          <tr><td class="pg-name">ジャケット袖丈調整</td><td class="pg-price"><strong>¥4,000〜</strong></td></tr>
+          <tr><td class="pg-name">着丈調整</td><td class="pg-price"><strong>¥6,000〜</strong></td></tr>
+          <tr><td class="pg-name">肩幅調整</td><td class="pg-price"><strong>¥8,000〜</strong></td></tr>
+          <tr><td class="pg-name">かけはぎ</td><td class="pg-price"><span class="pg-estimate">お見積もり（大きさによる）</span></td></tr>
+        </tbody>
+      </table>
+      <div class="price-guide-notes">
+        <p>※上記は税込参考価格です。生地・縫製の状態により変動します。</p>
+        <p>※お見積りのみのご相談も無料で承ります。</p>
       </div>
     </div>
   </section>
@@ -940,7 +1056,8 @@
       <h2 class="cta-title">まずはお気軽にご相談ください。</h2>
       <p class="cta-note">
         お直しの可否・お見積りは無料です。<br>
-        お着用の衣類をお持ちいただければ、その場でご確認できます。
+        お着用の衣類をお持ちいただければ、その場でご確認できます。<br>
+        町田駅北口より徒歩4分。相模原・神奈川エリアからもアクセス便利です。
       </p>
       <div class="cta-actions">
         <a href="https://line.me/R/ti/p/@538mhqlu" data-line-cta data-cta="contact" target="_blank" rel="noopener" class="btn btn-primary">
@@ -978,7 +1095,6 @@
         <div class="footer-block">
           <h4 class="footer-block-title">Contact</h4>
           <div class="footer-block-content">
-            TEL <a href="tel:09048470487" data-fiero-tel>090-4847-0487</a><br>
             MAIL <a href="mailto:fiero878@gmail.com" data-fiero-mail>fiero878@gmail.com</a>
           </div>
         </div>
