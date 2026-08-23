@@ -2,73 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fiero-suits.com/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fiero-suits.com/style-log.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://fiero-suits.com/style-log</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiero-suits.com/patine.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://fiero-suits.com/patine</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiero-suits.com/naoshi.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://fiero-suits.com/naoshi</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiero-suits.com/blog.html</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fiero-suits.com/blog/coat-guide.html</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fiero-suits.com/blog/loden-coat.html</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fiero-suits.com/blog/five-italian-brands.html</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fiero-suits.com/blog/zegna.html</loc>
+    <loc>https://fiero-suits.com/blog</loc>
     <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fiero-suits.com/blog/coat-guide</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fiero-suits.com/blog/zegna-trofeo.html</loc>
-    <lastmod>2026-12-23</lastmod>
+    <loc>https://fiero-suits.com/blog/loden-coat</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fiero-suits.com/blog/zegna-mil-mil.html</loc>
-    <lastmod>2026-12-30</lastmod>
+    <loc>https://fiero-suits.com/blog/five-italian-brands</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fiero-suits.com/blog/zegna-dondi.html</loc>
-    <lastmod>2027-01-06</lastmod>
+    <loc>https://fiero-suits.com/blog/zegna</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fiero-suits.com/blog/drapers</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fiero-suits.com/blog/suit-alteration-guide</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

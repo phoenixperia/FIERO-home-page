@@ -1,2 +1,20 @@
-/works /style-log 301
-/works.html /style-log 301
+# 旧URL互換
+/works        /style-log  301
+/works.html   /style-log  301
+
+# .html → クリーンURL 301リダイレクト
+/index.html               /                             301
+/style-log.html           /style-log                    301
+/patine.html              /patine                       301
+/naoshi.html              /naoshi                       301
+/sagamihara.html          /sagamihara                   301
+/blog.html                /blog                         301
+/blog/coat-guide.html     /blog/coat-guide              301
+/blog/loden-coat.html     /blog/loden-coat              301
+/blog/five-italian-brands.html /blog/five-italian-brands 301
+/blog/zegna.html          /blog/zegna                   301
+/blog/drapers.html        /blog/drapers                 301
+/blog/suit-alteration-guide.html /blog/suit-alteration-guide 301
+/blog/zegna-trofeo.html   /blog/zegna-trofeo            301
+/blog/zegna-mil-mil.html  /blog/zegna-mil-mil           301
+/blog/zegna-dondi.html    /blog/zegna-dondi             301
